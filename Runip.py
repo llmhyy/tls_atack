@@ -18,7 +18,7 @@ def scan():
         print(ip1)
         for ip2 in range(0, 256):
             print(ip2)
-            for ip3 in range(0, 255):
+            for ip3 in range(0, 259):
                 print(ip3)
                 for ip4 in range(0, 255):
 
