@@ -16,7 +16,7 @@ working_set = []
 def scan():
     for ip1 in range(0, 255):
         print(ip1)
-        for ip2 in range(0, 255):
+        for ip2 in range(0, 256):
             print(ip2)
             for ip3 in range(0, 255):
                 print(ip3)
