@@ -16,11 +16,11 @@ working_set = []
 def scan():
     for ip1 in range(0, 255):
         print(ip1)
-        for ip2 in range(0, 255):
+        for ip2 in range(0, 256):
             print(ip2)
-            for ip3 in range(0, 255):
+            for ip3 in range(0, 256):
                 print(ip3)
-                for ip4 in range(0, 255):
+                for ip4 in range(0, 256):
 
                     ip = str(ip1) + "." + str(ip2) + "." + str(ip3) + "." + str(ip4) + ":443"
                     print(ip)
