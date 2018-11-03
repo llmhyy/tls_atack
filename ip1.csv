@@ -1,0 +1,19 @@
+
+157.240.13.35:443,Breach,,,TLSFallback,,,HeartBleed,,,CSS,,,Ticket Bleed ,,,Secure Renegotiation,,,Secure Client-Initiated Renegotiation,,,Crime,,,Poodle,,,Sweet,Vulnerable,"VULNERABLE[m, uses 64 bit block ciphers
+[1m",Freak,,,Drown,,,Logjam,,,Beast,Vulnerable,"VULNERABLE[m -- but also supports higher protocols  TLSv1.1 TLSv1.2 (likely mitigated)
+[1m",Lucky13,Vulnerable,"VULNERABLE[m, uses cipher block chaining (CBC) ciphers with TLS. Check patches
+[1m",RC4,Vulnerable,"VULNERABLE (NOT ok): [m[0;31mECDHE-RSA-RC4-SHA 
+                                                                CDHE-ECDSA-RC4-SHA 
+                                                                C4-SHA [m
+
+
+[7m"
+157.240.13.35:443,Breach,,,TLSFallback,,,HeartBleed,,,CSS,,,Ticket Bleed ,,,Secure Renegotiation,,,Secure Client-Initiated Renegotiation,,,Crime,,,Poodle,,,Sweet,Vulnerable,"VULNERABLE[m, uses 64 bit block ciphers
+[1m",Freak,,,Drown,,,Logjam,,,Beast,Vulnerable,"VULNERABLE[m -- but also supports higher protocols  TLSv1.1 TLSv1.2 (likely mitigated)
+[1m",Lucky13,Vulnerable,"VULNERABLE[m, uses cipher block chaining (CBC) ciphers with TLS. Check patches
+[1m",RC4,Vulnerable,"VULNERABLE (NOT ok): [m[0;31mECDHE-RSA-RC4-SHA 
+                                                                CDHE-ECDSA-RC4-SHA 
+                                                                C4-SHA [m
+
+
+[7m"
