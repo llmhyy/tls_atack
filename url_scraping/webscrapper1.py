@@ -8,7 +8,7 @@ import time
 keyword = "secured"
 q_url = "search?q=" + keyword
 g_string = "https://www.google.com/"
-
+domain = {}
 
 def geturl():
     qurl = q_url
@@ -40,9 +40,27 @@ def url_csv(page_info):
             url = parse_qs(urlparse(url).query)['q']
         print(url[0])
         if "https://" in url[0]:
-            with open("urls.csv", "a") as f:
-                writer = csv.writer(f, dialect="excel")
-                writer.writerow([url[0]])
+            check_url(url[0])
+
+def check_url(url):
+
+        f_string= url 
+        c_string= f_string[8:-1]
+      
+        index=c_string.find("/")
+        c_string=c_string[0:index]
+        search(domain,c_string)
+
+def search(dic, looup):
+    for key ,value in dic.items():
+        for x in value:
+            if lookup in v:
+                with open("refined.csv", "a", newline='') as g :
+                    h = csv.writer(g, dialect="excel")
+                    h.writerow([lookup])
+            if lookup not in v:
+                domain.update({ len(domian)+1 : lookup})
+
 
 
 geturl()
