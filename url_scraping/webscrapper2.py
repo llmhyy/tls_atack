@@ -13,7 +13,7 @@ def search():
         keyword = r.get_random_word()
         keyword = "https+" + keyword
         q_url1 = "search?q=" + keyword
-        time.sleep(20)
+        time.sleep(2)
         geturl(q_url1)
         
 
@@ -38,7 +38,7 @@ def geturl(q_url):
             qurl = list2[-1]
             href = nxt_page[-1]
             href = href.get("href")
-        dim = 5+(len(domain)*0.003)
+        dim = 1+(len(domain)*0.003)
         time.sleep(dim)
 
 def url_csv(page_info):
