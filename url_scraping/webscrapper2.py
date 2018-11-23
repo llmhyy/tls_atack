@@ -11,7 +11,7 @@ def search():
     for i in range(100):
         r= RandomWords()
         keyword = r.get_random_word()
-        keyword = "https+"
+        keyword = "https+" + keyword
         q_url1 = "search?q=" + keyword
         time.sleep(20)
         geturl(q_url1)
