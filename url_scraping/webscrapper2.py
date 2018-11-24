@@ -32,8 +32,9 @@ def geturl(q_url):
         for g in range(len(url_list)):
             if "start=" in url_list[g]:
                 print(url_list[g])
+                list2.append(url_list[g])
         if len(list2) != 0:
-            list2.append(url_list[g])
+            
             qurl = list2[-1]
             href = nxt_page[-1]
             href = href.get("href")
