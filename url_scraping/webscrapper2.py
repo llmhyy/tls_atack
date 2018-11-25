@@ -11,9 +11,9 @@ def search():
     for i in range(100):
         r= RandomWords()
         keyword = r.get_random_word()
-        keyword = "https+" + keyword
+        keyword = "https+"+keyword
         q_url1 = "search?q=" + keyword
-        time.sleep(2)
+        time.sleep(20)
         geturl(q_url1)
         
 
@@ -21,25 +21,28 @@ def geturl(q_url):
     qurl = q_url
     url_list = []
     list2 = []
-    for x in range(0, 100):
-        raw = get(g_string + qurl).text
-        page = fromstring(raw)
-        url_csv(page)
-        nxt_page = page.cssselect("a.fl")
-        for g in nxt_page:
-            url_list.append(g.get("href"))
+    full_url= g_string + qurl
+    number=  check_len(full_url)
+    if number!= None :
+        for x in range(0,number):
+            raw = get(g_string + qurl).text
+            page = fromstring(raw)
+            url_csv(page)
+            nxt_page = page.cssselect("a.fl")
+            for g in nxt_page:
+                url_list.append(g.get("href"))
 
-        for g in range(len(url_list)):
-            if "start=" in url_list[g]:
-                print(url_list[g])
+            for g in range(len(url_list)):
+                if "start=" in url_list[g]:
+                    print(url_list[g])
+                    list2.append(url_list[g])
+            if len(list2) != 0:
                 list2.append(url_list[g])
-        if len(list2) != 0:
-            
-            qurl = list2[-1]
-            href = nxt_page[-1]
-            href = href.get("href")
-        dim = 1+(len(domain)*0.003)
-        time.sleep(dim)
+                qurl = list2[-1]
+                href = nxt_page[-1]
+                href = href.get("href")
+            dim = 5+(len(domain)*0.003)
+            time.sleep(dim)
 
 def url_csv(page_info):
     for result in page_info.cssselect(".r a"):
@@ -64,7 +67,25 @@ def search_dic(lookup,url):
             h = csv.writer(g, dialect="excel")
             h.writerow([url])
             domain.update({lookup:1 })
-            print(domain)           
+            print(domain)
+def check_len(full_url):
+    raw = get(full_url).text
+    page = fromstring(raw)
+    meta_1= raw.find("""id="resultStats""")
+    if meta_1 != -1:
+        
+        meta_2= meta_1 +150
+        meta = raw[meta_1+23:meta_2]
+        meta_1= meta.find("results")
+        meta = meta[0:meta_1-1]
+        if len(meta)<4 :
+            r_msg = len(meta)*7
+            return r_msg
+        else:
+            return 80
+    else:
+        return None
+    
                 
 while len(domain)<10000:
     search()
