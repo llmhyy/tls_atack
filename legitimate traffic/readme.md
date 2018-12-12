@@ -7,3 +7,12 @@ Number of reptitions (times to run per website)
 Output text to prepend to save file (i.e. output/) means save it under a folder named output.
 
 It saves logging to application.log and any errors to errors.out. It might also create a file named failed websites with the ending date and time, those are the websites in which the query failed.
+
+### Windows note:
+You may have to rely on the npf driver (used by wireshark) in order to run this program.
+
+If you do, you can start the driver by starting a command prompt with administrator priveleges and running:
+*sc start npf
+
+Once done, you should turn it off.
+*sc stop npf
