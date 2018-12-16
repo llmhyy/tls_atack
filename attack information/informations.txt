@@ -1,0 +1,48 @@
+Beast Attack :;
+
+	BEAST has three conditions that must be met for this attack to take place:
+
+	JavaScript or applet injection into the same origin of the web site
+	Network sniffing of the connection must be possible
+	A vulnerable version of SSL must be used which is using a block cipher
+
+
+	How attack work:
+	http://www.educatedguesswork.org/2011/09/security_impact_of_the_rizzodu.html
+
+	CODE:
+	https://github.com/mpgn/BEAST-PoC
+
+	Related Paper:
+	http://netifera.com/research/beast/beast_DRAFT_0621.pdf
+
+Compression side channel attacks:
+	Breach :v
+		Be served from a server that uses HTTP-level compression
+		Reflect user-input in HTTP response bodies
+		Reflect a secret (such as a CSRF token) in HTTP response bodies
+	implementation tools:  https://ruptureit.com/
+							:https://github.com/nealharris/BREACH
+
+Secure Client Renegotiation :
+	information : https://blog.qualys.com/ssllabs/2011/10/31/tls-renegotiation-and-denial-of-service-attacks
+	DOS:
+	https://www.incapsula.com/ddos/ddos-attacks.html
+		HTTP FLOOD:https://www.cloudflare.com/learning/ddos/http-flood-ddos-attack/
+		UDP FLOOD(script) :https://gist.github.com/Ananasr/e05f3286b6ab94ec2c5431e64832c13e
+		SNY FLOOD (Script ):https://github.com/EmreOvunc/Python-SYN-Flood-Attack-Tool
+		NDP Amplfication (script ):https://github.com/DrizzleRisk/NTPDoser
+									https://github.com/vpnguy-zz/ntpdos
+									https://github.com/rnilekani/NTP-Monlist-Amplification-Attack/blob/master/ntp.py
+									
+		DNS FLood:	https://github.com/OffensivePython/Saddam(cover multiple )
+					https://www.akamai.com/de/de/multimedia/documents/technical-publication/dns-reflection-vs-dns-mirai-technical-publication.pdf
+		Ping of Death : https://fossbytes.com/perform-ping-of-death-attack-using-cmd-just-for-learning/
+						https://github.com/ffmancera/ping_of_death
+		Slowrisi : https://www.slashroot.in/slowloris-http-dosdenial-serviceattack-and-prevention
+
+LogJam : proof of concept   https://weakdh.org/logjam.html#attack1	
+							https://weakdh.org/
+						(perl script that validate vulnerablility )	https://github.com/ldidry/logjam
+
+RC4:		 https://github.com/bozhu/RC4-Python/blob/master/rc4.py
