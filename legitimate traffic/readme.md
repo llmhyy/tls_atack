@@ -1,5 +1,5 @@
 ## Running pyrawcap
-To run the program, use `python pyrawcap.py Source.xlsx 3 output/`
+To run the program, use `python pyrawcap.py Source.xlsx 1 output/`
 
 If you have both python 2 and python 3 installed, run with python 3 (usually `py -3`)
 
