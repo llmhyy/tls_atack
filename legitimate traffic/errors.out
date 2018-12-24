@@ -13360,3 +13360,1076 @@ Traceback (most recent call last):
     raise SSLError(e, request=request)
 requests.exceptions.SSLError: HTTPSConnectionPool(host='instruction.cvhs.okstate.edu', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLError("bad handshake: SysCallError(-1, 'Unexpected EOF')",),))
 Website: https://instruction.cvhs.okstate.edu
+===========================================================================================================================
+2018-12-24_17-09-23 - Error accessing website:
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 346, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 850, in _validate_conn
+    conn.connect()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connection.py", line 346, in connect
+    _match_hostname(cert, self.assert_hostname or hostname)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connection.py", line 356, in _match_hostname
+    match_hostname(cert, asserted_hostname)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\ssl.py", line 327, in match_hostname
+    % (hostname, ', '.join(map(repr, dnsnames))))
+ssl.CertificateError: hostname 'www.hapag-lloyd.co' doesn't match either of 'www.hapag-lloyd.com', 'hapag-lloyd.com'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\adapters.py", line 440, in send
+    timeout=timeout
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 639, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\util\retry.py", line 388, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='www.hapag-lloyd.co', port=443): Max retries exceeded with url: / (Caused by SSLError(CertificateError("hostname 'www.hapag-lloyd.co' doesn't match either of 'www.hapag-lloyd.com', 'hapag-lloyd.com'",),))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "pyrawcap.py", line 123, in <module>
+    r = requests.get(websites[i][0], timeout=30, headers=headers);
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\adapters.py", line 506, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='www.hapag-lloyd.co', port=443): Max retries exceeded with url: / (Caused by SSLError(CertificateError("hostname 'www.hapag-lloyd.co' doesn't match either of 'www.hapag-lloyd.com', 'hapag-lloyd.com'",),))
+Website: https://www.hapag-lloyd.co
+===========================================================================================================================
+2018-12-24_17-10-15 - Error accessing website:
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 346, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 850, in _validate_conn
+    conn.connect()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connection.py", line 346, in connect
+    _match_hostname(cert, self.assert_hostname or hostname)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connection.py", line 356, in _match_hostname
+    match_hostname(cert, asserted_hostname)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\ssl.py", line 327, in match_hostname
+    % (hostname, ', '.join(map(repr, dnsnames))))
+ssl.CertificateError: hostname 'theatrecat.co' doesn't match either of 'www.123-reg-new-domain.co.uk', '123-reg-new-domain.co.uk'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\adapters.py", line 440, in send
+    timeout=timeout
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 639, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\util\retry.py", line 388, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='theatrecat.co', port=443): Max retries exceeded with url: / (Caused by SSLError(CertificateError("hostname 'theatrecat.co' doesn't match either of 'www.123-reg-new-domain.co.uk', '123-reg-new-domain.co.uk'",),))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "pyrawcap.py", line 123, in <module>
+    r = requests.get(websites[i][0], timeout=30, headers=headers);
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\adapters.py", line 506, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='theatrecat.co', port=443): Max retries exceeded with url: / (Caused by SSLError(CertificateError("hostname 'theatrecat.co' doesn't match either of 'www.123-reg-new-domain.co.uk', '123-reg-new-domain.co.uk'",),))
+Website: https://theatrecat.co
+===========================================================================================================================
+2018-12-24_17-12-56 - Error accessing website:
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 346, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 850, in _validate_conn
+    conn.connect()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connection.py", line 346, in connect
+    _match_hostname(cert, self.assert_hostname or hostname)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connection.py", line 356, in _match_hostname
+    match_hostname(cert, asserted_hostname)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\ssl.py", line 327, in match_hostname
+    % (hostname, ', '.join(map(repr, dnsnames))))
+ssl.CertificateError: hostname 'hiring.careerbuilder.co' doesn't match either of '*.careerbuilder.com', 'careerbuilder.com'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\adapters.py", line 440, in send
+    timeout=timeout
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 639, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\util\retry.py", line 388, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='hiring.careerbuilder.co', port=443): Max retries exceeded with url: / (Caused by SSLError(CertificateError("hostname 'hiring.careerbuilder.co' doesn't match either of '*.careerbuilder.com', 'careerbuilder.com'",),))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "pyrawcap.py", line 123, in <module>
+    r = requests.get(websites[i][0], timeout=30, headers=headers);
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\adapters.py", line 506, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='hiring.careerbuilder.co', port=443): Max retries exceeded with url: / (Caused by SSLError(CertificateError("hostname 'hiring.careerbuilder.co' doesn't match either of '*.careerbuilder.com', 'careerbuilder.com'",),))
+Website: https://hiring.careerbuilder.co
+===========================================================================================================================
+2018-12-24_17-13-28 - Error accessing website:
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\contrib\pyopenssl.py", line 441, in wrap_socket
+    cnx.do_handshake()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\OpenSSL\SSL.py", line 1907, in do_handshake
+    self._raise_ssl_error(self._ssl, result)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\OpenSSL\SSL.py", line 1639, in _raise_ssl_error
+    _raise_current_error()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\OpenSSL\_util.py", line 54, in exception_from_error_queue
+    raise exception_type(errors)
+OpenSSL.SSL.Error: [('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 346, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 850, in _validate_conn
+    conn.connect()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connection.py", line 326, in connect
+    ssl_context=context)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\util\ssl_.py", line 329, in ssl_wrap_socket
+    return context.wrap_socket(sock, server_hostname=server_hostname)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\contrib\pyopenssl.py", line 448, in wrap_socket
+    raise ssl.SSLError('bad handshake: %r' % e)
+ssl.SSLError: ("bad handshake: Error([('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')],)",)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\adapters.py", line 440, in send
+    timeout=timeout
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 639, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\util\retry.py", line 388, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='www.paho.org', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLError("bad handshake: Error([('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')],)",),))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "pyrawcap.py", line 123, in <module>
+    r = requests.get(websites[i][0], timeout=30, headers=headers);
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\adapters.py", line 506, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='www.paho.org', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLError("bad handshake: Error([('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')],)",),))
+Website: https://www.paho.org
+===========================================================================================================================
+2018-12-24_17-16-34 - Error accessing website:
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\contrib\pyopenssl.py", line 441, in wrap_socket
+    cnx.do_handshake()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\OpenSSL\SSL.py", line 1907, in do_handshake
+    self._raise_ssl_error(self._ssl, result)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\OpenSSL\SSL.py", line 1639, in _raise_ssl_error
+    _raise_current_error()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\OpenSSL\_util.py", line 54, in exception_from_error_queue
+    raise exception_type(errors)
+OpenSSL.SSL.Error: [('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 346, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 850, in _validate_conn
+    conn.connect()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connection.py", line 326, in connect
+    ssl_context=context)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\util\ssl_.py", line 329, in ssl_wrap_socket
+    return context.wrap_socket(sock, server_hostname=server_hostname)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\contrib\pyopenssl.py", line 448, in wrap_socket
+    raise ssl.SSLError('bad handshake: %r' % e)
+ssl.SSLError: ("bad handshake: Error([('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')],)",)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\adapters.py", line 440, in send
+    timeout=timeout
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 639, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\util\retry.py", line 388, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='www4.ntu.ac.uk', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLError("bad handshake: Error([('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')],)",),))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "pyrawcap.py", line 123, in <module>
+    r = requests.get(websites[i][0], timeout=30, headers=headers);
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\adapters.py", line 506, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='www4.ntu.ac.uk', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLError("bad handshake: Error([('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')],)",),))
+Website: https://www4.ntu.ac.uk
+===========================================================================================================================
+2018-12-24_17-19-47 - Error accessing website:
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\contrib\pyopenssl.py", line 441, in wrap_socket
+    cnx.do_handshake()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\OpenSSL\SSL.py", line 1907, in do_handshake
+    self._raise_ssl_error(self._ssl, result)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\OpenSSL\SSL.py", line 1639, in _raise_ssl_error
+    _raise_current_error()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\OpenSSL\_util.py", line 54, in exception_from_error_queue
+    raise exception_type(errors)
+OpenSSL.SSL.Error: [('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 346, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 850, in _validate_conn
+    conn.connect()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connection.py", line 326, in connect
+    ssl_context=context)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\util\ssl_.py", line 329, in ssl_wrap_socket
+    return context.wrap_socket(sock, server_hostname=server_hostname)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\contrib\pyopenssl.py", line 448, in wrap_socket
+    raise ssl.SSLError('bad handshake: %r' % e)
+ssl.SSLError: ("bad handshake: Error([('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')],)",)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\adapters.py", line 440, in send
+    timeout=timeout
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 639, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\util\retry.py", line 388, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='contractaciopublica.gencat.cat', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLError("bad handshake: Error([('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')],)",),))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "pyrawcap.py", line 123, in <module>
+    r = requests.get(websites[i][0], timeout=30, headers=headers);
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\adapters.py", line 506, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='contractaciopublica.gencat.cat', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLError("bad handshake: Error([('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')],)",),))
+Website: https://contractaciopublica.gencat.cat
+===========================================================================================================================
+2018-12-24_17-30-01 - Error accessing website:
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 346, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 850, in _validate_conn
+    conn.connect()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connection.py", line 346, in connect
+    _match_hostname(cert, self.assert_hostname or hostname)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connection.py", line 356, in _match_hostname
+    match_hostname(cert, asserted_hostname)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\ssl.py", line 327, in match_hostname
+    % (hostname, ', '.join(map(repr, dnsnames))))
+ssl.CertificateError: hostname 'www.hapag-lloyd.co' doesn't match either of 'www.hapag-lloyd.com', 'hapag-lloyd.com'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\adapters.py", line 440, in send
+    timeout=timeout
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 639, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\util\retry.py", line 388, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='www.hapag-lloyd.co', port=443): Max retries exceeded with url: / (Caused by SSLError(CertificateError("hostname 'www.hapag-lloyd.co' doesn't match either of 'www.hapag-lloyd.com', 'hapag-lloyd.com'",),))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "pyrawcap.py", line 123, in <module>
+    r = requests.get(websites[i][0], timeout=30, headers=headers);
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\adapters.py", line 506, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='www.hapag-lloyd.co', port=443): Max retries exceeded with url: / (Caused by SSLError(CertificateError("hostname 'www.hapag-lloyd.co' doesn't match either of 'www.hapag-lloyd.com', 'hapag-lloyd.com'",),))
+Website: https://www.hapag-lloyd.co
+===========================================================================================================================
+2018-12-24_17-30-51 - Error accessing website:
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 346, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 850, in _validate_conn
+    conn.connect()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connection.py", line 346, in connect
+    _match_hostname(cert, self.assert_hostname or hostname)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connection.py", line 356, in _match_hostname
+    match_hostname(cert, asserted_hostname)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\ssl.py", line 327, in match_hostname
+    % (hostname, ', '.join(map(repr, dnsnames))))
+ssl.CertificateError: hostname 'theatrecat.co' doesn't match either of 'www.123-reg-new-domain.co.uk', '123-reg-new-domain.co.uk'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\adapters.py", line 440, in send
+    timeout=timeout
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 639, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\util\retry.py", line 388, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='theatrecat.co', port=443): Max retries exceeded with url: / (Caused by SSLError(CertificateError("hostname 'theatrecat.co' doesn't match either of 'www.123-reg-new-domain.co.uk', '123-reg-new-domain.co.uk'",),))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "pyrawcap.py", line 123, in <module>
+    r = requests.get(websites[i][0], timeout=30, headers=headers);
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\adapters.py", line 506, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='theatrecat.co', port=443): Max retries exceeded with url: / (Caused by SSLError(CertificateError("hostname 'theatrecat.co' doesn't match either of 'www.123-reg-new-domain.co.uk', '123-reg-new-domain.co.uk'",),))
+Website: https://theatrecat.co
+===========================================================================================================================
+2018-12-24_17-33-41 - Error accessing website:
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 346, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 850, in _validate_conn
+    conn.connect()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connection.py", line 346, in connect
+    _match_hostname(cert, self.assert_hostname or hostname)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connection.py", line 356, in _match_hostname
+    match_hostname(cert, asserted_hostname)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\ssl.py", line 327, in match_hostname
+    % (hostname, ', '.join(map(repr, dnsnames))))
+ssl.CertificateError: hostname 'hiring.careerbuilder.co' doesn't match either of '*.careerbuilder.com', 'careerbuilder.com'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\adapters.py", line 440, in send
+    timeout=timeout
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 639, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\util\retry.py", line 388, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='hiring.careerbuilder.co', port=443): Max retries exceeded with url: / (Caused by SSLError(CertificateError("hostname 'hiring.careerbuilder.co' doesn't match either of '*.careerbuilder.com', 'careerbuilder.com'",),))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "pyrawcap.py", line 123, in <module>
+    r = requests.get(websites[i][0], timeout=30, headers=headers);
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\adapters.py", line 506, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='hiring.careerbuilder.co', port=443): Max retries exceeded with url: / (Caused by SSLError(CertificateError("hostname 'hiring.careerbuilder.co' doesn't match either of '*.careerbuilder.com', 'careerbuilder.com'",),))
+Website: https://hiring.careerbuilder.co
+===========================================================================================================================
+2018-12-24_17-34-07 - Error accessing website:
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\contrib\pyopenssl.py", line 441, in wrap_socket
+    cnx.do_handshake()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\OpenSSL\SSL.py", line 1907, in do_handshake
+    self._raise_ssl_error(self._ssl, result)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\OpenSSL\SSL.py", line 1639, in _raise_ssl_error
+    _raise_current_error()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\OpenSSL\_util.py", line 54, in exception_from_error_queue
+    raise exception_type(errors)
+OpenSSL.SSL.Error: [('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 346, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 850, in _validate_conn
+    conn.connect()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connection.py", line 326, in connect
+    ssl_context=context)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\util\ssl_.py", line 329, in ssl_wrap_socket
+    return context.wrap_socket(sock, server_hostname=server_hostname)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\contrib\pyopenssl.py", line 448, in wrap_socket
+    raise ssl.SSLError('bad handshake: %r' % e)
+ssl.SSLError: ("bad handshake: Error([('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')],)",)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\adapters.py", line 440, in send
+    timeout=timeout
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 639, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\util\retry.py", line 388, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='www.paho.org', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLError("bad handshake: Error([('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')],)",),))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "pyrawcap.py", line 123, in <module>
+    r = requests.get(websites[i][0], timeout=30, headers=headers);
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\adapters.py", line 506, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='www.paho.org', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLError("bad handshake: Error([('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')],)",),))
+Website: https://www.paho.org
+===========================================================================================================================
+2018-12-24_17-37-01 - Error accessing website:
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\contrib\pyopenssl.py", line 441, in wrap_socket
+    cnx.do_handshake()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\OpenSSL\SSL.py", line 1907, in do_handshake
+    self._raise_ssl_error(self._ssl, result)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\OpenSSL\SSL.py", line 1639, in _raise_ssl_error
+    _raise_current_error()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\OpenSSL\_util.py", line 54, in exception_from_error_queue
+    raise exception_type(errors)
+OpenSSL.SSL.Error: [('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 346, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 850, in _validate_conn
+    conn.connect()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connection.py", line 326, in connect
+    ssl_context=context)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\util\ssl_.py", line 329, in ssl_wrap_socket
+    return context.wrap_socket(sock, server_hostname=server_hostname)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\contrib\pyopenssl.py", line 448, in wrap_socket
+    raise ssl.SSLError('bad handshake: %r' % e)
+ssl.SSLError: ("bad handshake: Error([('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')],)",)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\adapters.py", line 440, in send
+    timeout=timeout
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 639, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\util\retry.py", line 388, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='www4.ntu.ac.uk', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLError("bad handshake: Error([('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')],)",),))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "pyrawcap.py", line 123, in <module>
+    r = requests.get(websites[i][0], timeout=30, headers=headers);
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\adapters.py", line 506, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='www4.ntu.ac.uk', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLError("bad handshake: Error([('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')],)",),))
+Website: https://www4.ntu.ac.uk
+===========================================================================================================================
+2018-12-24_17-38-37 - Error accessing website:
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 383, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\http\client.py", line 1331, in getresponse
+    response.begin()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\http\client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\http\client.py", line 258, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\socket.py", line 586, in readinto
+    return self._sock.recv_into(b)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\contrib\pyopenssl.py", line 296, in recv_into
+    return self.recv_into(*args, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\contrib\pyopenssl.py", line 285, in recv_into
+    raise SocketError(str(e))
+OSError: (10054, 'WSAECONNRESET')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\adapters.py", line 440, in send
+    timeout=timeout
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 639, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\util\retry.py", line 357, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\packages\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 383, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\http\client.py", line 1331, in getresponse
+    response.begin()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\http\client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\http\client.py", line 258, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\socket.py", line 586, in readinto
+    return self._sock.recv_into(b)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\contrib\pyopenssl.py", line 296, in recv_into
+    return self.recv_into(*args, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\contrib\pyopenssl.py", line 285, in recv_into
+    raise SocketError(str(e))
+urllib3.exceptions.ProtocolError: ('Connection aborted.', OSError("(10054, 'WSAECONNRESET')",))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "pyrawcap.py", line 123, in <module>
+    r = requests.get(websites[i][0], timeout=30, headers=headers);
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\adapters.py", line 490, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', OSError("(10054, 'WSAECONNRESET')",))
+Website: https://www.opentable.com
+===========================================================================================================================
+2018-12-24_17-40-25 - Error accessing website:
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\contrib\pyopenssl.py", line 441, in wrap_socket
+    cnx.do_handshake()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\OpenSSL\SSL.py", line 1907, in do_handshake
+    self._raise_ssl_error(self._ssl, result)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\OpenSSL\SSL.py", line 1639, in _raise_ssl_error
+    _raise_current_error()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\OpenSSL\_util.py", line 54, in exception_from_error_queue
+    raise exception_type(errors)
+OpenSSL.SSL.Error: [('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 346, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 850, in _validate_conn
+    conn.connect()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connection.py", line 326, in connect
+    ssl_context=context)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\util\ssl_.py", line 329, in ssl_wrap_socket
+    return context.wrap_socket(sock, server_hostname=server_hostname)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\contrib\pyopenssl.py", line 448, in wrap_socket
+    raise ssl.SSLError('bad handshake: %r' % e)
+ssl.SSLError: ("bad handshake: Error([('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')],)",)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\adapters.py", line 440, in send
+    timeout=timeout
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 639, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\util\retry.py", line 388, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='contractaciopublica.gencat.cat', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLError("bad handshake: Error([('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')],)",),))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "pyrawcap.py", line 123, in <module>
+    r = requests.get(websites[i][0], timeout=30, headers=headers);
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\adapters.py", line 506, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='contractaciopublica.gencat.cat', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLError("bad handshake: Error([('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')],)",),))
+Website: https://contractaciopublica.gencat.cat
+===========================================================================================================================
+2018-12-24_18-25-28 - Error accessing website:
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 346, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 850, in _validate_conn
+    conn.connect()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connection.py", line 346, in connect
+    _match_hostname(cert, self.assert_hostname or hostname)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connection.py", line 356, in _match_hostname
+    match_hostname(cert, asserted_hostname)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\ssl.py", line 327, in match_hostname
+    % (hostname, ', '.join(map(repr, dnsnames))))
+ssl.CertificateError: hostname 'www.hapag-lloyd.co' doesn't match either of 'www.hapag-lloyd.com', 'hapag-lloyd.com'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\adapters.py", line 440, in send
+    timeout=timeout
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 639, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\util\retry.py", line 388, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='www.hapag-lloyd.co', port=443): Max retries exceeded with url: / (Caused by SSLError(CertificateError("hostname 'www.hapag-lloyd.co' doesn't match either of 'www.hapag-lloyd.com', 'hapag-lloyd.com'",),))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "pyrawcap.py", line 123, in <module>
+    r = requests.get(websites[i][0], timeout=30, headers=headers);
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\adapters.py", line 506, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='www.hapag-lloyd.co', port=443): Max retries exceeded with url: / (Caused by SSLError(CertificateError("hostname 'www.hapag-lloyd.co' doesn't match either of 'www.hapag-lloyd.com', 'hapag-lloyd.com'",),))
+Website: https://www.hapag-lloyd.co
+===========================================================================================================================
+2018-12-24_18-26-19 - Error accessing website:
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 346, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 850, in _validate_conn
+    conn.connect()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connection.py", line 346, in connect
+    _match_hostname(cert, self.assert_hostname or hostname)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connection.py", line 356, in _match_hostname
+    match_hostname(cert, asserted_hostname)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\ssl.py", line 327, in match_hostname
+    % (hostname, ', '.join(map(repr, dnsnames))))
+ssl.CertificateError: hostname 'theatrecat.co' doesn't match either of 'www.123-reg-new-domain.co.uk', '123-reg-new-domain.co.uk'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\adapters.py", line 440, in send
+    timeout=timeout
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 639, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\util\retry.py", line 388, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='theatrecat.co', port=443): Max retries exceeded with url: / (Caused by SSLError(CertificateError("hostname 'theatrecat.co' doesn't match either of 'www.123-reg-new-domain.co.uk', '123-reg-new-domain.co.uk'",),))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "pyrawcap.py", line 123, in <module>
+    r = requests.get(websites[i][0], timeout=30, headers=headers);
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\adapters.py", line 506, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='theatrecat.co', port=443): Max retries exceeded with url: / (Caused by SSLError(CertificateError("hostname 'theatrecat.co' doesn't match either of 'www.123-reg-new-domain.co.uk', '123-reg-new-domain.co.uk'",),))
+Website: https://theatrecat.co
+===========================================================================================================================
+2018-12-24_18-28-55 - Error accessing website:
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 346, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 850, in _validate_conn
+    conn.connect()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connection.py", line 346, in connect
+    _match_hostname(cert, self.assert_hostname or hostname)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connection.py", line 356, in _match_hostname
+    match_hostname(cert, asserted_hostname)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\ssl.py", line 327, in match_hostname
+    % (hostname, ', '.join(map(repr, dnsnames))))
+ssl.CertificateError: hostname 'hiring.careerbuilder.co' doesn't match either of '*.careerbuilder.com', 'careerbuilder.com'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\adapters.py", line 440, in send
+    timeout=timeout
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 639, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\util\retry.py", line 388, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='hiring.careerbuilder.co', port=443): Max retries exceeded with url: / (Caused by SSLError(CertificateError("hostname 'hiring.careerbuilder.co' doesn't match either of '*.careerbuilder.com', 'careerbuilder.com'",),))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "pyrawcap.py", line 123, in <module>
+    r = requests.get(websites[i][0], timeout=30, headers=headers);
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\adapters.py", line 506, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='hiring.careerbuilder.co', port=443): Max retries exceeded with url: / (Caused by SSLError(CertificateError("hostname 'hiring.careerbuilder.co' doesn't match either of '*.careerbuilder.com', 'careerbuilder.com'",),))
+Website: https://hiring.careerbuilder.co
+===========================================================================================================================
+2018-12-24_18-29-21 - Error accessing website:
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\contrib\pyopenssl.py", line 441, in wrap_socket
+    cnx.do_handshake()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\OpenSSL\SSL.py", line 1907, in do_handshake
+    self._raise_ssl_error(self._ssl, result)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\OpenSSL\SSL.py", line 1639, in _raise_ssl_error
+    _raise_current_error()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\OpenSSL\_util.py", line 54, in exception_from_error_queue
+    raise exception_type(errors)
+OpenSSL.SSL.Error: [('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 346, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 850, in _validate_conn
+    conn.connect()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connection.py", line 326, in connect
+    ssl_context=context)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\util\ssl_.py", line 329, in ssl_wrap_socket
+    return context.wrap_socket(sock, server_hostname=server_hostname)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\contrib\pyopenssl.py", line 448, in wrap_socket
+    raise ssl.SSLError('bad handshake: %r' % e)
+ssl.SSLError: ("bad handshake: Error([('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')],)",)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\adapters.py", line 440, in send
+    timeout=timeout
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 639, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\util\retry.py", line 388, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='www.paho.org', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLError("bad handshake: Error([('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')],)",),))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "pyrawcap.py", line 123, in <module>
+    r = requests.get(websites[i][0], timeout=30, headers=headers);
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\adapters.py", line 506, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='www.paho.org', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLError("bad handshake: Error([('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')],)",),))
+Website: https://www.paho.org
+===========================================================================================================================
+2018-12-24_18-32-33 - Error accessing website:
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\contrib\pyopenssl.py", line 441, in wrap_socket
+    cnx.do_handshake()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\OpenSSL\SSL.py", line 1907, in do_handshake
+    self._raise_ssl_error(self._ssl, result)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\OpenSSL\SSL.py", line 1639, in _raise_ssl_error
+    _raise_current_error()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\OpenSSL\_util.py", line 54, in exception_from_error_queue
+    raise exception_type(errors)
+OpenSSL.SSL.Error: [('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 346, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 850, in _validate_conn
+    conn.connect()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connection.py", line 326, in connect
+    ssl_context=context)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\util\ssl_.py", line 329, in ssl_wrap_socket
+    return context.wrap_socket(sock, server_hostname=server_hostname)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\contrib\pyopenssl.py", line 448, in wrap_socket
+    raise ssl.SSLError('bad handshake: %r' % e)
+ssl.SSLError: ("bad handshake: Error([('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')],)",)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\adapters.py", line 440, in send
+    timeout=timeout
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 639, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\util\retry.py", line 388, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='www4.ntu.ac.uk', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLError("bad handshake: Error([('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')],)",),))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "pyrawcap.py", line 123, in <module>
+    r = requests.get(websites[i][0], timeout=30, headers=headers);
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\adapters.py", line 506, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='www4.ntu.ac.uk', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLError("bad handshake: Error([('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')],)",),))
+Website: https://www4.ntu.ac.uk
+===========================================================================================================================
+2018-12-24_18-34-03 - Error accessing website:
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 383, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\http\client.py", line 1331, in getresponse
+    response.begin()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\http\client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\http\client.py", line 258, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\socket.py", line 586, in readinto
+    return self._sock.recv_into(b)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\contrib\pyopenssl.py", line 296, in recv_into
+    return self.recv_into(*args, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\contrib\pyopenssl.py", line 285, in recv_into
+    raise SocketError(str(e))
+OSError: (10054, 'WSAECONNRESET')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\adapters.py", line 440, in send
+    timeout=timeout
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 639, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\util\retry.py", line 357, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\packages\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 383, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\http\client.py", line 1331, in getresponse
+    response.begin()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\http\client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\http\client.py", line 258, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\socket.py", line 586, in readinto
+    return self._sock.recv_into(b)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\contrib\pyopenssl.py", line 296, in recv_into
+    return self.recv_into(*args, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\contrib\pyopenssl.py", line 285, in recv_into
+    raise SocketError(str(e))
+urllib3.exceptions.ProtocolError: ('Connection aborted.', OSError("(10054, 'WSAECONNRESET')",))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "pyrawcap.py", line 123, in <module>
+    r = requests.get(websites[i][0], timeout=30, headers=headers);
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\adapters.py", line 490, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', OSError("(10054, 'WSAECONNRESET')",))
+Website: https://www.opentable.com
+===========================================================================================================================
+2018-12-24_18-35-53 - Error accessing website:
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\contrib\pyopenssl.py", line 441, in wrap_socket
+    cnx.do_handshake()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\OpenSSL\SSL.py", line 1907, in do_handshake
+    self._raise_ssl_error(self._ssl, result)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\OpenSSL\SSL.py", line 1639, in _raise_ssl_error
+    _raise_current_error()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\OpenSSL\_util.py", line 54, in exception_from_error_queue
+    raise exception_type(errors)
+OpenSSL.SSL.Error: [('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 346, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 850, in _validate_conn
+    conn.connect()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connection.py", line 326, in connect
+    ssl_context=context)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\util\ssl_.py", line 329, in ssl_wrap_socket
+    return context.wrap_socket(sock, server_hostname=server_hostname)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\contrib\pyopenssl.py", line 448, in wrap_socket
+    raise ssl.SSLError('bad handshake: %r' % e)
+ssl.SSLError: ("bad handshake: Error([('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')],)",)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\adapters.py", line 440, in send
+    timeout=timeout
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\connectionpool.py", line 639, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\urllib3\util\retry.py", line 388, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='contractaciopublica.gencat.cat', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLError("bad handshake: Error([('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')],)",),))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "pyrawcap.py", line 123, in <module>
+    r = requests.get(websites[i][0], timeout=30, headers=headers);
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\requests\adapters.py", line 506, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='contractaciopublica.gencat.cat', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLError("bad handshake: Error([('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')],)",),))
+Website: https://contractaciopublica.gencat.cat
