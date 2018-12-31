@@ -11,8 +11,21 @@ import requests
 import datetime
 import os
 import logging
+import subprocess
 from fake_useragent import UserAgent
+import ssl
+from urllib3.poolmanager import PoolManager
+from requests.adapters import HTTPAdapter
 #from prob_matrix import main
+
+class Ssl3HttpAdapter(HTTPAdapter):
+    """"Transport adapter" that allows us to use SSLv3."""
+
+    def init_poolmanager(self, connections, maxsize, block=False):
+        self.poolmanager = PoolManager(
+            num_pools=connections, maxsize=maxsize,
+            block=block, ssl_version=ssl.PROTOCOL_SSLv3)
+
 
 logging.basicConfig(filename='application.log',level=logging.INFO,format='%(asctime)s-%(levelname)s-%(message)s')
 
@@ -116,33 +129,25 @@ while i < len(websites):
 	j = 0
 	httpRetries = 0
 	timeouts = 0
+	done = 0
 	try:
-		while j < numOfTries:
-			try:
-				headers = {'User-Agent': ua.random}
-				r = requests.get(websites[i][0], timeout=30, headers=headers);
-			except requests.Timeout:
-				timeouts = timeouts + 1;
-				logging.info("Timeout #" + str(timeouts) + " for website: " + str(websites[i][0]));
-				if timeouts < 3:
-					continue
-				else:
-					logging.warning("Failed 6 timeouts for website: " + str(websites[i][0]));
-					raise TimeoutError("Timeout for website: " + str(websites[i][0]));
+		#Use java to perform the request with sslv3
+		try:
+			s = subprocess.check_output(["curl", websites[i][0], "--sslv3"]).decode("utf-8");
+		except UnicodeDecodeError as e:
+			#Assume success
+			done = 1
 
-			if r.status_code == 200:
-				j += 1
-				logging.debug(j)
-			else:
-				if httpRetries < 10:
-					httpRetries += 1
-					logging.info("Failed request for: " + str(websites[i][0]) + ", status code: " + str(r.status_code) + ", retry number: " +  str(httpRetries))
-				else:
-					logging.warning("Failed " + str(httpRetries) + " requests for: " + str(websites[i][0]) + ", status code: " + str(r.status_code) + ", skipping...")
-					httpFailures += 1
-					failedNames.append(names[i])
-					failedWebsites.append(websites[i][0])
-					break;
+		if done != 1:
+			#Get last line of output
+			output = s.split("\n")
+			lastLine = output[len(output)-1]
+			if "error" in lastLine:
+				logging.warning("Failed request for: " + str(websites[i][0]) + ", reason: " + lastLine + ", skipping...")
+				httpFailures += 1
+				failedNames.append(names[i])
+				failedWebsites.append(websites[i][0])
+				raise Exception(lastLine)
 	except Exception as e: 
 		with open("errors.out", 'a+') as f:
 			f.write("===========================================================================================================================\n");

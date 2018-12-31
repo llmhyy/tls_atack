@@ -1,0 +1,11 @@
+Fallback SCSV data:
+Total websites tested: 61
+Success: 58
+Failures: 3
+
+www.appliancewhse.co
+www.tsw.com
+theodora.com
+
+Out of all 3 tests, these 3 websites failed all the time (3/3 times)
+

@@ -10334,3 +10334,2401 @@
 2018-12-24 18:37:08,248-INFO-Failed request for: https://www.loopnet.com, status code: 403, retry number: 10
 2018-12-24 18:37:08,327-WARNING-Failed 10 requests for: https://www.loopnet.com, status code: 403, skipping...
 2018-12-24 18:37:08,428-INFO-py raw cap complete. 0 out of 453 failed
+2018-12-27 16:40:42,506-INFO-Now processing: https://www.publishersweekly.com
+2018-12-27 16:40:43,926-WARNING-Failure: Maximum retries exceeded for website https://www.publishersweekly.com Skipping...
+2018-12-27 16:40:43,926-INFO-Now processing: https://www.breastcancer.org
+2018-12-27 16:40:45,310-WARNING-Failure: Maximum retries exceeded for website https://www.breastcancer.org Skipping...
+2018-12-27 16:40:45,310-INFO-Now processing: https://www.pharmaceutical-journal.com
+2018-12-27 16:40:47,204-WARNING-Failure: Maximum retries exceeded for website https://www.pharmaceutical-journal.com Skipping...
+2018-12-27 16:40:47,205-INFO-Now processing: https://www.roche.com
+2018-12-27 16:40:47,299-WARNING-Failure: Maximum retries exceeded for website https://www.roche.com Skipping...
+2018-12-27 16:40:47,299-INFO-Now processing: https://www.genentech-access.com
+2018-12-27 16:40:48,465-WARNING-Failure: Maximum retries exceeded for website https://www.genentech-access.com Skipping...
+2018-12-27 16:40:48,465-INFO-Now processing: https://www.clinicaloncologyonline.net
+2018-12-27 16:40:53,986-WARNING-Failure: Maximum retries exceeded for website https://www.clinicaloncologyonline.net Skipping...
+2018-12-27 16:40:53,986-INFO-Now processing: https://news.samsung.com
+2018-12-27 16:40:54,285-WARNING-Failure: Maximum retries exceeded for website https://news.samsung.com Skipping...
+2018-12-27 16:40:54,285-INFO-Now processing: https://www.midwiferyjournal.com
+2018-12-27 16:41:02,472-WARNING-Failure: Maximum retries exceeded for website https://www.midwiferyjournal.com Skipping...
+2018-12-27 16:41:02,472-INFO-Now processing: https://diy-courses.typeform.com
+2018-12-27 16:41:04,051-WARNING-Failure: Maximum retries exceeded for website https://diy-courses.typeform.com Skipping...
+2018-12-27 16:41:04,051-INFO-Now processing: https://www.maine.gov
+2018-12-27 16:41:09,437-WARNING-Failure: Maximum retries exceeded for website https://www.maine.gov Skipping...
+2018-12-27 16:41:09,437-INFO-Now processing: https://www.msci.com
+2018-12-27 16:41:09,957-WARNING-Failure: Maximum retries exceeded for website https://www.msci.com Skipping...
+2018-12-27 16:41:09,957-INFO-Now processing: https://www.intuitive.com
+2018-12-27 16:41:11,863-WARNING-Failure: Maximum retries exceeded for website https://www.intuitive.com Skipping...
+2018-12-27 16:41:11,863-INFO-Now processing: https://www.intuitivesurgical.com
+2018-12-27 16:41:14,369-WARNING-Failure: Maximum retries exceeded for website https://www.intuitivesurgical.com Skipping...
+2018-12-27 16:41:14,369-INFO-Now processing: https://mms.mckesson.com
+2018-12-27 16:41:17,005-WARNING-Failure: Maximum retries exceeded for website https://mms.mckesson.com Skipping...
+2018-12-27 16:41:17,005-INFO-Now processing: https://www.travelchannel.com
+2018-12-27 16:41:17,304-WARNING-Failure: Maximum retries exceeded for website https://www.travelchannel.com Skipping...
+2018-12-27 16:41:17,304-INFO-Now processing: https://whc.unesco.org
+2018-12-27 16:41:19,371-WARNING-Failure: Maximum retries exceeded for website https://whc.unesco.org Skipping...
+2018-12-27 16:41:19,371-INFO-Now processing: https://www.nypl.org
+2018-12-27 16:41:20,665-WARNING-Failure: Maximum retries exceeded for website https://www.nypl.org Skipping...
+2018-12-27 16:41:20,665-INFO-Now processing: https://www.jvir.org
+2018-12-27 16:41:26,194-WARNING-Failure: Maximum retries exceeded for website https://www.jvir.org Skipping...
+2018-12-27 16:41:26,194-INFO-Now processing: https://www.websecurity.symantec.com
+2018-12-27 16:41:26,540-WARNING-Failure: Maximum retries exceeded for website https://www.websecurity.symantec.com Skipping...
+2018-12-27 16:41:26,540-INFO-Now processing: https://www.sonicwall.com
+2018-12-27 16:41:28,341-WARNING-Failure: Maximum retries exceeded for website https://www.sonicwall.com Skipping...
+2018-12-27 16:41:28,341-INFO-Now processing: https://www.lloyds.com
+2018-12-27 16:41:30,928-WARNING-Failure: Maximum retries exceeded for website https://www.lloyds.com Skipping...
+2018-12-27 16:41:30,944-INFO-Now processing: https://www.hapag-lloyd.co
+2018-12-27 16:41:31,778-ERROR-Certificate did not match expected hostname: www.hapag-lloyd.co. Certificate: {'subject': ((('commonName', 'www.hapag-lloyd.com'),),), 'subjectAltName': [('DNS', 'www.hapag-lloyd.com'), ('DNS', 'hapag-lloyd.com')]}
+2018-12-27 16:41:32,125-WARNING-Request error for website: https://www.hapag-lloyd.co
+2018-12-27 16:41:32,125-INFO-Now processing: https://education.ky.gov
+2018-12-27 16:41:35,403-WARNING-Failure: Maximum retries exceeded for website https://education.ky.gov Skipping...
+2018-12-27 16:41:35,403-INFO-Now processing: https://education.emc.com
+2018-12-27 16:41:36,442-WARNING-Failure: Maximum retries exceeded for website https://education.emc.com Skipping...
+2018-12-27 16:41:36,442-INFO-Now processing: https://www.autodesk.com
+2018-12-27 16:41:36,551-WARNING-Failure: Maximum retries exceeded for website https://www.autodesk.com Skipping...
+2018-12-27 16:41:36,551-INFO-Now processing: https://www.stuff.co.nz
+2018-12-27 16:41:36,977-WARNING-Failure: Maximum retries exceeded for website https://www.stuff.co.nz Skipping...
+2018-12-27 16:41:36,977-INFO-Now processing: https://sourcebooks.fordham.edu
+2018-12-27 16:41:37,104-WARNING-Failure: Maximum retries exceeded for website https://sourcebooks.fordham.edu Skipping...
+2018-12-27 16:41:37,104-INFO-Now processing: https://www.lds.org
+2018-12-27 16:41:37,277-WARNING-Failure: Maximum retries exceeded for website https://www.lds.org Skipping...
+2018-12-27 16:41:37,277-INFO-Now processing: https://www.lingvolive.com
+2018-12-27 16:41:39,248-WARNING-Failure: Maximum retries exceeded for website https://www.lingvolive.com Skipping...
+2018-12-27 16:41:39,248-INFO-Now processing: https://www.expressen.se
+2018-12-27 16:41:41,473-WARNING-Failure: Maximum retries exceeded for website https://www.expressen.se Skipping...
+2018-12-27 16:41:41,473-INFO-Now processing: https://www.mayoclinicproceedings.org
+2018-12-27 16:41:46,945-WARNING-Failure: Maximum retries exceeded for website https://www.mayoclinicproceedings.org Skipping...
+2018-12-27 16:41:46,945-INFO-Now processing: https://www.jpost.com
+2018-12-27 16:41:55,209-WARNING-Failure: Maximum retries exceeded for website https://www.jpost.com Skipping...
+2018-12-27 16:41:55,209-INFO-Now processing: https://library.seg.org
+2018-12-27 16:41:56,992-WARNING-Failure: Maximum retries exceeded for website https://library.seg.org Skipping...
+2018-12-27 16:41:56,992-INFO-Now processing: https://www.jobs.net
+2018-12-27 16:41:58,129-INFO-Failed request for: https://www.jobs.net, status code: 521, retry number: 1
+2018-12-27 16:41:59,280-INFO-Failed request for: https://www.jobs.net, status code: 521, retry number: 2
+2018-12-27 16:42:00,446-INFO-Failed request for: https://www.jobs.net, status code: 521, retry number: 3
+2018-12-27 16:42:01,581-INFO-Failed request for: https://www.jobs.net, status code: 521, retry number: 4
+2018-12-27 16:42:02,684-INFO-Failed request for: https://www.jobs.net, status code: 521, retry number: 5
+2018-12-27 16:42:03,787-INFO-Failed request for: https://www.jobs.net, status code: 521, retry number: 6
+2018-12-27 16:42:04,985-INFO-Failed request for: https://www.jobs.net, status code: 521, retry number: 7
+2018-12-27 16:42:06,137-INFO-Failed request for: https://www.jobs.net, status code: 521, retry number: 8
+2018-12-27 16:42:07,241-INFO-Failed request for: https://www.jobs.net, status code: 521, retry number: 9
+2018-12-27 16:42:08,459-INFO-Failed request for: https://www.jobs.net, status code: 521, retry number: 10
+2018-12-27 16:42:09,562-WARNING-Failed 10 requests for: https://www.jobs.net, status code: 521, skipping...
+2018-12-27 16:42:09,562-WARNING-Failure: Maximum retries exceeded for website https://www.jobs.net Skipping...
+2018-12-27 16:42:09,562-INFO-Now processing: https://www.justice.gov.nt.ca
+2018-12-27 16:42:11,504-WARNING-Failure: Maximum retries exceeded for website https://www.justice.gov.nt.ca Skipping...
+2018-12-27 16:42:11,504-INFO-Now processing: https://plants.usda.gov
+2018-12-27 16:42:15,505-WARNING-Failure: Maximum retries exceeded for website https://plants.usda.gov Skipping...
+2018-12-27 16:42:15,505-INFO-Now processing: https://www.gog.com
+2018-12-27 16:42:18,897-WARNING-Failure: Maximum retries exceeded for website https://www.gog.com Skipping...
+2018-12-27 16:42:18,897-INFO-Now processing: https://www.news18.com
+2018-12-27 16:42:19,086-WARNING-Failure: Maximum retries exceeded for website https://www.news18.com Skipping...
+2018-12-27 16:42:19,086-INFO-Now processing: https://speed.economictimes.indiatimes.com
+2018-12-27 16:42:19,323-WARNING-Failure: Maximum retries exceeded for website https://speed.economictimes.indiatimes.com Skipping...
+2018-12-27 16:42:19,323-INFO-Now processing: https://www.hertz.com.sg
+2018-12-27 16:42:20,457-WARNING-Failure: Maximum retries exceeded for website https://www.hertz.com.sg Skipping...
+2018-12-27 16:42:20,457-INFO-Now processing: https://www.businesstoday.in
+2018-12-27 16:42:20,599-WARNING-Failure: Maximum retries exceeded for website https://www.businesstoday.in Skipping...
+2018-12-27 16:42:20,599-INFO-Now processing: https://oi.uchicago.edu
+2018-12-27 16:42:21,925-WARNING-Failure: Maximum retries exceeded for website https://oi.uchicago.edu Skipping...
+2018-12-27 16:42:21,925-INFO-Now processing: https://www.louvre.fr
+2018-12-27 16:42:23,517-WARNING-Failure: Maximum retries exceeded for website https://www.louvre.fr Skipping...
+2018-12-27 16:42:23,517-INFO-Now processing: https://access.redhat.com
+2018-12-27 16:42:23,851-WARNING-Failure: Maximum retries exceeded for website https://access.redhat.com Skipping...
+2018-12-27 16:42:23,851-INFO-Now processing: https://data.oecd.org
+2018-12-27 16:42:25,301-WARNING-Failure: Maximum retries exceeded for website https://data.oecd.org Skipping...
+2018-12-27 16:42:25,301-INFO-Now processing: https://www.foodsafety.gov
+2018-12-27 16:42:25,506-WARNING-Failure: Maximum retries exceeded for website https://www.foodsafety.gov Skipping...
+2018-12-27 16:42:25,506-INFO-Now processing: https://www.singpass.gov.sg
+2018-12-27 16:42:25,915-WARNING-Failure: Maximum retries exceeded for website https://www.singpass.gov.sg Skipping...
+2018-12-27 16:42:25,915-INFO-Now processing: https://support.microsoft.com
+2018-12-27 16:42:26,104-WARNING-Failure: Maximum retries exceeded for website https://support.microsoft.com Skipping...
+2018-12-27 16:42:26,104-INFO-Now processing: https://theatrecat.co
+2018-12-27 16:42:26,893-ERROR-Certificate did not match expected hostname: theatrecat.co. Certificate: {'subject': ((('commonName', 'www.123-reg-new-domain.co.uk'),),), 'subjectAltName': [('DNS', 'www.123-reg-new-domain.co.uk'), ('DNS', '123-reg-new-domain.co.uk')]}
+2018-12-27 16:42:26,924-WARNING-Request error for website: https://theatrecat.co
+2018-12-27 16:42:26,924-INFO-Now processing: https://blend.io
+2018-12-27 16:42:32,067-WARNING-Failure: Maximum retries exceeded for website https://blend.io Skipping...
+2018-12-27 16:42:32,067-INFO-Now processing: https://magdomixshowpodcast.podbean.com
+2018-12-27 16:42:33,188-WARNING-Failure: Maximum retries exceeded for website https://magdomixshowpodcast.podbean.com Skipping...
+2018-12-27 16:42:33,188-INFO-Now processing: https://ameblo.jp
+2018-12-27 16:42:33,409-WARNING-Failure: Maximum retries exceeded for website https://ameblo.jp Skipping...
+2018-12-27 16:42:33,409-INFO-Now processing: https://www.bam.com
+2018-12-27 16:42:36,530-WARNING-Failure: Maximum retries exceeded for website https://www.bam.com Skipping...
+2018-12-27 16:42:36,530-INFO-Now processing: https://www.orkin.com
+2018-12-27 16:42:38,624-WARNING-Failure: Maximum retries exceeded for website https://www.orkin.com Skipping...
+2018-12-27 16:42:38,624-INFO-Now processing: https://www.konami.com
+2018-12-27 16:42:39,003-WARNING-Failure: Maximum retries exceeded for website https://www.konami.com Skipping...
+2018-12-27 16:42:39,003-INFO-Now processing: https://www.petfinder.com
+2018-12-27 16:42:40,500-WARNING-Failure: Maximum retries exceeded for website https://www.petfinder.com Skipping...
+2018-12-27 16:42:40,500-INFO-Now processing: https://newsinteractives.cbc.ca
+2018-12-27 16:42:42,473-WARNING-Failure: Maximum retries exceeded for website https://newsinteractives.cbc.ca Skipping...
+2018-12-27 16:42:42,473-INFO-Now processing: https://www.milb.com
+2018-12-27 16:42:42,977-WARNING-Failure: Maximum retries exceeded for website https://www.milb.com Skipping...
+2018-12-27 16:42:42,977-INFO-Now processing: https://www.jeevansathi.com
+2018-12-27 16:42:43,484-WARNING-Failure: Maximum retries exceeded for website https://www.jeevansathi.com Skipping...
+2018-12-27 16:42:43,484-INFO-Now processing: https://profile.bharatmatrimony.com
+2018-12-27 16:42:43,955-WARNING-Failure: Maximum retries exceeded for website https://profile.bharatmatrimony.com Skipping...
+2018-12-27 16:42:43,955-INFO-Now processing: https://www.physiology.org
+2018-12-27 16:42:46,338-WARNING-Failure: Maximum retries exceeded for website https://www.physiology.org Skipping...
+2018-12-27 16:42:46,338-INFO-Now processing: https://agupubs.onlinelibrary.wiley.com
+2018-12-27 16:42:48,592-WARNING-Failure: Maximum retries exceeded for website https://agupubs.onlinelibrary.wiley.com Skipping...
+2018-12-27 16:42:48,592-INFO-Now processing: https://www.uwpnw.org
+2018-12-27 16:42:49,887-WARNING-Failure: Maximum retries exceeded for website https://www.uwpnw.org Skipping...
+2018-12-27 16:42:49,887-INFO-Now processing: https://www.uwpnw.org
+2018-12-27 16:42:50,297-WARNING-Failure: Maximum retries exceeded for website https://www.uwpnw.org Skipping...
+2018-12-27 16:42:50,297-INFO-Now processing: https://turbotax.intuit.com
+2018-12-27 16:42:50,769-WARNING-Failure: Maximum retries exceeded for website https://turbotax.intuit.com Skipping...
+2018-12-27 16:42:50,769-INFO-Now processing: https://www.boticario.com.br
+2018-12-27 16:42:52,341-WARNING-Failure: Maximum retries exceeded for website https://www.boticario.com.br Skipping...
+2018-12-27 16:42:52,341-INFO-Now processing: https://www.landrover.com
+2018-12-27 16:42:52,453-WARNING-Failure: Maximum retries exceeded for website https://www.landrover.com Skipping...
+2018-12-27 16:42:52,453-INFO-Now processing: https://www.driving.co.uk
+2018-12-27 16:42:52,925-WARNING-Failure: Maximum retries exceeded for website https://www.driving.co.uk Skipping...
+2018-12-27 16:42:52,925-INFO-Now processing: https://www.michigan.gov
+2018-12-27 16:42:53,918-WARNING-Failure: Maximum retries exceeded for website https://www.michigan.gov Skipping...
+2018-12-27 16:42:53,918-INFO-Now processing: https://www1.nyc.gov
+2018-12-27 16:42:55,036-WARNING-Failure: Maximum retries exceeded for website https://www1.nyc.gov Skipping...
+2018-12-27 16:42:55,036-INFO-Now processing: https://www.norfolk.gov.uk
+2018-12-27 16:42:56,392-WARNING-Failure: Maximum retries exceeded for website https://www.norfolk.gov.uk Skipping...
+2018-12-27 16:42:56,392-INFO-Now processing: https://www.tn.gov
+2018-12-27 16:42:58,316-WARNING-Failure: Maximum retries exceeded for website https://www.tn.gov Skipping...
+2018-12-27 16:42:58,316-INFO-Now processing: https://www.cityofchicago.org
+2018-12-27 16:43:02,354-WARNING-Failure: Maximum retries exceeded for website https://www.cityofchicago.org Skipping...
+2018-12-27 16:43:02,354-INFO-Now processing: https://www.cabi.org
+2018-12-27 16:43:04,766-WARNING-Failure: Maximum retries exceeded for website https://www.cabi.org Skipping...
+2018-12-27 16:43:04,766-INFO-Now processing: https://www.harveynorman.com.sg
+2018-12-27 16:43:05,601-WARNING-Failure: Maximum retries exceeded for website https://www.harveynorman.com.sg Skipping...
+2018-12-27 16:43:05,601-INFO-Now processing: https://mashable.com
+2018-12-27 16:43:05,711-WARNING-Failure: Maximum retries exceeded for website https://mashable.com Skipping...
+2018-12-27 16:43:05,711-INFO-Now processing: https://www.bestdenki.com.sg
+2018-12-27 16:43:05,821-WARNING-Failure: Maximum retries exceeded for website https://www.bestdenki.com.sg Skipping...
+2018-12-27 16:43:05,821-INFO-Now processing: https://www.bestdenki.com.sg
+2018-12-27 16:43:05,931-WARNING-Failure: Maximum retries exceeded for website https://www.bestdenki.com.sg Skipping...
+2018-12-27 16:43:05,931-INFO-Now processing: https://shop.ee.co.uk
+2018-12-27 16:43:07,886-WARNING-Failure: Maximum retries exceeded for website https://shop.ee.co.uk Skipping...
+2018-12-27 16:43:07,886-INFO-Now processing: https://www.ftd.com
+2018-12-27 16:43:09,413-WARNING-Failure: Maximum retries exceeded for website https://www.ftd.com Skipping...
+2018-12-27 16:43:09,413-INFO-Now processing: https://www.bestbuy.ca
+2018-12-27 16:43:12,377-WARNING-Failure: Maximum retries exceeded for website https://www.bestbuy.ca Skipping...
+2018-12-27 16:43:12,377-INFO-Now processing: https://proceedings.spiedigitallibrary.org
+2018-12-27 16:43:14,617-WARNING-Failure: Maximum retries exceeded for website https://proceedings.spiedigitallibrary.org Skipping...
+2018-12-27 16:43:14,617-INFO-Now processing: https://study.com
+2018-12-27 16:43:16,035-WARNING-Failure: Maximum retries exceeded for website https://study.com Skipping...
+2018-12-27 16:43:16,035-INFO-Now processing: https://www.browserstack.com
+2018-12-27 16:46:44,076-INFO-Now processing: https://www.publishersweekly.com
+2018-12-27 16:46:45,493-INFO-Now processing: https://www.breastcancer.org
+2018-12-27 16:46:46,788-INFO-Now processing: https://www.pharmaceutical-journal.com
+2018-12-27 16:46:48,917-INFO-Now processing: https://www.roche.com
+2018-12-27 16:46:49,152-INFO-Now processing: https://www.genentech-access.com
+2018-12-27 16:46:50,342-INFO-Now processing: https://www.clinicaloncologyonline.net
+2018-12-27 16:46:56,638-INFO-Now processing: https://news.samsung.com
+2018-12-27 16:46:57,141-INFO-Now processing: https://www.midwiferyjournal.com
+2018-12-27 16:47:03,860-INFO-Now processing: https://diy-courses.typeform.com
+2018-12-27 16:47:05,231-INFO-Now processing: https://www.maine.gov
+2018-12-27 16:47:09,937-INFO-Now processing: https://www.msci.com
+2018-12-27 16:47:10,504-INFO-Now processing: https://www.intuitive.com
+2018-12-27 16:47:12,412-INFO-Now processing: https://www.intuitivesurgical.com
+2018-12-27 16:47:15,422-INFO-Now processing: https://mms.mckesson.com
+2018-12-27 16:47:20,276-INFO-Now processing: https://www.travelchannel.com
+2018-12-27 16:47:20,798-INFO-Now processing: https://whc.unesco.org
+2018-12-27 16:47:29,833-INFO-Now processing: https://www.nypl.org
+2018-12-27 16:47:31,613-INFO-Now processing: https://www.jvir.org
+2018-12-27 16:47:38,105-INFO-Now processing: https://www.websecurity.symantec.com
+2018-12-27 16:47:40,170-INFO-Now processing: https://www.sonicwall.com
+2018-12-27 16:47:42,457-INFO-Now processing: https://www.lloyds.com
+2018-12-27 16:47:44,724-INFO-Now processing: https://www.hapag-lloyd.co
+2018-12-27 16:47:45,512-ERROR-Certificate did not match expected hostname: www.hapag-lloyd.co. Certificate: {'subject': ((('commonName', 'www.hapag-lloyd.com'),),), 'subjectAltName': [('DNS', 'www.hapag-lloyd.com'), ('DNS', 'hapag-lloyd.com')]}
+2018-12-27 16:47:45,623-WARNING-Request error for website: https://www.hapag-lloyd.co
+2018-12-27 16:47:45,623-INFO-Now processing: https://education.ky.gov
+2018-12-27 16:47:48,038-INFO-Now processing: https://education.emc.com
+2018-12-27 16:47:49,313-INFO-Now processing: https://www.autodesk.com
+2018-12-27 16:47:49,832-INFO-Now processing: https://www.stuff.co.nz
+2018-12-27 16:47:50,636-INFO-Now processing: https://sourcebooks.fordham.edu
+2018-12-27 16:47:50,825-INFO-Now processing: https://www.lds.org
+2018-12-27 16:47:51,156-INFO-Now processing: https://www.lingvolive.com
+2018-12-27 16:47:53,534-INFO-Now processing: https://www.expressen.se
+2018-12-27 16:47:53,881-INFO-Now processing: https://www.mayoclinicproceedings.org
+2018-12-27 16:48:00,473-INFO-Now processing: https://www.jpost.com
+2018-12-27 16:48:02,051-INFO-Now processing: https://library.seg.org
+2018-12-27 16:48:03,912-INFO-Now processing: https://www.jobs.net
+2018-12-27 16:48:05,568-INFO-Failed request for: https://www.jobs.net, status code: 521, retry number: 1
+2018-12-27 16:48:06,720-INFO-Failed request for: https://www.jobs.net, status code: 521, retry number: 2
+2018-12-27 16:48:07,902-INFO-Failed request for: https://www.jobs.net, status code: 521, retry number: 3
+2018-12-27 16:48:09,006-INFO-Failed request for: https://www.jobs.net, status code: 521, retry number: 4
+2018-12-27 16:48:10,205-INFO-Failed request for: https://www.jobs.net, status code: 521, retry number: 5
+2018-12-27 16:48:11,435-INFO-Failed request for: https://www.jobs.net, status code: 521, retry number: 6
+2018-12-27 16:48:12,618-INFO-Failed request for: https://www.jobs.net, status code: 521, retry number: 7
+2018-12-27 16:48:13,912-INFO-Failed request for: https://www.jobs.net, status code: 521, retry number: 8
+2018-12-27 16:48:15,096-INFO-Failed request for: https://www.jobs.net, status code: 521, retry number: 9
+2018-12-27 16:48:16,246-INFO-Failed request for: https://www.jobs.net, status code: 521, retry number: 10
+2018-12-27 16:48:17,366-WARNING-Failed 10 requests for: https://www.jobs.net, status code: 521, skipping...
+2018-12-27 16:48:17,475-INFO-Now processing: https://www.justice.gov.nt.ca
+2018-12-27 16:48:19,622-INFO-Now processing: https://plants.usda.gov
+2018-12-27 16:48:23,564-INFO-Now processing: https://www.gog.com
+2018-12-27 16:48:27,566-INFO-Now processing: https://www.news18.com
+2018-12-27 16:48:27,835-INFO-Now processing: https://speed.economictimes.indiatimes.com
+2018-12-27 16:48:28,641-INFO-Now processing: https://www.hertz.com.sg
+2018-12-27 16:48:29,631-INFO-Now processing: https://www.businesstoday.in
+2018-12-27 16:48:29,900-INFO-Now processing: https://oi.uchicago.edu
+2018-12-27 16:48:31,495-INFO-Now processing: https://www.louvre.fr
+2018-12-27 16:48:32,868-INFO-Now processing: https://access.redhat.com
+2018-12-27 16:48:33,137-INFO-Now processing: https://data.oecd.org
+2018-12-27 16:48:34,445-INFO-Now processing: https://www.foodsafety.gov
+2018-12-27 16:48:34,681-INFO-Now processing: https://www.singpass.gov.sg
+2018-12-27 16:48:35,249-INFO-Now processing: https://support.microsoft.com
+2018-12-27 16:48:35,644-INFO-Now processing: https://theatrecat.co
+2018-12-27 16:48:36,431-ERROR-Certificate did not match expected hostname: theatrecat.co. Certificate: {'subject': ((('commonName', 'www.123-reg-new-domain.co.uk'),),), 'subjectAltName': [('DNS', 'www.123-reg-new-domain.co.uk'), ('DNS', '123-reg-new-domain.co.uk')]}
+2018-12-27 16:48:36,447-WARNING-Request error for website: https://theatrecat.co
+2018-12-27 16:48:36,463-INFO-Now processing: https://blend.io
+2018-12-27 16:48:41,782-INFO-Now processing: https://magdomixshowpodcast.podbean.com
+2018-12-27 16:48:42,946-INFO-Now processing: https://ameblo.jp
+2018-12-27 16:48:43,263-INFO-Now processing: https://www.bam.com
+2018-12-27 16:48:46,148-INFO-Now processing: https://www.orkin.com
+2018-12-27 16:48:48,466-INFO-Now processing: https://www.konami.com
+2018-12-27 16:48:48,971-INFO-Now processing: https://www.petfinder.com
+2018-12-27 16:48:50,583-INFO-Now processing: https://newsinteractives.cbc.ca
+2018-12-27 16:48:50,803-INFO-Now processing: https://www.milb.com
+2018-12-27 16:48:53,029-INFO-Now processing: https://www.jeevansathi.com
+2018-12-27 16:48:53,800-INFO-Now processing: https://profile.bharatmatrimony.com
+2018-12-27 16:48:54,838-INFO-Now processing: https://www.physiology.org
+2018-12-27 16:48:57,693-INFO-Now processing: https://agupubs.onlinelibrary.wiley.com
+2018-12-27 16:49:00,853-INFO-Now processing: https://www.uwpnw.org
+2018-12-27 16:49:02,099-INFO-Now processing: https://www.uwpnw.org
+2018-12-27 16:49:02,670-INFO-Now processing: https://turbotax.intuit.com
+2018-12-27 16:49:04,304-INFO-Now processing: https://www.boticario.com.br
+2018-12-27 16:49:06,059-INFO-Now processing: https://www.landrover.com
+2018-12-27 16:49:06,342-INFO-Now processing: https://www.driving.co.uk
+2018-12-27 16:49:06,721-INFO-Now processing: https://www.michigan.gov
+2018-12-27 16:49:07,888-INFO-Now processing: https://www1.nyc.gov
+2018-12-27 16:49:08,522-INFO-Now processing: https://www.norfolk.gov.uk
+2018-12-27 16:49:10,117-INFO-Now processing: https://www.tn.gov
+2018-12-27 16:49:12,658-INFO-Now processing: https://www.cityofchicago.org
+2018-12-27 16:49:16,126-INFO-Now processing: https://www.cabi.org
+2018-12-27 16:49:18,832-INFO-Now processing: https://www.harveynorman.com.sg
+2018-12-27 16:49:20,265-INFO-Now processing: https://mashable.com
+2018-12-27 16:49:21,127-INFO-Now processing: https://www.bestdenki.com.sg
+2018-12-27 16:49:21,727-INFO-Now processing: https://www.bestdenki.com.sg
+2018-12-27 16:49:22,246-INFO-Now processing: https://shop.ee.co.uk
+2018-12-27 16:49:25,605-INFO-Now processing: https://www.ftd.com
+2018-12-27 16:49:26,818-INFO-Now processing: https://www.bestbuy.ca
+2018-12-27 16:49:29,687-INFO-Now processing: https://proceedings.spiedigitallibrary.org
+2018-12-27 16:49:32,513-INFO-Now processing: https://study.com
+2018-12-27 16:49:34,106-INFO-Now processing: https://www.browserstack.com
+2018-12-27 16:49:35,492-INFO-Now processing: https://sites.ualberta.ca
+2018-12-27 16:49:36,612-INFO-Now processing: https://support.symantec.com
+2018-12-27 16:49:37,728-INFO-Now processing: https://www.us-cert.gov
+2018-12-27 16:49:38,239-INFO-Now processing: https://www.bkstr.com
+2018-12-27 16:49:41,596-INFO-Now processing: https://www.coursereport.com
+2018-12-27 16:49:43,235-INFO-Now processing: https://www.voanews.com
+2018-12-27 16:49:43,567-INFO-Now processing: https://www.stellamccartney.com
+2018-12-27 16:49:48,106-INFO-Now processing: https://www.cmrfalabella.com
+2018-12-27 16:49:50,423-INFO-Now processing: https://store.sentosa.com.sg
+2018-12-27 16:49:52,708-INFO-Now processing: https://www.sentosa.com.sg
+2018-12-27 16:49:53,058-INFO-Now processing: https://king.com
+2018-12-27 16:49:57,094-INFO-Now processing: https://www.census.gov
+2018-12-27 16:49:57,992-INFO-Now processing: https://www.ndtv.com
+2018-12-27 16:49:58,292-INFO-Now processing: https://www.fs.fed.us
+2018-12-27 16:49:58,984-INFO-Now processing: https://www.ema.gov.sg
+2018-12-27 16:50:00,236-INFO-Now processing: https://fortress.wa.gov
+2018-12-27 16:50:01,632-INFO-Now processing: https://www.metoffice.gov.uk
+2018-12-27 16:50:02,168-INFO-Now processing: https://dosseh.lnk.to
+2018-12-27 16:50:03,810-INFO-Now processing: https://dosseh.lnk.to
+2018-12-27 16:50:05,885-INFO-Now processing: https://www.redbull.com
+2018-12-27 16:50:07,920-INFO-Now processing: https://www.ebay.co.uk
+2018-12-27 16:50:09,257-INFO-Now processing: https://en.langenscheidt.com
+2018-12-27 16:50:10,110-INFO-Now processing: https://www.britishcouncil.sg
+2018-12-27 16:50:10,363-INFO-Now processing: https://flock.co
+2018-12-27 16:50:11,701-INFO-Now processing: https://www.exact.com
+2018-12-27 16:50:12,773-INFO-Now processing: https://www.stlouisfed.org
+2018-12-27 16:50:14,616-INFO-Now processing: https://www.mypaycheckdirect.com
+2018-12-27 16:50:15,800-INFO-Now processing: https://smartasset.com
+2018-12-27 16:50:17,093-INFO-Now processing: https://www.oregon.gov
+2018-12-27 16:50:19,887-INFO-Now processing: https://www.brown.edu
+2018-12-27 16:50:21,605-INFO-Now processing: https://www.sciencenewsforstudents.org
+2018-12-27 16:50:22,848-INFO-Now processing: https://www.basspro.com
+2018-12-27 16:50:23,102-INFO-Failed request for: https://www.basspro.com, status code: 403, retry number: 1
+2018-12-27 16:50:23,196-INFO-Failed request for: https://www.basspro.com, status code: 403, retry number: 2
+2018-12-27 16:50:23,292-INFO-Failed request for: https://www.basspro.com, status code: 403, retry number: 3
+2018-12-27 16:50:23,416-INFO-Failed request for: https://www.basspro.com, status code: 403, retry number: 4
+2018-12-27 16:50:23,512-INFO-Failed request for: https://www.basspro.com, status code: 403, retry number: 5
+2018-12-27 16:50:23,605-INFO-Failed request for: https://www.basspro.com, status code: 403, retry number: 6
+2018-12-27 16:50:23,700-INFO-Failed request for: https://www.basspro.com, status code: 403, retry number: 7
+2018-12-27 16:50:23,825-INFO-Failed request for: https://www.basspro.com, status code: 403, retry number: 8
+2018-12-27 16:50:23,937-INFO-Failed request for: https://www.basspro.com, status code: 403, retry number: 9
+2018-12-27 16:50:24,756-INFO-Now processing: https://www.ustanationalcampus.com
+2018-12-27 16:50:26,190-INFO-Now processing: https://cars.usnews.com
+2018-12-27 16:50:26,380-INFO-Failed request for: https://cars.usnews.com, status code: 403, retry number: 1
+2018-12-27 16:50:26,442-INFO-Failed request for: https://cars.usnews.com, status code: 403, retry number: 2
+2018-12-27 16:50:26,505-INFO-Failed request for: https://cars.usnews.com, status code: 403, retry number: 3
+2018-12-27 16:50:26,584-INFO-Failed request for: https://cars.usnews.com, status code: 403, retry number: 4
+2018-12-27 16:50:31,060-INFO-Now processing: https://www.nationalparks.nsw.gov.au
+2018-12-27 16:50:32,240-INFO-Now processing: https://cmp.smu.edu.sg
+2018-12-27 16:50:32,572-INFO-Now processing: https://www.dolomite.it
+2018-12-27 16:50:34,668-INFO-Now processing: https://www.toastmasters.org
+2018-12-27 16:50:36,184-INFO-Now processing: https://courttribunalfinder.service.gov.uk
+2018-12-27 16:50:37,475-INFO-Now processing: https://www.thedailymeal.com
+2018-12-27 16:50:37,742-INFO-Now processing: https://www.homeaway.co.uk
+2018-12-27 16:50:38,499-INFO-Now processing: https://www.colorado.edu
+2018-12-27 16:50:40,444-INFO-Now processing: https://www.posb.com.sg
+2018-12-27 16:50:40,744-INFO-Now processing: https://www.autowealth.sg
+2018-12-27 16:50:41,200-INFO-Now processing: https://www.autowealth.sg
+2018-12-27 16:50:41,688-INFO-Now processing: https://www.citibank.com.sg
+2018-12-27 16:50:41,988-INFO-Now processing: https://comptox.epa.gov
+2018-12-27 16:50:43,704-INFO-Now processing: https://journals.jps.jp
+2018-12-27 16:50:45,705-INFO-Now processing: https://www.journal.csj.jp
+2018-12-27 16:50:47,377-INFO-Now processing: https://www.unibas.ch
+2018-12-27 16:50:49,458-INFO-Now processing: https://www.barrie.ca
+2018-12-27 16:50:56,597-INFO-Now processing: https://barrie.ctvnews.ca
+2018-12-27 16:50:57,370-INFO-Now processing: https://www.theweathernetwork.com
+2018-12-27 16:50:57,890-INFO-Now processing: https://www.chapters.indigo.ca
+2018-12-27 16:50:59,152-INFO-Now processing: https://www.ihg.com
+2018-12-27 16:50:59,230-INFO-Failed request for: https://www.ihg.com, status code: 403, retry number: 1
+2018-12-27 16:50:59,309-INFO-Failed request for: https://www.ihg.com, status code: 403, retry number: 2
+2018-12-27 16:50:59,390-INFO-Failed request for: https://www.ihg.com, status code: 403, retry number: 3
+2018-12-27 16:50:59,483-INFO-Failed request for: https://www.ihg.com, status code: 403, retry number: 4
+2018-12-27 16:50:59,547-INFO-Failed request for: https://www.ihg.com, status code: 403, retry number: 5
+2018-12-27 16:50:59,610-INFO-Failed request for: https://www.ihg.com, status code: 403, retry number: 6
+2018-12-27 16:50:59,688-INFO-Failed request for: https://www.ihg.com, status code: 403, retry number: 7
+2018-12-27 16:50:59,751-INFO-Failed request for: https://www.ihg.com, status code: 403, retry number: 8
+2018-12-27 16:50:59,830-INFO-Failed request for: https://www.ihg.com, status code: 403, retry number: 9
+2018-12-27 16:50:59,971-INFO-Failed request for: https://www.ihg.com, status code: 403, retry number: 10
+2018-12-27 16:51:00,096-WARNING-Failed 10 requests for: https://www.ihg.com, status code: 403, skipping...
+2018-12-27 16:51:00,143-INFO-Now processing: https://www.xero.com
+2018-12-27 16:51:00,950-INFO-Now processing: https://www.oponeo.co.uk
+2018-12-27 16:51:03,521-INFO-Now processing: https://www.tut.fi
+2018-12-27 16:51:06,545-INFO-Now processing: https://www.stamfordhealth.org
+2018-12-27 16:51:08,135-INFO-Now processing: https://physicstoday.scitation.org
+2018-12-27 16:51:10,325-INFO-Now processing: https://www.inpex.co.jp
+2018-12-27 16:51:11,162-INFO-Now processing: https://www.inpex.co.jp
+2018-12-27 16:51:11,864-INFO-Now processing: https://www.senate.gov
+2018-12-27 16:51:12,311-INFO-Now processing: https://theculturetrip.com
+2018-12-27 16:51:14,528-INFO-Now processing: https://kclpure.kcl.ac.uk
+2018-12-27 16:51:16,583-INFO-Now processing: https://www.birmingham.ac.uk
+2018-12-27 16:51:18,572-INFO-Now processing: https://www.nel.sg
+2018-12-27 16:51:19,108-INFO-Now processing: https://www.rferl.org
+2018-12-27 16:51:20,734-INFO-Now processing: https://www.th-koeln.de
+2018-12-27 16:51:32,305-INFO-Now processing: https://www.hellomagazine.com
+2018-12-27 16:51:32,746-INFO-Now processing: https://creative.adobe.com
+2018-12-27 16:51:33,313-INFO-Now processing: https://creative.adobe.com
+2018-12-27 16:51:33,833-INFO-Now processing: https://hiring.snagajob.com
+2018-12-27 16:51:41,584-INFO-Now processing: https://www.fastretailing.com
+2018-12-27 16:51:41,804-INFO-Now processing: https://hiring.careerbuilder.co
+2018-12-27 16:51:43,743-ERROR-Certificate did not match expected hostname: hiring.careerbuilder.co. Certificate: {'subject': ((('commonName', '*.careerbuilder.com'),),), 'subjectAltName': [('DNS', '*.careerbuilder.com'), ('DNS', 'careerbuilder.com')]}
+2018-12-27 16:51:43,808-WARNING-Request error for website: https://hiring.careerbuilder.co
+2018-12-27 16:51:43,811-INFO-Now processing: https://www.mediacorp.sg
+2018-12-27 16:51:44,842-INFO-Now processing: https://hiring.monster.com
+2018-12-27 16:51:48,074-INFO-Now processing: https://careers.dbs.com
+2018-12-27 16:51:49,523-INFO-Now processing: https://www.redhat.com
+2018-12-27 16:51:49,982-INFO-Now processing: https://2020census.gov
+2018-12-27 16:51:52,538-INFO-Now processing: https://jobs.gapinc.com
+2018-12-27 16:51:53,011-INFO-Now processing: https://urbana.org
+2018-12-27 16:51:54,239-INFO-Now processing: https://www.jpurol.com
+2018-12-27 16:51:59,190-INFO-Now processing: https://brians.wsu.edu
+2018-12-27 16:52:03,809-INFO-Now processing: https://admissions.smu.edu.sg
+2018-12-27 16:52:04,157-INFO-Now processing: https://www.msnbc.com
+2018-12-27 16:52:04,455-INFO-Now processing: https://www.poems.com.sg
+2018-12-27 16:52:04,818-INFO-Now processing: https://www.philips.com
+2018-12-27 16:52:07,500-INFO-Now processing: https://www2.meethue.com
+2018-12-27 16:52:07,987-INFO-Now processing: https://www2.meethue.com
+2018-12-27 16:52:08,223-INFO-Now processing: https://www.cia.gov
+2018-12-27 16:52:09,357-INFO-Now processing: https://www.habitat.org
+2018-12-27 16:52:11,691-INFO-Now processing: https://www.catholicsandcultures.org
+2018-12-27 16:52:12,950-INFO-Now processing: https://www.dhs.gov
+2018-12-27 16:52:13,582-INFO-Now processing: https://www.citigroup.com
+2018-12-27 16:52:15,307-INFO-Now processing: https://www.paho.org
+2018-12-27 16:52:15,999-WARNING-Request error for website: https://www.paho.org
+2018-12-27 16:52:15,999-INFO-Now processing: https://www.export.gov
+2018-12-27 16:52:17,167-INFO-Now processing: https://kids.nationalgeographic.com
+2018-12-27 16:52:18,587-INFO-Now processing: https://www.asexuality.org
+2018-12-27 16:52:19,846-INFO-Now processing: https://www.bizjournals.com
+2018-12-27 16:52:20,004-INFO-Now processing: https://www.ophelia.net.au
+2018-12-27 16:52:22,414-INFO-Now processing: https://www.channel4.com
+2018-12-27 16:52:22,808-INFO-Now processing: https://online.boneandjoint.org.uk
+2018-12-27 16:52:25,895-INFO-Now processing: https://www.cancerhealth.com
+2018-12-27 16:52:28,558-INFO-Now processing: https://www.emblemhealth.com
+2018-12-27 16:52:31,678-INFO-Now processing: https://www.europeanurology.com
+2018-12-27 16:52:38,500-INFO-Now processing: https://meetinglibrary.asco.org
+2018-12-27 16:52:40,235-INFO-Now processing: https://www.redjournal.org
+2018-12-27 16:52:48,161-INFO-Now processing: https://www.pharmacompass.com
+2018-12-27 16:52:49,989-INFO-Now processing: https://www.goldjournal.net
+2018-12-27 16:52:58,592-INFO-Now processing: https://www.clinical-genitourinary-cancer.com
+2018-12-27 16:53:09,857-INFO-Now processing: https://www.g-ba.de
+2018-12-27 16:53:10,912-INFO-Now processing: https://www.caremark.com
+2018-12-27 16:53:12,298-INFO-Now processing: https://www.premera.com
+2018-12-27 16:53:14,838-INFO-Now processing: https://www.cihi.ca
+2018-12-27 16:53:19,139-INFO-Now processing: https://www.seroundtable.com
+2018-12-27 16:53:20,416-INFO-Now processing: https://www.nature.org
+2018-12-27 16:53:25,446-INFO-Now processing: https://www.srs.fs.usda.gov
+2018-12-27 16:53:28,127-INFO-Now processing: https://au.mathworks.com
+2018-12-27 16:53:28,427-INFO-Now processing: https://www.un.org
+2018-12-27 16:53:30,192-INFO-Now processing: https://vtechworks.lib.vt.edu
+2018-12-27 16:53:33,627-INFO-Now processing: https://www.wharfdc.com
+2018-12-27 16:53:35,330-INFO-Now processing: https://www.seattletimes.com
+2018-12-27 16:53:36,180-INFO-Now processing: https://www.acs.org
+2018-12-27 16:53:39,252-INFO-Now processing: https://www.abc.net.au
+2018-12-27 16:53:39,597-INFO-Now processing: https://www.icivics.org
+2018-12-27 16:53:41,220-INFO-Now processing: https://www.cecc.gov
+2018-12-27 16:53:45,239-INFO-Now processing: https://www.uscis.gov
+2018-12-27 16:53:45,757-INFO-Now processing: https://www.ricksteves.com
+2018-12-27 16:53:47,208-INFO-Now processing: https://www.utmb.edu
+2018-12-27 16:53:49,572-INFO-Now processing: https://www.atf.gov
+2018-12-27 16:53:50,723-INFO-Now processing: https://community.st.com
+2018-12-27 16:53:52,439-INFO-Now processing: https://community.st.com
+2018-12-27 16:53:53,417-INFO-Now processing: https://www.hostelbookers.com
+2018-12-27 16:53:55,370-INFO-Now processing: https://www.healthxchange.sg
+2018-12-27 16:53:59,153-INFO-Now processing: https://www.soard.org
+2018-12-27 16:54:07,051-INFO-Now processing: https://www.giejournal.org
+2018-12-27 16:54:15,328-INFO-Now processing: https://www.thermal.com
+2018-12-27 16:54:16,460-INFO-Now processing: https://www.zara.com
+2018-12-27 16:54:16,696-INFO-Now processing: https://www.endclothing.com
+2018-12-27 16:54:17,390-INFO-Now processing: https://www2.hm.com
+2018-12-27 16:54:17,704-INFO-Now processing: https://www.groupon.com
+2018-12-27 16:54:18,824-INFO-Now processing: https://www.livestrong.com
+2018-12-27 16:54:20,037-INFO-Now processing: https://ghr.nlm.nih.gov
+2018-12-27 16:54:21,471-INFO-Now processing: https://ghr.nlm.nih.gov
+2018-12-27 16:54:22,731-INFO-Now processing: https://www.m1.com.sg
+2018-12-27 16:54:23,250-INFO-Now processing: https://www.giffgaff.com
+2018-12-27 16:54:24,037-INFO-Now processing: https://www.ultramobile.com
+2018-12-27 16:54:25,315-INFO-Now processing: https://www.telstra.com.au
+2018-12-27 16:54:26,732-INFO-Now processing: https://www.three.ie
+2018-12-27 16:54:28,970-INFO-Now processing: https://www.bell.ca
+2018-12-27 16:54:32,548-INFO-Now processing: https://www.sprint.com
+2018-12-27 16:54:33,019-INFO-Failed request for: https://www.sprint.com, status code: 403, retry number: 1
+2018-12-27 16:54:33,336-INFO-Failed request for: https://www.sprint.com, status code: 403, retry number: 2
+2018-12-27 16:54:33,681-INFO-Failed request for: https://www.sprint.com, status code: 403, retry number: 3
+2018-12-27 16:54:34,076-INFO-Failed request for: https://www.sprint.com, status code: 403, retry number: 4
+2018-12-27 16:54:34,691-INFO-Failed request for: https://www.sprint.com, status code: 403, retry number: 5
+2018-12-27 16:54:34,914-INFO-Failed request for: https://www.sprint.com, status code: 403, retry number: 6
+2018-12-27 16:54:35,230-INFO-Failed request for: https://www.sprint.com, status code: 403, retry number: 7
+2018-12-27 16:54:35,483-INFO-Failed request for: https://www.sprint.com, status code: 403, retry number: 8
+2018-12-27 16:54:35,688-INFO-Failed request for: https://www.sprint.com, status code: 403, retry number: 9
+2018-12-27 16:54:35,972-INFO-Failed request for: https://www.sprint.com, status code: 403, retry number: 10
+2018-12-27 16:54:36,270-WARNING-Failed 10 requests for: https://www.sprint.com, status code: 403, skipping...
+2018-12-27 16:54:36,413-INFO-Now processing: https://app.a-star.edu.sg
+2018-12-27 16:54:36,838-INFO-Failed request for: https://app.a-star.edu.sg, status code: 403, retry number: 1
+2018-12-27 16:54:37,201-INFO-Failed request for: https://app.a-star.edu.sg, status code: 403, retry number: 2
+2018-12-27 16:54:37,657-INFO-Failed request for: https://app.a-star.edu.sg, status code: 403, retry number: 3
+2018-12-27 16:54:37,831-INFO-Failed request for: https://app.a-star.edu.sg, status code: 403, retry number: 4
+2018-12-27 16:54:38,462-INFO-Failed request for: https://app.a-star.edu.sg, status code: 403, retry number: 5
+2018-12-27 16:54:38,588-INFO-Failed request for: https://app.a-star.edu.sg, status code: 403, retry number: 6
+2018-12-27 16:54:38,950-INFO-Failed request for: https://app.a-star.edu.sg, status code: 403, retry number: 7
+2018-12-27 16:54:39,138-INFO-Failed request for: https://app.a-star.edu.sg, status code: 403, retry number: 8
+2018-12-27 16:54:39,519-INFO-Failed request for: https://app.a-star.edu.sg, status code: 403, retry number: 9
+2018-12-27 16:54:39,661-INFO-Failed request for: https://app.a-star.edu.sg, status code: 403, retry number: 10
+2018-12-27 16:54:39,817-WARNING-Failed 10 requests for: https://app.a-star.edu.sg, status code: 403, skipping...
+2018-12-27 16:54:39,928-INFO-Now processing: https://www.awqaf.gov.ae
+2018-12-27 16:54:47,092-INFO-Now processing: https://www.sec.gov
+2018-12-27 16:54:47,595-INFO-Now processing: https://www.afr.com
+2018-12-27 16:54:48,068-INFO-Now processing: https://lastpass.com
+2018-12-27 16:54:51,836-INFO-Now processing: https://apsjournals.apsnet.org
+2018-12-27 16:54:53,284-INFO-Now processing: https://www.magonlinelibrary.com
+2018-12-27 16:54:55,680-INFO-Now processing: https://www.medicare.gov
+2018-12-27 16:54:56,831-INFO-Now processing: https://www.marinabaysands.com
+2018-12-27 16:54:57,398-INFO-Now processing: https://www.nycgovparks.org
+2018-12-27 16:54:58,721-INFO-Now processing: https://www.nycgovparks.org
+2018-12-27 16:54:59,952-INFO-Now processing: https://www.cancerresearchuk.org
+2018-12-27 16:55:01,494-INFO-Now processing: https://www.cancerresearchuk.org
+2018-12-27 16:55:02,881-INFO-Now processing: https://www.dot.ny.gov
+2018-12-27 16:55:05,954-INFO-Now processing: https://blogs.technet.microsoft.com
+2018-12-27 16:55:08,335-INFO-Now processing: https://www.factmonster.com
+2018-12-27 16:55:09,486-INFO-Now processing: https://www.factmonster.com
+2018-12-27 16:55:10,655-INFO-Now processing: https://www.aana.com
+2018-12-27 16:55:13,270-INFO-Now processing: https://swachhindia.ndtv.com
+2018-12-27 16:55:18,564-INFO-Now processing: https://magic.wizards.com
+2018-12-27 16:55:19,603-INFO-Now processing: https://www.silverpages.sg
+2018-12-27 16:55:20,013-INFO-Now processing: https://dataverse.harvard.edu
+2018-12-27 16:55:23,150-INFO-Now processing: https://www.abbeyroad.com
+2018-12-27 16:55:24,631-INFO-Now processing: https://ssrn.com
+2018-12-27 16:55:26,979-INFO-Now processing: https://ssrn.com
+2018-12-27 16:55:29,407-INFO-Now processing: https://www.mirror.co.uk
+2018-12-27 16:55:29,738-INFO-Now processing: https://www.smu.edu.sg
+2018-12-27 16:55:30,399-INFO-Now processing: https://www.smu.edu.sg
+2018-12-27 16:55:30,667-INFO-Now processing: https://www.ticketbox.sg
+2018-12-27 16:55:31,234-INFO-Now processing: https://www.ticketbox.sg
+2018-12-27 16:55:31,675-INFO-Now processing: https://academy.smu.edu.sg
+2018-12-27 16:55:32,227-INFO-Now processing: https://www.oreilly.com
+2018-12-27 16:55:32,543-INFO-Now processing: https://www.techrepublic.com
+2018-12-27 16:55:34,086-INFO-Now processing: https://ich.unesco.org
+2018-12-27 16:55:38,009-INFO-Now processing: https://www.thsh.co.uk
+2018-12-27 16:55:39,191-INFO-Now processing: https://www.thsh.co.uk
+2018-12-27 16:55:40,263-INFO-Now processing: https://www.dartmouth.edu
+2018-12-27 16:55:45,352-INFO-Now processing: https://culanth.org
+2018-12-27 16:55:46,803-INFO-Now processing: https://culanth.org
+2018-12-27 16:55:48,552-INFO-Now processing: https://culanth.org
+2018-12-27 16:55:50,191-INFO-Now processing: https://www.phoenixmarketcity.com
+2018-12-27 16:55:51,323-INFO-Now processing: https://www.phoenixmarketcity.com
+2018-12-27 16:55:52,655-INFO-Now processing: https://www.msdmanuals.com
+2018-12-27 16:55:54,057-INFO-Now processing: https://www.hipvan.com
+2018-12-27 16:55:54,734-INFO-Now processing: https://www.hipvan.com
+2018-12-27 16:55:55,258-INFO-Now processing: https://www.wayfair.com
+2018-12-27 16:55:57,402-INFO-Now processing: https://www.people.vcu.edu
+2018-12-27 16:56:02,305-INFO-Now processing: https://www.juniper.net
+2018-12-27 16:56:02,746-INFO-Now processing: https://content.vexrobotics.com
+2018-12-27 16:56:04,763-INFO-Now processing: https://www4.ntu.ac.uk
+2018-12-27 16:56:05,581-WARNING-Request error for website: https://www4.ntu.ac.uk
+2018-12-27 16:56:05,581-INFO-Now processing: https://www.plugin-alliance.com
+2018-12-27 16:56:06,811-INFO-Now processing: https://www.plugin-alliance.com
+2018-12-27 16:56:08,292-INFO-Now processing: https://castbox.fm
+2018-12-27 16:56:09,287-INFO-Now processing: https://castbox.fm
+2018-12-27 16:56:10,000-INFO-Now processing: https://www.tommybahama.com
+2018-12-27 16:56:11,433-INFO-Now processing: https://cityseeker.com
+2018-12-27 16:56:13,782-INFO-Now processing: https://cityseeker.com
+2018-12-27 16:56:15,610-INFO-Now processing: https://www.cbr.ru
+2018-12-27 16:56:17,541-INFO-Now processing: https://www.foreignaffairs.com
+2018-12-27 16:56:20,206-INFO-Now processing: https://www.state.gov
+2018-12-27 16:56:21,073-INFO-Now processing: https://adtmag.com
+2018-12-27 16:56:23,459-INFO-Now processing: https://disneyworld.disney.go.com
+2018-12-27 16:56:24,693-INFO-Now processing: https://napoli.repubblica.it
+2018-12-27 16:56:26,390-INFO-Now processing: https://www.sans.org
+2018-12-27 16:56:28,088-INFO-Now processing: https://www.treasury.gov
+2018-12-27 16:56:30,292-INFO-Now processing: https://www.dni.gov
+2018-12-27 16:56:31,404-INFO-Now processing: https://threatvector.cylance.com
+2018-12-27 16:56:32,608-INFO-Now processing: https://threatvector.cylance.com
+2018-12-27 16:56:33,781-INFO-Now processing: https://www.americanjournalofsurgery.com
+2018-12-27 16:56:43,053-INFO-Now processing: https://www.eusupplements.europeanurology.com
+2018-12-27 16:56:52,100-INFO-Now processing: https://dzone.com
+2018-12-27 16:56:53,675-INFO-Now processing: https://dzone.com
+2018-12-27 16:56:55,130-INFO-Now processing: https://dzone.com
+2018-12-27 16:56:56,615-INFO-Now processing: https://www.universalorlando.com
+2018-12-27 16:57:03,408-INFO-Now processing: https://public.wmo.int
+2018-12-27 16:57:05,066-INFO-Now processing: https://public.wmo.int
+2018-12-27 16:57:06,738-INFO-Now processing: https://www.weather.gov
+2018-12-27 16:57:23,928-INFO-Now processing: https://wiki.mozilla.org
+2018-12-27 16:57:25,137-INFO-Now processing: https://wiki.mozilla.org
+2018-12-27 16:57:26,347-INFO-Now processing: https://wiki.mozilla.org
+2018-12-27 16:57:27,524-INFO-Now processing: https://www.theboneman.com
+2018-12-27 16:57:29,130-INFO-Now processing: https://www.baume-et-mercier.com
+2018-12-27 16:57:29,651-INFO-Now processing: https://about.twitter.com
+2018-12-27 16:57:30,093-INFO-Now processing: https://about.twitter.com
+2018-12-27 16:57:30,491-INFO-Now processing: https://about.twitter.com
+2018-12-27 16:57:30,890-INFO-Now processing: https://about.twitter.com
+2018-12-27 16:57:31,271-INFO-Now processing: https://www.paloaltonetworks.com
+2018-12-27 16:57:31,773-INFO-Now processing: https://www.sony.co.in
+2018-12-27 16:57:32,015-INFO-Now processing: https://sit-bulan.wixsite.com
+2018-12-27 16:57:32,305-INFO-Failed request for: https://sit-bulan.wixsite.com, status code: 404, retry number: 1
+2018-12-27 16:57:32,572-INFO-Failed request for: https://sit-bulan.wixsite.com, status code: 404, retry number: 2
+2018-12-27 16:57:32,827-INFO-Failed request for: https://sit-bulan.wixsite.com, status code: 404, retry number: 3
+2018-12-27 16:57:33,102-INFO-Failed request for: https://sit-bulan.wixsite.com, status code: 404, retry number: 4
+2018-12-27 16:57:33,378-INFO-Failed request for: https://sit-bulan.wixsite.com, status code: 404, retry number: 5
+2018-12-27 16:57:33,656-INFO-Failed request for: https://sit-bulan.wixsite.com, status code: 404, retry number: 6
+2018-12-27 16:57:33,914-INFO-Failed request for: https://sit-bulan.wixsite.com, status code: 404, retry number: 7
+2018-12-27 16:57:34,195-INFO-Failed request for: https://sit-bulan.wixsite.com, status code: 404, retry number: 8
+2018-12-27 16:57:34,465-INFO-Failed request for: https://sit-bulan.wixsite.com, status code: 404, retry number: 9
+2018-12-27 16:57:34,719-INFO-Failed request for: https://sit-bulan.wixsite.com, status code: 404, retry number: 10
+2018-12-27 16:57:34,989-WARNING-Failed 10 requests for: https://sit-bulan.wixsite.com, status code: 404, skipping...
+2018-12-27 16:57:35,035-INFO-Now processing: https://www.health.qld.gov.au
+2018-12-27 16:57:36,198-INFO-Now processing: https://www.uregina.ca
+2018-12-27 16:57:37,890-INFO-Now processing: https://www.uniqlo.com
+2018-12-27 16:57:38,403-INFO-Now processing: https://www.manutd.com
+2018-12-27 16:57:38,674-INFO-Now processing: https://www.watsons.com.sg
+2018-12-27 16:57:40,084-INFO-Now processing: https://philaymca.org
+2018-12-27 16:57:42,910-INFO-Now processing: https://www.opentable.com
+2018-12-27 16:57:43,808-INFO-Now processing: https://recreation.ku.edu
+2018-12-27 16:57:45,298-INFO-Now processing: https://frieze.com
+2018-12-27 16:57:46,509-INFO-Now processing: https://frieze.com
+2018-12-27 16:57:47,642-INFO-Now processing: https://www.prweek.com
+2018-12-27 16:57:51,524-INFO-Now processing: https://www.eurosport.fr
+2018-12-27 16:57:52,127-INFO-Now processing: https://www.justdial.com
+2018-12-27 16:57:52,744-INFO-Now processing: https://www.dezeen.com
+2018-12-27 16:57:55,292-INFO-Now processing: https://openagenda.com
+2018-12-27 16:57:56,414-INFO-Now processing: https://openagenda.com
+2018-12-27 16:57:57,612-INFO-Now processing: https://za.pinterest.com
+2018-12-27 16:57:58,399-INFO-Now processing: https://www.infogreffe.com
+2018-12-27 16:58:01,251-INFO-Now processing: https://airandspace.si.edu
+2018-12-27 16:58:03,302-INFO-Now processing: https://www.foxsports.com
+2018-12-27 16:58:03,980-INFO-Now processing: https://www.teamusa.org
+2018-12-27 16:58:04,472-INFO-Now processing: https://www.rotorandwing.com
+2018-12-27 16:58:06,161-INFO-Now processing: https://depts.washington.edu
+2018-12-27 16:58:07,684-INFO-Now processing: https://billetterie.centrepompidou.fr
+2018-12-27 16:58:09,636-INFO-Now processing: https://forum.solidworks.com
+2018-12-27 16:58:11,288-INFO-Now processing: https://www.thermofisher.com
+2018-12-27 16:58:12,919-INFO-Now processing: https://www.sephora.com
+2018-12-27 16:58:13,467-INFO-Now processing: https://www.esteelauder.com
+2018-12-27 16:58:13,861-INFO-Now processing: https://www.thebodyshop.com
+2018-12-27 16:58:14,307-INFO-Now processing: https://www.e-crt.org
+2018-12-27 16:58:16,729-INFO-Now processing: https://audible.custhelp.com
+2018-12-27 16:58:18,522-INFO-Now processing: https://www.newharbinger.com
+2018-12-27 16:58:20,168-INFO-Now processing: https://www.newharbinger.com
+2018-12-27 16:58:21,681-INFO-Now processing: https://www.health.ny.gov
+2018-12-27 16:58:23,803-INFO-Now processing: https://respond.census.gov
+2018-12-27 16:58:25,022-INFO-Now processing: https://health.usnews.com
+2018-12-27 16:58:27,447-INFO-Now processing: https://www.mulesoft.com
+2018-12-27 16:58:27,731-INFO-Now processing: https://www.fender.com
+2018-12-27 16:58:31,072-INFO-Now processing: https://www.fender.com
+2018-12-27 16:58:33,736-INFO-Now processing: https://www.virtualbox.org
+2018-12-27 16:58:35,350-INFO-Now processing: https://unama.unmissions.org
+2018-12-27 16:58:37,237-INFO-Now processing: https://www.goethe.de
+2018-12-27 16:58:37,626-INFO-Now processing: https://www.funidelia.sg
+2018-12-27 16:58:39,369-INFO-Now processing: https://devcentral.f5.com
+2018-12-27 16:58:40,519-INFO-Now processing: https://faculty.washington.edu
+2018-12-27 16:58:41,942-INFO-Now processing: https://wiki.ubc.ca
+2018-12-27 16:58:43,388-INFO-Now processing: https://www.eia.gov
+2018-12-27 16:58:44,807-INFO-Now processing: https://www.federalreserve.gov
+2018-12-27 16:58:47,277-INFO-Now processing: https://citrusvariety.ucr.edu
+2018-12-27 16:58:48,785-INFO-Now processing: https://www.preteristarchive.com
+2018-12-27 16:58:49,286-INFO-Now processing: https://www.checkpoint.com
+2018-12-27 16:58:49,668-INFO-Now processing: https://www.bar.admin.ch
+2018-12-27 16:58:51,759-INFO-Now processing: https://m4.ti.ch
+2018-12-27 16:58:58,111-INFO-Now processing: https://francais.rt.com
+2018-12-27 16:59:00,277-INFO-Now processing: https://www.gr.ch
+2018-12-27 16:59:04,966-INFO-Now processing: https://www.francetvinfo.fr
+2018-12-27 16:59:07,873-INFO-Now processing: https://www.francetvinfo.fr
+2018-12-27 16:59:08,038-INFO-Now processing: https://www.jpedsurg.org
+2018-12-27 16:59:15,108-INFO-Now processing: https://www.seedandspark.com
+2018-12-27 16:59:16,431-INFO-Now processing: https://www.seedandspark.com
+2018-12-27 16:59:17,665-INFO-Now processing: https://www.iams.com
+2018-12-27 16:59:19,497-INFO-Now processing: https://www.kumc.edu
+2018-12-27 16:59:20,870-INFO-Now processing: https://www.autonomicneuroscience.com
+2018-12-27 16:59:30,208-INFO-Now processing: https://mothersruinpodcast.podbean.com
+2018-12-27 16:59:31,387-INFO-Now processing: https://mothersruinpodcast.podbean.com
+2018-12-27 16:59:32,600-INFO-Now processing: https://www.geni.com
+2018-12-27 16:59:35,574-INFO-Now processing: https://library.si.edu
+2018-12-27 16:59:40,262-INFO-Now processing: https://www.almanac.com
+2018-12-27 16:59:41,606-INFO-Now processing: https://www.almanac.com
+2018-12-27 16:59:42,826-INFO-Now processing: https://www.fema.gov
+2018-12-27 16:59:43,109-INFO-Now processing: https://www.heb.com
+2018-12-27 16:59:44,657-INFO-Now processing: https://contractaciopublica.gencat.cat
+2018-12-27 16:59:45,856-WARNING-Request error for website: https://contractaciopublica.gencat.cat
+2018-12-27 16:59:45,859-INFO-Now processing: https://www.yr.no
+2018-12-27 16:59:46,511-INFO-Now processing: https://www.eurail.com
+2018-12-27 16:59:46,748-INFO-Now processing: https://www.tc.gc.ca
+2018-12-27 16:59:48,443-INFO-Now processing: https://www.pml-bmw.com.sg
+2018-12-27 16:59:52,194-INFO-Now processing: https://www.pml-bmw.com.sg
+2018-12-27 16:59:52,595-INFO-Now processing: https://www.volvocars.com
+2018-12-27 16:59:53,191-INFO-Now processing: https://www.edb.gov.sg
+2018-12-27 16:59:53,362-INFO-Now processing: https://www.meridianenergy.co.nz
+2018-12-27 16:59:55,312-INFO-Now processing: https://www.qcaa.qld.edu.au
+2018-12-27 16:59:55,452-INFO-Now processing: https://www.inventables.com
+2018-12-27 16:59:56,653-INFO-Now processing: https://www.inventables.com
+2018-12-27 16:59:57,945-INFO-Now processing: https://www.mba.com
+2018-12-27 16:59:59,443-INFO-Now processing: https://www.hg.org
+2018-12-27 16:59:59,679-INFO-Now processing: https://www.poetry4kids.com
+2018-12-27 17:00:00,661-INFO-Now processing: https://bpspubs.onlinelibrary.wiley.com
+2018-12-27 17:00:04,563-INFO-Now processing: https://www.moneycontrol.com
+2018-12-27 17:00:05,188-INFO-Now processing: https://www.britishcouncil.pt
+2018-12-27 17:00:09,337-INFO-Now processing: https://russiapedia.rt.com
+2018-12-27 17:00:12,014-INFO-Now processing: https://www.rbth.com
+2018-12-27 17:00:16,141-INFO-Now processing: https://www.unitythroughdiversity.org
+2018-12-27 17:00:17,280-INFO-Now processing: https://www.stb.gov.sg
+2018-12-27 17:00:18,231-INFO-Now processing: https://www.oracle.com
+2018-12-27 17:00:18,639-INFO-Now processing: https://global.canon
+2018-12-27 17:00:19,158-INFO-Now processing: https://www.bhphotovideo.com
+2018-12-27 17:00:21,348-INFO-Now processing: https://www.smart.com
+2018-12-27 17:00:23,574-INFO-Now processing: https://markets.businessinsider.com
+2018-12-27 17:00:24,911-INFO-Now processing: https://www.whitehouse.gov
+2018-12-27 17:00:25,179-INFO-Now processing: https://www.fallingpianogames.com
+2018-12-27 17:00:26,229-INFO-Now processing: https://www.geocaching.com
+2018-12-27 17:00:27,568-INFO-Now processing: https://www.waves.com
+2018-12-27 17:00:33,672-INFO-Now processing: https://www.waves.com
+2018-12-27 17:00:35,775-INFO-Now processing: https://www.waves.com
+2018-12-27 17:00:48,943-INFO-Now processing: https://www.sgh.com.sg
+2018-12-27 17:00:52,205-INFO-Now processing: https://www.stanfordchildrens.org
+2018-12-27 17:00:54,577-INFO-Now processing: https://www.ecooutdoor.com.au
+2018-12-27 17:00:55,629-INFO-Now processing: https://www.ecooutdoor.com.au
+2018-12-27 17:00:56,511-INFO-Now processing: https://theatrefilm.ubc.ca
+2018-12-27 17:00:57,940-INFO-Now processing: https://www.beatport.com
+2018-12-27 17:01:01,096-INFO-Now processing: https://www.beatport.com
+2018-12-27 17:01:02,818-INFO-Now processing: https://www.qld.gov.au
+2018-12-27 17:01:03,486-INFO-Now processing: https://nph.onlinelibrary.wiley.com
+2018-12-27 17:01:06,454-INFO-Now processing: https://www.analog.com
+2018-12-27 17:01:06,926-INFO-Now processing: https://community.babycentre.co.uk
+2018-12-27 17:01:08,011-INFO-Now processing: https://www.hsph.harvard.edu
+2018-12-27 17:01:10,179-INFO-Now processing: https://www.queensland.com
+2018-12-27 17:01:13,908-INFO-Now processing: https://www.queensland.com
+2018-12-27 17:01:15,254-INFO-Now processing: https://www.tmr.qld.gov.au
+2018-12-27 17:01:17,458-INFO-Now processing: https://www.tmr.qld.gov.au
+2018-12-27 17:01:19,719-INFO-Now processing: https://www.npsr.qld.gov.au
+2018-12-27 17:01:21,606-INFO-Now processing: https://data.qld.gov.au
+2018-12-27 17:01:22,151-INFO-Now processing: https://www.caesars.com
+2018-12-27 17:01:22,996-INFO-Now processing: https://www.powtoon.com
+2018-12-27 17:01:25,026-INFO-Now processing: https://www.angieslist.com
+2018-12-27 17:01:25,355-INFO-Now processing: https://www.hiddenvalley.com
+2018-12-27 17:01:29,012-INFO-Now processing: https://www.aphis.usda.gov
+2018-12-27 17:01:31,369-INFO-Now processing: https://www.loopnet.com
+2018-12-27 17:01:31,568-INFO-Failed request for: https://www.loopnet.com, status code: 403, retry number: 1
+2018-12-27 17:01:31,655-INFO-Failed request for: https://www.loopnet.com, status code: 403, retry number: 2
+2018-12-27 17:01:31,758-INFO-Failed request for: https://www.loopnet.com, status code: 403, retry number: 3
+2018-12-27 17:01:31,850-INFO-Failed request for: https://www.loopnet.com, status code: 403, retry number: 4
+2018-12-27 17:01:31,960-INFO-Failed request for: https://www.loopnet.com, status code: 403, retry number: 5
+2018-12-27 17:01:32,098-INFO-Failed request for: https://www.loopnet.com, status code: 403, retry number: 6
+2018-12-27 17:01:32,433-INFO-Failed request for: https://www.loopnet.com, status code: 403, retry number: 7
+2018-12-27 17:01:32,505-INFO-Failed request for: https://www.loopnet.com, status code: 403, retry number: 8
+2018-12-27 17:01:32,577-INFO-Failed request for: https://www.loopnet.com, status code: 403, retry number: 9
+2018-12-27 17:01:32,670-INFO-Failed request for: https://www.loopnet.com, status code: 403, retry number: 10
+2018-12-27 17:01:32,780-WARNING-Failed 10 requests for: https://www.loopnet.com, status code: 403, skipping...
+2018-12-27 17:01:33,681-INFO-py raw cap complete. 0 out of 453 failed
+2018-12-27 19:21:55,093-INFO-Now processing: https://www.publishersweekly.com
+2018-12-27 19:21:56,732-INFO-Now processing: https://www.breastcancer.org
+2018-12-27 19:21:58,071-INFO-Now processing: https://www.pharmaceutical-journal.com
+2018-12-27 19:22:00,150-INFO-Now processing: https://www.roche.com
+2018-12-27 19:22:00,387-INFO-Now processing: https://www.genentech-access.com
+2018-12-27 19:22:01,851-INFO-Now processing: https://www.clinicaloncologyonline.net
+2018-12-27 19:22:08,817-INFO-Now processing: https://news.samsung.com
+2018-12-27 19:22:09,149-INFO-Now processing: https://www.midwiferyjournal.com
+2018-12-27 19:22:14,463-INFO-Now processing: https://diy-courses.typeform.com
+2018-12-27 19:22:15,724-INFO-Now processing: https://www.maine.gov
+2018-12-27 19:22:21,265-INFO-Now processing: https://www.msci.com
+2018-12-27 19:22:22,923-INFO-Now processing: https://www.intuitive.com
+2018-12-27 19:22:24,785-INFO-Now processing: https://www.intuitivesurgical.com
+2018-12-27 19:22:27,415-INFO-Now processing: https://mms.mckesson.com
+2018-12-27 19:22:29,371-INFO-Now processing: https://www.travelchannel.com
+2018-12-27 19:22:29,877-INFO-Now processing: https://whc.unesco.org
+2018-12-27 19:22:57,152-INFO-Now processing: https://www.nypl.org
+2018-12-27 19:22:58,695-INFO-Now processing: https://www.jvir.org
+2018-12-27 19:23:04,808-INFO-Now processing: https://www.websecurity.symantec.com
+2018-12-27 19:23:06,007-INFO-Now processing: https://www.sonicwall.com
+2018-12-27 19:23:08,153-INFO-Now processing: https://www.lloyds.com
+2018-12-27 19:23:11,170-INFO-Now processing: https://www.hapag-lloyd.co
+2018-12-27 19:23:12,007-ERROR-Certificate did not match expected hostname: www.hapag-lloyd.co. Certificate: {'subject': ((('commonName', 'www.hapag-lloyd.com'),),), 'subjectAltName': [('DNS', 'www.hapag-lloyd.com'), ('DNS', 'hapag-lloyd.com')]}
+2018-12-27 19:23:12,370-WARNING-Request error for website: https://www.hapag-lloyd.co
+2018-12-27 19:23:12,370-INFO-Now processing: https://education.ky.gov
+2018-12-27 19:23:15,198-INFO-Now processing: https://education.emc.com
+2018-12-27 19:23:16,284-INFO-Now processing: https://www.autodesk.com
+2018-12-27 19:23:16,582-INFO-Now processing: https://www.stuff.co.nz
+2018-12-27 19:23:17,382-INFO-Now processing: https://sourcebooks.fordham.edu
+2018-12-27 19:23:19,355-INFO-Now processing: https://www.lds.org
+2018-12-27 19:23:19,843-INFO-Now processing: https://www.lingvolive.com
+2018-12-27 19:23:21,893-INFO-Now processing: https://www.expressen.se
+2018-12-27 19:23:24,578-INFO-Now processing: https://www.mayoclinicproceedings.org
+2018-12-27 19:23:31,063-INFO-Now processing: https://www.jpost.com
+2018-12-27 19:23:48,347-INFO-Now processing: https://library.seg.org
+2018-12-27 19:23:50,440-INFO-Now processing: https://www.jobs.net
+2018-12-27 19:23:52,204-INFO-Failed request for: https://www.jobs.net, status code: 521, retry number: 1
+2018-12-27 19:23:53,431-INFO-Failed request for: https://www.jobs.net, status code: 521, retry number: 2
+2018-12-27 19:23:54,677-INFO-Failed request for: https://www.jobs.net, status code: 521, retry number: 3
+2018-12-27 19:23:55,954-INFO-Failed request for: https://www.jobs.net, status code: 521, retry number: 4
+2018-12-27 19:23:57,217-INFO-Failed request for: https://www.jobs.net, status code: 521, retry number: 5
+2018-12-27 19:23:58,429-INFO-Failed request for: https://www.jobs.net, status code: 521, retry number: 6
+2018-12-27 19:23:59,598-INFO-Failed request for: https://www.jobs.net, status code: 521, retry number: 7
+2018-12-27 19:24:00,836-INFO-Failed request for: https://www.jobs.net, status code: 521, retry number: 8
+2018-12-27 19:24:01,992-INFO-Failed request for: https://www.jobs.net, status code: 521, retry number: 9
+2018-12-27 19:24:03,679-INFO-Failed request for: https://www.jobs.net, status code: 521, retry number: 10
+2018-12-27 19:24:05,131-WARNING-Failed 10 requests for: https://www.jobs.net, status code: 521, skipping...
+2018-12-27 19:24:05,162-INFO-Now processing: https://www.justice.gov.nt.ca
+2018-12-27 19:24:07,228-INFO-Now processing: https://plants.usda.gov
+2018-12-27 19:24:11,037-INFO-Now processing: https://www.gog.com
+2018-12-27 19:24:12,913-INFO-Now processing: https://www.news18.com
+2018-12-27 19:24:13,324-INFO-Now processing: https://speed.economictimes.indiatimes.com
+2018-12-27 19:24:13,586-INFO-Now processing: https://www.hertz.com.sg
+2018-12-27 19:24:14,086-INFO-Now processing: https://www.businesstoday.in
+2018-12-27 19:24:14,424-INFO-Now processing: https://oi.uchicago.edu
+2018-12-27 19:24:15,874-INFO-Now processing: https://www.louvre.fr
+2018-12-27 19:24:17,597-INFO-Now processing: https://access.redhat.com
+2018-12-27 19:24:17,976-INFO-Now processing: https://data.oecd.org
+2018-12-27 19:25:20,294-INFO-Now processing: https://forums.cpanel.net
+2018-12-27 19:25:22,764-INFO-Now processing: https://www.newportmansions.org
+2018-12-27 19:25:25,184-INFO-Now processing: https://dpeaflcio.org
+2018-12-27 19:25:26,354-INFO-Now processing: https://collections.museumvictoria.com.au
+2018-12-27 19:25:28,394-INFO-Now processing: https://www.iep.utm.edu
+2018-12-27 19:25:29,148-WARNING-Request error for website: https://www.iep.utm.edu
+2018-12-27 19:25:29,158-INFO-Now processing: https://bestapples.com
+2018-12-27 19:25:32,054-INFO-Now processing: https://australianmuseum.net.au
+2018-12-27 23:03:37,330-INFO-Now processing: https://forums.cpanel.net
+2018-12-27 23:03:45,911-WARNING-Request error for website: https://forums.cpanel.net
+2018-12-27 23:03:45,911-INFO-Now processing: https://www.newportmansions.org
+2018-12-27 23:06:03,552-WARNING-Request error for website: https://www.newportmansions.org
+2018-12-27 23:06:03,552-INFO-Now processing: https://dpeaflcio.org
+2018-12-27 23:06:10,005-WARNING-Request error for website: https://dpeaflcio.org
+2018-12-27 23:06:10,005-INFO-Now processing: https://collections.museumvictoria.com.au
+2018-12-27 23:06:17,080-WARNING-Request error for website: https://collections.museumvictoria.com.au
+2018-12-27 23:06:17,080-INFO-Now processing: https://www.iep.utm.edu
+2018-12-27 23:06:23,379-WARNING-Request error for website: https://www.iep.utm.edu
+2018-12-27 23:06:23,379-INFO-Now processing: https://bestapples.com
+2018-12-27 23:06:32,328-WARNING-Request error for website: https://bestapples.com
+2018-12-27 23:06:32,328-INFO-Now processing: https://australianmuseum.net.au
+2018-12-27 23:06:42,474-WARNING-Request error for website: https://australianmuseum.net.au
+2018-12-27 23:06:42,474-INFO-Now processing: https://www.surette-realestate.com
+2018-12-27 23:07:00,042-WARNING-Request error for website: https://www.surette-realestate.com
+2018-12-27 23:07:00,042-INFO-Now processing: https://www.surette-realestate.com
+2018-12-27 23:07:17,560-WARNING-Request error for website: https://www.surette-realestate.com
+2018-12-27 23:07:17,560-INFO-Now processing: https://www.pnb.org
+2018-12-27 23:07:25,468-WARNING-Request error for website: https://www.pnb.org
+2018-12-27 23:07:25,468-INFO-Now processing: https://newsroom.cisco.com
+2018-12-27 23:07:32,292-WARNING-Request error for website: https://newsroom.cisco.com
+2018-12-27 23:07:32,292-INFO-Now processing: https://www.robbinschevy.co
+2018-12-27 23:07:38,487-WARNING-Request error for website: https://www.robbinschevy.co
+2018-12-27 23:07:38,487-INFO-Now processing: https://thesefootballtimes.co
+2018-12-27 23:07:50,630-WARNING-Request error for website: https://thesefootballtimes.co
+2018-12-27 23:07:50,630-INFO-Now processing: https://imm.medicina.ulisboa.pt
+2018-12-27 23:07:58,329-WARNING-Request error for website: https://imm.medicina.ulisboa.pt
+2018-12-27 23:07:58,329-INFO-Now processing: https://neosmart.net
+2018-12-27 23:08:04,478-WARNING-Request error for website: https://neosmart.net
+2018-12-27 23:08:04,478-INFO-Now processing: https://danci.911cha.com
+2018-12-27 23:09:26,945-WARNING-Request error for website: https://danci.911cha.com
+2018-12-27 23:09:26,945-INFO-Now processing: https://danci.911cha.com
+2018-12-27 23:10:49,887-WARNING-Request error for website: https://danci.911cha.com
+2018-12-27 23:10:49,887-INFO-Now processing: https://www.narayana-verlag.com
+2018-12-27 23:10:57,239-WARNING-Request error for website: https://www.narayana-verlag.com
+2018-12-27 23:10:57,239-INFO-Now processing: https://recorder.franklincountyohio.gov
+2018-12-27 23:13:04,158-WARNING-Request error for website: https://recorder.franklincountyohio.gov
+2018-12-27 23:13:04,158-INFO-Now processing: https://www.digitalcommonwealth.org
+2018-12-27 23:13:16,297-WARNING-Request error for website: https://www.digitalcommonwealth.org
+2018-12-27 23:13:16,297-INFO-Now processing: https://sponsorpitch.com
+2018-12-27 23:13:28,395-WARNING-Request error for website: https://sponsorpitch.com
+2018-12-27 23:13:28,395-INFO-Now processing: https://forum.isthmus.com
+2018-12-27 23:13:40,431-WARNING-Request error for website: https://forum.isthmus.com
+2018-12-27 23:13:40,431-INFO-Now processing: https://www.nihadc.com
+2018-12-27 23:13:48,912-WARNING-Request error for website: https://www.nihadc.com
+2018-12-27 23:13:48,912-INFO-Now processing: https://www.e-jmd.org
+2018-12-27 23:13:57,414-WARNING-Request error for website: https://www.e-jmd.org
+2018-12-27 23:13:57,414-INFO-Now processing: https://www.separations.asia.tosohbioscience.com
+2018-12-27 23:16:15,837-WARNING-Request error for website: https://www.separations.asia.tosohbioscience.com
+2018-12-27 23:16:15,837-INFO-Now processing: https://www.e-sciencecentral.org
+2018-12-27 23:16:28,418-WARNING-Request error for website: https://www.e-sciencecentral.org
+2018-12-27 23:16:28,418-INFO-Now processing: https://iovs.arvojournals.org
+2018-12-27 23:16:39,716-WARNING-Request error for website: https://iovs.arvojournals.org
+2018-12-27 23:16:39,716-INFO-Now processing: https://stellaris.paradoxwikis.com
+2018-12-27 23:16:45,780-WARNING-Request error for website: https://stellaris.paradoxwikis.com
+2018-12-27 23:16:45,780-INFO-Now processing: https://developer.asperasoft.com
+2018-12-27 23:16:52,509-WARNING-Request error for website: https://developer.asperasoft.com
+2018-12-27 23:16:52,509-INFO-Now processing: https://www.tourisme-alsace.com
+2018-12-27 23:16:59,926-WARNING-Request error for website: https://www.tourisme-alsace.com
+2018-12-27 23:16:59,926-INFO-Now processing: https://www.cem-protection.com
+2018-12-27 23:17:06,173-WARNING-Request error for website: https://www.cem-protection.com
+2018-12-27 23:17:06,173-INFO-Now processing: https://www.paulettesauve.com
+2018-12-27 23:17:13,648-WARNING-Request error for website: https://www.paulettesauve.com
+2018-12-27 23:17:13,648-INFO-Now processing: https://read.dukeupress.edu
+2018-12-27 23:17:22,306-WARNING-Request error for website: https://read.dukeupress.edu
+2018-12-27 23:17:22,306-INFO-Now processing: https://www.marketingsherpa.com
+2018-12-27 23:17:30,577-WARNING-Request error for website: https://www.marketingsherpa.com
+2018-12-27 23:17:30,577-INFO-Now processing: https://jamanetwork.com
+2018-12-27 23:17:38,865-WARNING-Request error for website: https://jamanetwork.com
+2018-12-27 23:17:38,865-INFO-Now processing: https://www.ceemjournal.org
+2018-12-27 23:17:45,989-WARNING-Request error for website: https://www.ceemjournal.org
+2018-12-27 23:17:45,989-INFO-Now processing: https://www.tosohindia.com
+2018-12-27 23:20:07,352-WARNING-Request error for website: https://www.tosohindia.com
+2018-12-27 23:20:07,352-INFO-Now processing: https://shop.hytest.fi
+2018-12-27 23:20:19,930-WARNING-Request error for website: https://shop.hytest.fi
+2018-12-27 23:20:19,930-INFO-Now processing: https://www.j-stroke.org
+2018-12-27 23:20:27,649-WARNING-Request error for website: https://www.j-stroke.org
+2018-12-27 23:20:27,649-INFO-Now processing: https://www.diagnostics.eu.tosohbioscience.com
+2018-12-27 23:22:45,838-WARNING-Request error for website: https://www.diagnostics.eu.tosohbioscience.com
+2018-12-27 23:22:45,838-INFO-Now processing: https://gbtimes.com
+2018-12-27 23:22:52,818-WARNING-Request error for website: https://gbtimes.com
+2018-12-27 23:22:52,818-INFO-Now processing: https://thecasswiki.net
+2018-12-27 23:22:58,856-WARNING-Request error for website: https://thecasswiki.net
+2018-12-27 23:22:58,856-INFO-Now processing: https://ck2.paradoxwikis.com
+2018-12-27 23:23:04,923-WARNING-Request error for website: https://ck2.paradoxwikis.com
+2018-12-27 23:23:04,923-INFO-Now processing: https://www.robomow.com
+2018-12-27 23:23:11,105-WARNING-Request error for website: https://www.robomow.com
+2018-12-27 23:23:11,105-INFO-Now processing: https://www.ucsusa.org
+2018-12-27 23:23:18,420-WARNING-Request error for website: https://www.ucsusa.org
+2018-12-27 23:23:18,420-INFO-Now processing: https://www.vogelwarte.ch
+2018-12-28 00:27:31,463-INFO-Now processing: https://forums.cpanel.net
+2018-12-28 00:27:37,486-WARNING-Failed request for: https://forums.cpanel.net, reason: 200 OK	, skipping...
+2018-12-28 00:27:37,495-INFO-py raw cap complete. 0 out of 160 failed
+2018-12-28 00:31:01,696-INFO-Now processing: https://forums.cpanel.net
+2018-12-28 00:31:05,316-INFO-Now processing: https://www.newportmansions.org
+2018-12-28 00:33:16,693-WARNING-Failed request for: https://www.newportmansions.org, reason: java.net.SocketException: Connection reset, skipping...
+2018-12-28 00:33:16,725-INFO-Now processing: https://dpeaflcio.org
+2018-12-28 00:33:18,296-WARNING-Failed request for: https://dpeaflcio.org, reason: No SSLv3 support, skipping...
+2018-12-28 00:33:18,526-INFO-Now processing: https://collections.museumvictoria.com.au
+2018-12-28 00:33:20,933-INFO-Now processing: https://www.iep.utm.edu
+2018-12-28 00:33:22,516-WARNING-Failed request for: https://www.iep.utm.edu, reason: No SSLv3 support, skipping...
+2018-12-28 00:33:22,553-INFO-Now processing: https://bestapples.com
+2018-12-28 00:33:26,722-INFO-Now processing: https://australianmuseum.net.au
+2018-12-28 00:33:27,872-WARNING-Failed request for: https://australianmuseum.net.au, reason: No SSLv3 support, skipping...
+2018-12-28 00:33:27,918-INFO-Now processing: https://www.surette-realestate.com
+2018-12-28 00:33:40,976-INFO-Now processing: https://www.surette-realestate.com
+2018-12-28 00:33:53,526-INFO-Now processing: https://www.pnb.org
+2018-12-28 00:33:59,516-INFO-Now processing: https://newsroom.cisco.com
+2018-12-28 00:34:01,616-WARNING-Failed request for: https://newsroom.cisco.com, reason: HTTP/1.1 400 Bad Request, skipping...
+2018-12-28 00:34:01,663-INFO-Now processing: https://www.robbinschevy.co
+2018-12-28 00:34:02,983-WARNING-Failed request for: https://www.robbinschevy.co, reason: No SSLv3 support, skipping...
+2018-12-28 00:34:03,056-INFO-Now processing: https://thesefootballtimes.co
+2018-12-28 00:34:10,376-INFO-Now processing: https://imm.medicina.ulisboa.pt
+2018-12-28 00:34:13,033-WARNING-Failed request for: https://imm.medicina.ulisboa.pt, reason: HTTP/1.1 400 Bad Request, skipping...
+2018-12-28 00:34:13,103-INFO-Now processing: https://neosmart.net
+2018-12-28 00:34:14,287-WARNING-Failed request for: https://neosmart.net, reason: No SSLv3 support, skipping...
+2018-12-28 00:34:14,501-INFO-Now processing: https://danci.911cha.com
+2018-12-28 00:35:32,413-WARNING-Failed request for: https://danci.911cha.com, reason: HTTP/1.1 404 Not Found, skipping...
+2018-12-28 00:35:32,465-INFO-Now processing: https://danci.911cha.com
+2018-12-28 00:36:50,205-WARNING-Failed request for: https://danci.911cha.com, reason: HTTP/1.1 404 Not Found, skipping...
+2018-12-28 00:36:50,285-INFO-Now processing: https://www.narayana-verlag.com
+2018-12-28 00:36:52,826-WARNING-Failed request for: https://www.narayana-verlag.com, reason: HTTP/1.1 400 Bad Request, skipping...
+2018-12-28 00:36:52,912-INFO-Now processing: https://recorder.franklincountyohio.gov
+2018-12-28 00:38:54,955-WARNING-Failed request for: https://recorder.franklincountyohio.gov, reason: java.net.SocketException: Connection reset, skipping...
+2018-12-28 00:38:55,006-INFO-Now processing: https://www.digitalcommonwealth.org
+2018-12-28 00:39:03,166-INFO-Now processing: https://sponsorpitch.com
+2018-12-28 00:39:10,715-INFO-Now processing: https://forum.isthmus.com
+2018-12-28 00:39:18,345-INFO-Now processing: https://www.nihadc.com
+2018-12-28 00:39:21,676-INFO-Now processing: https://www.e-jmd.org
+2018-12-28 00:39:24,112-INFO-Now processing: https://www.separations.asia.tosohbioscience.com
+2018-12-28 00:41:36,193-WARNING-Failed request for: https://www.separations.asia.tosohbioscience.com, reason: java.net.SocketException: Connection reset, skipping...
+2018-12-28 00:41:41,203-WARNING-Failure: Maximum retries exceeded for website https://www.separations.asia.tosohbioscience.com Skipping...
+2018-12-28 00:41:41,203-INFO-Now processing: https://www.e-sciencecentral.org
+2018-12-28 00:41:49,216-INFO-Now processing: https://iovs.arvojournals.org
+2018-12-28 00:41:52,505-INFO-Now processing: https://stellaris.paradoxwikis.com
+2018-12-28 00:41:54,026-WARNING-Failed request for: https://stellaris.paradoxwikis.com, reason: No SSLv3 support, skipping...
+2018-12-28 00:41:54,156-INFO-Now processing: https://developer.asperasoft.com
+2018-12-28 00:41:56,396-WARNING-Failed request for: https://developer.asperasoft.com, reason: HTTP/1.1 400 Bad Request, skipping...
+2018-12-28 00:41:56,477-INFO-Now processing: https://www.tourisme-alsace.com
+2018-12-28 00:41:59,006-WARNING-Failed request for: https://www.tourisme-alsace.com, reason: HTTP/1.1 400 Bad Request, skipping...
+2018-12-28 00:41:59,056-INFO-Now processing: https://www.cem-protection.com
+2018-12-28 00:42:00,506-WARNING-Failed request for: https://www.cem-protection.com, reason: No SSLv3 support, skipping...
+2018-12-28 00:42:00,676-INFO-Now processing: https://www.paulettesauve.com
+2018-12-28 00:42:03,466-INFO-Now processing: https://read.dukeupress.edu
+2018-12-28 00:42:07,712-INFO-Now processing: https://www.marketingsherpa.com
+2018-12-28 00:42:11,305-INFO-Now processing: https://jamanetwork.com
+2018-12-28 00:42:15,006-INFO-Now processing: https://www.ceemjournal.org
+2018-12-28 00:42:17,665-INFO-Now processing: https://www.tosohindia.com
+2018-12-28 00:44:32,706-WARNING-Failed request for: https://www.tosohindia.com, reason: java.net.SocketException: Connection reset, skipping...
+2018-12-28 00:44:37,722-WARNING-Failure: Maximum retries exceeded for website https://www.tosohindia.com Skipping...
+2018-12-28 00:44:37,722-INFO-Now processing: https://shop.hytest.fi
+2018-12-28 00:44:45,672-WARNING-Failed request for: https://shop.hytest.fi, reason: HTTP/1.1 301 Moved Permanently, skipping...
+2018-12-28 00:44:45,805-INFO-Now processing: https://www.j-stroke.org
+2018-12-28 00:44:48,303-INFO-Now processing: https://www.diagnostics.eu.tosohbioscience.com
+2018-12-28 00:47:01,176-WARNING-Failed request for: https://www.diagnostics.eu.tosohbioscience.com, reason: java.net.SocketException: Connection reset, skipping...
+2018-12-28 00:47:01,286-INFO-Now processing: https://gbtimes.com
+2018-12-28 00:47:03,533-WARNING-Failed request for: https://gbtimes.com, reason: HTTP/1.1 500 Internal Server Error, skipping...
+2018-12-28 00:47:03,625-INFO-Now processing: https://thecasswiki.net
+2018-12-28 00:47:04,974-WARNING-Failed request for: https://thecasswiki.net, reason: No SSLv3 support, skipping...
+2018-12-28 00:47:05,046-INFO-Now processing: https://ck2.paradoxwikis.com
+2018-12-28 00:47:06,945-WARNING-Failed request for: https://ck2.paradoxwikis.com, reason: No SSLv3 support, skipping...
+2018-12-28 00:47:07,144-INFO-Now processing: https://www.robomow.com
+2018-12-28 00:47:08,527-WARNING-Failed request for: https://www.robomow.com, reason: No SSLv3 support, skipping...
+2018-12-28 00:47:08,561-INFO-Now processing: https://www.ucsusa.org
+2018-12-28 00:47:11,662-INFO-Now processing: https://www.vogelwarte.ch
+2018-12-28 00:49:21,236-WARNING-Failed request for: https://www.vogelwarte.ch, reason: java.net.SocketException: Connection reset, skipping...
+2018-12-28 00:49:21,336-INFO-Now processing: https://ezcanvas.com
+2018-12-28 01:03:40,623-INFO-Now processing: https://forums.cpanel.net
+2018-12-28 01:03:43,905-INFO-Now processing: https://www.newportmansions.org
+2018-12-28 01:03:46,696-INFO-Now processing: https://dpeaflcio.org
+2018-12-28 01:03:47,723-INFO-Now processing: https://collections.museumvictoria.com.au
+2018-12-28 01:03:49,183-INFO-Now processing: https://www.iep.utm.edu
+2018-12-28 01:03:50,125-INFO-Now processing: https://bestapples.com
+2018-12-28 01:03:51,193-INFO-Now processing: https://australianmuseum.net.au
+2018-12-28 01:03:51,825-WARNING-Failed request for: https://australianmuseum.net.au, reason: curl: (35) error:14094410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure, skipping...
+2018-12-28 01:03:51,953-WARNING-Request error for website: https://australianmuseum.net.au
+2018-12-28 01:03:51,953-INFO-Now processing: https://www.surette-realestate.com
+2018-12-28 01:03:52,913-INFO-Now processing: https://www.surette-realestate.com
+2018-12-28 01:03:54,143-INFO-Now processing: https://www.pnb.org
+2018-12-28 01:03:56,972-INFO-Now processing: https://newsroom.cisco.com
+2018-12-28 01:04:00,086-INFO-Now processing: https://www.robbinschevy.co
+2018-12-28 01:04:00,943-INFO-Now processing: https://thesefootballtimes.co
+2018-12-28 01:04:02,026-INFO-Now processing: https://imm.medicina.ulisboa.pt
+2018-12-28 01:04:04,257-INFO-Now processing: https://neosmart.net
+2018-12-28 01:04:05,076-INFO-Now processing: https://danci.911cha.com
+2018-12-28 01:04:07,826-WARNING-Request error for website: https://danci.911cha.com
+2018-12-28 01:04:07,826-INFO-Now processing: https://danci.911cha.com
+2018-12-28 01:04:10,142-WARNING-Request error for website: https://danci.911cha.com
+2018-12-28 01:04:10,142-INFO-Now processing: https://www.narayana-verlag.com
+2018-12-28 01:04:11,666-INFO-Now processing: https://recorder.franklincountyohio.gov
+2018-12-28 01:04:13,594-INFO-Now processing: https://www.digitalcommonwealth.org
+2018-12-28 01:04:15,186-INFO-Now processing: https://sponsorpitch.com
+2018-12-28 01:04:16,836-WARNING-Request error for website: https://sponsorpitch.com
+2018-12-28 01:04:16,843-INFO-Now processing: https://forum.isthmus.com
+2018-12-28 01:04:18,926-INFO-Now processing: https://www.nihadc.com
+2018-12-28 01:04:22,467-INFO-Now processing: https://www.e-jmd.org
+2018-12-28 01:04:23,853-WARNING-Request error for website: https://www.e-jmd.org
+2018-12-28 01:04:23,856-INFO-Now processing: https://www.separations.asia.tosohbioscience.com
+2018-12-28 01:04:27,096-WARNING-Request error for website: https://www.separations.asia.tosohbioscience.com
+2018-12-28 01:04:27,096-INFO-Now processing: https://www.e-sciencecentral.org
+2018-12-28 01:04:29,806-WARNING-Request error for website: https://www.e-sciencecentral.org
+2018-12-28 01:04:29,806-INFO-Now processing: https://iovs.arvojournals.org
+2018-12-28 01:04:32,533-INFO-Now processing: https://stellaris.paradoxwikis.com
+2018-12-28 01:04:33,243-INFO-Now processing: https://developer.asperasoft.com
+2018-12-28 01:04:35,305-INFO-Now processing: https://www.tourisme-alsace.com
+2018-12-28 01:04:36,636-INFO-Now processing: https://www.cem-protection.com
+2018-12-28 01:04:37,483-INFO-Now processing: https://www.paulettesauve.com
+2018-12-28 01:04:38,573-INFO-Now processing: https://read.dukeupress.edu
+2018-12-28 01:04:40,722-INFO-Now processing: https://www.marketingsherpa.com
+2018-12-28 01:04:43,236-INFO-Now processing: https://jamanetwork.com
+2018-12-28 01:04:45,853-INFO-Now processing: https://www.ceemjournal.org
+2018-12-28 01:04:47,453-WARNING-Request error for website: https://www.ceemjournal.org
+2018-12-28 01:04:47,453-INFO-Now processing: https://www.tosohindia.com
+2018-12-28 01:04:50,626-INFO-Now processing: https://shop.hytest.fi
+2018-12-28 01:04:52,354-INFO-Now processing: https://www.j-stroke.org
+2018-12-28 01:04:54,123-INFO-Now processing: https://www.diagnostics.eu.tosohbioscience.com
+2018-12-28 01:04:57,295-INFO-Now processing: https://gbtimes.com
+2018-12-28 01:04:58,743-INFO-Now processing: https://thecasswiki.net
+2018-12-28 01:04:59,604-INFO-Now processing: https://ck2.paradoxwikis.com
+2018-12-28 01:05:00,345-INFO-Now processing: https://www.robomow.com
+2018-12-28 01:05:01,636-INFO-Now processing: https://www.ucsusa.org
+2018-12-28 01:05:03,695-WARNING-Request error for website: https://www.ucsusa.org
+2018-12-28 01:05:03,695-INFO-Now processing: https://www.vogelwarte.ch
+2018-12-28 01:05:05,472-INFO-Now processing: https://ezcanvas.com
+2018-12-28 01:05:06,836-INFO-Now processing: https://askaquestionto.us
+2018-12-28 01:05:08,066-INFO-Now processing: https://www.rushcard.co
+2018-12-28 01:05:21,523-WARNING-Failure: Maximum retries exceeded for website https://www.rushcard.co Skipping...
+2018-12-28 01:05:21,523-INFO-Now processing: https://www.cdfa.ca.gov
+2018-12-28 01:05:25,483-INFO-Now processing: https://www.mevaccine.org
+2018-12-28 01:05:27,255-INFO-Now processing: https://www.aaos.org
+2018-12-28 01:05:28,793-INFO-Now processing: https://s2018.siggraph.org
+2018-12-28 01:05:29,756-INFO-Now processing: https://www.gsa.europa.eu
+2018-12-28 01:05:31,243-INFO-Now processing: https://www.pma.com
+2018-12-28 01:05:32,395-INFO-Now processing: https://norsafe.com
+2018-12-28 01:05:34,616-INFO-Now processing: https://pubs.geoscienceworld.org
+2018-12-28 01:05:36,406-INFO-Now processing: https://gq.pgi.gov.pl
+2018-12-28 01:05:37,516-INFO-Now processing: https://www.ajas.info
+2018-12-28 01:05:39,256-INFO-Now processing: https://www.quikrete.com
+2018-12-28 01:05:42,415-INFO-Now processing: https://starklibrary.org
+2018-12-28 01:05:45,045-INFO-Now processing: https://www.a1corp.com.sg
+2018-12-28 01:05:45,526-WARNING-Request error for website: https://www.a1corp.com.sg
+2018-12-28 01:05:45,526-INFO-Now processing: https://www.str.org
+2018-12-28 01:05:47,986-WARNING-Request error for website: https://www.str.org
+2018-12-28 01:05:47,986-INFO-Now processing: https://leader.pubs.asha.org
+2018-12-28 01:05:48,725-WARNING-Failed request for: https://leader.pubs.asha.org, reason: curl: (35) error:14094410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure, skipping...
+2018-12-28 01:05:48,731-WARNING-Request error for website: https://leader.pubs.asha.org
+2018-12-28 01:05:48,731-INFO-Now processing: https://parkinson.org
+2018-12-28 01:05:52,236-WARNING-Request error for website: https://parkinson.org
+2018-12-28 01:05:52,236-INFO-Now processing: https://mayfieldclinic.com
+2018-12-28 01:05:54,493-INFO-Now processing: https://www.thomsonbiketours.com
+2018-12-28 01:05:56,151-INFO-Now processing: https://www.rhs.org.uk
+2018-12-28 01:05:59,863-INFO-Now processing: https://www.medicines.org.uk
+2018-12-28 01:06:01,271-INFO-Now processing: https://www.mmv.org
+2018-12-28 01:06:04,513-INFO-Now processing: https://www.iwh.on.ca
+2018-12-28 01:06:07,547-INFO-Now processing: https://educationendowmentfoundation.org.uk
+2018-12-28 01:06:10,216-INFO-Now processing: https://www.docsquiffy.co
+2018-12-28 01:07:00,683-INFO-Now processing: https://elcajon.gwfathom.co
+2018-12-28 01:07:02,205-INFO-Now processing: https://glean.info
+2018-12-28 01:07:05,606-WARNING-Request error for website: https://glean.info
+2018-12-28 01:07:05,606-INFO-Now processing: https://www.gwct.org.uk
+2018-12-28 01:07:09,455-INFO-Now processing: https://www.onlalu.com
+2018-12-28 01:07:12,356-INFO-Now processing: https://www.spandidos-publications.com
+2018-12-28 01:07:14,166-INFO-Now processing: https://en.uesp.net
+2018-12-28 01:07:15,703-INFO-Now processing: https://www.arthurconandoyle.com
+2018-12-28 01:07:17,046-WARNING-Request error for website: https://www.arthurconandoyle.com
+2018-12-28 01:07:17,046-INFO-Now processing: https://www.endruntechnologies.com
+2018-12-28 01:07:18,496-INFO-Now processing: https://www.logmein.co
+2018-12-28 01:07:25,896-WARNING-Failure: Maximum retries exceeded for website https://www.logmein.co Skipping...
+2018-12-28 01:07:25,896-INFO-Now processing: https://www.stpatricksfestival.ie
+2018-12-28 01:07:27,445-INFO-Now processing: https://www.cairn.info
+2018-12-28 01:07:29,116-INFO-Now processing: https://www.persee.fr
+2018-12-28 01:07:35,186-INFO-Now processing: https://www.fsco.gov.on.ca
+2018-12-28 01:07:36,946-INFO-Now processing: https://www.123teachme.com
+2018-12-28 01:07:38,565-INFO-Now processing: https://sites.fas.harvard.edu
+2018-12-28 01:07:40,306-INFO-Now processing: https://esami.unipi.it
+2018-12-28 01:07:42,087-INFO-Now processing: https://www.djguide.nl
+2018-12-28 01:07:43,533-INFO-Now processing: https://www.rettie.co.uk
+2018-12-28 01:07:44,346-WARNING-Failed request for: https://www.rettie.co.uk, reason: curl: (35) error:14094410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure, skipping...
+2018-12-28 01:07:44,455-WARNING-Request error for website: https://www.rettie.co.uk
+2018-12-28 01:07:44,455-INFO-Now processing: https://www.crwflags.com
+2018-12-28 01:07:46,246-INFO-Now processing: https://www.matrimonialsindia.com
+2018-12-28 01:07:48,563-INFO-Now processing: https://www.pothole.info
+2018-12-28 01:07:54,010-WARNING-Request error for website: https://www.pothole.info
+2018-12-28 01:07:54,010-INFO-Now processing: https://www.avs.org
+2018-12-28 01:07:57,957-INFO-Now processing: https://www.element-it.com
+2018-12-28 01:07:59,606-INFO-Now processing: https://casper.berkeley.edu
+2018-12-28 01:08:00,423-WARNING-Failed request for: https://casper.berkeley.edu, reason: curl: (35) error:14094410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure, skipping...
+2018-12-28 01:08:00,426-WARNING-Request error for website: https://casper.berkeley.edu
+2018-12-28 01:08:00,426-INFO-Now processing: https://www.zeroaggressionproject.org
+2018-12-28 01:08:03,506-WARNING-Request error for website: https://www.zeroaggressionproject.org
+2018-12-28 01:08:03,506-INFO-Now processing: https://www.arabianhorses.org
+2018-12-28 01:08:05,456-INFO-Now processing: https://www.butfootballclub.fr
+2018-12-28 01:08:06,366-WARNING-Failed request for: https://www.butfootballclub.fr, reason: curl: (35) error:14094410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure, skipping...
+2018-12-28 01:08:06,383-WARNING-Request error for website: https://www.butfootballclub.fr
+2018-12-28 01:08:06,383-INFO-Now processing: https://www.industrystock.com
+2018-12-28 01:08:07,473-INFO-Now processing: https://www.1life.co.za
+2018-12-28 01:08:11,956-INFO-Now processing: https://wiki.openstack.org
+2018-12-28 01:08:13,276-INFO-Now processing: https://www.paycheckrecords.co
+2018-12-28 01:08:14,796-INFO-Now processing: https://www.egnyte.co
+2018-12-28 01:08:19,346-INFO-Now processing: https://www.wilsonsleather.co
+2018-12-28 01:08:20,977-INFO-Now processing: https://www.dolomiti.org
+2018-12-28 01:08:23,016-INFO-Now processing: https://www.cifor.org
+2018-12-28 01:08:25,274-WARNING-Request error for website: https://www.cifor.org
+2018-12-28 01:08:25,274-INFO-Now processing: https://www.ks.uiuc.edu
+2018-12-28 01:08:28,780-INFO-Now processing: https://incubator.duolingo.co
+2018-12-28 01:08:47,768-INFO-Now processing: https://www.appliancewhse.co
+2018-12-28 01:09:11,063-INFO-Now processing: https://www.waveapps.co
+2018-12-28 01:09:12,690-INFO-Now processing: https://www.tsw.com
+2018-12-28 01:09:14,679-INFO-Now processing: https://www.inpex.co.jp
+2018-12-28 01:09:15,644-WARNING-Request error for website: https://www.inpex.co.jp
+2018-12-28 01:09:15,644-INFO-Now processing: https://www.inpex.co.jp
+2018-12-28 01:09:16,603-WARNING-Request error for website: https://www.inpex.co.jp
+2018-12-28 01:09:16,603-INFO-Now processing: https://www.fossilera.com
+2018-12-28 01:09:19,421-INFO-Now processing: https://www.thelindquistgroup.com
+2018-12-28 01:09:21,443-INFO-Now processing: https://cabrillo.instructure.co
+2018-12-28 01:09:23,163-INFO-Now processing: https://www.visitsanantonio.co
+2018-12-28 01:09:24,551-INFO-Now processing: https://pangea.stanford.edu
+2018-12-28 01:09:25,924-INFO-Now processing: https://www.singaporeair.co
+2018-12-28 01:09:30,267-INFO-Now processing: https://www.iaindale.com
+2018-12-28 01:09:31,043-INFO-Now processing: https://www.cancercenter.com
+2018-12-28 01:09:33,033-INFO-Now processing: https://www.christiancourier.com
+2018-12-28 01:09:35,065-INFO-Now processing: https://www.care2.com
+2018-12-28 01:09:37,260-INFO-Now processing: https://ari.nus.edu.sg
+2018-12-28 01:09:37,874-WARNING-Request error for website: https://ari.nus.edu.sg
+2018-12-28 01:09:37,874-INFO-Now processing: https://www.dot.ny.gov
+2018-12-28 01:09:38,779-WARNING-Failed request for: https://www.dot.ny.gov, reason: curl: (35) error:14094410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure, skipping...
+2018-12-28 01:09:38,794-WARNING-Request error for website: https://www.dot.ny.gov
+2018-12-28 01:09:38,794-INFO-Now processing: https://www.lenntech.com
+2018-12-28 01:09:40,843-INFO-Now processing: https://www.burnabynow.com
+2018-12-28 01:09:41,587-WARNING-Failed request for: https://www.burnabynow.com, reason: curl: (35) error:14094410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure, skipping...
+2018-12-28 01:09:41,603-WARNING-Request error for website: https://www.burnabynow.com
+2018-12-28 01:09:41,603-INFO-Now processing: https://www.bitzer.de
+2018-12-28 01:09:43,180-INFO-Now processing: https://www.cairn-int.info
+2018-12-28 01:09:44,960-INFO-Now processing: https://kb.osu.edu
+2018-12-28 01:09:46,131-INFO-Now processing: https://www.ilae.org
+2018-12-28 01:09:47,063-INFO-Now processing: https://www.stripes.com
+2018-12-28 01:09:50,723-WARNING-Request error for website: https://www.stripes.com
+2018-12-28 01:09:50,723-INFO-Now processing: https://www.pamgolding.co.za
+2018-12-28 01:09:55,545-INFO-Now processing: https://www.bethinking.org
+2018-12-28 01:09:56,222-INFO-Now processing: https://wellcomelibrary.org
+2018-12-28 01:10:02,528-INFO-Now processing: https://www.claypaky.it
+2018-12-28 01:10:03,474-INFO-Now processing: https://www.gamebox.com
+2018-12-28 01:10:06,914-WARNING-Request error for website: https://www.gamebox.com
+2018-12-28 01:10:06,914-INFO-Now processing: https://www.britishmuseum.org
+2018-12-28 01:10:09,140-INFO-Now processing: https://www.sasw.org.sg
+2018-12-28 01:10:10,464-INFO-Now processing: https://www.sup.org
+2018-12-28 01:10:12,033-INFO-Now processing: https://www.dealstreetasia.com
+2018-12-28 01:10:12,574-INFO-Now processing: https://www.e-crt.org
+2018-12-28 01:10:15,106-WARNING-Request error for website: https://www.e-crt.org
+2018-12-28 01:10:15,106-INFO-Now processing: https://www.kaushik.net
+2018-12-28 01:10:17,104-INFO-Now processing: https://freshdelmonte.co
+2018-12-28 01:10:18,167-INFO-Now processing: https://theodora.com
+2018-12-28 01:10:22,624-INFO-Now processing: https://wikisaga.hi.is
+2018-12-28 01:10:23,692-INFO-Now processing: https://readers.english.com
+2018-12-28 01:10:25,371-WARNING-Request error for website: https://readers.english.com
+2018-12-28 01:10:25,371-INFO-Now processing: https://readers.english.com
+2018-12-28 01:10:27,444-WARNING-Request error for website: https://readers.english.com
+2018-12-28 01:10:27,451-INFO-Now processing: https://www.marathondumedoc.com
+2018-12-28 01:10:28,796-INFO-Now processing: https://docassas.u-paris2.fr
+2018-12-28 01:10:30,445-INFO-Now processing: https://www.seat61.com
+2018-12-28 01:10:33,291-INFO-Now processing: https://www.sail-world.com
+2018-12-28 01:10:50,835-INFO-Now processing: https://web.cn.edu
+2018-12-28 01:10:52,601-INFO-Now processing: https://chopra.com
+2018-12-28 01:10:55,191-WARNING-Request error for website: https://chopra.com
+2018-12-28 01:10:55,191-INFO-Now processing: https://groupees.com
+2018-12-28 01:10:56,776-INFO-Now processing: https://groupees.com
+2018-12-28 01:10:58,315-INFO-Now processing: https://www.tccb.gov.tr
+2018-12-28 01:11:00,541-WARNING-Request error for website: https://www.tccb.gov.tr
+2018-12-28 01:11:00,541-INFO-Now processing: https://www.geolsoc.org.uk
+2018-12-28 01:11:03,835-INFO-py raw cap complete. 2 out of 160 failed
+2018-12-28 16:31:34,502-INFO-Now processing: https://forums.cpanel.net
+2018-12-28 16:31:35,016-WARNING-Request error for website: https://forums.cpanel.net
+2018-12-28 16:31:35,016-INFO-Now processing: https://www.newportmansions.org
+2018-12-28 16:31:35,062-WARNING-Request error for website: https://www.newportmansions.org
+2018-12-28 16:31:35,062-INFO-Now processing: https://dpeaflcio.org
+2018-12-28 16:31:35,105-WARNING-Request error for website: https://dpeaflcio.org
+2018-12-28 16:31:35,105-INFO-Now processing: https://collections.museumvictoria.com.au
+2018-12-28 16:31:35,142-WARNING-Request error for website: https://collections.museumvictoria.com.au
+2018-12-28 16:31:35,142-INFO-Now processing: https://www.iep.utm.edu
+2018-12-28 16:31:35,202-WARNING-Request error for website: https://www.iep.utm.edu
+2018-12-28 16:31:35,202-INFO-Now processing: https://bestapples.com
+2018-12-28 16:31:35,245-WARNING-Request error for website: https://bestapples.com
+2018-12-28 16:31:35,245-INFO-Now processing: https://australianmuseum.net.au
+2018-12-28 16:31:35,291-WARNING-Request error for website: https://australianmuseum.net.au
+2018-12-28 16:31:35,291-INFO-Now processing: https://www.surette-realestate.com
+2018-12-28 16:31:35,331-WARNING-Request error for website: https://www.surette-realestate.com
+2018-12-28 16:31:35,331-INFO-Now processing: https://www.surette-realestate.com
+2018-12-28 16:31:35,371-WARNING-Request error for website: https://www.surette-realestate.com
+2018-12-28 16:31:35,371-INFO-Now processing: https://www.pnb.org
+2018-12-28 16:31:35,434-WARNING-Request error for website: https://www.pnb.org
+2018-12-28 16:31:35,434-INFO-Now processing: https://newsroom.cisco.com
+2018-12-28 16:31:35,472-WARNING-Request error for website: https://newsroom.cisco.com
+2018-12-28 16:31:35,472-INFO-Now processing: https://www.robbinschevy.co
+2018-12-28 16:31:35,514-WARNING-Request error for website: https://www.robbinschevy.co
+2018-12-28 16:31:35,514-INFO-Now processing: https://thesefootballtimes.co
+2018-12-28 16:31:35,555-WARNING-Request error for website: https://thesefootballtimes.co
+2018-12-28 16:31:35,555-INFO-Now processing: https://imm.medicina.ulisboa.pt
+2018-12-28 16:31:35,704-WARNING-Request error for website: https://imm.medicina.ulisboa.pt
+2018-12-28 16:31:35,704-INFO-Now processing: https://neosmart.net
+2018-12-28 16:31:35,855-WARNING-Request error for website: https://neosmart.net
+2018-12-28 16:31:35,855-INFO-Now processing: https://danci.911cha.com
+2018-12-28 16:31:35,963-WARNING-Request error for website: https://danci.911cha.com
+2018-12-28 16:31:35,963-INFO-Now processing: https://danci.911cha.com
+2018-12-28 16:31:36,081-WARNING-Request error for website: https://danci.911cha.com
+2018-12-28 16:31:36,081-INFO-Now processing: https://www.narayana-verlag.com
+2018-12-28 16:31:36,215-WARNING-Request error for website: https://www.narayana-verlag.com
+2018-12-28 16:31:36,215-INFO-Now processing: https://recorder.franklincountyohio.gov
+2018-12-28 16:31:36,284-WARNING-Request error for website: https://recorder.franklincountyohio.gov
+2018-12-28 16:31:36,284-INFO-Now processing: https://www.digitalcommonwealth.org
+2018-12-28 16:31:36,335-WARNING-Request error for website: https://www.digitalcommonwealth.org
+2018-12-28 16:31:36,335-INFO-Now processing: https://sponsorpitch.com
+2018-12-28 16:31:36,384-WARNING-Request error for website: https://sponsorpitch.com
+2018-12-28 16:31:36,384-INFO-Now processing: https://forum.isthmus.com
+2018-12-28 16:31:36,421-WARNING-Request error for website: https://forum.isthmus.com
+2018-12-28 16:31:36,421-INFO-Now processing: https://www.nihadc.com
+2018-12-28 16:31:36,465-WARNING-Request error for website: https://www.nihadc.com
+2018-12-28 16:31:36,465-INFO-Now processing: https://www.e-jmd.org
+2018-12-28 16:31:36,525-WARNING-Request error for website: https://www.e-jmd.org
+2018-12-28 16:31:36,525-INFO-Now processing: https://www.separations.asia.tosohbioscience.com
+2018-12-28 16:31:36,605-WARNING-Request error for website: https://www.separations.asia.tosohbioscience.com
+2018-12-28 16:31:36,605-INFO-Now processing: https://www.e-sciencecentral.org
+2018-12-28 16:31:36,681-WARNING-Request error for website: https://www.e-sciencecentral.org
+2018-12-28 16:31:36,681-INFO-Now processing: https://iovs.arvojournals.org
+2018-12-28 16:31:36,712-WARNING-Request error for website: https://iovs.arvojournals.org
+2018-12-28 16:31:36,712-INFO-Now processing: https://stellaris.paradoxwikis.com
+2018-12-28 16:31:36,784-WARNING-Request error for website: https://stellaris.paradoxwikis.com
+2018-12-28 16:31:36,784-INFO-Now processing: https://developer.asperasoft.com
+2018-12-28 16:31:36,841-WARNING-Request error for website: https://developer.asperasoft.com
+2018-12-28 16:31:36,841-INFO-Now processing: https://www.tourisme-alsace.com
+2018-12-28 16:31:36,883-WARNING-Request error for website: https://www.tourisme-alsace.com
+2018-12-28 16:31:36,883-INFO-Now processing: https://www.cem-protection.com
+2018-12-28 16:31:36,934-WARNING-Request error for website: https://www.cem-protection.com
+2018-12-28 16:31:36,934-INFO-Now processing: https://www.paulettesauve.com
+2018-12-28 16:31:37,222-WARNING-Request error for website: https://www.paulettesauve.com
+2018-12-28 16:31:37,222-INFO-Now processing: https://read.dukeupress.edu
+2018-12-28 16:31:37,292-WARNING-Request error for website: https://read.dukeupress.edu
+2018-12-28 16:31:37,292-INFO-Now processing: https://www.marketingsherpa.com
+2018-12-28 16:31:37,383-WARNING-Request error for website: https://www.marketingsherpa.com
+2018-12-28 16:31:37,383-INFO-Now processing: https://jamanetwork.com
+2018-12-28 16:31:37,442-WARNING-Request error for website: https://jamanetwork.com
+2018-12-28 16:31:37,442-INFO-Now processing: https://www.ceemjournal.org
+2018-12-28 16:31:37,525-WARNING-Request error for website: https://www.ceemjournal.org
+2018-12-28 16:31:37,525-INFO-Now processing: https://www.tosohindia.com
+2018-12-28 16:31:37,605-WARNING-Request error for website: https://www.tosohindia.com
+2018-12-28 16:31:37,605-INFO-Now processing: https://shop.hytest.fi
+2018-12-28 16:31:37,692-WARNING-Request error for website: https://shop.hytest.fi
+2018-12-28 16:31:37,692-INFO-Now processing: https://www.j-stroke.org
+2018-12-28 16:31:37,770-WARNING-Request error for website: https://www.j-stroke.org
+2018-12-28 16:31:37,770-INFO-Now processing: https://www.diagnostics.eu.tosohbioscience.com
+2018-12-28 16:31:37,835-WARNING-Request error for website: https://www.diagnostics.eu.tosohbioscience.com
+2018-12-28 16:31:37,835-INFO-Now processing: https://gbtimes.com
+2018-12-28 16:31:37,905-WARNING-Request error for website: https://gbtimes.com
+2018-12-28 16:31:37,911-INFO-Now processing: https://thecasswiki.net
+2018-12-28 16:31:37,965-WARNING-Request error for website: https://thecasswiki.net
+2018-12-28 16:31:37,965-INFO-Now processing: https://ck2.paradoxwikis.com
+2018-12-28 16:31:38,062-WARNING-Request error for website: https://ck2.paradoxwikis.com
+2018-12-28 16:31:38,062-INFO-Now processing: https://www.robomow.com
+2018-12-28 16:31:38,115-WARNING-Request error for website: https://www.robomow.com
+2018-12-28 16:31:38,115-INFO-Now processing: https://www.ucsusa.org
+2018-12-28 16:31:38,162-WARNING-Request error for website: https://www.ucsusa.org
+2018-12-28 16:31:38,162-INFO-Now processing: https://www.vogelwarte.ch
+2018-12-28 16:31:38,205-WARNING-Request error for website: https://www.vogelwarte.ch
+2018-12-28 16:31:38,205-INFO-Now processing: https://ezcanvas.com
+2018-12-28 16:31:38,252-WARNING-Request error for website: https://ezcanvas.com
+2018-12-28 16:31:38,252-INFO-Now processing: https://askaquestionto.us
+2018-12-28 16:31:38,294-WARNING-Request error for website: https://askaquestionto.us
+2018-12-28 16:31:38,294-INFO-Now processing: https://www.rushcard.co
+2018-12-28 16:31:38,591-WARNING-Request error for website: https://www.rushcard.co
+2018-12-28 16:31:38,591-INFO-Now processing: https://www.cdfa.ca.gov
+2018-12-28 16:31:38,632-WARNING-Request error for website: https://www.cdfa.ca.gov
+2018-12-28 16:31:38,632-INFO-Now processing: https://www.mevaccine.org
+2018-12-28 16:31:38,672-WARNING-Request error for website: https://www.mevaccine.org
+2018-12-28 16:31:38,672-INFO-Now processing: https://www.aaos.org
+2018-12-28 16:31:38,712-WARNING-Request error for website: https://www.aaos.org
+2018-12-28 16:31:38,712-INFO-Now processing: https://s2018.siggraph.org
+2018-12-28 16:31:38,752-WARNING-Request error for website: https://s2018.siggraph.org
+2018-12-28 16:31:38,752-INFO-Now processing: https://www.gsa.europa.eu
+2018-12-28 16:31:38,792-WARNING-Request error for website: https://www.gsa.europa.eu
+2018-12-28 16:31:38,792-INFO-Now processing: https://www.pma.com
+2018-12-28 16:31:38,821-WARNING-Request error for website: https://www.pma.com
+2018-12-28 16:31:38,821-INFO-Now processing: https://norsafe.com
+2018-12-28 16:31:38,865-WARNING-Request error for website: https://norsafe.com
+2018-12-28 16:31:38,865-INFO-Now processing: https://pubs.geoscienceworld.org
+2018-12-28 16:31:38,902-WARNING-Request error for website: https://pubs.geoscienceworld.org
+2018-12-28 16:31:38,902-INFO-Now processing: https://gq.pgi.gov.pl
+2018-12-28 16:31:38,942-WARNING-Request error for website: https://gq.pgi.gov.pl
+2018-12-28 16:31:38,942-INFO-Now processing: https://www.ajas.info
+2018-12-28 16:31:38,985-WARNING-Request error for website: https://www.ajas.info
+2018-12-28 16:31:38,985-INFO-Now processing: https://www.quikrete.com
+2018-12-28 16:31:39,025-WARNING-Request error for website: https://www.quikrete.com
+2018-12-28 16:31:39,025-INFO-Now processing: https://starklibrary.org
+2018-12-28 16:31:39,062-WARNING-Request error for website: https://starklibrary.org
+2018-12-28 16:31:39,062-INFO-Now processing: https://www.a1corp.com.sg
+2018-12-28 16:31:39,111-WARNING-Request error for website: https://www.a1corp.com.sg
+2018-12-28 16:31:39,111-INFO-Now processing: https://www.str.org
+2018-12-28 16:31:39,155-WARNING-Request error for website: https://www.str.org
+2018-12-28 16:31:39,155-INFO-Now processing: https://leader.pubs.asha.org
+2018-12-28 16:31:39,185-WARNING-Request error for website: https://leader.pubs.asha.org
+2018-12-28 16:31:39,185-INFO-Now processing: https://parkinson.org
+2018-12-28 16:31:39,232-WARNING-Request error for website: https://parkinson.org
+2018-12-28 16:31:39,232-INFO-Now processing: https://mayfieldclinic.com
+2018-12-28 16:31:39,275-WARNING-Request error for website: https://mayfieldclinic.com
+2018-12-28 16:31:39,275-INFO-Now processing: https://www.thomsonbiketours.com
+2018-12-28 16:31:39,345-WARNING-Request error for website: https://www.thomsonbiketours.com
+2018-12-28 16:31:39,345-INFO-Now processing: https://www.rhs.org.uk
+2018-12-28 16:31:39,415-WARNING-Request error for website: https://www.rhs.org.uk
+2018-12-28 16:31:39,415-INFO-Now processing: https://www.medicines.org.uk
+2018-12-28 16:31:39,485-WARNING-Request error for website: https://www.medicines.org.uk
+2018-12-28 16:31:39,485-INFO-Now processing: https://www.mmv.org
+2018-12-28 16:31:39,596-WARNING-Request error for website: https://www.mmv.org
+2018-12-28 16:31:39,596-INFO-Now processing: https://www.iwh.on.ca
+2018-12-28 16:31:39,655-WARNING-Request error for website: https://www.iwh.on.ca
+2018-12-28 16:31:39,655-INFO-Now processing: https://educationendowmentfoundation.org.uk
+2018-12-28 16:31:39,825-WARNING-Request error for website: https://educationendowmentfoundation.org.uk
+2018-12-28 16:31:39,825-INFO-Now processing: https://www.docsquiffy.co
+2018-12-28 16:31:39,912-WARNING-Request error for website: https://www.docsquiffy.co
+2018-12-28 16:31:39,915-INFO-Now processing: https://elcajon.gwfathom.co
+2018-12-28 16:31:39,962-WARNING-Request error for website: https://elcajon.gwfathom.co
+2018-12-28 16:31:39,962-INFO-Now processing: https://glean.info
+2018-12-28 16:31:40,075-WARNING-Request error for website: https://glean.info
+2018-12-28 16:31:40,075-INFO-Now processing: https://www.gwct.org.uk
+2018-12-28 16:31:40,171-WARNING-Request error for website: https://www.gwct.org.uk
+2018-12-28 16:31:40,171-INFO-Now processing: https://www.onlalu.com
+2018-12-28 16:31:40,215-WARNING-Request error for website: https://www.onlalu.com
+2018-12-28 16:31:40,215-INFO-Now processing: https://www.spandidos-publications.com
+2018-12-28 16:31:40,365-WARNING-Request error for website: https://www.spandidos-publications.com
+2018-12-28 16:31:40,365-INFO-Now processing: https://en.uesp.net
+2018-12-28 16:31:40,476-WARNING-Request error for website: https://en.uesp.net
+2018-12-28 16:31:40,476-INFO-Now processing: https://www.arthurconandoyle.com
+2018-12-28 16:31:40,552-WARNING-Request error for website: https://www.arthurconandoyle.com
+2018-12-28 16:31:40,552-INFO-Now processing: https://www.endruntechnologies.com
+2018-12-28 16:31:40,635-WARNING-Request error for website: https://www.endruntechnologies.com
+2018-12-28 16:31:40,635-INFO-Now processing: https://www.logmein.co
+2018-12-28 16:31:40,683-WARNING-Request error for website: https://www.logmein.co
+2018-12-28 16:31:40,683-INFO-Now processing: https://www.stpatricksfestival.ie
+2018-12-28 16:31:40,735-WARNING-Request error for website: https://www.stpatricksfestival.ie
+2018-12-28 16:31:40,735-INFO-Now processing: https://www.cairn.info
+2018-12-28 16:31:40,966-WARNING-Request error for website: https://www.cairn.info
+2018-12-28 16:31:40,966-INFO-Now processing: https://www.persee.fr
+2018-12-28 16:31:41,135-WARNING-Request error for website: https://www.persee.fr
+2018-12-28 16:31:41,135-INFO-Now processing: https://www.fsco.gov.on.ca
+2018-12-28 16:31:41,252-WARNING-Request error for website: https://www.fsco.gov.on.ca
+2018-12-28 16:31:41,252-INFO-Now processing: https://www.123teachme.com
+2018-12-28 16:31:41,336-WARNING-Request error for website: https://www.123teachme.com
+2018-12-28 16:31:41,336-INFO-Now processing: https://sites.fas.harvard.edu
+2018-12-28 16:31:41,414-WARNING-Request error for website: https://sites.fas.harvard.edu
+2018-12-28 16:31:41,414-INFO-Now processing: https://esami.unipi.it
+2018-12-28 16:31:41,652-WARNING-Request error for website: https://esami.unipi.it
+2018-12-28 16:31:41,653-INFO-Now processing: https://www.djguide.nl
+2018-12-28 16:31:41,935-WARNING-Request error for website: https://www.djguide.nl
+2018-12-28 16:31:41,935-INFO-Now processing: https://www.rettie.co.uk
+2018-12-28 16:31:42,164-WARNING-Request error for website: https://www.rettie.co.uk
+2018-12-28 16:31:42,164-INFO-Now processing: https://www.crwflags.com
+2018-12-28 16:31:42,305-WARNING-Request error for website: https://www.crwflags.com
+2018-12-28 16:31:42,305-INFO-Now processing: https://www.matrimonialsindia.com
+2018-12-28 16:31:42,465-WARNING-Request error for website: https://www.matrimonialsindia.com
+2018-12-28 16:31:42,465-INFO-Now processing: https://www.pothole.info
+2018-12-28 16:31:42,684-WARNING-Request error for website: https://www.pothole.info
+2018-12-28 16:31:42,684-INFO-Now processing: https://www.avs.org
+2018-12-28 16:31:42,874-WARNING-Request error for website: https://www.avs.org
+2018-12-28 16:31:42,874-INFO-Now processing: https://www.element-it.com
+2018-12-28 16:31:42,991-WARNING-Request error for website: https://www.element-it.com
+2018-12-28 16:31:42,991-INFO-Now processing: https://casper.berkeley.edu
+2018-12-28 16:31:43,362-WARNING-Request error for website: https://casper.berkeley.edu
+2018-12-28 16:31:43,362-INFO-Now processing: https://www.zeroaggressionproject.org
+2018-12-28 16:31:43,481-WARNING-Request error for website: https://www.zeroaggressionproject.org
+2018-12-28 16:31:43,481-INFO-Now processing: https://www.arabianhorses.org
+2018-12-28 16:31:43,732-WARNING-Request error for website: https://www.arabianhorses.org
+2018-12-28 16:31:43,732-INFO-Now processing: https://www.butfootballclub.fr
+2018-12-28 16:31:44,085-WARNING-Request error for website: https://www.butfootballclub.fr
+2018-12-28 16:31:44,085-INFO-Now processing: https://www.industrystock.com
+2018-12-28 16:31:44,375-WARNING-Request error for website: https://www.industrystock.com
+2018-12-28 16:31:44,375-INFO-Now processing: https://www.1life.co.za
+2018-12-28 16:31:44,461-WARNING-Request error for website: https://www.1life.co.za
+2018-12-28 16:31:44,461-INFO-Now processing: https://wiki.openstack.org
+2018-12-28 16:31:44,512-WARNING-Request error for website: https://wiki.openstack.org
+2018-12-28 16:31:44,512-INFO-Now processing: https://www.paycheckrecords.co
+2018-12-28 16:31:44,621-WARNING-Request error for website: https://www.paycheckrecords.co
+2018-12-28 16:31:44,621-INFO-Now processing: https://www.egnyte.co
+2018-12-28 16:31:44,705-WARNING-Request error for website: https://www.egnyte.co
+2018-12-28 16:31:44,705-INFO-Now processing: https://www.wilsonsleather.co
+2018-12-28 16:31:44,785-WARNING-Request error for website: https://www.wilsonsleather.co
+2018-12-28 16:31:44,785-INFO-Now processing: https://www.dolomiti.org
+2018-12-28 16:31:44,877-WARNING-Request error for website: https://www.dolomiti.org
+2018-12-28 16:31:44,877-INFO-Now processing: https://www.cifor.org
+2018-12-28 16:31:44,965-WARNING-Request error for website: https://www.cifor.org
+2018-12-28 16:31:44,965-INFO-Now processing: https://www.ks.uiuc.edu
+2018-12-28 16:31:45,022-WARNING-Request error for website: https://www.ks.uiuc.edu
+2018-12-28 16:31:45,022-INFO-Now processing: https://incubator.duolingo.co
+2018-12-28 16:31:45,085-WARNING-Request error for website: https://incubator.duolingo.co
+2018-12-28 16:31:45,085-INFO-Now processing: https://www.appliancewhse.co
+2018-12-28 16:31:45,142-WARNING-Request error for website: https://www.appliancewhse.co
+2018-12-28 16:31:45,142-INFO-Now processing: https://www.waveapps.co
+2018-12-28 16:31:45,265-WARNING-Request error for website: https://www.waveapps.co
+2018-12-28 16:31:45,265-INFO-Now processing: https://www.tsw.com
+2018-12-28 16:31:45,352-WARNING-Request error for website: https://www.tsw.com
+2018-12-28 16:31:45,352-INFO-Now processing: https://www.inpex.co.jp
+2018-12-28 16:31:45,401-WARNING-Request error for website: https://www.inpex.co.jp
+2018-12-28 16:31:45,401-INFO-Now processing: https://www.inpex.co.jp
+2018-12-28 16:31:45,442-WARNING-Request error for website: https://www.inpex.co.jp
+2018-12-28 16:31:45,445-INFO-Now processing: https://www.fossilera.com
+2018-12-28 16:31:45,514-WARNING-Request error for website: https://www.fossilera.com
+2018-12-28 16:31:45,522-INFO-Now processing: https://www.thelindquistgroup.com
+2018-12-28 16:31:45,564-WARNING-Request error for website: https://www.thelindquistgroup.com
+2018-12-28 16:31:45,564-INFO-Now processing: https://cabrillo.instructure.co
+2018-12-28 16:31:45,655-WARNING-Request error for website: https://cabrillo.instructure.co
+2018-12-28 16:31:45,655-INFO-Now processing: https://www.visitsanantonio.co
+2018-12-28 16:31:45,735-WARNING-Request error for website: https://www.visitsanantonio.co
+2018-12-28 16:31:45,735-INFO-Now processing: https://pangea.stanford.edu
+2018-12-28 16:31:45,815-WARNING-Request error for website: https://pangea.stanford.edu
+2018-12-28 16:31:45,821-INFO-Now processing: https://www.singaporeair.co
+2018-12-28 16:31:45,952-WARNING-Request error for website: https://www.singaporeair.co
+2018-12-28 16:31:45,952-INFO-Now processing: https://www.iaindale.com
+2018-12-28 16:31:46,022-WARNING-Request error for website: https://www.iaindale.com
+2018-12-28 16:31:46,022-INFO-Now processing: https://www.cancercenter.com
+2018-12-28 16:31:46,162-WARNING-Request error for website: https://www.cancercenter.com
+2018-12-28 16:31:46,162-INFO-Now processing: https://www.christiancourier.com
+2018-12-28 16:31:46,265-WARNING-Request error for website: https://www.christiancourier.com
+2018-12-28 16:31:46,265-INFO-Now processing: https://www.care2.com
+2018-12-28 16:31:46,335-WARNING-Request error for website: https://www.care2.com
+2018-12-28 16:31:46,335-INFO-Now processing: https://ari.nus.edu.sg
+2018-12-28 16:31:46,375-WARNING-Request error for website: https://ari.nus.edu.sg
+2018-12-28 16:31:46,375-INFO-Now processing: https://www.dot.ny.gov
+2018-12-28 16:31:46,425-WARNING-Request error for website: https://www.dot.ny.gov
+2018-12-28 16:31:46,425-INFO-Now processing: https://www.lenntech.com
+2018-12-28 16:31:46,482-WARNING-Request error for website: https://www.lenntech.com
+2018-12-28 16:31:46,482-INFO-Now processing: https://www.burnabynow.com
+2018-12-28 16:31:46,664-WARNING-Request error for website: https://www.burnabynow.com
+2018-12-28 16:31:46,664-INFO-Now processing: https://www.bitzer.de
+2018-12-28 16:31:46,792-WARNING-Request error for website: https://www.bitzer.de
+2018-12-28 16:31:46,792-INFO-Now processing: https://www.cairn-int.info
+2018-12-28 16:31:46,833-WARNING-Request error for website: https://www.cairn-int.info
+2018-12-28 16:31:46,833-INFO-Now processing: https://kb.osu.edu
+2018-12-28 16:31:46,885-WARNING-Request error for website: https://kb.osu.edu
+2018-12-28 16:31:46,885-INFO-Now processing: https://www.ilae.org
+2018-12-28 16:31:46,934-WARNING-Request error for website: https://www.ilae.org
+2018-12-28 16:31:46,934-INFO-Now processing: https://www.stripes.com
+2018-12-28 16:31:46,975-WARNING-Request error for website: https://www.stripes.com
+2018-12-28 16:31:46,975-INFO-Now processing: https://www.pamgolding.co.za
+2018-12-28 16:31:47,031-WARNING-Request error for website: https://www.pamgolding.co.za
+2018-12-28 16:31:47,031-INFO-Now processing: https://www.bethinking.org
+2018-12-28 16:31:47,134-WARNING-Request error for website: https://www.bethinking.org
+2018-12-28 16:31:47,134-INFO-Now processing: https://wellcomelibrary.org
+2018-12-28 16:31:47,192-WARNING-Request error for website: https://wellcomelibrary.org
+2018-12-28 16:31:47,192-INFO-Now processing: https://www.claypaky.it
+2018-12-28 16:31:47,233-WARNING-Request error for website: https://www.claypaky.it
+2018-12-28 16:31:47,233-INFO-Now processing: https://www.gamebox.com
+2018-12-28 16:31:47,302-WARNING-Request error for website: https://www.gamebox.com
+2018-12-28 16:31:47,302-INFO-Now processing: https://www.britishmuseum.org
+2018-12-28 16:31:47,346-WARNING-Request error for website: https://www.britishmuseum.org
+2018-12-28 16:31:47,346-INFO-Now processing: https://www.sasw.org.sg
+2018-12-28 16:31:47,392-WARNING-Request error for website: https://www.sasw.org.sg
+2018-12-28 16:31:47,392-INFO-Now processing: https://www.sup.org
+2018-12-28 16:31:47,449-WARNING-Request error for website: https://www.sup.org
+2018-12-28 16:31:47,450-INFO-Now processing: https://www.dealstreetasia.com
+2018-12-28 16:31:47,495-WARNING-Request error for website: https://www.dealstreetasia.com
+2018-12-28 16:31:47,495-INFO-Now processing: https://www.e-crt.org
+2018-12-28 16:31:47,533-WARNING-Request error for website: https://www.e-crt.org
+2018-12-28 16:31:47,533-INFO-Now processing: https://www.kaushik.net
+2018-12-28 16:31:47,642-WARNING-Request error for website: https://www.kaushik.net
+2018-12-28 16:31:47,642-INFO-Now processing: https://freshdelmonte.co
+2018-12-28 16:31:47,682-WARNING-Request error for website: https://freshdelmonte.co
+2018-12-28 16:31:47,682-INFO-Now processing: https://theodora.com
+2018-12-28 16:31:47,734-WARNING-Request error for website: https://theodora.com
+2018-12-28 16:31:47,734-INFO-Now processing: https://wikisaga.hi.is
+2018-12-28 16:31:47,814-WARNING-Request error for website: https://wikisaga.hi.is
+2018-12-28 16:31:47,814-INFO-Now processing: https://readers.english.com
+2018-12-28 16:31:47,855-WARNING-Request error for website: https://readers.english.com
+2018-12-28 16:31:47,855-INFO-Now processing: https://readers.english.com
+2018-12-28 16:31:48,015-WARNING-Request error for website: https://readers.english.com
+2018-12-28 16:31:48,015-INFO-Now processing: https://www.marathondumedoc.com
+2018-12-28 16:31:48,095-WARNING-Request error for website: https://www.marathondumedoc.com
+2018-12-28 16:31:48,095-INFO-Now processing: https://docassas.u-paris2.fr
+2018-12-28 16:31:48,272-WARNING-Request error for website: https://docassas.u-paris2.fr
+2018-12-28 16:31:48,272-INFO-Now processing: https://www.seat61.com
+2018-12-28 16:31:48,405-WARNING-Request error for website: https://www.seat61.com
+2018-12-28 16:31:48,405-INFO-Now processing: https://www.sail-world.com
+2018-12-28 16:31:48,554-WARNING-Request error for website: https://www.sail-world.com
+2018-12-28 16:31:48,554-INFO-Now processing: https://web.cn.edu
+2018-12-28 16:31:48,592-WARNING-Request error for website: https://web.cn.edu
+2018-12-28 16:31:48,596-INFO-Now processing: https://chopra.com
+2018-12-28 16:31:48,642-WARNING-Request error for website: https://chopra.com
+2018-12-28 16:31:48,642-INFO-Now processing: https://groupees.com
+2018-12-28 16:31:48,684-WARNING-Request error for website: https://groupees.com
+2018-12-28 16:31:48,684-INFO-Now processing: https://groupees.com
+2018-12-28 16:31:48,734-WARNING-Request error for website: https://groupees.com
+2018-12-28 16:31:48,734-INFO-Now processing: https://www.tccb.gov.tr
+2018-12-28 16:31:48,811-WARNING-Request error for website: https://www.tccb.gov.tr
+2018-12-28 16:31:48,815-INFO-Now processing: https://www.geolsoc.org.uk
+2018-12-28 16:31:48,865-WARNING-Request error for website: https://www.geolsoc.org.uk
+2018-12-28 16:39:01,952-INFO-Now processing: https://forums.cpanel.net
+2018-12-28 16:39:05,369-INFO-Now processing: https://www.newportmansions.org
+2018-12-28 16:39:08,563-INFO-Now processing: https://dpeaflcio.org
+2018-12-28 16:39:09,463-WARNING-Request error for website: https://dpeaflcio.org
+2018-12-28 16:39:09,464-INFO-Now processing: https://collections.museumvictoria.com.au
+2018-12-28 16:39:12,835-INFO-Now processing: https://www.iep.utm.edu
+2018-12-28 16:39:14,068-WARNING-Request error for website: https://www.iep.utm.edu
+2018-12-28 16:39:14,068-INFO-Now processing: https://bestapples.com
+2018-12-28 16:39:15,119-WARNING-Request error for website: https://bestapples.com
+2018-12-28 16:39:15,120-INFO-Now processing: https://australianmuseum.net.au
+2018-12-28 16:39:15,638-WARNING-Request error for website: https://australianmuseum.net.au
+2018-12-28 16:39:15,638-INFO-Now processing: https://www.surette-realestate.com
+2018-12-28 16:39:16,581-WARNING-Request error for website: https://www.surette-realestate.com
+2018-12-28 16:39:16,581-INFO-Now processing: https://www.surette-realestate.com
+2018-12-28 16:39:17,881-WARNING-Request error for website: https://www.surette-realestate.com
+2018-12-28 16:39:17,881-INFO-Now processing: https://www.pnb.org
+2018-12-28 16:39:21,250-INFO-Now processing: https://newsroom.cisco.com
+2018-12-28 16:39:24,873-INFO-Now processing: https://www.robbinschevy.co
+2018-12-28 16:39:25,587-WARNING-Request error for website: https://www.robbinschevy.co
+2018-12-28 16:39:25,587-INFO-Now processing: https://thesefootballtimes.co
+2018-12-28 16:39:26,483-WARNING-Request error for website: https://thesefootballtimes.co
+2018-12-28 16:39:26,484-INFO-Now processing: https://imm.medicina.ulisboa.pt
+2018-12-28 16:39:28,353-INFO-Now processing: https://neosmart.net
+2018-12-28 16:39:29,034-WARNING-Request error for website: https://neosmart.net
+2018-12-28 16:39:29,035-INFO-Now processing: https://danci.911cha.com
+2018-12-28 16:39:31,281-INFO-Now processing: https://danci.911cha.com
+2018-12-28 16:39:33,448-INFO-Now processing: https://www.narayana-verlag.com
+2018-12-28 16:39:35,303-INFO-Now processing: https://recorder.franklincountyohio.gov
+2018-12-28 16:39:37,187-INFO-Now processing: https://www.digitalcommonwealth.org
+2018-12-28 16:39:38,734-INFO-Now processing: https://sponsorpitch.com
+2018-12-28 16:39:40,408-INFO-Now processing: https://forum.isthmus.com
+2018-12-28 16:39:42,347-INFO-Now processing: https://www.nihadc.com
+2018-12-28 16:39:45,556-INFO-Now processing: https://www.e-jmd.org
+2018-12-28 16:39:46,933-INFO-Now processing: https://www.separations.asia.tosohbioscience.com
+2018-12-28 16:39:50,164-INFO-Now processing: https://www.e-sciencecentral.org
+2018-12-28 16:39:51,595-WARNING-Request error for website: https://www.e-sciencecentral.org
+2018-12-28 16:39:51,595-INFO-Now processing: https://iovs.arvojournals.org
+2018-12-28 16:39:53,334-WARNING-Request error for website: https://iovs.arvojournals.org
+2018-12-28 16:39:53,334-INFO-Now processing: https://stellaris.paradoxwikis.com
+2018-12-28 16:39:53,859-WARNING-Request error for website: https://stellaris.paradoxwikis.com
+2018-12-28 16:39:53,860-INFO-Now processing: https://developer.asperasoft.com
+2018-12-28 16:39:55,830-INFO-Now processing: https://www.tourisme-alsace.com
+2018-12-28 16:39:56,815-WARNING-Request error for website: https://www.tourisme-alsace.com
+2018-12-28 16:39:56,816-INFO-Now processing: https://www.cem-protection.com
+2018-12-28 16:39:57,520-WARNING-Request error for website: https://www.cem-protection.com
+2018-12-28 16:39:57,520-INFO-Now processing: https://www.paulettesauve.com
+2018-12-28 16:39:58,226-WARNING-Request error for website: https://www.paulettesauve.com
+2018-12-28 16:39:58,227-INFO-Now processing: https://read.dukeupress.edu
+2018-12-28 16:41:34,801-INFO-Now processing: https://forums.cpanel.net
+2018-12-28 16:41:38,036-INFO-Now processing: https://www.newportmansions.org
+2018-12-28 16:41:40,973-INFO-Now processing: https://dpeaflcio.org
+2018-12-28 16:41:41,874-WARNING-Request error for website: https://dpeaflcio.org
+2018-12-28 16:41:41,874-INFO-Now processing: https://collections.museumvictoria.com.au
+2018-12-28 16:41:43,422-INFO-Now processing: https://www.iep.utm.edu
+2018-12-28 16:41:44,289-WARNING-Request error for website: https://www.iep.utm.edu
+2018-12-28 16:41:44,289-INFO-Now processing: https://bestapples.com
+2018-12-28 16:41:45,450-WARNING-Request error for website: https://bestapples.com
+2018-12-28 16:41:45,451-INFO-Now processing: https://australianmuseum.net.au
+2018-12-28 16:41:46,184-WARNING-Request error for website: https://australianmuseum.net.au
+2018-12-28 16:41:46,184-INFO-Now processing: https://www.surette-realestate.com
+2018-12-28 16:41:47,454-WARNING-Request error for website: https://www.surette-realestate.com
+2018-12-28 16:41:47,454-INFO-Now processing: https://www.surette-realestate.com
+2018-12-28 16:41:48,369-WARNING-Request error for website: https://www.surette-realestate.com
+2018-12-28 16:41:48,369-INFO-Now processing: https://www.pnb.org
+2018-12-28 16:41:51,374-INFO-Now processing: https://newsroom.cisco.com
+2018-12-28 16:41:54,697-INFO-Now processing: https://www.robbinschevy.co
+2018-12-28 16:41:55,511-WARNING-Request error for website: https://www.robbinschevy.co
+2018-12-28 16:41:55,511-INFO-Now processing: https://thesefootballtimes.co
+2018-12-28 16:41:56,342-WARNING-Request error for website: https://thesefootballtimes.co
+2018-12-28 16:41:56,342-INFO-Now processing: https://imm.medicina.ulisboa.pt
+2018-12-28 16:41:58,256-INFO-Now processing: https://neosmart.net
+2018-12-28 16:41:58,937-WARNING-Request error for website: https://neosmart.net
+2018-12-28 16:41:58,938-INFO-Now processing: https://danci.911cha.com
+2018-12-28 16:42:01,138-INFO-Now processing: https://danci.911cha.com
+2018-12-28 16:42:03,355-INFO-Now processing: https://www.narayana-verlag.com
+2018-12-28 16:42:16,760-INFO-Now processing: https://recorder.franklincountyohio.gov
+2018-12-28 16:42:18,730-INFO-Now processing: https://www.digitalcommonwealth.org
+2018-12-28 16:42:20,430-INFO-Now processing: https://sponsorpitch.com
+2018-12-28 16:42:22,102-INFO-Now processing: https://forum.isthmus.com
+2018-12-28 16:42:24,232-INFO-Now processing: https://www.nihadc.com
+2018-12-28 16:42:28,520-INFO-Now processing: https://www.e-jmd.org
+2018-12-28 16:42:30,042-INFO-Now processing: https://www.separations.asia.tosohbioscience.com
+2018-12-28 16:42:33,062-INFO-Now processing: https://www.e-sciencecentral.org
+2018-12-28 16:42:34,587-WARNING-Request error for website: https://www.e-sciencecentral.org
+2018-12-28 16:42:34,587-INFO-Now processing: https://iovs.arvojournals.org
+2018-12-28 16:42:36,376-WARNING-Request error for website: https://iovs.arvojournals.org
+2018-12-28 16:42:36,376-INFO-Now processing: https://stellaris.paradoxwikis.com
+2018-12-28 16:42:36,966-WARNING-Request error for website: https://stellaris.paradoxwikis.com
+2018-12-28 16:42:36,966-INFO-Now processing: https://developer.asperasoft.com
+2018-12-28 16:42:38,985-INFO-Now processing: https://www.tourisme-alsace.com
+2018-12-28 16:42:39,996-WARNING-Request error for website: https://www.tourisme-alsace.com
+2018-12-28 16:42:39,997-INFO-Now processing: https://www.cem-protection.com
+2018-12-28 16:42:40,695-WARNING-Request error for website: https://www.cem-protection.com
+2018-12-28 16:42:40,695-INFO-Now processing: https://www.paulettesauve.com
+2018-12-28 16:42:41,757-WARNING-Request error for website: https://www.paulettesauve.com
+2018-12-28 16:42:41,757-INFO-Now processing: https://read.dukeupress.edu
+2018-12-28 16:42:44,093-WARNING-Request error for website: https://read.dukeupress.edu
+2018-12-28 16:42:44,093-INFO-Now processing: https://www.marketingsherpa.com
+2018-12-28 16:42:46,770-INFO-Now processing: https://jamanetwork.com
+2018-12-28 16:42:48,612-WARNING-Request error for website: https://jamanetwork.com
+2018-12-28 16:42:48,612-INFO-Now processing: https://www.ceemjournal.org
+2018-12-28 16:42:50,076-INFO-Now processing: https://www.tosohindia.com
+2018-12-28 16:42:53,970-INFO-Now processing: https://shop.hytest.fi
+2018-12-28 16:42:55,539-INFO-Now processing: https://www.j-stroke.org
+2018-12-28 16:42:57,921-INFO-Now processing: https://www.diagnostics.eu.tosohbioscience.com
+2018-12-28 16:43:01,582-INFO-Now processing: https://gbtimes.com
+2018-12-28 16:43:02,875-INFO-Now processing: https://thecasswiki.net
+2018-12-28 16:43:03,336-WARNING-Request error for website: https://thecasswiki.net
+2018-12-28 16:43:03,336-INFO-Now processing: https://ck2.paradoxwikis.com
+2018-12-28 16:43:03,938-WARNING-Request error for website: https://ck2.paradoxwikis.com
+2018-12-28 16:43:03,939-INFO-Now processing: https://www.robomow.com
+2018-12-28 16:43:04,674-WARNING-Request error for website: https://www.robomow.com
+2018-12-28 16:43:04,674-INFO-Now processing: https://www.ucsusa.org
+2018-12-28 16:43:06,284-INFO-Now processing: https://www.vogelwarte.ch
+2018-12-28 16:43:07,459-INFO-Now processing: https://ezcanvas.com
+2018-12-28 16:43:08,477-WARNING-Request error for website: https://ezcanvas.com
+2018-12-28 16:43:08,477-INFO-Now processing: https://askaquestionto.us
+2018-12-28 16:43:09,145-WARNING-Request error for website: https://askaquestionto.us
+2018-12-28 16:43:09,146-INFO-Now processing: https://www.rushcard.co
+2018-12-28 16:43:17,668-WARNING-Request error for website: https://www.rushcard.co
+2018-12-28 16:43:17,668-INFO-Now processing: https://www.cdfa.ca.gov
+2018-12-28 16:43:20,691-INFO-Now processing: https://www.mevaccine.org
+2018-12-28 16:43:22,434-INFO-Now processing: https://www.aaos.org
+2018-12-28 16:43:23,965-INFO-Now processing: https://s2018.siggraph.org
+2018-12-28 16:43:24,810-WARNING-Request error for website: https://s2018.siggraph.org
+2018-12-28 16:43:24,810-INFO-Now processing: https://www.gsa.europa.eu
+2018-12-28 16:43:26,126-WARNING-Request error for website: https://www.gsa.europa.eu
+2018-12-28 16:43:26,127-INFO-Now processing: https://www.pma.com
+2018-12-28 16:43:27,057-WARNING-Request error for website: https://www.pma.com
+2018-12-28 16:43:27,059-INFO-Now processing: https://norsafe.com
+2018-12-28 16:43:29,045-INFO-Now processing: https://pubs.geoscienceworld.org
+2018-12-28 16:43:30,860-WARNING-Request error for website: https://pubs.geoscienceworld.org
+2018-12-28 16:43:30,860-INFO-Now processing: https://gq.pgi.gov.pl
+2018-12-28 16:43:31,657-WARNING-Request error for website: https://gq.pgi.gov.pl
+2018-12-28 16:43:31,657-INFO-Now processing: https://www.ajas.info
+2018-12-28 16:43:33,356-WARNING-Request error for website: https://www.ajas.info
+2018-12-28 16:43:33,356-INFO-Now processing: https://www.quikrete.com
+2018-12-28 16:43:36,476-INFO-Now processing: https://starklibrary.org
+2018-12-28 16:43:38,707-INFO-Now processing: https://www.a1corp.com.sg
+2018-12-28 16:43:39,074-INFO-Now processing: https://www.str.org
+2018-12-28 16:43:41,285-INFO-Now processing: https://leader.pubs.asha.org
+2018-12-28 16:43:42,001-WARNING-Request error for website: https://leader.pubs.asha.org
+2018-12-28 16:43:42,001-INFO-Now processing: https://parkinson.org
+2018-12-28 16:43:49,794-INFO-Now processing: https://mayfieldclinic.com
+2018-12-28 16:43:51,538-INFO-Now processing: https://www.thomsonbiketours.com
+2018-12-28 16:43:53,018-INFO-Now processing: https://www.rhs.org.uk
+2018-12-28 16:43:57,875-INFO-Now processing: https://www.medicines.org.uk
+2018-12-28 16:43:59,035-INFO-Now processing: https://www.mmv.org
+2018-12-28 16:44:01,856-INFO-Now processing: https://www.iwh.on.ca
+2018-12-28 16:44:04,975-INFO-Now processing: https://educationendowmentfoundation.org.uk
+2018-12-28 16:44:07,671-INFO-Now processing: https://www.docsquiffy.co
+2018-12-28 16:44:08,935-WARNING-Request error for website: https://www.docsquiffy.co
+2018-12-28 16:44:08,936-INFO-Now processing: https://elcajon.gwfathom.co
+2018-12-28 16:44:10,208-WARNING-Request error for website: https://elcajon.gwfathom.co
+2018-12-28 16:44:10,209-INFO-Now processing: https://glean.info
+2018-12-28 16:44:14,237-INFO-Now processing: https://www.gwct.org.uk
+2018-12-28 16:44:29,380-INFO-Now processing: https://www.onlalu.com
+2018-12-28 16:44:32,178-INFO-Now processing: https://www.spandidos-publications.com
+2018-12-28 16:44:35,597-INFO-Now processing: https://en.uesp.net
+2018-12-28 16:44:36,961-INFO-Now processing: https://www.arthurconandoyle.com
+2018-12-28 16:44:38,561-INFO-Now processing: https://www.endruntechnologies.com
+2018-12-28 16:44:39,814-INFO-Now processing: https://www.logmein.co
+2018-12-28 16:44:42,591-WARNING-Request error for website: https://www.logmein.co
+2018-12-28 16:44:42,591-INFO-Now processing: https://www.stpatricksfestival.ie
+2018-12-28 16:44:43,293-WARNING-Request error for website: https://www.stpatricksfestival.ie
+2018-12-28 16:44:43,293-INFO-Now processing: https://www.cairn.info
+2018-12-28 16:44:44,437-WARNING-Request error for website: https://www.cairn.info
+2018-12-28 16:44:44,438-INFO-Now processing: https://www.persee.fr
+2018-12-28 16:44:50,008-INFO-Now processing: https://www.fsco.gov.on.ca
+2018-12-28 16:44:51,526-INFO-Now processing: https://www.123teachme.com
+2018-12-28 16:44:53,240-INFO-Now processing: https://sites.fas.harvard.edu
+2018-12-28 16:44:54,610-INFO-Now processing: https://esami.unipi.it
+2018-12-28 16:44:56,773-INFO-Now processing: https://www.djguide.nl
+2018-12-28 16:44:58,045-INFO-Now processing: https://www.rettie.co.uk
+2018-12-28 16:44:58,751-WARNING-Request error for website: https://www.rettie.co.uk
+2018-12-28 16:44:58,752-INFO-Now processing: https://www.crwflags.com
+2018-12-28 16:45:00,409-INFO-Now processing: https://www.matrimonialsindia.com
+2018-12-28 16:45:02,585-INFO-Now processing: https://www.pothole.info
+2018-12-28 16:45:06,296-INFO-Now processing: https://www.avs.org
+2018-12-28 16:45:09,621-INFO-Now processing: https://www.element-it.com
+2018-12-28 16:45:11,074-INFO-Now processing: https://casper.berkeley.edu
+2018-12-28 16:45:11,791-WARNING-Request error for website: https://casper.berkeley.edu
+2018-12-28 16:45:11,792-INFO-Now processing: https://www.zeroaggressionproject.org
+2018-12-28 16:45:15,248-INFO-Now processing: https://www.arabianhorses.org
+2018-12-28 16:45:18,573-INFO-Now processing: https://www.butfootballclub.fr
+2018-12-28 16:45:19,314-WARNING-Request error for website: https://www.butfootballclub.fr
+2018-12-28 16:45:19,314-INFO-Now processing: https://www.industrystock.com
+2018-12-28 16:45:20,172-WARNING-Request error for website: https://www.industrystock.com
+2018-12-28 16:45:20,172-INFO-Now processing: https://www.1life.co.za
+2018-12-28 16:45:47,318-INFO-Now processing: https://wiki.openstack.org
+2018-12-28 16:45:48,748-INFO-Now processing: https://www.paycheckrecords.co
+2018-12-28 16:45:50,976-WARNING-Request error for website: https://www.paycheckrecords.co
+2018-12-28 16:45:50,976-INFO-Now processing: https://www.egnyte.co
+2018-12-28 16:45:54,292-WARNING-Request error for website: https://www.egnyte.co
+2018-12-28 16:45:54,293-INFO-Now processing: https://www.wilsonsleather.co
+2018-12-28 16:45:55,634-WARNING-Request error for website: https://www.wilsonsleather.co
+2018-12-28 16:45:55,634-INFO-Now processing: https://www.dolomiti.org
+2018-12-28 16:45:57,441-INFO-Now processing: https://www.cifor.org
+2018-12-28 16:45:59,530-INFO-Now processing: https://www.ks.uiuc.edu
+2018-12-28 16:46:12,055-INFO-Now processing: https://incubator.duolingo.co
+2018-12-28 16:46:26,471-WARNING-Request error for website: https://incubator.duolingo.co
+2018-12-28 16:46:26,471-INFO-Now processing: https://www.appliancewhse.co
+2018-12-28 16:46:26,914-WARNING-Request error for website: https://www.appliancewhse.co
+2018-12-28 16:46:26,914-INFO-Now processing: https://www.waveapps.co
+2018-12-28 16:46:28,413-WARNING-Request error for website: https://www.waveapps.co
+2018-12-28 16:46:28,413-INFO-Now processing: https://www.tsw.com
+2018-12-28 16:46:30,238-INFO-Now processing: https://www.inpex.co.jp
+2018-12-28 16:46:31,146-INFO-Now processing: https://www.inpex.co.jp
+2018-12-28 16:46:32,083-INFO-Now processing: https://www.fossilera.com
+2018-12-28 16:46:34,968-INFO-Now processing: https://www.thelindquistgroup.com
+2018-12-28 16:46:36,925-INFO-Now processing: https://cabrillo.instructure.co
+2018-12-28 16:46:43,133-WARNING-Request error for website: https://cabrillo.instructure.co
+2018-12-28 16:46:43,134-INFO-Now processing: https://www.visitsanantonio.co
+2018-12-28 16:46:45,296-WARNING-Request error for website: https://www.visitsanantonio.co
+2018-12-28 16:46:45,296-INFO-Now processing: https://pangea.stanford.edu
+2018-12-28 16:46:46,382-INFO-Now processing: https://www.singaporeair.co
+2018-12-28 16:46:48,497-WARNING-Request error for website: https://www.singaporeair.co
+2018-12-28 16:46:48,497-INFO-Now processing: https://www.iaindale.com
+2018-12-28 16:46:49,281-WARNING-Request error for website: https://www.iaindale.com
+2018-12-28 16:46:49,281-INFO-Now processing: https://www.cancercenter.com
+2018-12-28 16:46:51,138-INFO-Now processing: https://www.christiancourier.com
+2018-12-28 16:46:53,807-INFO-Now processing: https://www.care2.com
+2018-12-28 16:46:55,796-INFO-Now processing: https://ari.nus.edu.sg
+2018-12-28 16:46:56,362-INFO-Now processing: https://www.dot.ny.gov
+2018-12-28 16:46:57,345-WARNING-Request error for website: https://www.dot.ny.gov
+2018-12-28 16:46:57,345-INFO-Now processing: https://www.lenntech.com
+2018-12-28 16:46:59,492-INFO-Now processing: https://www.burnabynow.com
+2018-12-28 16:47:00,199-WARNING-Request error for website: https://www.burnabynow.com
+2018-12-28 16:47:00,199-INFO-Now processing: https://www.bitzer.de
+2018-12-28 16:47:02,003-INFO-Now processing: https://www.cairn-int.info
+2018-12-28 16:47:03,343-INFO-Now processing: https://kb.osu.edu
+2018-12-28 16:47:04,305-WARNING-Request error for website: https://kb.osu.edu
+2018-12-28 16:47:04,306-INFO-Now processing: https://www.ilae.org
+2018-12-28 16:47:04,939-WARNING-Request error for website: https://www.ilae.org
+2018-12-28 16:47:04,939-INFO-Now processing: https://www.stripes.com
+2018-12-28 16:47:08,626-INFO-Now processing: https://www.pamgolding.co.za
+2018-12-28 16:47:12,595-INFO-Now processing: https://www.bethinking.org
+2018-12-28 16:47:13,174-WARNING-Request error for website: https://www.bethinking.org
+2018-12-28 16:47:13,174-INFO-Now processing: https://wellcomelibrary.org
+2018-12-28 16:47:19,277-INFO-Now processing: https://www.claypaky.it
+2018-12-28 16:47:20,562-WARNING-Request error for website: https://www.claypaky.it
+2018-12-28 16:47:20,562-INFO-Now processing: https://www.gamebox.com
+2018-12-28 16:47:22,745-INFO-Now processing: https://www.britishmuseum.org
+2018-12-28 16:47:28,633-INFO-Now processing: https://www.sasw.org.sg
+2018-12-28 16:47:29,545-INFO-Now processing: https://www.sup.org
+2018-12-28 16:47:30,799-INFO-Now processing: https://www.dealstreetasia.com
+2018-12-28 16:47:31,140-INFO-Now processing: https://www.e-crt.org
+2018-12-28 16:47:33,364-INFO-Now processing: https://www.kaushik.net
+2018-12-28 16:47:34,945-INFO-Now processing: https://freshdelmonte.co
+2018-12-28 16:47:35,617-WARNING-Request error for website: https://freshdelmonte.co
+2018-12-28 16:47:35,617-INFO-Now processing: https://theodora.com
+2018-12-28 16:47:39,713-INFO-Now processing: https://wikisaga.hi.is
+2018-12-28 16:47:40,549-WARNING-Request error for website: https://wikisaga.hi.is
+2018-12-28 16:47:40,549-INFO-Now processing: https://readers.english.com
+2018-12-28 16:47:41,979-INFO-Now processing: https://readers.english.com
+2018-12-28 16:47:44,142-INFO-Now processing: https://www.marathondumedoc.com
+2018-12-28 16:47:47,157-WARNING-Request error for website: https://www.marathondumedoc.com
+2018-12-28 16:47:47,157-INFO-Now processing: https://docassas.u-paris2.fr
+2018-12-28 16:47:50,728-INFO-Now processing: https://www.seat61.com
+2018-12-28 16:47:53,046-WARNING-Request error for website: https://www.seat61.com
+2018-12-28 16:47:53,046-INFO-Now processing: https://www.sail-world.com
+2018-12-28 16:47:54,969-INFO-Now processing: https://web.cn.edu
+2018-12-28 16:47:56,529-INFO-Now processing: https://chopra.com
+2018-12-28 16:47:59,532-INFO-Now processing: https://groupees.com
+2018-12-28 16:48:00,964-INFO-Now processing: https://groupees.com
+2018-12-28 16:48:02,474-INFO-Now processing: https://www.tccb.gov.tr
+2018-12-28 16:48:04,799-INFO-Now processing: https://www.geolsoc.org.uk
+2018-12-28 16:48:08,820-INFO-py raw cap complete. 0 out of 160 failed
+2018-12-28 17:17:07,049-INFO-Now processing: https://forums.cpanel.net
+2018-12-28 17:17:10,484-INFO-Now processing: https://www.newportmansions.org
+2018-12-28 17:17:12,883-INFO-Now processing: https://dpeaflcio.org
+2018-12-28 17:17:13,589-WARNING-Request error for website: https://dpeaflcio.org
+2018-12-28 17:17:13,589-INFO-Now processing: https://collections.museumvictoria.com.au
+2018-12-28 17:17:15,204-INFO-Now processing: https://www.iep.utm.edu
+2018-12-28 17:17:16,069-WARNING-Request error for website: https://www.iep.utm.edu
+2018-12-28 17:17:16,069-INFO-Now processing: https://bestapples.com
+2018-12-28 17:17:16,883-WARNING-Request error for website: https://bestapples.com
+2018-12-28 17:17:16,883-INFO-Now processing: https://australianmuseum.net.au
+2018-12-28 17:17:17,398-WARNING-Request error for website: https://australianmuseum.net.au
+2018-12-28 17:17:17,398-INFO-Now processing: https://www.surette-realestate.com
+2018-12-28 17:17:18,286-WARNING-Request error for website: https://www.surette-realestate.com
+2018-12-28 17:17:18,286-INFO-Now processing: https://www.surette-realestate.com
+2018-12-28 17:17:19,173-WARNING-Request error for website: https://www.surette-realestate.com
+2018-12-28 17:17:19,173-INFO-Now processing: https://www.pnb.org
+2018-12-28 17:17:22,131-INFO-Now processing: https://newsroom.cisco.com
+2018-12-28 17:17:25,176-INFO-Now processing: https://www.robbinschevy.co
+2018-12-28 17:17:25,829-WARNING-Request error for website: https://www.robbinschevy.co
+2018-12-28 17:17:25,829-INFO-Now processing: https://thesefootballtimes.co
+2018-12-28 17:17:26,728-WARNING-Request error for website: https://thesefootballtimes.co
+2018-12-28 17:17:26,729-INFO-Now processing: https://imm.medicina.ulisboa.pt
+2018-12-28 17:17:28,580-INFO-Now processing: https://neosmart.net
+2018-12-28 17:17:29,238-WARNING-Request error for website: https://neosmart.net
+2018-12-28 17:17:29,238-INFO-Now processing: https://danci.911cha.com
+2018-12-28 17:17:31,591-INFO-Now processing: https://danci.911cha.com
+2018-12-28 17:17:33,876-INFO-Now processing: https://www.narayana-verlag.com
+2018-12-28 17:17:35,312-INFO-Now processing: https://recorder.franklincountyohio.gov
+2018-12-28 17:17:37,087-INFO-Now processing: https://www.digitalcommonwealth.org
+2018-12-28 17:17:38,582-INFO-Now processing: https://sponsorpitch.com
+2018-12-28 17:17:40,058-INFO-Now processing: https://forum.isthmus.com
+2018-12-28 17:18:02,087-INFO-Now processing: https://www.nihadc.com
+2018-12-28 17:18:25,845-INFO-Now processing: https://www.e-jmd.org
+2018-12-28 17:18:27,739-INFO-Now processing: https://www.separations.asia.tosohbioscience.com
+2018-12-28 17:18:30,813-INFO-Now processing: https://www.e-sciencecentral.org
+2018-12-28 17:18:32,357-INFO-Now processing: https://iovs.arvojournals.org
+2018-12-28 17:18:34,163-WARNING-Request error for website: https://iovs.arvojournals.org
+2018-12-28 17:18:34,164-INFO-Now processing: https://stellaris.paradoxwikis.com
+2018-12-28 17:18:34,701-WARNING-Request error for website: https://stellaris.paradoxwikis.com
+2018-12-28 17:18:34,702-INFO-Now processing: https://developer.asperasoft.com
+2018-12-28 17:18:36,442-INFO-Now processing: https://www.tourisme-alsace.com
+2018-12-28 17:18:37,418-WARNING-Request error for website: https://www.tourisme-alsace.com
+2018-12-28 17:18:37,419-INFO-Now processing: https://www.cem-protection.com
+2018-12-28 17:18:38,132-WARNING-Request error for website: https://www.cem-protection.com
+2018-12-28 17:18:38,132-INFO-Now processing: https://www.paulettesauve.com
+2018-12-28 17:18:38,913-WARNING-Request error for website: https://www.paulettesauve.com
+2018-12-28 17:18:38,913-INFO-Now processing: https://read.dukeupress.edu
+2018-12-28 17:18:40,703-WARNING-Request error for website: https://read.dukeupress.edu
+2018-12-28 17:18:40,704-INFO-Now processing: https://www.marketingsherpa.com
+2018-12-28 17:18:43,066-INFO-Now processing: https://jamanetwork.com
+2018-12-28 17:18:44,846-WARNING-Request error for website: https://jamanetwork.com
+2018-12-28 17:18:44,846-INFO-Now processing: https://www.ceemjournal.org
+2018-12-28 17:18:46,190-INFO-Now processing: https://www.tosohindia.com
+2018-12-28 17:18:48,977-INFO-Now processing: https://shop.hytest.fi
+2018-12-28 17:18:50,631-INFO-Now processing: https://www.j-stroke.org
+2018-12-28 17:18:52,196-INFO-Now processing: https://www.diagnostics.eu.tosohbioscience.com
+2018-12-28 17:18:55,153-INFO-Now processing: https://gbtimes.com
+2018-12-28 17:18:56,485-INFO-Now processing: https://thecasswiki.net
+2018-12-28 17:18:56,956-WARNING-Request error for website: https://thecasswiki.net
+2018-12-28 17:18:56,957-INFO-Now processing: https://ck2.paradoxwikis.com
+2018-12-28 17:18:57,555-WARNING-Request error for website: https://ck2.paradoxwikis.com
+2018-12-28 17:18:57,556-INFO-Now processing: https://www.robomow.com
+2018-12-28 17:18:58,199-WARNING-Request error for website: https://www.robomow.com
+2018-12-28 17:18:58,199-INFO-Now processing: https://www.ucsusa.org
+2018-12-28 17:18:59,999-INFO-Now processing: https://www.vogelwarte.ch
+2018-12-28 17:19:01,368-INFO-Now processing: https://ezcanvas.com
+2018-12-28 17:19:02,333-WARNING-Request error for website: https://ezcanvas.com
+2018-12-28 17:19:02,333-INFO-Now processing: https://askaquestionto.us
+2018-12-28 17:19:03,035-WARNING-Request error for website: https://askaquestionto.us
+2018-12-28 17:19:03,036-INFO-Now processing: https://www.rushcard.co
+2018-12-28 17:19:11,387-WARNING-Request error for website: https://www.rushcard.co
+2018-12-28 17:19:11,387-INFO-Now processing: https://www.cdfa.ca.gov
+2018-12-28 17:19:14,846-INFO-Now processing: https://www.mevaccine.org
+2018-12-28 17:19:16,677-INFO-Now processing: https://www.aaos.org
+2018-12-28 17:19:18,190-INFO-Now processing: https://s2018.siggraph.org
+2018-12-28 17:19:18,955-WARNING-Request error for website: https://s2018.siggraph.org
+2018-12-28 17:19:18,955-INFO-Now processing: https://www.gsa.europa.eu
+2018-12-28 17:19:20,372-WARNING-Request error for website: https://www.gsa.europa.eu
+2018-12-28 17:19:20,372-INFO-Now processing: https://www.pma.com
+2018-12-28 17:19:21,286-WARNING-Request error for website: https://www.pma.com
+2018-12-28 17:19:21,286-INFO-Now processing: https://norsafe.com
+2018-12-28 17:19:23,207-INFO-Now processing: https://pubs.geoscienceworld.org
+2018-12-28 17:19:25,077-WARNING-Request error for website: https://pubs.geoscienceworld.org
+2018-12-28 17:19:25,078-INFO-Now processing: https://gq.pgi.gov.pl
+2018-12-28 17:19:25,917-WARNING-Request error for website: https://gq.pgi.gov.pl
+2018-12-28 17:19:25,917-INFO-Now processing: https://www.ajas.info
+2018-12-28 17:19:29,431-INFO-Now processing: https://www.quikrete.com
+2018-12-28 17:19:32,837-INFO-Now processing: https://starklibrary.org
+2018-12-28 17:19:35,146-INFO-Now processing: https://www.a1corp.com.sg
+2018-12-28 17:19:35,742-INFO-Now processing: https://www.str.org
+2018-12-28 17:19:38,064-INFO-Now processing: https://leader.pubs.asha.org
+2018-12-28 17:19:38,614-WARNING-Request error for website: https://leader.pubs.asha.org
+2018-12-28 17:19:38,614-INFO-Now processing: https://parkinson.org
+2018-12-28 17:19:41,902-INFO-Now processing: https://mayfieldclinic.com
+2018-12-28 17:19:43,669-INFO-Now processing: https://www.thomsonbiketours.com
+2018-12-28 17:19:45,632-INFO-Now processing: https://www.rhs.org.uk
+2018-12-28 17:19:47,144-INFO-Now processing: https://www.medicines.org.uk
+2018-12-28 17:19:48,416-INFO-Now processing: https://www.mmv.org
+2018-12-28 17:19:50,952-INFO-Now processing: https://www.iwh.on.ca
+2018-12-28 17:19:54,108-INFO-Now processing: https://educationendowmentfoundation.org.uk
+2018-12-28 17:19:56,682-INFO-Now processing: https://www.docsquiffy.co
+2018-12-28 17:19:57,902-WARNING-Request error for website: https://www.docsquiffy.co
+2018-12-28 17:19:57,902-INFO-Now processing: https://elcajon.gwfathom.co
+2018-12-28 17:19:59,215-WARNING-Request error for website: https://elcajon.gwfathom.co
+2018-12-28 17:19:59,215-INFO-Now processing: https://glean.info
+2018-12-28 17:20:02,141-INFO-Now processing: https://www.gwct.org.uk
+2018-12-28 17:20:05,853-INFO-Now processing: https://www.onlalu.com
+2018-12-28 17:20:08,606-INFO-Now processing: https://www.spandidos-publications.com
+2018-12-28 17:20:10,147-INFO-Now processing: https://en.uesp.net
+2018-12-28 17:20:11,416-INFO-Now processing: https://www.arthurconandoyle.com
+2018-12-28 17:20:12,824-INFO-Now processing: https://www.endruntechnologies.com
+2018-12-28 17:20:14,125-INFO-Now processing: https://www.logmein.co
+2018-12-28 17:20:16,467-WARNING-Request error for website: https://www.logmein.co
+2018-12-28 17:20:16,467-INFO-Now processing: https://www.stpatricksfestival.ie
+2018-12-28 17:20:17,202-WARNING-Request error for website: https://www.stpatricksfestival.ie
+2018-12-28 17:20:17,202-INFO-Now processing: https://www.cairn.info
+2018-12-28 17:20:18,250-WARNING-Request error for website: https://www.cairn.info
+2018-12-28 17:20:18,250-INFO-Now processing: https://www.persee.fr
+2018-12-28 17:20:26,552-INFO-Now processing: https://www.fsco.gov.on.ca
+2018-12-28 17:20:28,034-INFO-Now processing: https://www.123teachme.com
+2018-12-28 17:20:29,823-INFO-Now processing: https://sites.fas.harvard.edu
+2018-12-28 17:20:31,235-INFO-Now processing: https://esami.unipi.it
+2018-12-28 17:20:32,917-INFO-Now processing: https://www.djguide.nl
+2018-12-28 17:20:34,299-INFO-Now processing: https://www.rettie.co.uk
+2018-12-28 17:20:35,017-WARNING-Request error for website: https://www.rettie.co.uk
+2018-12-28 17:20:35,017-INFO-Now processing: https://www.crwflags.com
+2018-12-28 17:20:36,569-INFO-Now processing: https://www.matrimonialsindia.com
+2018-12-28 17:20:38,790-INFO-Now processing: https://www.pothole.info
+2018-12-28 17:20:42,195-INFO-Now processing: https://www.avs.org
+2018-12-28 17:20:45,520-INFO-Now processing: https://www.element-it.com
+2018-12-28 17:20:46,758-INFO-Now processing: https://casper.berkeley.edu
+2018-12-28 17:20:47,433-WARNING-Request error for website: https://casper.berkeley.edu
+2018-12-28 17:20:47,434-INFO-Now processing: https://www.zeroaggressionproject.org
+2018-12-28 17:20:50,159-INFO-Now processing: https://www.arabianhorses.org
+2018-12-28 17:20:52,515-INFO-Now processing: https://www.butfootballclub.fr
+2018-12-28 17:20:53,243-WARNING-Request error for website: https://www.butfootballclub.fr
+2018-12-28 17:20:53,244-INFO-Now processing: https://www.industrystock.com
+2018-12-28 17:20:54,074-WARNING-Request error for website: https://www.industrystock.com
+2018-12-28 17:20:54,074-INFO-Now processing: https://www.1life.co.za
+2018-12-28 17:20:58,157-INFO-Now processing: https://wiki.openstack.org
+2018-12-28 17:20:59,334-INFO-Now processing: https://www.paycheckrecords.co
+2018-12-28 17:21:00,624-WARNING-Request error for website: https://www.paycheckrecords.co
+2018-12-28 17:21:00,625-INFO-Now processing: https://www.egnyte.co
+2018-12-28 17:21:05,326-WARNING-Request error for website: https://www.egnyte.co
+2018-12-28 17:21:05,326-INFO-Now processing: https://www.wilsonsleather.co
+2018-12-28 17:21:06,559-WARNING-Request error for website: https://www.wilsonsleather.co
+2018-12-28 17:21:06,560-INFO-Now processing: https://www.dolomiti.org
+2018-12-28 17:21:08,190-INFO-Now processing: https://www.cifor.org
+2018-12-28 17:21:10,182-INFO-Now processing: https://www.ks.uiuc.edu
+2018-12-28 17:21:13,121-INFO-Now processing: https://incubator.duolingo.co
+2018-12-28 17:21:14,573-WARNING-Request error for website: https://incubator.duolingo.co
+2018-12-28 17:21:14,574-INFO-Now processing: https://www.appliancewhse.co
+2018-12-28 17:21:15,944-WARNING-Request error for website: https://www.appliancewhse.co
+2018-12-28 17:21:15,945-INFO-Now processing: https://www.waveapps.co
+2018-12-28 17:21:17,226-WARNING-Request error for website: https://www.waveapps.co
+2018-12-28 17:21:17,226-INFO-Now processing: https://www.tsw.com
+2018-12-28 17:21:19,076-INFO-Now processing: https://www.inpex.co.jp
+2018-12-28 17:21:19,938-INFO-Now processing: https://www.inpex.co.jp
+2018-12-28 17:21:20,801-INFO-Now processing: https://www.fossilera.com
+2018-12-28 17:21:23,517-INFO-Now processing: https://www.thelindquistgroup.com
+2018-12-28 17:21:25,350-INFO-Now processing: https://cabrillo.instructure.co
+2018-12-28 17:21:29,994-WARNING-Request error for website: https://cabrillo.instructure.co
+2018-12-28 17:21:29,994-INFO-Now processing: https://www.visitsanantonio.co
+2018-12-28 17:21:31,278-WARNING-Request error for website: https://www.visitsanantonio.co
+2018-12-28 17:21:31,279-INFO-Now processing: https://pangea.stanford.edu
+2018-12-28 17:21:32,424-INFO-Now processing: https://www.singaporeair.co
+2018-12-28 17:21:33,740-WARNING-Request error for website: https://www.singaporeair.co
+2018-12-28 17:21:33,741-INFO-Now processing: https://www.iaindale.com
+2018-12-28 17:21:34,507-WARNING-Request error for website: https://www.iaindale.com
+2018-12-28 17:21:34,508-INFO-Now processing: https://www.cancercenter.com
+2018-12-28 17:21:36,921-INFO-Now processing: https://www.christiancourier.com
+2018-12-28 17:21:39,284-INFO-Now processing: https://www.care2.com
+2018-12-28 17:21:41,307-INFO-Now processing: https://ari.nus.edu.sg
+2018-12-28 17:21:41,853-INFO-Now processing: https://www.dot.ny.gov
+2018-12-28 17:21:42,873-WARNING-Request error for website: https://www.dot.ny.gov
+2018-12-28 17:21:42,873-INFO-Now processing: https://www.lenntech.com
+2018-12-28 17:21:44,788-INFO-Now processing: https://www.burnabynow.com
+2018-12-28 17:21:45,535-WARNING-Request error for website: https://www.burnabynow.com
+2018-12-28 17:21:45,536-INFO-Now processing: https://www.bitzer.de
+2018-12-28 17:21:47,003-INFO-Now processing: https://www.cairn-int.info
+2018-12-28 17:21:48,383-INFO-Now processing: https://kb.osu.edu
+2018-12-28 17:21:49,395-WARNING-Request error for website: https://kb.osu.edu
+2018-12-28 17:21:49,395-INFO-Now processing: https://www.ilae.org
+2018-12-28 17:21:50,071-WARNING-Request error for website: https://www.ilae.org
+2018-12-28 17:21:50,071-INFO-Now processing: https://www.stripes.com
+2018-12-28 17:21:54,508-INFO-Now processing: https://www.pamgolding.co.za
+2018-12-28 17:21:58,343-INFO-Now processing: https://www.bethinking.org
+2018-12-28 17:21:58,990-WARNING-Request error for website: https://www.bethinking.org
+2018-12-28 17:21:58,990-INFO-Now processing: https://wellcomelibrary.org
+2018-12-28 17:22:05,139-INFO-Now processing: https://www.claypaky.it
+2018-12-28 17:22:05,957-WARNING-Request error for website: https://www.claypaky.it
+2018-12-28 17:22:05,957-INFO-Now processing: https://www.gamebox.com
+2018-12-28 17:22:08,731-INFO-Now processing: https://www.britishmuseum.org
+2018-12-28 17:22:11,586-INFO-Now processing: https://www.sasw.org.sg
+2018-12-28 17:22:12,627-INFO-Now processing: https://www.sup.org
+2018-12-28 17:22:13,794-INFO-Now processing: https://www.dealstreetasia.com
+2018-12-28 17:22:14,273-INFO-Now processing: https://www.e-crt.org
+2018-12-28 17:22:20,156-INFO-Now processing: https://www.kaushik.net
+2018-12-28 17:22:21,747-INFO-Now processing: https://freshdelmonte.co
+2018-12-28 17:22:22,406-WARNING-Request error for website: https://freshdelmonte.co
+2018-12-28 17:22:22,406-INFO-Now processing: https://theodora.com
+2018-12-28 17:22:26,461-INFO-Now processing: https://wikisaga.hi.is
+2018-12-28 17:22:29,217-WARNING-Request error for website: https://wikisaga.hi.is
+2018-12-28 17:22:29,217-INFO-Now processing: https://readers.english.com
+2018-12-28 17:22:32,244-INFO-Now processing: https://readers.english.com
+2018-12-28 17:22:33,862-INFO-Now processing: https://www.marathondumedoc.com
+2018-12-28 17:22:38,516-WARNING-Request error for website: https://www.marathondumedoc.com
+2018-12-28 17:22:38,516-INFO-Now processing: https://docassas.u-paris2.fr
+2018-12-28 17:22:46,211-INFO-Now processing: https://www.seat61.com
+2018-12-28 17:22:48,722-INFO-Now processing: https://www.sail-world.com
+2018-12-28 17:22:51,107-INFO-Now processing: https://web.cn.edu
+2018-12-28 17:22:52,879-INFO-Now processing: https://chopra.com
+2018-12-28 17:22:55,656-INFO-Now processing: https://groupees.com
+2018-12-28 17:22:57,404-INFO-Now processing: https://groupees.com
+2018-12-28 17:22:58,988-INFO-Now processing: https://www.tccb.gov.tr
+2018-12-28 17:23:01,429-INFO-Now processing: https://www.geolsoc.org.uk
+2018-12-28 17:23:05,263-INFO-py raw cap complete. 0 out of 160 failed
+2018-12-28 19:43:10,142-INFO-Now processing: https://forums.cpanel.net
+2018-12-28 19:43:13,375-INFO-Now processing: https://www.newportmansions.org
+2018-12-28 19:43:16,089-INFO-Now processing: https://dpeaflcio.org
+2018-12-28 19:43:16,853-WARNING-Request error for website: https://dpeaflcio.org
+2018-12-28 19:43:16,853-INFO-Now processing: https://collections.museumvictoria.com.au
+2018-12-28 19:43:18,428-INFO-Now processing: https://www.iep.utm.edu
+2018-12-28 19:43:19,415-WARNING-Request error for website: https://www.iep.utm.edu
+2018-12-28 19:43:19,415-INFO-Now processing: https://bestapples.com
+2018-12-28 19:43:20,212-WARNING-Request error for website: https://bestapples.com
+2018-12-28 19:43:20,212-INFO-Now processing: https://australianmuseum.net.au
+2018-12-28 19:43:20,876-WARNING-Request error for website: https://australianmuseum.net.au
+2018-12-28 19:43:20,877-INFO-Now processing: https://www.surette-realestate.com
+2018-12-28 19:43:21,783-WARNING-Request error for website: https://www.surette-realestate.com
+2018-12-28 19:43:21,784-INFO-Now processing: https://www.surette-realestate.com
+2018-12-28 19:43:22,654-WARNING-Request error for website: https://www.surette-realestate.com
+2018-12-28 19:43:22,655-INFO-Now processing: https://www.pnb.org
+2018-12-28 19:43:25,228-INFO-Now processing: https://newsroom.cisco.com
+2018-12-28 19:43:28,344-INFO-Now processing: https://www.robbinschevy.co
+2018-12-28 19:43:29,130-WARNING-Request error for website: https://www.robbinschevy.co
+2018-12-28 19:43:29,130-INFO-Now processing: https://thesefootballtimes.co
+2018-12-28 19:43:30,010-WARNING-Request error for website: https://thesefootballtimes.co
+2018-12-28 19:43:30,010-INFO-Now processing: https://imm.medicina.ulisboa.pt
+2018-12-28 19:43:31,830-INFO-Now processing: https://neosmart.net
+2018-12-28 19:43:32,583-WARNING-Request error for website: https://neosmart.net
+2018-12-28 19:43:32,584-INFO-Now processing: https://danci.911cha.com
+2018-12-28 19:43:34,856-INFO-Now processing: https://danci.911cha.com
+2018-12-28 19:43:37,252-INFO-Now processing: https://www.narayana-verlag.com
+2018-12-28 19:43:38,738-INFO-Now processing: https://recorder.franklincountyohio.gov
+2018-12-28 19:43:40,682-INFO-Now processing: https://www.digitalcommonwealth.org
+2018-12-28 19:43:42,185-INFO-Now processing: https://sponsorpitch.com
+2018-12-28 19:43:43,742-INFO-Now processing: https://forum.isthmus.com
+2018-12-28 19:43:45,661-INFO-Now processing: https://www.nihadc.com
+2018-12-28 19:43:48,667-INFO-Now processing: https://www.e-jmd.org
+2018-12-28 19:43:50,164-INFO-Now processing: https://www.separations.asia.tosohbioscience.com
+2018-12-28 19:43:53,317-INFO-Now processing: https://www.e-sciencecentral.org
+2018-12-28 19:43:54,962-INFO-Now processing: https://iovs.arvojournals.org
+2018-12-28 19:43:56,702-WARNING-Request error for website: https://iovs.arvojournals.org
+2018-12-28 19:43:56,703-INFO-Now processing: https://stellaris.paradoxwikis.com
+2018-12-28 19:43:57,274-WARNING-Request error for website: https://stellaris.paradoxwikis.com
+2018-12-28 19:43:57,274-INFO-Now processing: https://developer.asperasoft.com
+2018-12-28 19:43:58,872-INFO-Now processing: https://www.tourisme-alsace.com
+2018-12-28 19:43:59,895-WARNING-Request error for website: https://www.tourisme-alsace.com
+2018-12-28 19:43:59,896-INFO-Now processing: https://www.cem-protection.com
+2018-12-28 19:44:00,623-WARNING-Request error for website: https://www.cem-protection.com
+2018-12-28 19:44:00,623-INFO-Now processing: https://www.paulettesauve.com
+2018-12-28 19:44:01,377-WARNING-Request error for website: https://www.paulettesauve.com
+2018-12-28 19:44:01,378-INFO-Now processing: https://read.dukeupress.edu
+2018-12-28 19:44:03,838-WARNING-Request error for website: https://read.dukeupress.edu
+2018-12-28 19:44:03,838-INFO-Now processing: https://www.marketingsherpa.com
+2018-12-28 19:44:06,356-INFO-Now processing: https://jamanetwork.com
+2018-12-28 19:44:08,108-WARNING-Request error for website: https://jamanetwork.com
+2018-12-28 19:44:08,108-INFO-Now processing: https://www.ceemjournal.org
+2018-12-28 19:44:09,408-INFO-Now processing: https://www.tosohindia.com
+2018-12-28 19:44:13,244-INFO-Now processing: https://shop.hytest.fi
+2018-12-28 19:44:14,952-INFO-Now processing: https://www.j-stroke.org
+2018-12-28 19:44:16,513-INFO-Now processing: https://www.diagnostics.eu.tosohbioscience.com
+2018-12-28 19:44:20,044-INFO-Now processing: https://gbtimes.com
+2018-12-28 19:44:21,362-INFO-Now processing: https://thecasswiki.net
+2018-12-28 19:44:21,809-WARNING-Request error for website: https://thecasswiki.net
+2018-12-28 19:44:21,809-INFO-Now processing: https://ck2.paradoxwikis.com
+2018-12-28 19:44:22,332-WARNING-Request error for website: https://ck2.paradoxwikis.com
+2018-12-28 19:44:22,333-INFO-Now processing: https://www.robomow.com
+2018-12-28 19:44:23,014-WARNING-Request error for website: https://www.robomow.com
+2018-12-28 19:44:23,015-INFO-Now processing: https://www.ucsusa.org
+2018-12-28 19:44:24,666-INFO-Now processing: https://www.vogelwarte.ch
+2018-12-28 19:44:25,926-INFO-Now processing: https://ezcanvas.com
+2018-12-28 19:44:26,970-WARNING-Request error for website: https://ezcanvas.com
+2018-12-28 19:44:26,970-INFO-Now processing: https://askaquestionto.us
+2018-12-28 19:44:27,759-WARNING-Request error for website: https://askaquestionto.us
+2018-12-28 19:44:27,760-INFO-Now processing: https://www.rushcard.co
+2018-12-28 19:44:36,091-WARNING-Request error for website: https://www.rushcard.co
+2018-12-28 19:44:36,092-INFO-Now processing: https://www.cdfa.ca.gov
+2018-12-28 19:44:39,540-INFO-Now processing: https://www.mevaccine.org
+2018-12-28 19:44:41,322-INFO-Now processing: https://www.aaos.org
+2018-12-28 19:44:43,275-INFO-Now processing: https://s2018.siggraph.org
+2018-12-28 19:44:44,096-WARNING-Request error for website: https://s2018.siggraph.org
+2018-12-28 19:44:44,096-INFO-Now processing: https://www.gsa.europa.eu
+2018-12-28 19:44:45,542-WARNING-Request error for website: https://www.gsa.europa.eu
+2018-12-28 19:44:45,543-INFO-Now processing: https://www.pma.com
+2018-12-28 19:44:46,467-WARNING-Request error for website: https://www.pma.com
+2018-12-28 19:44:46,467-INFO-Now processing: https://norsafe.com
+2018-12-28 19:44:48,715-INFO-Now processing: https://pubs.geoscienceworld.org
+2018-12-28 19:44:50,459-WARNING-Request error for website: https://pubs.geoscienceworld.org
+2018-12-28 19:44:50,459-INFO-Now processing: https://gq.pgi.gov.pl
+2018-12-28 19:44:51,325-WARNING-Request error for website: https://gq.pgi.gov.pl
+2018-12-28 19:44:51,326-INFO-Now processing: https://www.ajas.info
+2018-12-28 19:44:56,067-INFO-Now processing: https://www.quikrete.com
+2018-12-28 19:44:59,120-INFO-Now processing: https://starklibrary.org
+2018-12-28 19:45:02,006-INFO-Now processing: https://www.a1corp.com.sg
+2018-12-28 19:45:02,634-INFO-Now processing: https://www.str.org
+2018-12-28 19:45:04,886-INFO-Now processing: https://leader.pubs.asha.org
+2018-12-28 19:45:05,427-WARNING-Request error for website: https://leader.pubs.asha.org
+2018-12-28 19:45:05,427-INFO-Now processing: https://parkinson.org
+2018-12-28 19:45:09,216-INFO-Now processing: https://mayfieldclinic.com
+2018-12-28 19:45:11,021-INFO-Now processing: https://www.thomsonbiketours.com
+2018-12-28 19:45:12,826-INFO-Now processing: https://www.rhs.org.uk
+2018-12-28 19:45:15,918-INFO-Now processing: https://www.medicines.org.uk
+2018-12-28 19:45:17,302-INFO-Now processing: https://www.mmv.org
+2018-12-28 19:45:20,386-INFO-Now processing: https://www.iwh.on.ca
+2018-12-28 19:45:23,908-INFO-Now processing: https://educationendowmentfoundation.org.uk
+2018-12-28 19:45:26,656-INFO-Now processing: https://www.docsquiffy.co
+2018-12-28 19:45:27,927-WARNING-Request error for website: https://www.docsquiffy.co
+2018-12-28 19:45:27,927-INFO-Now processing: https://elcajon.gwfathom.co
+2018-12-28 19:45:29,230-WARNING-Request error for website: https://elcajon.gwfathom.co
+2018-12-28 19:45:29,231-INFO-Now processing: https://glean.info
+2018-12-28 19:45:32,252-INFO-Now processing: https://www.gwct.org.uk
+2018-12-28 19:45:37,555-INFO-Now processing: https://www.onlalu.com
+2018-12-28 19:45:40,398-INFO-Now processing: https://www.spandidos-publications.com
+2018-12-28 19:45:41,796-INFO-Now processing: https://en.uesp.net
+2018-12-28 19:45:43,091-INFO-Now processing: https://www.arthurconandoyle.com
+2018-12-28 19:45:44,317-INFO-Now processing: https://www.endruntechnologies.com
+2018-12-28 19:45:45,555-INFO-Now processing: https://www.logmein.co
+2018-12-28 19:45:47,897-WARNING-Request error for website: https://www.logmein.co
+2018-12-28 19:45:47,899-INFO-Now processing: https://www.stpatricksfestival.ie
+2018-12-28 19:45:48,725-WARNING-Request error for website: https://www.stpatricksfestival.ie
+2018-12-28 19:45:48,725-INFO-Now processing: https://www.cairn.info
+2018-12-28 19:45:49,719-WARNING-Request error for website: https://www.cairn.info
+2018-12-28 19:45:49,720-INFO-Now processing: https://www.persee.fr
+2018-12-28 19:46:05,519-INFO-Now processing: https://www.fsco.gov.on.ca
+2018-12-28 19:46:07,163-INFO-Now processing: https://www.123teachme.com
+2018-12-28 19:48:14,498-INFO-Now processing: https://sites.fas.harvard.edu
+2018-12-28 19:48:16,069-INFO-Now processing: https://esami.unipi.it
+2018-12-28 19:48:18,305-INFO-Now processing: https://www.djguide.nl
+2018-12-28 19:48:19,632-INFO-Now processing: https://www.rettie.co.uk
+2018-12-28 19:48:20,282-WARNING-Request error for website: https://www.rettie.co.uk
+2018-12-28 19:48:20,282-INFO-Now processing: https://www.crwflags.com
+2018-12-28 19:48:22,024-INFO-Now processing: https://www.matrimonialsindia.com
+2018-12-28 19:48:24,241-INFO-Now processing: https://www.pothole.info
+2018-12-28 19:48:27,885-INFO-Now processing: https://www.avs.org
+2018-12-28 19:48:31,239-INFO-Now processing: https://www.element-it.com
+2018-12-28 19:48:32,647-INFO-Now processing: https://casper.berkeley.edu
+2018-12-28 19:48:33,284-WARNING-Request error for website: https://casper.berkeley.edu
+2018-12-28 19:48:33,284-INFO-Now processing: https://www.zeroaggressionproject.org
+2018-12-28 19:48:39,236-INFO-Now processing: https://www.arabianhorses.org
+2018-12-28 19:48:47,085-INFO-Now processing: https://www.butfootballclub.fr
+2018-12-28 19:48:54,442-WARNING-Request error for website: https://www.butfootballclub.fr
+2018-12-28 19:48:54,442-INFO-Now processing: https://www.industrystock.com
+2018-12-28 19:49:04,551-WARNING-Request error for website: https://www.industrystock.com
+2018-12-28 19:49:04,552-INFO-Now processing: https://www.1life.co.za
+2018-12-28 19:49:42,040-INFO-Now processing: https://wiki.openstack.org
+2018-12-28 19:49:43,476-INFO-Now processing: https://www.paycheckrecords.co
+2018-12-28 19:49:47,864-WARNING-Request error for website: https://www.paycheckrecords.co
+2018-12-28 19:49:47,865-INFO-Now processing: https://www.egnyte.co
+2018-12-28 19:49:53,821-WARNING-Request error for website: https://www.egnyte.co
+2018-12-28 19:49:53,821-INFO-Now processing: https://www.wilsonsleather.co
+2018-12-28 19:50:04,971-WARNING-Request error for website: https://www.wilsonsleather.co
+2018-12-28 19:50:04,971-INFO-Now processing: https://www.dolomiti.org
+2018-12-28 19:50:06,646-INFO-Now processing: https://www.cifor.org
+2018-12-28 19:50:08,602-INFO-Now processing: https://www.ks.uiuc.edu
+2018-12-28 19:50:12,129-INFO-Now processing: https://incubator.duolingo.co
+2018-12-28 19:50:13,602-WARNING-Request error for website: https://incubator.duolingo.co
+2018-12-28 19:50:13,602-INFO-Now processing: https://www.appliancewhse.co
+2018-12-28 19:50:14,979-WARNING-Request error for website: https://www.appliancewhse.co
+2018-12-28 19:50:14,980-INFO-Now processing: https://www.waveapps.co
+2018-12-28 19:50:16,400-WARNING-Request error for website: https://www.waveapps.co
+2018-12-28 19:50:16,400-INFO-Now processing: https://www.tsw.com
+2018-12-28 19:50:18,333-INFO-Now processing: https://www.inpex.co.jp
+2018-12-28 19:50:19,331-INFO-Now processing: https://www.inpex.co.jp
+2018-12-28 19:50:20,500-INFO-Now processing: https://www.fossilera.com
+2018-12-28 19:50:24,149-INFO-Now processing: https://www.thelindquistgroup.com
+2018-12-28 19:50:26,160-INFO-Now processing: https://cabrillo.instructure.co
+2018-12-28 19:50:29,134-WARNING-Request error for website: https://cabrillo.instructure.co
+2018-12-28 19:50:29,134-INFO-Now processing: https://www.visitsanantonio.co
+2018-12-28 19:50:30,499-WARNING-Request error for website: https://www.visitsanantonio.co
+2018-12-28 19:50:30,499-INFO-Now processing: https://pangea.stanford.edu
+2018-12-28 19:50:31,649-INFO-Now processing: https://www.singaporeair.co
+2018-12-28 19:50:32,950-WARNING-Request error for website: https://www.singaporeair.co
+2018-12-28 19:50:32,951-INFO-Now processing: https://www.iaindale.com
+2018-12-28 19:50:33,632-WARNING-Request error for website: https://www.iaindale.com
+2018-12-28 19:50:33,632-INFO-Now processing: https://www.cancercenter.com
+2018-12-28 19:50:36,346-INFO-Now processing: https://www.christiancourier.com
+2018-12-28 19:50:38,582-INFO-Now processing: https://www.care2.com
+2018-12-28 19:50:40,848-INFO-Now processing: https://ari.nus.edu.sg
+2018-12-28 19:50:41,461-INFO-Now processing: https://www.dot.ny.gov
+2018-12-28 19:50:42,619-WARNING-Request error for website: https://www.dot.ny.gov
+2018-12-28 19:50:42,619-INFO-Now processing: https://www.lenntech.com
+2018-12-28 19:50:44,687-INFO-Now processing: https://www.burnabynow.com
+2018-12-28 19:50:45,797-WARNING-Request error for website: https://www.burnabynow.com
+2018-12-28 19:50:45,797-INFO-Now processing: https://www.bitzer.de
+2018-12-28 19:50:48,016-INFO-Now processing: https://www.cairn-int.info
+2018-12-28 19:50:49,366-INFO-Now processing: https://kb.osu.edu
+2018-12-28 19:50:50,396-WARNING-Request error for website: https://kb.osu.edu
+2018-12-28 19:50:50,396-INFO-Now processing: https://www.ilae.org
+2018-12-28 19:50:51,201-WARNING-Request error for website: https://www.ilae.org
+2018-12-28 19:50:51,201-INFO-Now processing: https://www.stripes.com
+2018-12-28 19:50:54,981-INFO-Now processing: https://www.pamgolding.co.za
+2018-12-28 19:50:59,426-INFO-Now processing: https://www.bethinking.org
+2018-12-28 19:51:00,355-WARNING-Request error for website: https://www.bethinking.org
+2018-12-28 19:51:00,355-INFO-Now processing: https://wellcomelibrary.org
+2018-12-28 19:51:03,718-INFO-Now processing: https://www.claypaky.it
+2018-12-28 19:51:04,570-WARNING-Request error for website: https://www.claypaky.it
+2018-12-28 19:51:04,570-INFO-Now processing: https://www.gamebox.com
+2018-12-28 19:51:07,535-INFO-Now processing: https://www.britishmuseum.org
+2018-12-28 19:51:10,789-INFO-Now processing: https://www.sasw.org.sg
+2018-12-28 19:51:11,770-INFO-Now processing: https://www.sup.org
+2018-12-28 19:51:12,990-INFO-Now processing: https://www.dealstreetasia.com
+2018-12-28 19:51:13,417-INFO-Now processing: https://www.e-crt.org
+2018-12-28 19:51:17,123-INFO-Now processing: https://www.kaushik.net
+2018-12-28 19:51:18,870-INFO-Now processing: https://freshdelmonte.co
+2018-12-28 19:51:20,550-WARNING-Request error for website: https://freshdelmonte.co
+2018-12-28 19:51:20,551-INFO-Now processing: https://theodora.com
+2018-12-28 19:51:25,003-INFO-Now processing: https://wikisaga.hi.is
+2018-12-28 19:51:27,893-WARNING-Request error for website: https://wikisaga.hi.is
+2018-12-28 19:51:27,895-INFO-Now processing: https://readers.english.com
+2018-12-28 19:51:29,388-INFO-Now processing: https://readers.english.com
+2018-12-28 19:51:30,986-INFO-Now processing: https://www.marathondumedoc.com
+2018-12-28 19:51:33,552-WARNING-Request error for website: https://www.marathondumedoc.com
+2018-12-28 19:51:33,553-INFO-Now processing: https://docassas.u-paris2.fr
+2018-12-28 19:51:34,924-INFO-Now processing: https://www.seat61.com
+2018-12-28 19:51:37,520-INFO-Now processing: https://www.sail-world.com
+2018-12-28 19:51:39,640-INFO-Now processing: https://web.cn.edu
+2018-12-28 19:51:41,592-INFO-Now processing: https://chopra.com
+2018-12-28 19:51:46,637-INFO-Now processing: https://groupees.com
+2018-12-28 19:51:48,270-INFO-Now processing: https://groupees.com
+2018-12-28 19:51:49,791-INFO-Now processing: https://www.tccb.gov.tr
+2018-12-28 19:51:52,186-INFO-Now processing: https://www.geolsoc.org.uk
+2018-12-28 19:51:55,654-INFO-py raw cap complete. 0 out of 160 failed
+2018-12-28 20:01:39,241-INFO-Now processing: https://forums.cpanel.net
+2018-12-28 20:01:42,326-INFO-Now processing: https://www.newportmansions.org
+2018-12-28 20:01:45,107-INFO-Now processing: https://dpeaflcio.org
+2018-12-28 20:01:45,909-WARNING-Request error for website: https://dpeaflcio.org
+2018-12-28 20:01:45,910-INFO-Now processing: https://collections.museumvictoria.com.au
+2018-12-28 20:01:47,375-INFO-Now processing: https://www.iep.utm.edu
+2018-12-28 20:01:48,184-WARNING-Request error for website: https://www.iep.utm.edu
+2018-12-28 20:01:48,184-INFO-Now processing: https://bestapples.com
+2018-12-28 20:01:49,055-WARNING-Request error for website: https://bestapples.com
+2018-12-28 20:01:49,055-INFO-Now processing: https://australianmuseum.net.au
+2018-12-28 20:01:49,637-WARNING-Request error for website: https://australianmuseum.net.au
+2018-12-28 20:01:49,638-INFO-Now processing: https://www.surette-realestate.com
+2018-12-28 20:01:50,557-WARNING-Request error for website: https://www.surette-realestate.com
+2018-12-28 20:01:50,557-INFO-Now processing: https://www.surette-realestate.com
+2018-12-28 20:01:51,488-WARNING-Request error for website: https://www.surette-realestate.com
+2018-12-28 20:01:51,489-INFO-Now processing: https://www.pnb.org
+2018-12-28 20:01:54,561-INFO-Now processing: https://newsroom.cisco.com
+2018-12-28 20:01:59,140-INFO-Now processing: https://www.robbinschevy.co
+2018-12-28 20:01:59,899-WARNING-Request error for website: https://www.robbinschevy.co
+2018-12-28 20:01:59,899-INFO-Now processing: https://thesefootballtimes.co
+2018-12-28 20:02:00,795-WARNING-Request error for website: https://thesefootballtimes.co
+2018-12-28 20:02:00,796-INFO-Now processing: https://imm.medicina.ulisboa.pt
+2018-12-28 20:02:02,767-INFO-Now processing: https://neosmart.net
+2018-12-28 20:02:03,817-WARNING-Request error for website: https://neosmart.net
+2018-12-28 20:02:03,818-INFO-Now processing: https://danci.911cha.com
+2018-12-28 20:02:05,858-INFO-Now processing: https://danci.911cha.com
+2018-12-28 20:02:08,019-INFO-Now processing: https://www.narayana-verlag.com
+2018-12-28 20:02:12,089-INFO-Now processing: https://recorder.franklincountyohio.gov
+2018-12-28 20:02:13,942-INFO-Now processing: https://www.digitalcommonwealth.org
+2018-12-28 20:02:15,506-INFO-Now processing: https://sponsorpitch.com
+2018-12-28 20:02:17,192-INFO-Now processing: https://forum.isthmus.com
+2018-12-28 20:02:19,233-INFO-Now processing: https://www.nihadc.com
+2018-12-28 20:02:22,371-INFO-Now processing: https://www.e-jmd.org
+2018-12-28 20:02:26,590-INFO-Now processing: https://www.separations.asia.tosohbioscience.com
+2018-12-28 20:02:29,674-INFO-Now processing: https://www.e-sciencecentral.org
+2018-12-28 20:02:31,245-INFO-Now processing: https://iovs.arvojournals.org
+2018-12-28 20:02:33,023-WARNING-Request error for website: https://iovs.arvojournals.org
+2018-12-28 20:02:33,024-INFO-Now processing: https://stellaris.paradoxwikis.com
+2018-12-28 20:02:33,587-WARNING-Request error for website: https://stellaris.paradoxwikis.com
+2018-12-28 20:02:33,587-INFO-Now processing: https://developer.asperasoft.com
+2018-12-28 20:02:35,254-INFO-Now processing: https://www.tourisme-alsace.com
+2018-12-28 20:02:36,221-WARNING-Request error for website: https://www.tourisme-alsace.com
+2018-12-28 20:02:36,222-INFO-Now processing: https://www.cem-protection.com
+2018-12-28 20:02:36,937-WARNING-Request error for website: https://www.cem-protection.com
+2018-12-28 20:02:36,938-INFO-Now processing: https://www.paulettesauve.com
+2018-12-28 20:02:37,720-WARNING-Request error for website: https://www.paulettesauve.com
+2018-12-28 20:02:37,720-INFO-Now processing: https://read.dukeupress.edu
+2018-12-28 20:02:39,509-WARNING-Request error for website: https://read.dukeupress.edu
+2018-12-28 20:02:39,509-INFO-Now processing: https://www.marketingsherpa.com
+2018-12-28 20:02:41,669-INFO-Now processing: https://jamanetwork.com
+2018-12-28 20:02:44,053-WARNING-Request error for website: https://jamanetwork.com
+2018-12-28 20:02:44,054-INFO-Now processing: https://www.ceemjournal.org
+2018-12-28 20:02:45,972-INFO-Now processing: https://www.tosohindia.com
+2018-12-28 20:02:48,498-INFO-Now processing: https://shop.hytest.fi
+2018-12-28 20:02:50,157-INFO-Now processing: https://www.j-stroke.org
+2018-12-28 20:02:52,456-INFO-Now processing: https://www.diagnostics.eu.tosohbioscience.com
+2018-12-28 20:02:56,203-INFO-Now processing: https://gbtimes.com
+2018-12-28 20:02:57,443-INFO-Now processing: https://thecasswiki.net
+2018-12-28 20:02:57,962-WARNING-Request error for website: https://thecasswiki.net
+2018-12-28 20:02:57,963-INFO-Now processing: https://ck2.paradoxwikis.com
+2018-12-28 20:02:58,610-WARNING-Request error for website: https://ck2.paradoxwikis.com
+2018-12-28 20:02:58,621-INFO-Now processing: https://www.robomow.com
+2018-12-28 20:02:59,403-WARNING-Request error for website: https://www.robomow.com
+2018-12-28 20:02:59,404-INFO-Now processing: https://www.ucsusa.org
+2018-12-28 20:03:01,230-INFO-Now processing: https://www.vogelwarte.ch
+2018-12-28 20:03:02,526-INFO-Now processing: https://ezcanvas.com
+2018-12-28 20:03:03,661-WARNING-Request error for website: https://ezcanvas.com
+2018-12-28 20:03:03,661-INFO-Now processing: https://askaquestionto.us
+2018-12-28 20:03:04,503-WARNING-Request error for website: https://askaquestionto.us
+2018-12-28 20:03:04,504-INFO-Now processing: https://www.rushcard.co
+2018-12-28 20:03:12,826-WARNING-Request error for website: https://www.rushcard.co
+2018-12-28 20:03:12,827-INFO-Now processing: https://www.cdfa.ca.gov
+2018-12-28 20:03:14,970-INFO-Now processing: https://www.mevaccine.org
+2018-12-28 20:03:16,773-INFO-Now processing: https://www.aaos.org
+2018-12-28 20:03:18,375-INFO-Now processing: https://s2018.siggraph.org
+2018-12-28 20:03:19,216-WARNING-Request error for website: https://s2018.siggraph.org
+2018-12-28 20:03:19,216-INFO-Now processing: https://www.gsa.europa.eu
+2018-12-28 20:03:20,656-WARNING-Request error for website: https://www.gsa.europa.eu
+2018-12-28 20:03:20,656-INFO-Now processing: https://www.pma.com
+2018-12-28 20:03:21,658-WARNING-Request error for website: https://www.pma.com
+2018-12-28 20:03:21,658-INFO-Now processing: https://norsafe.com
+2018-12-28 20:03:23,493-INFO-Now processing: https://pubs.geoscienceworld.org
+2018-12-28 20:03:25,959-WARNING-Request error for website: https://pubs.geoscienceworld.org
+2018-12-28 20:03:25,960-INFO-Now processing: https://gq.pgi.gov.pl
+2018-12-28 20:03:26,721-WARNING-Request error for website: https://gq.pgi.gov.pl
+2018-12-28 20:03:26,722-INFO-Now processing: https://www.ajas.info
+2018-12-28 20:03:28,290-INFO-Now processing: https://www.quikrete.com
+2018-12-28 20:03:31,646-INFO-Now processing: https://starklibrary.org
+2018-12-28 20:03:34,046-INFO-Now processing: https://www.a1corp.com.sg
+2018-12-28 20:03:34,467-INFO-Now processing: https://www.str.org
+2018-12-28 20:03:36,661-INFO-Now processing: https://leader.pubs.asha.org
+2018-12-28 20:03:37,308-WARNING-Request error for website: https://leader.pubs.asha.org
+2018-12-28 20:03:37,308-INFO-Now processing: https://parkinson.org
+2018-12-28 20:03:40,759-INFO-Now processing: https://mayfieldclinic.com
+2018-12-28 20:03:42,412-INFO-Now processing: https://www.thomsonbiketours.com
+2018-12-28 20:03:44,025-INFO-Now processing: https://www.rhs.org.uk
+2018-12-28 20:03:45,591-INFO-Now processing: https://www.medicines.org.uk
+2018-12-28 20:03:46,828-INFO-Now processing: https://www.mmv.org
+2018-12-28 20:03:49,593-INFO-Now processing: https://www.iwh.on.ca
+2018-12-28 20:03:52,561-INFO-Now processing: https://educationendowmentfoundation.org.uk
+2018-12-28 20:03:56,331-INFO-Now processing: https://www.docsquiffy.co
+2018-12-28 20:03:57,771-WARNING-Request error for website: https://www.docsquiffy.co
+2018-12-28 20:03:57,771-INFO-Now processing: https://elcajon.gwfathom.co
+2018-12-28 20:03:59,166-WARNING-Request error for website: https://elcajon.gwfathom.co
+2018-12-28 20:03:59,166-INFO-Now processing: https://glean.info
+2018-12-28 20:04:02,307-INFO-Now processing: https://www.gwct.org.uk
+2018-12-28 20:04:28,646-INFO-Now processing: https://www.onlalu.com
+2018-12-28 20:04:31,947-INFO-Now processing: https://www.spandidos-publications.com
+2018-12-28 20:04:33,462-INFO-Now processing: https://en.uesp.net
+2018-12-28 20:04:34,897-INFO-Now processing: https://www.arthurconandoyle.com
+2018-12-28 20:04:36,473-INFO-Now processing: https://www.endruntechnologies.com
+2018-12-28 20:04:37,907-INFO-Now processing: https://www.logmein.co
+2018-12-28 20:04:40,236-WARNING-Request error for website: https://www.logmein.co
+2018-12-28 20:04:40,236-INFO-Now processing: https://www.stpatricksfestival.ie
+2018-12-28 20:04:41,011-WARNING-Request error for website: https://www.stpatricksfestival.ie
+2018-12-28 20:04:41,011-INFO-Now processing: https://www.cairn.info
+2018-12-28 20:04:42,148-WARNING-Request error for website: https://www.cairn.info
+2018-12-28 20:04:42,148-INFO-Now processing: https://www.persee.fr
+2018-12-28 20:04:47,746-INFO-Now processing: https://www.fsco.gov.on.ca
+2018-12-28 20:04:49,418-INFO-Now processing: https://www.123teachme.com
+2018-12-28 20:04:50,985-INFO-Now processing: https://sites.fas.harvard.edu
+2018-12-28 20:04:52,539-INFO-Now processing: https://esami.unipi.it
+2018-12-28 20:04:54,245-INFO-Now processing: https://www.djguide.nl
+2018-12-28 20:04:55,620-INFO-Now processing: https://www.rettie.co.uk
+2018-12-28 20:04:56,440-WARNING-Request error for website: https://www.rettie.co.uk
+2018-12-28 20:04:56,440-INFO-Now processing: https://www.crwflags.com
+2018-12-28 20:04:58,062-INFO-Now processing: https://www.matrimonialsindia.com
+2018-12-28 20:05:00,249-INFO-Now processing: https://www.pothole.info
+2018-12-28 20:05:04,482-INFO-Now processing: https://www.avs.org
+2018-12-28 20:05:07,599-INFO-Now processing: https://www.element-it.com
+2018-12-28 20:05:09,269-INFO-Now processing: https://casper.berkeley.edu
+2018-12-28 20:05:10,629-WARNING-Request error for website: https://casper.berkeley.edu
+2018-12-28 20:05:10,629-INFO-Now processing: https://www.zeroaggressionproject.org
+2018-12-28 20:05:13,677-INFO-Now processing: https://www.arabianhorses.org
+2018-12-28 20:05:15,481-INFO-Now processing: https://www.butfootballclub.fr
+2018-12-28 20:05:16,478-WARNING-Request error for website: https://www.butfootballclub.fr
+2018-12-28 20:05:16,479-INFO-Now processing: https://www.industrystock.com
+2018-12-28 20:05:17,373-WARNING-Request error for website: https://www.industrystock.com
+2018-12-28 20:05:17,374-INFO-Now processing: https://www.1life.co.za
+2018-12-28 20:05:42,482-INFO-Now processing: https://wiki.openstack.org
+2018-12-28 20:05:43,767-INFO-Now processing: https://www.paycheckrecords.co
+2018-12-28 20:05:45,066-WARNING-Request error for website: https://www.paycheckrecords.co
+2018-12-28 20:05:45,066-INFO-Now processing: https://www.egnyte.co
+2018-12-28 20:05:46,557-WARNING-Request error for website: https://www.egnyte.co
+2018-12-28 20:05:46,557-INFO-Now processing: https://www.wilsonsleather.co
+2018-12-28 20:05:50,893-WARNING-Request error for website: https://www.wilsonsleather.co
+2018-12-28 20:05:50,894-INFO-Now processing: https://www.dolomiti.org
+2018-12-28 20:05:52,547-INFO-Now processing: https://www.cifor.org
+2018-12-28 20:05:54,229-INFO-Now processing: https://www.ks.uiuc.edu
+2018-12-28 20:05:57,149-INFO-Now processing: https://incubator.duolingo.co
+2018-12-28 20:05:59,745-WARNING-Request error for website: https://incubator.duolingo.co
+2018-12-28 20:05:59,745-INFO-Now processing: https://www.appliancewhse.co
+2018-12-28 20:06:01,111-WARNING-Request error for website: https://www.appliancewhse.co
+2018-12-28 20:06:01,112-INFO-Now processing: https://www.waveapps.co
+2018-12-28 20:06:02,437-WARNING-Request error for website: https://www.waveapps.co
+2018-12-28 20:06:02,438-INFO-Now processing: https://www.tsw.com
+2018-12-28 20:06:04,314-INFO-Now processing: https://www.inpex.co.jp
+2018-12-28 20:06:05,271-INFO-Now processing: https://www.inpex.co.jp
+2018-12-28 20:06:06,187-INFO-Now processing: https://www.fossilera.com
+2018-12-28 20:06:11,165-INFO-Now processing: https://www.thelindquistgroup.com
+2018-12-28 20:06:13,103-INFO-Now processing: https://cabrillo.instructure.co
+2018-12-28 20:06:15,750-WARNING-Request error for website: https://cabrillo.instructure.co
+2018-12-28 20:06:15,751-INFO-Now processing: https://www.visitsanantonio.co
+2018-12-28 20:06:16,980-WARNING-Request error for website: https://www.visitsanantonio.co
+2018-12-28 20:06:16,980-INFO-Now processing: https://pangea.stanford.edu
+2018-12-28 20:06:18,084-INFO-Now processing: https://www.singaporeair.co
+2018-12-28 20:06:19,369-WARNING-Request error for website: https://www.singaporeair.co
+2018-12-28 20:06:19,370-INFO-Now processing: https://www.iaindale.com
+2018-12-28 20:06:20,136-WARNING-Request error for website: https://www.iaindale.com
+2018-12-28 20:06:20,136-INFO-Now processing: https://www.cancercenter.com
+2018-12-28 20:06:22,064-INFO-Now processing: https://www.christiancourier.com
+2018-12-28 20:06:25,617-INFO-Now processing: https://www.care2.com
+2018-12-28 20:06:27,933-INFO-Now processing: https://ari.nus.edu.sg
+2018-12-28 20:06:29,231-INFO-Now processing: https://www.dot.ny.gov
+2018-12-28 20:06:30,243-WARNING-Request error for website: https://www.dot.ny.gov
+2018-12-28 20:06:30,244-INFO-Now processing: https://www.lenntech.com
+2018-12-28 20:06:32,183-INFO-Now processing: https://www.burnabynow.com
+2018-12-28 20:06:32,895-WARNING-Request error for website: https://www.burnabynow.com
+2018-12-28 20:06:32,895-INFO-Now processing: https://www.bitzer.de
+2018-12-28 20:06:34,515-INFO-Now processing: https://www.cairn-int.info
+2018-12-28 20:06:35,801-INFO-Now processing: https://kb.osu.edu
+2018-12-28 20:06:36,760-WARNING-Request error for website: https://kb.osu.edu
+2018-12-28 20:06:36,760-INFO-Now processing: https://www.ilae.org
+2018-12-28 20:06:37,416-WARNING-Request error for website: https://www.ilae.org
+2018-12-28 20:06:37,417-INFO-Now processing: https://www.stripes.com
+2018-12-28 20:06:41,715-INFO-Now processing: https://www.pamgolding.co.za
+2018-12-28 20:06:45,768-INFO-Now processing: https://www.bethinking.org
+2018-12-28 20:06:46,402-WARNING-Request error for website: https://www.bethinking.org
+2018-12-28 20:06:46,403-INFO-Now processing: https://wellcomelibrary.org
+2018-12-28 20:06:50,517-INFO-Now processing: https://www.claypaky.it
+2018-12-28 20:06:54,445-WARNING-Request error for website: https://www.claypaky.it
+2018-12-28 20:06:54,446-INFO-Now processing: https://www.gamebox.com
+2018-12-28 20:06:56,814-INFO-Now processing: https://www.britishmuseum.org
+2018-12-28 20:07:01,746-INFO-Now processing: https://www.sasw.org.sg
+2018-12-28 20:07:02,665-INFO-Now processing: https://www.sup.org
+2018-12-28 20:07:03,935-INFO-Now processing: https://www.dealstreetasia.com
+2018-12-28 20:07:04,368-INFO-Now processing: https://www.e-crt.org
+2018-12-28 20:07:09,073-INFO-Now processing: https://www.kaushik.net
+2018-12-28 20:07:10,634-INFO-Now processing: https://freshdelmonte.co
+2018-12-28 20:07:11,332-WARNING-Request error for website: https://freshdelmonte.co
+2018-12-28 20:07:11,332-INFO-Now processing: https://theodora.com
+2018-12-28 20:07:15,398-INFO-Now processing: https://wikisaga.hi.is
+2018-12-28 20:07:20,778-WARNING-Request error for website: https://wikisaga.hi.is
+2018-12-28 20:07:20,778-INFO-Now processing: https://readers.english.com
+2018-12-28 20:07:22,200-INFO-Now processing: https://readers.english.com
+2018-12-28 20:07:23,711-INFO-Now processing: https://www.marathondumedoc.com
+2018-12-28 20:07:25,956-WARNING-Request error for website: https://www.marathondumedoc.com
+2018-12-28 20:07:25,956-INFO-Now processing: https://docassas.u-paris2.fr
+2018-12-28 20:07:29,963-INFO-Now processing: https://www.seat61.com
+2018-12-28 20:07:32,479-INFO-Now processing: https://www.sail-world.com
+2018-12-28 20:07:39,034-INFO-Now processing: https://web.cn.edu
+2018-12-28 20:07:41,094-INFO-Now processing: https://chopra.com
+2018-12-28 20:07:43,702-INFO-Now processing: https://groupees.com
+2018-12-28 20:07:45,318-INFO-Now processing: https://groupees.com
+2018-12-28 20:07:46,934-INFO-Now processing: https://www.tccb.gov.tr
+2018-12-28 20:07:50,379-INFO-Now processing: https://www.geolsoc.org.uk
+2018-12-28 20:07:53,645-INFO-py raw cap complete. 0 out of 160 failed
