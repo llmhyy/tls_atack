@@ -226,6 +226,7 @@ Processing file: output TLS/Logjam_common_primes/1/global.oup.com_2018-12-24_15-
 Processing file: output TLS/Logjam_common_primes/1/groupees.com_2018-12-24_15-43-28.pcap
 Processing file: output TLS/Logjam_common_primes/1/groupees.com_2018-12-24_15-43-29.pcap
 Processing file: output TLS/Logjam_common_primes/1/guides.codepath.com_2018-12-24_15-34-21.pcap
+Error recording tls version
 Processing file: output TLS/Logjam_common_primes/1/healthypets.mercola.com_2018-12-24_15-43-10.pcap
 Processing file: output TLS/Logjam_common_primes/1/history.nasa.gov_2018-12-24_15-36-31.pcap
 Processing file: output TLS/Logjam_common_primes/1/history.uconn.edu_2018-12-24_15-36-50.pcap
@@ -250,6 +251,7 @@ Processing file: output TLS/Logjam_common_primes/1/raleighmasjid.org_2018-12-24_
 Processing file: output TLS/Logjam_common_primes/1/readthedocs.org_2018-12-24_15-37-46.pcap
 Processing file: output TLS/Logjam_common_primes/1/recorder.franklincountyohio.gov_2018-12-24_15-34-22.pcap
 Processing file: output TLS/Logjam_common_primes/1/reseauinternational.net_2018-12-24_15-35-22.pcap
+Error recording tls version
 Processing file: output TLS/Logjam_common_primes/1/roammobility.com_2018-12-24_15-40-18.pcap
 Processing file: output TLS/Logjam_common_primes/1/security.web.cern.ch_2018-12-24_15-42-12.pcap
 Processing file: output TLS/Logjam_common_primes/1/shpr.registercentrum.se_2018-12-24_15-40-05.pcap
@@ -263,6 +265,7 @@ Processing file: output TLS/Logjam_common_primes/1/tuftshealthplan.com_2018-12-2
 Processing file: output TLS/Logjam_common_primes/1/twinavi.jp_2018-12-24_15-33-16.pcap
 Processing file: output TLS/Logjam_common_primes/1/vitalik.ca_2018-12-24_15-43-01.pcap
 Processing file: output TLS/Logjam_common_primes/1/web.calpoly.edu_2018-12-24_15-40-13.pcap
+Error recording tls version
 Processing file: output TLS/Logjam_common_primes/1/web.extension.illinois.edu_2018-12-24_15-37-05.pcap
 Warning: Length of connections != 0. It is: [1, 2, 3]
 Guessing: 3
@@ -304,6 +307,7 @@ Processing file: output TLS/Logjam_common_primes/1/www.claypaky.it_2018-12-24_15
 Processing file: output TLS/Logjam_common_primes/1/www.contrepoints.org_2018-12-24_15-43-06.pcap
 Processing file: output TLS/Logjam_common_primes/1/www.cornwall.gov.uk_2018-12-24_15-40-04.pcap
 Processing file: output TLS/Logjam_common_primes/1/www.crossref.org_2018-12-24_15-39-54.pcap
+Error recording tls version
 Processing file: output TLS/Logjam_common_primes/1/www.ctahr.hawaii.edu_2018-12-24_15-38-53.pcap
 Warning: Length of connections != 0. It is: [1, 2]
 Guessing: 2
@@ -316,6 +320,7 @@ Warning: Length of connections != 0. It is: [1, 2]
 Guessing: 2
 Processing file: output TLS/Logjam_common_primes/1/www.ecooutdoor.com.au_2018-12-24_15-43-36.pcap
 Processing file: output TLS/Logjam_common_primes/1/www.ecooutdoor.com.au_2018-12-24_15-43-37.pcap
+Error recording tls version
 Processing file: output TLS/Logjam_common_primes/1/www.eir.ie_2018-12-24_15-40-19.pcap
 Processing file: output TLS/Logjam_common_primes/1/www.element-it.com_2018-12-24_15-38-31.pcap
 Processing file: output TLS/Logjam_common_primes/1/www.endocrineweb.com_2018-12-24_15-42-43.pcap
@@ -350,6 +355,7 @@ Processing file: output TLS/Logjam_common_primes/1/www.jobs.net_2018-12-24_15-38
 Warning: Length of connections != 0. It is: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 Guessing: 3
 Processing file: output TLS/Logjam_common_primes/1/www.kuryakyn.com_2018-12-24_15-36-47.pcap
+Error recording tls version
 Processing file: output TLS/Logjam_common_primes/1/www.lecedrerouge.com_2018-12-24_15-34-35.pcap
 Processing file: output TLS/Logjam_common_primes/1/www.letpub.com.cn_2018-12-24_15-43-42.pcap
 Processing file: output TLS/Logjam_common_primes/1/www.liveleak.com_2018-12-24_15-43-08.pcap
@@ -392,6 +398,7 @@ Processing file: output TLS/Logjam_common_primes/1/www.rheumatology.org_2018-12-
 Processing file: output TLS/Logjam_common_primes/1/www.rhs.org.uk_2018-12-24_15-36-37.pcap
 Processing file: output TLS/Logjam_common_primes/1/www.rims.org_2018-12-24_15-36-05.pcap
 Processing file: output TLS/Logjam_common_primes/1/www.rosewoodhotelgroup.com_2018-12-24_15-37-12.pcap
+Error recording tls version
 Processing file: output TLS/Logjam_common_primes/1/www.rothkocenter.com_2018-12-24_15-43-48.pcap
 Processing file: output TLS/Logjam_common_primes/1/www.sail-world.com_2018-12-24_15-43-18.pcap
 Processing file: output TLS/Logjam_common_primes/1/www.salvatori.it_2018-12-24_15-43-01.pcap
@@ -411,6 +418,7 @@ Processing file: output TLS/Logjam_common_primes/1/www.techradar.com_2018-12-24_
 Processing file: output TLS/Logjam_common_primes/1/www.thelindquistgroup.com_2018-12-24_15-39-58.pcap
 Processing file: output TLS/Logjam_common_primes/1/www.theparisreview.org_2018-12-24_15-37-52.pcap
 Processing file: output TLS/Logjam_common_primes/1/www.ticketfly.com_2018-12-24_15-35-27.pcap
+Error recording tls version
 Processing file: output TLS/Logjam_common_primes/1/www.ticketfly.com_2018-12-24_15-35-28.pcap
 Processing file: output TLS/Logjam_common_primes/1/www.ticketfly.com_2018-12-24_15-35-29.pcap
 Processing file: output TLS/Logjam_common_primes/1/www.todayschristianwoman.com_2018-12-24_15-42-28.pcap
@@ -442,6 +450,7 @@ Processing file: output TLS/Logjam_common_primes/2/casper.berkeley.edu_2018-12-2
 Processing file: output TLS/Logjam_common_primes/2/cegq.com_2018-12-24_15-21-03.pcap
 Processing file: output TLS/Logjam_common_primes/2/certification.comptia.org_2018-12-24_15-25-14.pcap
 Processing file: output TLS/Logjam_common_primes/2/chopra.com_2018-12-24_15-26-32.pcap
+Error recording tls version
 Processing file: output TLS/Logjam_common_primes/2/circus.readthedocs.io_2018-12-24_15-21-36.pcap
 Processing file: output TLS/Logjam_common_primes/2/convention.bio.org_2018-12-24_15-19-31.pcap
 Processing file: output TLS/Logjam_common_primes/2/coub.com_2018-12-24_15-26-36.pcap
@@ -455,6 +464,7 @@ Processing file: output TLS/Logjam_common_primes/2/econpapers.repec.org_2018-12-
 Processing file: output TLS/Logjam_common_primes/2/esami.unipi.it_2018-12-24_15-21-21.pcap
 Processing file: output TLS/Logjam_common_primes/2/ezcanvas.com_2018-12-24_15-18-39.pcap
 Processing file: output TLS/Logjam_common_primes/2/f1000.com_2018-12-24_15-18-20.pcap
+Error recording tls version
 Processing file: output TLS/Logjam_common_primes/2/fashionmagazine.com_2018-12-24_15-17-46.pcap
 Processing file: output TLS/Logjam_common_primes/2/forum.ableton.com_2018-12-24_15-25-55.pcap
 Processing file: output TLS/Logjam_common_primes/2/forum.minetest.net_2018-12-24_15-18-05.pcap
@@ -464,6 +474,7 @@ Processing file: output TLS/Logjam_common_primes/2/global.oup.com_2018-12-24_15-
 Processing file: output TLS/Logjam_common_primes/2/groupees.com_2018-12-24_15-26-33.pcap
 Processing file: output TLS/Logjam_common_primes/2/groupees.com_2018-12-24_15-26-34.pcap
 Processing file: output TLS/Logjam_common_primes/2/guides.codepath.com_2018-12-24_15-17-36.pcap
+Error recording tls version
 Processing file: output TLS/Logjam_common_primes/2/healthypets.mercola.com_2018-12-24_15-26-13.pcap
 Processing file: output TLS/Logjam_common_primes/2/history.nasa.gov_2018-12-24_15-19-47.pcap
 Processing file: output TLS/Logjam_common_primes/2/history.uconn.edu_2018-12-24_15-20-04.pcap
@@ -486,6 +497,7 @@ Processing file: output TLS/Logjam_common_primes/2/raleighmasjid.org_2018-12-24_
 Processing file: output TLS/Logjam_common_primes/2/readthedocs.org_2018-12-24_15-20-55.pcap
 Processing file: output TLS/Logjam_common_primes/2/recorder.franklincountyohio.gov_2018-12-24_15-17-38.pcap
 Processing file: output TLS/Logjam_common_primes/2/reseauinternational.net_2018-12-24_15-18-40.pcap
+Error recording tls version
 Processing file: output TLS/Logjam_common_primes/2/roammobility.com_2018-12-24_15-23-21.pcap
 Processing file: output TLS/Logjam_common_primes/2/security.web.cern.ch_2018-12-24_15-25-17.pcap
 Processing file: output TLS/Logjam_common_primes/2/shpr.registercentrum.se_2018-12-24_15-23-10.pcap
@@ -495,6 +507,7 @@ Processing file: output TLS/Logjam_common_primes/2/studyinrussia.ru_2018-12-24_1
 Processing file: output TLS/Logjam_common_primes/2/theodora.com_2018-12-24_15-26-02.pcap
 Processing file: output TLS/Logjam_common_primes/2/thesaurus.plus_2018-12-24_15-17-31.pcap
 Processing file: output TLS/Logjam_common_primes/2/tpwd.texas.gov_2018-12-24_15-16-53.pcap
+Error recording tls version
 Processing file: output TLS/Logjam_common_primes/2/tuftshealthplan.com_2018-12-24_15-23-12.pcap
 Processing file: output TLS/Logjam_common_primes/2/twinavi.jp_2018-12-24_15-16-28.pcap
 Processing file: output TLS/Logjam_common_primes/2/vitalik.ca_2018-12-24_15-26-04.pcap
@@ -540,6 +553,7 @@ Processing file: output TLS/Logjam_common_primes/2/www.claypaky.it_2018-12-24_15
 Processing file: output TLS/Logjam_common_primes/2/www.contrepoints.org_2018-12-24_15-26-09.pcap
 Processing file: output TLS/Logjam_common_primes/2/www.cornwall.gov.uk_2018-12-24_15-23-09.pcap
 Processing file: output TLS/Logjam_common_primes/2/www.crossref.org_2018-12-24_15-22-58.pcap
+Error recording tls version
 Processing file: output TLS/Logjam_common_primes/2/www.ctahr.hawaii.edu_2018-12-24_15-21-54.pcap
 Warning: Length of connections != 0. It is: [1, 2]
 Guessing: 2
@@ -586,6 +600,7 @@ Processing file: output TLS/Logjam_common_primes/2/www.jobs.net_2018-12-24_15-21
 Warning: Length of connections != 0. It is: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 Guessing: 1
 Processing file: output TLS/Logjam_common_primes/2/www.kuryakyn.com_2018-12-24_15-20-01.pcap
+Error recording tls version
 Processing file: output TLS/Logjam_common_primes/2/www.lecedrerouge.com_2018-12-24_15-17-52.pcap
 Processing file: output TLS/Logjam_common_primes/2/www.letpub.com.cn_2018-12-24_15-26-49.pcap
 Processing file: output TLS/Logjam_common_primes/2/www.liveleak.com_2018-12-24_15-26-11.pcap
@@ -597,6 +612,7 @@ Processing file: output TLS/Logjam_common_primes/2/www.mmv.org_2018-12-24_15-19-
 Processing file: output TLS/Logjam_common_primes/2/www.nabjconvention.com_2018-12-24_15-19-32.pcap
 Processing file: output TLS/Logjam_common_primes/2/www.nasponline.org_2018-12-24_15-23-34.pcap
 Processing file: output TLS/Logjam_common_primes/2/www.nctreasurer.com_2018-12-24_15-19-29.pcap
+Error recording tls version
 Processing file: output TLS/Logjam_common_primes/2/www.neatorama.com_2018-12-24_15-16-31.pcap
 Processing file: output TLS/Logjam_common_primes/2/www.netflix.com_2018-12-24_15-17-03.pcap
 Processing file: output TLS/Logjam_common_primes/2/www.netflix.com_2018-12-24_15-17-04.pcap
@@ -618,6 +634,7 @@ Processing file: output TLS/Logjam_common_primes/2/www.paulettesauve.com_2018-12
 Processing file: output TLS/Logjam_common_primes/2/www.pcs.org_2018-12-24_15-18-47.pcap
 Processing file: output TLS/Logjam_common_primes/2/www.pheasantsforever.org_2018-12-24_15-20-06.pcap
 Processing file: output TLS/Logjam_common_primes/2/www.pma.com_2018-12-24_15-19-34.pcap
+Error recording tls version
 Processing file: output TLS/Logjam_common_primes/2/www.postojnska-jama.eu_2018-12-24_15-22-07.pcap
 Processing file: output TLS/Logjam_common_primes/2/www.pothole.info_2018-12-24_15-21-33.pcap
 Processing file: output TLS/Logjam_common_primes/2/www.preachingtoday.com_2018-12-24_15-21-44.pcap
@@ -685,6 +702,7 @@ Processing file: output TLS/Logjam_common_primes/3/danci.911cha.com_2018-12-24_1
 Processing file: output TLS/Logjam_common_primes/3/danci.911cha.com_2018-12-24_14-53-31.pcap
 Warning: Length of connections != 0. It is: [1, 2]
 Guessing: 2
+Error recording tls version
 Processing file: output TLS/Logjam_common_primes/3/donor.cbsblood.org_2018-12-24_14-56-37.pcap
 Warning: Length of connections != 0. It is: [1, 2, 3]
 Guessing: 3
@@ -702,6 +720,7 @@ Processing file: output TLS/Logjam_common_primes/3/global.oup.com_2018-12-24_14-
 Processing file: output TLS/Logjam_common_primes/3/groupees.com_2018-12-24_15-02-36.pcap
 Processing file: output TLS/Logjam_common_primes/3/groupees.com_2018-12-24_15-02-37.pcap
 Processing file: output TLS/Logjam_common_primes/3/guides.codepath.com_2018-12-24_14-53-33.pcap
+Error recording tls version
 Processing file: output TLS/Logjam_common_primes/3/healthypets.mercola.com_2018-12-24_15-02-19.pcap
 Processing file: output TLS/Logjam_common_primes/3/history.nasa.gov_2018-12-24_14-55-46.pcap
 Processing file: output TLS/Logjam_common_primes/3/history.uconn.edu_2018-12-24_14-56-04.pcap
@@ -724,6 +743,7 @@ Processing file: output TLS/Logjam_common_primes/3/raleighmasjid.org_2018-12-24_
 Processing file: output TLS/Logjam_common_primes/3/readthedocs.org_2018-12-24_14-56-53.pcap
 Processing file: output TLS/Logjam_common_primes/3/recorder.franklincountyohio.gov_2018-12-24_14-53-35.pcap
 Processing file: output TLS/Logjam_common_primes/3/reseauinternational.net_2018-12-24_14-54-39.pcap
+Error recording tls version
 Processing file: output TLS/Logjam_common_primes/3/roammobility.com_2018-12-24_14-59-14.pcap
 Processing file: output TLS/Logjam_common_primes/3/security.web.cern.ch_2018-12-24_15-01-20.pcap
 Processing file: output TLS/Logjam_common_primes/3/shpr.registercentrum.se_2018-12-24_14-59-03.pcap
@@ -767,6 +787,7 @@ Processing file: output TLS/Logjam_common_primes/3/www.business.uconn.edu_2018-1
 Processing file: output TLS/Logjam_common_primes/3/www.butfootballclub.fr_2018-12-24_14-57-58.pcap
 Processing file: output TLS/Logjam_common_primes/3/www.cabi.org_2018-12-24_14-57-39.pcap
 Processing file: output TLS/Logjam_common_primes/3/www.cabrillo.edu_2018-12-24_14-58-59.pcap
+Error recording tls version
 Processing file: output TLS/Logjam_common_primes/3/www.cancerresearchuk.org_2018-12-24_14-59-28.pcap
 Processing file: output TLS/Logjam_common_primes/3/www.cancerresearchuk.org_2018-12-24_14-59-29.pcap
 Processing file: output TLS/Logjam_common_primes/3/www.cdfa.ca.gov_2018-12-24_14-55-14.pcap
@@ -778,6 +799,7 @@ Processing file: output TLS/Logjam_common_primes/3/www.claypaky.it_2018-12-24_15
 Processing file: output TLS/Logjam_common_primes/3/www.contrepoints.org_2018-12-24_15-02-15.pcap
 Processing file: output TLS/Logjam_common_primes/3/www.cornwall.gov.uk_2018-12-24_14-59-02.pcap
 Processing file: output TLS/Logjam_common_primes/3/www.crossref.org_2018-12-24_14-58-50.pcap
+Error recording tls version
 Processing file: output TLS/Logjam_common_primes/3/www.ctahr.hawaii.edu_2018-12-24_14-57-54.pcap
 Warning: Length of connections != 0. It is: [1, 2]
 Guessing: 2
@@ -824,6 +846,7 @@ Processing file: output TLS/Logjam_common_primes/3/www.jobs.net_2018-12-24_14-57
 Warning: Length of connections != 0. It is: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 Guessing: 1
 Processing file: output TLS/Logjam_common_primes/3/www.kuryakyn.com_2018-12-24_14-56-01.pcap
+Error recording tls version
 Processing file: output TLS/Logjam_common_primes/3/www.lecedrerouge.com_2018-12-24_14-53-48.pcap
 Processing file: output TLS/Logjam_common_primes/3/www.letpub.com.cn_2018-12-24_15-02-51.pcap
 Processing file: output TLS/Logjam_common_primes/3/www.liveleak.com_2018-12-24_15-02-17.pcap
@@ -866,6 +889,7 @@ Processing file: output TLS/Logjam_common_primes/3/www.rheumatology.org_2018-12-
 Processing file: output TLS/Logjam_common_primes/3/www.rhs.org.uk_2018-12-24_14-55-51.pcap
 Processing file: output TLS/Logjam_common_primes/3/www.rims.org_2018-12-24_14-55-20.pcap
 Processing file: output TLS/Logjam_common_primes/3/www.rosewoodhotelgroup.com_2018-12-24_14-56-24.pcap
+Error recording tls version
 Processing file: output TLS/Logjam_common_primes/3/www.rothkocenter.com_2018-12-24_15-02-59.pcap
 Processing file: output TLS/Logjam_common_primes/3/www.sail-world.com_2018-12-24_15-02-27.pcap
 Processing file: output TLS/Logjam_common_primes/3/www.salvatori.it_2018-12-24_15-02-10.pcap
@@ -977,6 +1001,7 @@ Processing file: output TLS/poodle/1/www.cifor.org_2018-12-21_16-19-21.pcap
 Processing file: output TLS/poodle/1/www.claypaky.it_2018-12-21_16-20-19.pcap
 Processing file: output TLS/poodle/1/www.crwflags.com_2018-12-21_16-18-51.pcap
 Processing file: output TLS/poodle/1/www.dealstreetasia.com_2018-12-21_16-20-24.pcap
+Error recording tls version
 Processing file: output TLS/poodle/1/www.diagnostics.eu.tosohbioscience.com_2018-12-21_16-16-59.pcap
 Processing file: output TLS/poodle/1/www.digitalcommonwealth.org_2018-12-21_16-16-24.pcap
 Processing file: output TLS/poodle/1/www.djguide.nl_2018-12-21_16-18-47.pcap
@@ -1023,6 +1048,7 @@ Processing file: output TLS/poodle/1/www.pnb.org_2018-12-21_16-16-05.pcap
 Processing file: output TLS/poodle/1/www.pothole.info_2018-12-21_16-18-56.pcap
 Processing file: output TLS/poodle/1/www.quikrete.com_2018-12-21_16-17-43.pcap
 Processing file: output TLS/poodle/1/www.rettie.co.uk_2018-12-21_16-18-50.pcap
+Error recording tls version
 Processing file: output TLS/poodle/1/www.rhs.org.uk_2018-12-21_16-17-56.pcap
 Processing file: output TLS/poodle/1/www.robomow.com_2018-12-21_16-17-07.pcap
 Processing file: output TLS/poodle/1/www.sail-world.com_2018-12-21_16-20-46.pcap
@@ -1116,6 +1142,7 @@ Warning: Length of connections != 0. It is: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 Guessing: 10
 Processing file: output TLS/poodle/2/www.cancercenter.com_2018-12-21_16-30-48.pcap
 Processing file: output TLS/poodle/2/www.care2.com_2018-12-21_16-30-53.pcap
+Error recording tls version
 Processing file: output TLS/poodle/2/www.cdfa.ca.gov_2018-12-21_16-28-28.pcap
 Processing file: output TLS/poodle/2/www.ceemjournal.org_2018-12-21_16-27-56.pcap
 Processing file: output TLS/poodle/2/www.cem-protection.com_2018-12-21_16-27-47.pcap
@@ -1124,6 +1151,7 @@ Processing file: output TLS/poodle/2/www.cifor.org_2018-12-21_16-30-27.pcap
 Processing file: output TLS/poodle/2/www.claypaky.it_2018-12-21_16-31-28.pcap
 Processing file: output TLS/poodle/2/www.crwflags.com_2018-12-21_16-29-55.pcap
 Processing file: output TLS/poodle/2/www.dealstreetasia.com_2018-12-21_16-31-34.pcap
+Error recording tls version
 Processing file: output TLS/poodle/2/www.diagnostics.eu.tosohbioscience.com_2018-12-21_16-28-04.pcap
 Processing file: output TLS/poodle/2/www.digitalcommonwealth.org_2018-12-21_16-27-29.pcap
 Processing file: output TLS/poodle/2/www.djguide.nl_2018-12-21_16-29-50.pcap
@@ -1265,6 +1293,7 @@ Warning: Length of connections != 0. It is: [1, 2, 3, 4, 5, 7, 8, 9, 10, 11]
 Guessing: 4
 Processing file: output TLS/poodle/3/www.cancercenter.com_2018-12-21_16-42-13.pcap
 Processing file: output TLS/poodle/3/www.care2.com_2018-12-21_16-42-17.pcap
+Error recording tls version
 Processing file: output TLS/poodle/3/www.cdfa.ca.gov_2018-12-21_16-39-51.pcap
 Processing file: output TLS/poodle/3/www.ceemjournal.org_2018-12-21_16-38-50.pcap
 Processing file: output TLS/poodle/3/www.cem-protection.com_2018-12-21_16-38-42.pcap
@@ -1301,6 +1330,7 @@ Processing file: output TLS/poodle/3/www.j-stroke.org_2018-12-21_16-38-57.pcap
 Processing file: output TLS/poodle/3/www.kaushik.net_2018-12-21_16-43-06.pcap
 Processing file: output TLS/poodle/3/www.ks.uiuc.edu_2018-12-21_16-41-56.pcap
 Processing file: output TLS/poodle/3/www.lenntech.com_2018-12-21_16-42-21.pcap
+Error recording tls version
 Processing file: output TLS/poodle/3/www.marketingsherpa.com_2018-12-21_16-38-47.pcap
 Processing file: output TLS/poodle/3/www.matrimonialsindia.com_2018-12-21_16-41-19.pcap
 Processing file: output TLS/poodle/3/www.medicines.org.uk_2018-12-21_16-40-26.pcap
@@ -1311,6 +1341,7 @@ Processing file: output TLS/poodle/3/www.narayana-verlag.com_2018-12-21_16-38-19
 Processing file: output TLS/poodle/3/www.newportmansions.org_2018-12-21_16-37-48.pcap
 Processing file: output TLS/poodle/3/www.nihadc.com_2018-12-21_16-38-28.pcap
 Processing file: output TLS/poodle/3/www.onlalu.com_2018-12-21_16-40-45.pcap
+Error recording tls version
 Processing file: output TLS/poodle/3/www.pamgolding.co.za_2018-12-21_16-42-46.pcap
 Processing file: output TLS/poodle/3/www.paulettesauve.com_2018-12-21_16-38-44.pcap
 Processing file: output TLS/poodle/3/www.persee.fr_2018-12-21_16-41-07.pcap
@@ -1319,6 +1350,7 @@ Processing file: output TLS/poodle/3/www.pnb.org_2018-12-21_16-38-03.pcap
 Processing file: output TLS/poodle/3/www.pothole.info_2018-12-21_16-41-23.pcap
 Processing file: output TLS/poodle/3/www.quikrete.com_2018-12-21_16-40-12.pcap
 Processing file: output TLS/poodle/3/www.rettie.co.uk_2018-12-21_16-41-16.pcap
+Error recording tls version
 Processing file: output TLS/poodle/3/www.rhs.org.uk_2018-12-21_16-40-24.pcap
 Processing file: output TLS/poodle/3/www.robomow.com_2018-12-21_16-39-34.pcap
 Processing file: output TLS/poodle/3/www.sail-world.com_2018-12-21_16-43-20.pcap
@@ -1375,6 +1407,7 @@ Processing file: output TLS/RC4/1/drknews.com_2018-12-24_15-58-40.pcap
 Processing file: output TLS/RC4/1/dspace.library.uu.nl_2018-12-24_16-03-45.pcap
 Processing file: output TLS/RC4/1/econpapers.repec.org_2018-12-24_16-00-54.pcap
 Processing file: output TLS/RC4/1/emetoutreach.com_2018-12-24_16-03-44.pcap
+Error recording tls version
 Processing file: output TLS/RC4/1/encyklopedia.pwn.pl_2018-12-24_16-08-33.pcap
 Processing file: output TLS/RC4/1/en.uesp.net_2018-12-24_16-02-44.pcap
 Processing file: output TLS/RC4/1/esefarad.com_2018-12-24_16-06-41.pcap
@@ -1488,6 +1521,7 @@ Processing file: output TLS/RC4/1/www.bibleref.com_2018-12-24_16-07-47.pcap
 Processing file: output TLS/RC4/1/www.biomerieux-diagnostics.com_2018-12-24_15-59-28.pcap
 Processing file: output TLS/RC4/1/www.briggsandstratton.com_2018-12-24_15-59-46.pcap
 Processing file: output TLS/RC4/1/www.brightredpublishing.co.uk_2018-12-24_15-57-19.pcap
+Error recording tls version
 Processing file: output TLS/RC4/1/www.britishmuseum.org_2018-12-24_16-07-20.pcap
 Processing file: output TLS/RC4/1/www.burnabynow.com_2018-12-24_16-04-58.pcap
 Processing file: output TLS/RC4/1/www.cabi.org_2018-12-24_16-03-26.pcap
@@ -1497,6 +1531,7 @@ Guessing: 5
 Processing file: output TLS/RC4/1/www.caister.com_2018-12-24_16-04-35.pcap
 Processing file: output TLS/RC4/1/www.cdfa.ca.gov_2018-12-24_16-01-16.pcap
 Processing file: output TLS/RC4/1/www.ceemjournal.org_2018-12-24_15-59-24.pcap
+Error recording tls version
 Processing file: output TLS/RC4/1/www.cem-protection.com_2018-12-24_15-59-10.pcap
 Processing file: output TLS/RC4/1/www.cesarsway.com_2018-12-24_16-03-18.pcap
 Processing file: output TLS/RC4/1/www.cifor.org_2018-12-24_16-03-50.pcap
@@ -1588,6 +1623,7 @@ Guessing: 3
 Processing file: output TLS/RC4/1/www.kjvbible.org_2018-12-24_16-08-26.pcap
 Processing file: output TLS/RC4/1/www.konbini.com_2018-12-24_16-02-28.pcap
 Processing file: output TLS/RC4/1/www.kuryakyn.com_2018-12-24_16-02-19.pcap
+Error recording tls version
 Processing file: output TLS/RC4/1/www.lenntech.com_2018-12-24_16-04-41.pcap
 Processing file: output TLS/RC4/1/www.letpub.com.cn_2018-12-24_16-08-58.pcap
 Processing file: output TLS/RC4/1/www.letsgo.co.za_2018-12-24_16-07-48.pcap
@@ -1607,10 +1643,12 @@ Processing file: output TLS/RC4/1/www.nihadc.com_2018-12-24_15-58-44.pcap
 Processing file: output TLS/RC4/1/www.nobelprize.org_2018-12-24_15-57-50.pcap
 Processing file: output TLS/RC4/1/www.oas.org_2018-12-24_16-00-22.pcap
 Processing file: output TLS/RC4/1/www.oceansoffun.org_2018-12-24_16-00-56.pcap
+Error recording tls version
 Processing file: output TLS/RC4/1/www.omim.org_2018-12-24_16-07-46.pcap
 Processing file: output TLS/RC4/1/www.onlinemphdegree.net_2018-12-24_16-04-20.pcap
 Processing file: output TLS/RC4/1/www.ottawaheart.ca_2018-12-24_16-03-30.pcap
 Processing file: output TLS/RC4/1/www.pacificpeche.com_2018-12-24_16-00-35.pcap
+Error recording tls version
 Processing file: output TLS/RC4/1/www.pamgolding.co.za_2018-12-24_16-07-10.pcap
 Processing file: output TLS/RC4/1/www.pantone.com_2018-12-24_15-57-17.pcap
 Processing file: output TLS/RC4/1/www.pma.com_2018-12-24_16-01-27.pcap
@@ -1633,6 +1671,7 @@ Processing file: output TLS/RC4/1/www.shakeout.org_2018-12-24_15-59-17.pcap
 Processing file: output TLS/RC4/1/www.sickkids.ca_2018-12-24_16-04-34.pcap
 Processing file: output TLS/RC4/1/www.simplicitymfg.com_2018-12-24_15-59-57.pcap
 Processing file: output TLS/RC4/1/www.skincancer.org_2018-12-24_16-04-25.pcap
+Error recording tls version
 Processing file: output TLS/RC4/1/www.snapper.com_2018-12-24_16-00-00.pcap
 Processing file: output TLS/RC4/1/www.socialworkers.org_2018-12-24_16-07-28.pcap
 Processing file: output TLS/RC4/1/www-sop.inria.fr_2018-12-24_15-57-13.pcap
@@ -1679,6 +1718,7 @@ Processing file: output TLS/RC4/1/www.worx.com_2018-12-24_15-59-58.pcap
 Processing file: output TLS/RC4/1/www.wyohistory.org_2018-12-24_16-00-19.pcap
 Processing file: output TLS/RC4/1/www.yr.no_2018-12-24_16-08-15.pcap
 Processing file: output TLS/RC4/1/zero1.sg_2018-12-24_16-04-26.pcap
+Error recording tls version
 Processing file: output TLS/RC4/1/zh-cn.facebook.com_2018-12-24_15-56-59.pcap
 Processing file: output TLS/RC4/2/acronyms.thefreedictionary.com_2018-12-24_16-20-55.pcap
 Processing file: output TLS/RC4/2/ahdc.vet.cornell.edu_2018-12-24_16-25-13.pcap
@@ -1722,6 +1762,7 @@ Processing file: output TLS/RC4/2/explore.library.leeds.ac.uk_2018-12-24_16-23-5
 Processing file: output TLS/RC4/2/ezcanvas.com_2018-12-24_16-21-41.pcap
 Processing file: output TLS/RC4/2/f1000.com_2018-12-24_16-21-04.pcap
 Processing file: output TLS/RC4/2/fi-fi.facebook.com_2018-12-24_16-29-54.pcap
+Error recording tls version
 Processing file: output TLS/RC4/2/financial-dictionary.thefreedictionary.com_2018-12-24_16-18-03.pcap
 Processing file: output TLS/RC4/2/forum.ableton.com_2018-12-24_16-29-05.pcap
 Processing file: output TLS/RC4/2/forum.isthmus.com_2018-12-24_16-20-00.pcap
@@ -1735,6 +1776,7 @@ Processing file: output TLS/RC4/2/gq.pgi.gov.pl_2018-12-24_16-22-59.pcap
 Warning: Length of connections != 0. It is: [1, 2]
 Guessing: 2
 Processing file: output TLS/RC4/2/greatergood.berkeley.edu_2018-12-24_16-18-31.pcap
+Error recording tls version
 Processing file: output TLS/RC4/2/greensock.com_2018-12-24_16-29-51.pcap
 Processing file: output TLS/RC4/2/hairsellon.com_2018-12-24_16-22-07.pcap
 Processing file: output TLS/RC4/2/help.instagram.com_2018-12-24_16-24-08.pcap
@@ -1811,6 +1853,7 @@ Processing file: output TLS/RC4/2/www2.palomar.edu_2018-12-24_16-23-59.pcap
 Processing file: output TLS/RC4/2/www.a1corp.com.sg_2018-12-24_16-23-12.pcap
 Processing file: output TLS/RC4/2/www.aaos.org_2018-12-24_16-22-29.pcap
 Processing file: output TLS/RC4/2/www.abc.net.au_2018-12-24_16-25-39.pcap
+Error recording tls version
 Processing file: output TLS/RC4/2/www.aesculapusa.com_2018-12-24_16-19-55.pcap
 Processing file: output TLS/RC4/2/www.africa-confidential.com_2018-12-24_16-23-40.pcap
 Processing file: output TLS/RC4/2/www.aide-joomla.fr_2018-12-24_16-19-27.pcap
@@ -1865,6 +1908,7 @@ Processing file: output TLS/RC4/2/www.doctorsdata.com_2018-12-24_16-20-11.pcap
 Processing file: output TLS/RC4/2/www.dolomiti.org_2018-12-24_16-25-09.pcap
 Processing file: output TLS/RC4/2/www.dot.ny.gov_2018-12-24_16-26-00.pcap
 Processing file: output TLS/RC4/2/www.drystone.org_2018-12-24_16-30-03.pcap
+Error recording tls version
 Processing file: output TLS/RC4/2/www.dw.com_2018-12-24_16-20-32.pcap
 Processing file: output TLS/RC4/2/www.ecologyandsociety.org_2018-12-24_16-30-14.pcap
 Processing file: output TLS/RC4/2/www.e-crt.org_2018-12-24_16-28-56.pcap
@@ -1926,6 +1970,7 @@ Warning: Length of connections != 0. It is: [1, 3]
 Guessing: 3
 Processing file: output TLS/RC4/2/www.kjvbible.org_2018-12-24_16-29-36.pcap
 Processing file: output TLS/RC4/2/www.kuryakyn.com_2018-12-24_16-23-31.pcap
+Error recording tls version
 Processing file: output TLS/RC4/2/www.lenntech.com_2018-12-24_16-26-03.pcap
 Processing file: output TLS/RC4/2/www.letpub.com.cn_2018-12-24_16-30-10.pcap
 Processing file: output TLS/RC4/2/www.letsgo.co.za_2018-12-24_16-29-00.pcap
@@ -1943,8 +1988,10 @@ Processing file: output TLS/RC4/2/www.nccn.org_2018-12-24_16-25-24.pcap
 Processing file: output TLS/RC4/2/www.newportmansions.org_2018-12-24_16-18-21.pcap
 Processing file: output TLS/RC4/2/www.nihadc.com_2018-12-24_16-20-06.pcap
 Processing file: output TLS/RC4/2/www.nobelprize.org_2018-12-24_16-19-19.pcap
+Error recording tls version
 Processing file: output TLS/RC4/2/www.oas.org_2018-12-24_16-21-34.pcap
 Processing file: output TLS/RC4/2/www.oceansoffun.org_2018-12-24_16-22-02.pcap
+Error recording tls version
 Processing file: output TLS/RC4/2/www.omim.org_2018-12-24_16-28-57.pcap
 Processing file: output TLS/RC4/2/www.onlinemphdegree.net_2018-12-24_16-25-41.pcap
 Processing file: output TLS/RC4/2/www.ottawaheart.ca_2018-12-24_16-24-51.pcap
@@ -2038,6 +2085,7 @@ Processing file: output TLS/RC4/3/bmdp.org_2018-12-24_16-53-11.pcap
 Processing file: output TLS/RC4/3/casper.berkeley.edu_2018-12-24_16-53-42.pcap
 Processing file: output TLS/RC4/3/centerforinquiry.org_2018-12-24_16-53-26.pcap
 Processing file: output TLS/RC4/3/collections.museumvictoria.com.au_2018-12-24_16-46-24.pcap
+Error recording tls version
 Processing file: output TLS/RC4/3/crawford.anu.edu.au_2018-12-24_16-50-57.pcap
 Processing file: output TLS/RC4/3/datadryad.org_2018-12-24_16-46-09.pcap
 Processing file: output TLS/RC4/3/definedterm.com_2018-12-24_16-50-17.pcap
@@ -2052,6 +2100,7 @@ Processing file: output TLS/RC4/3/drknews.com_2018-12-24_16-48-21.pcap
 Processing file: output TLS/RC4/3/dspace.library.uu.nl_2018-12-24_16-54-05.pcap
 Processing file: output TLS/RC4/3/econpapers.repec.org_2018-12-24_16-50-44.pcap
 Processing file: output TLS/RC4/3/emetoutreach.com_2018-12-24_16-54-03.pcap
+Error recording tls version
 Processing file: output TLS/RC4/3/encyklopedia.pwn.pl_2018-12-24_16-57-23.pcap
 Processing file: output TLS/RC4/3/en.uesp.net_2018-12-24_16-52-52.pcap
 Processing file: output TLS/RC4/3/esefarad.com_2018-12-24_16-55-37.pcap
@@ -2266,6 +2315,7 @@ Guessing: 3
 Processing file: output TLS/RC4/3/www.kjvbible.org_2018-12-24_16-57-17.pcap
 Processing file: output TLS/RC4/3/www.konbini.com_2018-12-24_16-52-35.pcap
 Processing file: output TLS/RC4/3/www.kuryakyn.com_2018-12-24_16-52-26.pcap
+Error recording tls version
 Processing file: output TLS/RC4/3/www.lenntech.com_2018-12-24_16-55-19.pcap
 Processing file: output TLS/RC4/3/www.letpub.com.cn_2018-12-24_16-57-50.pcap
 Processing file: output TLS/RC4/3/www.letsgo.co.za_2018-12-24_16-56-39.pcap
@@ -2275,6 +2325,7 @@ Processing file: output TLS/RC4/3/www.medicines.org.uk_2018-12-24_16-52-03.pcap
 Warning: Length of connections != 0. It is: [1, 2]
 Guessing: 2
 Processing file: output TLS/RC4/3/www.miun.se_2018-12-24_16-48-29.pcap
+Error recording tls version
 Processing file: output TLS/RC4/3/www.mountainproject.com_2018-12-24_16-56-15.pcap
 Processing file: output TLS/RC4/3/www.naeyc.org_2018-12-24_16-46-34.pcap
 Processing file: output TLS/RC4/3/www.narayana-verlag.com_2018-12-24_16-48-00.pcap
@@ -2285,6 +2336,7 @@ Processing file: output TLS/RC4/3/www.nihadc.com_2018-12-24_16-48-26.pcap
 Processing file: output TLS/RC4/3/www.nobelprize.org_2018-12-24_16-47-23.pcap
 Processing file: output TLS/RC4/3/www.oas.org_2018-12-24_16-50-15.pcap
 Processing file: output TLS/RC4/3/www.oceansoffun.org_2018-12-24_16-50-47.pcap
+Error recording tls version
 Processing file: output TLS/RC4/3/www.omim.org_2018-12-24_16-56-36.pcap
 Processing file: output TLS/RC4/3/www.onlinemphdegree.net_2018-12-24_16-54-53.pcap
 Processing file: output TLS/RC4/3/www.ottawaheart.ca_2018-12-24_16-53-45.pcap
@@ -2311,6 +2363,7 @@ Processing file: output TLS/RC4/3/www.shakeout.org_2018-12-24_16-49-03.pcap
 Processing file: output TLS/RC4/3/www.sickkids.ca_2018-12-24_16-55-11.pcap
 Processing file: output TLS/RC4/3/www.simplicitymfg.com_2018-12-24_16-49-42.pcap
 Processing file: output TLS/RC4/3/www.skincancer.org_2018-12-24_16-54-59.pcap
+Error recording tls version
 Processing file: output TLS/RC4/3/www.snapper.com_2018-12-24_16-49-45.pcap
 Processing file: output TLS/RC4/3/www.socialworkers.org_2018-12-24_16-56-21.pcap
 Processing file: output TLS/RC4/3/www-sop.inria.fr_2018-12-24_16-46-43.pcap
@@ -2369,6 +2422,7 @@ Processing file: output TLS/Secure_client_renego/1/agupubs.onlinelibrary.wiley.c
 Warning: Length of connections != 0. It is: [1, 2, 3]
 Guessing: 3
 Processing file: output TLS/Secure_client_renego/1/airandspace.si.edu_2018-12-24_17-18-11.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/1/ameblo.jp_2018-12-24_17-10-22.pcap
 Processing file: output TLS/Secure_client_renego/1/app.a-star.edu.sg_2018-12-24_17-15-26_0.pcap
 Warning: Length of connections != 0. It is: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
@@ -2394,6 +2448,7 @@ Processing file: output TLS/Secure_client_renego/1/cmp.smu.edu.sg_2018-12-24_17-
 Processing file: output TLS/Secure_client_renego/1/community.babycentre.co.uk_2018-12-24_17-20-46.pcap
 Processing file: output TLS/Secure_client_renego/1/community.st.com_2018-12-24_17-14-44.pcap
 Processing file: output TLS/Secure_client_renego/1/community.st.com_2018-12-24_17-14-45.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/1/comptox.epa.gov_2018-12-24_17-12-13.pcap
 Processing file: output TLS/Secure_client_renego/1/content.vexrobotics.com_2018-12-24_17-16-33.pcap
 Processing file: output TLS/Secure_client_renego/1/courttribunalfinder.service.gov.uk_2018-12-24_17-12-08.pcap
@@ -2441,6 +2496,7 @@ Processing file: output TLS/Secure_client_renego/1/king.com_2018-12-24_17-11-33.
 Processing file: output TLS/Secure_client_renego/1/lastpass.com_2018-12-24_17-15-36.pcap
 Processing file: output TLS/Secure_client_renego/1/library.seg.org_2018-12-24_17-09-42.pcap
 Processing file: output TLS/Secure_client_renego/1/library.si.edu_2018-12-24_17-19-41.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/1/m4.ti.ch_2018-12-24_17-19-00.pcap
 Warning: Length of connections != 0. It is: [1, 2]
 Guessing: 2
@@ -2510,6 +2566,7 @@ Processing file: output TLS/Secure_client_renego/1/www2.meethue.com_2018-12-24_1
 Processing file: output TLS/Secure_client_renego/1/www.aana.com_2018-12-24_17-15-55.pcap
 Processing file: output TLS/Secure_client_renego/1/www.abbeyroad.com_2018-12-24_17-16-01.pcap
 Processing file: output TLS/Secure_client_renego/1/www.abc.net.au_2018-12-24_17-14-35.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/1/www.acs.org_2018-12-24_17-14-34.pcap
 Processing file: output TLS/Secure_client_renego/1/www.afr.com_2018-12-24_17-15-33.pcap
 Processing file: output TLS/Secure_client_renego/1/www.almanac.com_2018-12-24_17-19-42.pcap
@@ -2531,6 +2588,7 @@ Processing file: output TLS/Secure_client_renego/1/www.autowealth.sg_2018-12-24_
 Processing file: output TLS/Secure_client_renego/1/www.awqaf.gov.ae_2018-12-24_17-15-32.pcap
 Processing file: output TLS/Secure_client_renego/1/www.bam.com_2018-12-24_17-10-25.pcap
 Processing file: output TLS/Secure_client_renego/1/www.bar.admin.ch_2018-12-24_17-18-54.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/1/www.barrie.ca_2018-12-24_17-12-22.pcap
 Processing file: output TLS/Secure_client_renego/1/www.basspro.com_2018-12-24_17-11-56_0.pcap
 Warning: Length of connections != 0. It is: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -2545,6 +2603,7 @@ Processing file: output TLS/Secure_client_renego/1/www.bestdenki.com.sg_2018-12-
 Processing file: output TLS/Secure_client_renego/1/www.bhphotovideo.com_2018-12-24_17-20-13.pcap
 Processing file: output TLS/Secure_client_renego/1/www.birmingham.ac.uk_2018-12-24_17-12-44.pcap
 Processing file: output TLS/Secure_client_renego/1/www.bizjournals.com_2018-12-24_17-13-32.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/1/www.bkstr.com_2018-12-24_17-11-22.pcap
 Warning: Length of connections != 0. It is: [1, 2]
 Guessing: 1
@@ -2562,6 +2621,7 @@ Processing file: output TLS/Secure_client_renego/1/www.cancerresearchuk.org_2018
 Processing file: output TLS/Secure_client_renego/1/www.cancerresearchuk.org_2018-12-24_17-15-46.pcap
 Warning: Length of connections != 0. It is: [1, 2]
 Guessing: 2
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/1/www.caremark.com_2018-12-24_17-14-13.pcap
 Processing file: output TLS/Secure_client_renego/1/www.catholicsandcultures.org_2018-12-24_17-13-26.pcap
 Processing file: output TLS/Secure_client_renego/1/www.cbr.ru_2018-12-24_17-16-43.pcap
@@ -2572,6 +2632,7 @@ Processing file: output TLS/Secure_client_renego/1/www.chapters.indigo.ca_2018-1
 Processing file: output TLS/Secure_client_renego/1/www.checkpoint.com_2018-12-24_17-18-52.pcap
 Processing file: output TLS/Secure_client_renego/1/www.cia.gov_2018-12-24_17-13-22.pcap
 Processing file: output TLS/Secure_client_renego/1/www.cihi.ca_2018-12-24_17-14-19.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/1/www.citibank.com.sg_2018-12-24_17-12-12.pcap
 Processing file: output TLS/Secure_client_renego/1/www.citigroup.com_2018-12-24_17-13-27.pcap
 Processing file: output TLS/Secure_client_renego/1/www.cityofchicago.org_2018-12-24_17-11-00.pcap
@@ -2588,6 +2649,7 @@ Processing file: output TLS/Secure_client_renego/1/www.colorado.edu_2018-12-24_1
 Processing file: output TLS/Secure_client_renego/1/www.coursereport.com_2018-12-24_17-11-24.pcap
 Processing file: output TLS/Secure_client_renego/1/www.dartmouth.edu_2018-12-24_17-16-17.pcap
 Processing file: output TLS/Secure_client_renego/1/www.dezeen.com_2018-12-24_17-18-04.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/1/www.dhs.gov_2018-12-24_17-13-26.pcap
 Processing file: output TLS/Secure_client_renego/1/www.dni.gov_2018-12-24_17-16-56.pcap
 Processing file: output TLS/Secure_client_renego/1/www.dolomite.it_2018-12-24_17-12-05.pcap
@@ -2598,6 +2660,7 @@ Processing file: output TLS/Secure_client_renego/1/www.ecooutdoor.com.au_2018-12
 Processing file: output TLS/Secure_client_renego/1/www.ecooutdoor.com.au_2018-12-24_17-20-35.pcap
 Processing file: output TLS/Secure_client_renego/1/www.e-crt.org_2018-12-24_17-18-22.pcap
 Processing file: output TLS/Secure_client_renego/1/www.edb.gov.sg_2018-12-24_17-19-54.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/1/www.eia.gov_2018-12-24_17-18-47.pcap
 Processing file: output TLS/Secure_client_renego/1/www.ema.gov.sg_2018-12-24_17-11-36.pcap
 Processing file: output TLS/Secure_client_renego/1/www.emblemhealth.com_2018-12-24_17-13-44.pcap
@@ -2622,6 +2685,7 @@ Processing file: output TLS/Secure_client_renego/1/www.fallingpianogames.com_201
 Processing file: output TLS/Secure_client_renego/1/www.fastretailing.com_2018-12-24_17-12-54.pcap
 Processing file: output TLS/Secure_client_renego/1/www.federalreserve.gov_2018-12-24_17-18-50.pcap
 Processing file: output TLS/Secure_client_renego/1/www.fema.gov_2018-12-24_17-19-44.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/1/www.fender.com_2018-12-24_17-18-34.pcap
 Processing file: output TLS/Secure_client_renego/1/www.fender.com_2018-12-24_17-18-37.pcap
 Processing file: output TLS/Secure_client_renego/1/www.foodsafety.gov_2018-12-24_17-10-13.pcap
@@ -2655,6 +2719,7 @@ Processing file: output TLS/Secure_client_renego/1/www.heb.com_2018-12-24_17-19-
 Processing file: output TLS/Secure_client_renego/1/www.hellomagazine.com_2018-12-24_17-12-48.pcap
 Processing file: output TLS/Secure_client_renego/1/www.hertz.com.sg_2018-12-24_17-10-06.pcap
 Processing file: output TLS/Secure_client_renego/1/www.hg.org_2018-12-24_17-20-01.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/1/www.hiddenvalley.com_2018-12-24_17-21-06.pcap
 Processing file: output TLS/Secure_client_renego/1/www.hipvan.com_2018-12-24_17-16-24.pcap
 Processing file: output TLS/Secure_client_renego/1/www.homeaway.co.uk_2018-12-24_17-12-09.pcap
@@ -2718,7 +2783,9 @@ Processing file: output TLS/Secure_client_renego/1/www.mediacorp.sg_2018-12-24_1
 Processing file: output TLS/Secure_client_renego/1/www.medicare.gov_2018-12-24_17-15-40.pcap
 Processing file: output TLS/Secure_client_renego/1/www.meridianenergy.co.nz_2018-12-24_17-19-56.pcap
 Processing file: output TLS/Secure_client_renego/1/www.metoffice.gov.uk_2018-12-24_17-11-37.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/1/www.michigan.gov_2018-12-24_17-10-52.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/1/www.midwiferyjournal.com_2018-12-24_17-08-51.pcap
 Warning: Length of connections != 0. It is: [1, 2, 3, 4]
 Guessing: 4
@@ -2750,6 +2817,7 @@ Processing file: output TLS/Secure_client_renego/1/www.oponeo.co.uk_2018-12-24_1
 Processing file: output TLS/Secure_client_renego/1/www.oracle.com_2018-12-24_17-20-11.pcap
 Processing file: output TLS/Secure_client_renego/1/www.oregon.gov_2018-12-24_17-11-51.pcap
 Processing file: output TLS/Secure_client_renego/1/www.oreilly.com_2018-12-24_17-16-07.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/1/www.orkin.com_2018-12-24_17-10-27.pcap
 Processing file: output TLS/Secure_client_renego/1/www.paloaltonetworks.com_2018-12-24_17-17-42.pcap
 Processing file: output TLS/Secure_client_renego/1/www.people.vcu.edu_2018-12-24_17-16-31.pcap
@@ -2769,9 +2837,11 @@ Processing file: output TLS/Secure_client_renego/1/www.posb.com.sg_2018-12-24_17
 Processing file: output TLS/Secure_client_renego/1/www.powtoon.com_2018-12-24_17-21-02.pcap
 Processing file: output TLS/Secure_client_renego/1/www.premera.com_2018-12-24_17-14-15.pcap
 Processing file: output TLS/Secure_client_renego/1/www.preteristarchive.com_2018-12-24_17-18-52.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/1/www.prweek.com_2018-12-24_17-18-01.pcap
 Processing file: output TLS/Secure_client_renego/1/www.publishersweekly.com_2018-12-24_17-08-29.pcap
 Processing file: output TLS/Secure_client_renego/1/www.qcaa.qld.edu.au_2018-12-24_17-19-56.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/1/www.qld.gov.au_2018-12-24_17-20-43.pcap
 Processing file: output TLS/Secure_client_renego/1/www.queensland.com_2018-12-24_17-20-51.pcap
 Processing file: output TLS/Secure_client_renego/1/www.queensland.com_2018-12-24_17-20-52.pcap
@@ -2784,6 +2854,7 @@ Guessing: 4
 Processing file: output TLS/Secure_client_renego/1/www.rferl.org_2018-12-24_17-12-45.pcap
 Processing file: output TLS/Secure_client_renego/1/www.ricksteves.com_2018-12-24_17-14-40.pcap
 Processing file: output TLS/Secure_client_renego/1/www.roche.com_2018-12-24_17-08-32.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/1/www.rotorandwing.com_2018-12-24_17-18-13.pcap
 Processing file: output TLS/Secure_client_renego/1/www.sans.org_2018-12-24_17-16-53.pcap
 Processing file: output TLS/Secure_client_renego/1/www.sciencenewsforstudents.org_2018-12-24_17-11-54.pcap
@@ -2794,13 +2865,17 @@ Processing file: output TLS/Secure_client_renego/1/www.seedandspark.com_2018-12-
 Processing file: output TLS/Secure_client_renego/1/www.senate.gov_2018-12-24_17-12-39.pcap
 Processing file: output TLS/Secure_client_renego/1/www.sentosa.com.sg_2018-12-24_17-11-29.pcap
 Processing file: output TLS/Secure_client_renego/1/www.sephora.com_2018-12-24_17-18-18.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/1/www.seroundtable.com_2018-12-24_17-14-20.pcap
 Processing file: output TLS/Secure_client_renego/1/www.sgh.com.sg_2018-12-24_17-20-32.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/1/www.silverpages.sg_2018-12-24_17-15-57.pcap
 Processing file: output TLS/Secure_client_renego/1/www.singpass.gov.sg_2018-12-24_17-10-14.pcap
 Processing file: output TLS/Secure_client_renego/1/www.smart.com_2018-12-24_17-20-15.pcap
 Processing file: output TLS/Secure_client_renego/1/www.smu.edu.sg_2018-12-24_17-16-05.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/1/www.smu.edu.sg_2018-12-24_17-16-06.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/1/www.soard.org_2018-12-24_17-14-58.pcap
 Warning: Length of connections != 0. It is: [1, 2, 3, 4]
 Guessing: 4
@@ -2847,6 +2922,7 @@ Processing file: output TLS/Secure_client_renego/1/www.uniqlo.com_2018-12-24_17-
 Processing file: output TLS/Secure_client_renego/1/www.unitythroughdiversity.org_2018-12-24_17-20-10.pcap
 Processing file: output TLS/Secure_client_renego/1/www.universalorlando.com_2018-12-24_17-17-28.pcap
 Processing file: output TLS/Secure_client_renego/1/www.un.org_2018-12-24_17-14-26.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/1/www.uregina.ca_2018-12-24_17-17-49.pcap
 Processing file: output TLS/Secure_client_renego/1/www.us-cert.gov_2018-12-24_17-11-21.pcap
 Processing file: output TLS/Secure_client_renego/1/www.uscis.gov_2018-12-24_17-14-38.pcap
@@ -2857,6 +2933,7 @@ Processing file: output TLS/Secure_client_renego/1/www.uwpnw.org_2018-12-24_17-1
 Processing file: output TLS/Secure_client_renego/1/www.virtualbox.org_2018-12-24_17-18-39.pcap
 Processing file: output TLS/Secure_client_renego/1/www.voanews.com_2018-12-24_17-11-24.pcap
 Processing file: output TLS/Secure_client_renego/1/www.volvocars.com_2018-12-24_17-19-54.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/1/www.watsons.com.sg_2018-12-24_17-17-51.pcap
 Processing file: output TLS/Secure_client_renego/1/www.waves.com_2018-12-24_17-20-24.pcap
 Processing file: output TLS/Secure_client_renego/1/www.waves.com_2018-12-24_17-20-26.pcap
@@ -2868,6 +2945,7 @@ Processing file: output TLS/Secure_client_renego/1/www.weather.gov_2018-12-24_17
 Processing file: output TLS/Secure_client_renego/1/www.websecurity.symantec.com_2018-12-24_17-09-18.pcap
 Processing file: output TLS/Secure_client_renego/1/www.wharfdc.com_2018-12-24_17-14-31.pcap
 Processing file: output TLS/Secure_client_renego/1/www.whitehouse.gov_2018-12-24_17-20-18.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/1/www.xero.com_2018-12-24_17-12-28.pcap
 Processing file: output TLS/Secure_client_renego/1/www.yr.no_2018-12-24_17-19-49.pcap
 Processing file: output TLS/Secure_client_renego/1/www.zara.com_2018-12-24_17-15-08.pcap
@@ -2876,11 +2954,13 @@ Processing file: output TLS/Secure_client_renego/2/2020census.gov_2018-12-24_17-
 Processing file: output TLS/Secure_client_renego/2/about.twitter.com_2018-12-24_17-38-00.pcap
 Processing file: output TLS/Secure_client_renego/2/about.twitter.com_2018-12-24_17-38-01.pcap
 Processing file: output TLS/Secure_client_renego/2/academy.smu.edu.sg_2018-12-24_17-36-35.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/2/access.redhat.com_2018-12-24_17-30-48.pcap
 Processing file: output TLS/Secure_client_renego/2/admissions.smu.edu.sg_2018-12-24_17-33-57.pcap
 Processing file: output TLS/Secure_client_renego/2/adtmag.com_2018-12-24_17-37-16.pcap
 Processing file: output TLS/Secure_client_renego/2/agupubs.onlinelibrary.wiley.com_2018-12-24_17-31-13.pcap
 Processing file: output TLS/Secure_client_renego/2/airandspace.si.edu_2018-12-24_17-38-54.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/2/ameblo.jp_2018-12-24_17-30-58.pcap
 Processing file: output TLS/Secure_client_renego/2/app.a-star.edu.sg_2018-12-24_17-35-54_0.pcap
 Warning: Length of connections != 0. It is: [1, 2, 4, 5, 6, 7, 8, 9, 10]
@@ -2954,6 +3034,7 @@ Processing file: output TLS/Secure_client_renego/2/king.com_2018-12-24_17-32-10.
 Processing file: output TLS/Secure_client_renego/2/lastpass.com_2018-12-24_17-36-04.pcap
 Processing file: output TLS/Secure_client_renego/2/library.seg.org_2018-12-24_17-30-21.pcap
 Processing file: output TLS/Secure_client_renego/2/library.si.edu_2018-12-24_17-40-20.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/2/m4.ti.ch_2018-12-24_17-39-45.pcap
 Warning: Length of connections != 0. It is: [1, 2]
 Guessing: 2
@@ -3044,6 +3125,7 @@ Processing file: output TLS/Secure_client_renego/2/www.autowealth.sg_2018-12-24_
 Processing file: output TLS/Secure_client_renego/2/www.awqaf.gov.ae_2018-12-24_17-36-01.pcap
 Processing file: output TLS/Secure_client_renego/2/www.bam.com_2018-12-24_17-31-00.pcap
 Processing file: output TLS/Secure_client_renego/2/www.bar.admin.ch_2018-12-24_17-39-40.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/2/www.barrie.ca_2018-12-24_17-33-05.pcap
 Processing file: output TLS/Secure_client_renego/2/www.basspro.com_2018-12-24_17-32-36.pcap
 Warning: Length of connections != 0. It is: [1, 2, 3, 4, 5, 6, 7]
@@ -3057,12 +3139,14 @@ Processing file: output TLS/Secure_client_renego/2/www.bestdenki.com.sg_2018-12-
 Processing file: output TLS/Secure_client_renego/2/www.bhphotovideo.com_2018-12-24_17-40-53.pcap
 Processing file: output TLS/Secure_client_renego/2/www.birmingham.ac.uk_2018-12-24_17-33-29.pcap
 Processing file: output TLS/Secure_client_renego/2/www.bizjournals.com_2018-12-24_17-34-12.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/2/www.bkstr.com_2018-12-24_17-31-55.pcap
 Warning: Length of connections != 0. It is: [1, 2]
 Guessing: 1
 Processing file: output TLS/Secure_client_renego/2/www.boticario.com.br_2018-12-24_17-31-17.pcap
 Processing file: output TLS/Secure_client_renego/2/www.breastcancer.org_2018-12-24_17-29-10.pcap
 Processing file: output TLS/Secure_client_renego/2/www.britishcouncil.pt_2018-12-24_17-40-45.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/2/www.britishcouncil.sg_2018-12-24_17-32-23.pcap
 Processing file: output TLS/Secure_client_renego/2/www.brown.edu_2018-12-24_17-32-33.pcap
 Processing file: output TLS/Secure_client_renego/2/www.browserstack.com_2018-12-24_17-31-49.pcap
@@ -3082,6 +3166,7 @@ Processing file: output TLS/Secure_client_renego/2/www.chapters.indigo.ca_2018-1
 Processing file: output TLS/Secure_client_renego/2/www.checkpoint.com_2018-12-24_17-39-38.pcap
 Processing file: output TLS/Secure_client_renego/2/www.cia.gov_2018-12-24_17-34-01.pcap
 Processing file: output TLS/Secure_client_renego/2/www.cihi.ca_2018-12-24_17-34-55.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/2/www.citibank.com.sg_2018-12-24_17-32-54.pcap
 Processing file: output TLS/Secure_client_renego/2/www.citigroup.com_2018-12-24_17-34-07.pcap
 Processing file: output TLS/Secure_client_renego/2/www.cityofchicago.org_2018-12-24_17-31-32.pcap
@@ -3107,6 +3192,7 @@ Processing file: output TLS/Secure_client_renego/2/www.ebay.co.uk_2018-12-24_17-
 Processing file: output TLS/Secure_client_renego/2/www.ecooutdoor.com.au_2018-12-24_17-41-12.pcap
 Processing file: output TLS/Secure_client_renego/2/www.e-crt.org_2018-12-24_17-39-08.pcap
 Processing file: output TLS/Secure_client_renego/2/www.edb.gov.sg_2018-12-24_17-40-32.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/2/www.eia.gov_2018-12-24_17-39-33.pcap
 Processing file: output TLS/Secure_client_renego/2/www.ema.gov.sg_2018-12-24_17-32-15.pcap
 Processing file: output TLS/Secure_client_renego/2/www.emblemhealth.com_2018-12-24_17-34-22.pcap
@@ -3128,6 +3214,7 @@ Processing file: output TLS/Secure_client_renego/2/www.expressen.se_2018-12-24_1
 Processing file: output TLS/Secure_client_renego/2/www.factmonster.com_2018-12-24_17-36-18.pcap
 Processing file: output TLS/Secure_client_renego/2/www.factmonster.com_2018-12-24_17-36-19.pcap
 Processing file: output TLS/Secure_client_renego/2/www.fallingpianogames.com_2018-12-24_17-40-58.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/2/www.fastretailing.com_2018-12-24_17-33-40.pcap
 Processing file: output TLS/Secure_client_renego/2/www.federalreserve.gov_2018-12-24_17-39-36.pcap
 Processing file: output TLS/Secure_client_renego/2/www.fema.gov_2018-12-24_17-40-23.pcap
@@ -3164,6 +3251,7 @@ Processing file: output TLS/Secure_client_renego/2/www.heb.com_2018-12-24_17-40-
 Processing file: output TLS/Secure_client_renego/2/www.hellomagazine.com_2018-12-24_17-33-34.pcap
 Processing file: output TLS/Secure_client_renego/2/www.hertz.com.sg_2018-12-24_17-30-44.pcap
 Processing file: output TLS/Secure_client_renego/2/www.hg.org_2018-12-24_17-40-39.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/2/www.hiddenvalley.com_2018-12-24_17-41-40.pcap
 Processing file: output TLS/Secure_client_renego/2/www.hipvan.com_2018-12-24_17-36-53.pcap
 Processing file: output TLS/Secure_client_renego/2/www.homeaway.co.uk_2018-12-24_17-32-50.pcap
@@ -3280,9 +3368,11 @@ Processing file: output TLS/Secure_client_renego/2/www.posb.com.sg_2018-12-24_17
 Processing file: output TLS/Secure_client_renego/2/www.powtoon.com_2018-12-24_17-41-37.pcap
 Processing file: output TLS/Secure_client_renego/2/www.premera.com_2018-12-24_17-34-50.pcap
 Processing file: output TLS/Secure_client_renego/2/www.preteristarchive.com_2018-12-24_17-39-38.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/2/www.prweek.com_2018-12-24_17-38-43.pcap
 Processing file: output TLS/Secure_client_renego/2/www.publishersweekly.com_2018-12-24_17-29-09.pcap
 Processing file: output TLS/Secure_client_renego/2/www.qcaa.qld.edu.au_2018-12-24_17-40-34.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/2/www.qld.gov.au_2018-12-24_17-41-18.pcap
 Processing file: output TLS/Secure_client_renego/2/www.queensland.com_2018-12-24_17-41-25.pcap
 Processing file: output TLS/Secure_client_renego/2/www.queensland.com_2018-12-24_17-41-26.pcap
@@ -3311,6 +3401,7 @@ Processing file: output TLS/Secure_client_renego/2/www.silverpages.sg_2018-12-24
 Processing file: output TLS/Secure_client_renego/2/www.singpass.gov.sg_2018-12-24_17-30-50.pcap
 Processing file: output TLS/Secure_client_renego/2/www.smart.com_2018-12-24_17-40-55.pcap
 Processing file: output TLS/Secure_client_renego/2/www.smu.edu.sg_2018-12-24_17-36-34.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/2/www.soard.org_2018-12-24_17-35-27.pcap
 Warning: Length of connections != 0. It is: [1, 2, 3]
 Guessing: 3
@@ -3389,6 +3480,7 @@ Processing file: output TLS/Secure_client_renego/3/agupubs.onlinelibrary.wiley.c
 Warning: Length of connections != 0. It is: [1, 2]
 Guessing: 2
 Processing file: output TLS/Secure_client_renego/3/airandspace.si.edu_2018-12-24_18-34-21.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/3/ameblo.jp_2018-12-24_18-26-25.pcap
 Processing file: output TLS/Secure_client_renego/3/app.a-star.edu.sg_2018-12-24_18-31-24_0.pcap
 Warning: Length of connections != 0. It is: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
@@ -3427,6 +3519,7 @@ Processing file: output TLS/Secure_client_renego/3/data.oecd.org_2018-12-24_18-2
 Processing file: output TLS/Secure_client_renego/3/data.qld.gov.au_2018-12-24_18-36-59.pcap
 Processing file: output TLS/Secure_client_renego/3/dataverse.harvard.edu_2018-12-24_18-31-58.pcap
 Processing file: output TLS/Secure_client_renego/3/depts.washington.edu_2018-12-24_18-34-26.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/3/devcentral.f5.com_2018-12-24_18-34-57.pcap
 Processing file: output TLS/Secure_client_renego/3/disneyworld.disney.go.com_2018-12-24_18-32-50.pcap
 Processing file: output TLS/Secure_client_renego/3/diy-courses.typeform.com_2018-12-24_18-24-54.pcap
@@ -3446,6 +3539,7 @@ Processing file: output TLS/Secure_client_renego/3/francais.rt.com_2018-12-24_18
 Processing file: output TLS/Secure_client_renego/3/frieze.com_2018-12-24_18-34-07.pcap
 Processing file: output TLS/Secure_client_renego/3/frieze.com_2018-12-24_18-34-08.pcap
 Processing file: output TLS/Secure_client_renego/3/ghr.nlm.nih.gov_2018-12-24_18-31-10.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/3/ghr.nlm.nih.gov_2018-12-24_18-31-11.pcap
 Processing file: output TLS/Secure_client_renego/3/global.canon_2018-12-24_18-36-18.pcap
 Processing file: output TLS/Secure_client_renego/3/health.usnews.com_2018-12-24_18-34-46_0.pcap
@@ -3462,6 +3556,7 @@ Processing file: output TLS/Secure_client_renego/3/king.com_2018-12-24_18-27-29.
 Processing file: output TLS/Secure_client_renego/3/lastpass.com_2018-12-24_18-31-35.pcap
 Processing file: output TLS/Secure_client_renego/3/library.seg.org_2018-12-24_18-25-48.pcap
 Processing file: output TLS/Secure_client_renego/3/library.si.edu_2018-12-24_18-35-48.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/3/m4.ti.ch_2018-12-24_18-35-12.pcap
 Warning: Length of connections != 0. It is: [1, 2]
 Guessing: 2
@@ -3541,6 +3636,7 @@ Warning: Length of connections != 0. It is: [1, 2, 3, 4, 5]
 Guessing: 5
 Processing file: output TLS/Secure_client_renego/3/www.analog.com_2018-12-24_18-36-46.pcap
 Processing file: output TLS/Secure_client_renego/3/www.angieslist.com_2018-12-24_18-37-02.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/3/www.aphis.usda.gov_2018-12-24_18-37-07.pcap
 Processing file: output TLS/Secure_client_renego/3/www.asexuality.org_2018-12-24_18-29-25.pcap
 Processing file: output TLS/Secure_client_renego/3/www.atf.gov_2018-12-24_18-30-40.pcap
@@ -3553,6 +3649,7 @@ Processing file: output TLS/Secure_client_renego/3/www.autowealth.sg_2018-12-24_
 Processing file: output TLS/Secure_client_renego/3/www.awqaf.gov.ae_2018-12-24_18-31-31.pcap
 Processing file: output TLS/Secure_client_renego/3/www.bam.com_2018-12-24_18-26-28.pcap
 Processing file: output TLS/Secure_client_renego/3/www.bar.admin.ch_2018-12-24_18-35-08.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/3/www.barrie.ca_2018-12-24_18-28-18.pcap
 Processing file: output TLS/Secure_client_renego/3/www.basspro.com_2018-12-24_18-27-52.pcap
 Warning: Length of connections != 0. It is: [1, 2]
@@ -3591,6 +3688,7 @@ Processing file: output TLS/Secure_client_renego/3/www.chapters.indigo.ca_2018-1
 Processing file: output TLS/Secure_client_renego/3/www.checkpoint.com_2018-12-24_18-35-06.pcap
 Processing file: output TLS/Secure_client_renego/3/www.cia.gov_2018-12-24_18-29-14.pcap
 Processing file: output TLS/Secure_client_renego/3/www.cihi.ca_2018-12-24_18-30-14.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/3/www.citibank.com.sg_2018-12-24_18-28-07.pcap
 Processing file: output TLS/Secure_client_renego/3/www.citigroup.com_2018-12-24_18-29-20.pcap
 Processing file: output TLS/Secure_client_renego/3/www.cityofchicago.org_2018-12-24_18-26-56.pcap
@@ -3617,6 +3715,7 @@ Processing file: output TLS/Secure_client_renego/3/www.ecooutdoor.com.au_2018-12
 Processing file: output TLS/Secure_client_renego/3/www.ecooutdoor.com.au_2018-12-24_18-36-38.pcap
 Processing file: output TLS/Secure_client_renego/3/www.e-crt.org_2018-12-24_18-34-37.pcap
 Processing file: output TLS/Secure_client_renego/3/www.edb.gov.sg_2018-12-24_18-36-01.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/3/www.eia.gov_2018-12-24_18-35-01.pcap
 Processing file: output TLS/Secure_client_renego/3/www.ema.gov.sg_2018-12-24_18-27-31.pcap
 Processing file: output TLS/Secure_client_renego/3/www.emblemhealth.com_2018-12-24_18-29-36.pcap
@@ -3659,6 +3758,7 @@ Warning: Length of connections != 0. It is: [3, 4, 5]
 Guessing: 5
 Processing file: output TLS/Secure_client_renego/3/www.giffgaff.com_2018-12-24_18-31-12.pcap
 Processing file: output TLS/Secure_client_renego/3/www.goethe.de_2018-12-24_18-34-56.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/3/www.gog.com_2018-12-24_18-26-09.pcap
 Processing file: output TLS/Secure_client_renego/3/www.goldjournal.net_2018-12-24_18-30-00.pcap
 Warning: Length of connections != 0. It is: [1, 2, 3, 4, 5]
@@ -3674,8 +3774,10 @@ Processing file: output TLS/Secure_client_renego/3/www.heb.com_2018-12-24_18-35-
 Processing file: output TLS/Secure_client_renego/3/www.hellomagazine.com_2018-12-24_18-28-47.pcap
 Processing file: output TLS/Secure_client_renego/3/www.hertz.com.sg_2018-12-24_18-26-11.pcap
 Processing file: output TLS/Secure_client_renego/3/www.hg.org_2018-12-24_18-36-07.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/3/www.hiddenvalley.com_2018-12-24_18-37-04.pcap
 Processing file: output TLS/Secure_client_renego/3/www.hipvan.com_2018-12-24_18-32-24.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/3/www.homeaway.co.uk_2018-12-24_18-28-03.pcap
 Processing file: output TLS/Secure_client_renego/3/www.hostelbookers.com_2018-12-24_18-30-43.pcap
 Processing file: output TLS/Secure_client_renego/3/www.hsph.harvard.edu_2018-12-24_18-36-49.pcap
@@ -3716,6 +3818,7 @@ Guessing: 6
 Processing file: output TLS/Secure_client_renego/3/www.konami.com_2018-12-24_18-26-31.pcap
 Processing file: output TLS/Secure_client_renego/3/www.kumc.edu_2018-12-24_18-35-34.pcap
 Processing file: output TLS/Secure_client_renego/3/www.landrover.com_2018-12-24_18-26-47.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/3/www.lds.org_2018-12-24_18-25-34.pcap
 Processing file: output TLS/Secure_client_renego/3/www.lingvolive.com_2018-12-24_18-25-36.pcap
 Processing file: output TLS/Secure_client_renego/3/www.livestrong.com_2018-12-24_18-31-07.pcap
@@ -3768,6 +3871,7 @@ Guessing: 3
 Processing file: output TLS/Secure_client_renego/3/www.ophelia.net.au_2018-12-24_18-29-28.pcap
 Processing file: output TLS/Secure_client_renego/3/www.oponeo.co.uk_2018-12-24_18-28-27.pcap
 Processing file: output TLS/Secure_client_renego/3/www.oracle.com_2018-12-24_18-36-17.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/3/www.oregon.gov_2018-12-24_18-27-47.pcap
 Processing file: output TLS/Secure_client_renego/3/www.oreilly.com_2018-12-24_18-32-06.pcap
 Processing file: output TLS/Secure_client_renego/3/www.orkin.com_2018-12-24_18-26-30.pcap
@@ -3789,21 +3893,25 @@ Processing file: output TLS/Secure_client_renego/3/www.posb.com.sg_2018-12-24_18
 Processing file: output TLS/Secure_client_renego/3/www.powtoon.com_2018-12-24_18-37-02.pcap
 Processing file: output TLS/Secure_client_renego/3/www.premera.com_2018-12-24_18-30-10.pcap
 Processing file: output TLS/Secure_client_renego/3/www.preteristarchive.com_2018-12-24_18-35-05.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/3/www.prweek.com_2018-12-24_18-34-11.pcap
 Processing file: output TLS/Secure_client_renego/3/www.publishersweekly.com_2018-12-24_18-24-27.pcap
 Processing file: output TLS/Secure_client_renego/3/www.qcaa.qld.edu.au_2018-12-24_18-36-03.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/3/www.qld.gov.au_2018-12-24_18-36-44.pcap
 Processing file: output TLS/Secure_client_renego/3/www.queensland.com_2018-12-24_18-36-51.pcap
 Processing file: output TLS/Secure_client_renego/3/www.queensland.com_2018-12-24_18-36-52.pcap
 Processing file: output TLS/Secure_client_renego/3/www.rbth.com_2018-12-24_18-36-15.pcap
 Processing file: output TLS/Secure_client_renego/3/www.redbull.com_2018-12-24_18-27-37.pcap
 Processing file: output TLS/Secure_client_renego/3/www.redhat.com_2018-12-24_18-28-59.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/3/www.redjournal.org_2018-12-24_18-29-50.pcap
 Warning: Length of connections != 0. It is: [1, 2, 3, 4]
 Guessing: 4
 Processing file: output TLS/Secure_client_renego/3/www.rferl.org_2018-12-24_18-28-44.pcap
 Processing file: output TLS/Secure_client_renego/3/www.ricksteves.com_2018-12-24_18-30-37.pcap
 Processing file: output TLS/Secure_client_renego/3/www.roche.com_2018-12-24_18-24-31.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/3/www.rotorandwing.com_2018-12-24_18-34-23.pcap
 Processing file: output TLS/Secure_client_renego/3/www.sans.org_2018-12-24_18-32-53.pcap
 Processing file: output TLS/Secure_client_renego/3/www.sciencenewsforstudents.org_2018-12-24_18-27-51.pcap
@@ -3820,6 +3928,7 @@ Processing file: output TLS/Secure_client_renego/3/www.silverpages.sg_2018-12-24
 Processing file: output TLS/Secure_client_renego/3/www.singpass.gov.sg_2018-12-24_18-26-17.pcap
 Processing file: output TLS/Secure_client_renego/3/www.smart.com_2018-12-24_18-36-21.pcap
 Processing file: output TLS/Secure_client_renego/3/www.smu.edu.sg_2018-12-24_18-32-04.pcap
+Error recording tls version
 Processing file: output TLS/Secure_client_renego/3/www.soard.org_2018-12-24_18-30-56.pcap
 Warning: Length of connections != 0. It is: [1, 2, 3, 4]
 Guessing: 2
