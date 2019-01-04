@@ -28,10 +28,43 @@ for i in range(0, len(subdirectories) - 1):
 			file_content = f.read()
 			f.close()
 
-			data = json.loads(file_content.split("\n")[1])
+			jsonData = file_content.split("\n")
+			#Find the one that is correct
+			connections = []
+			for l in range(1, len(jsonData) - 1):
+				if "tls" in json.loads(jsonData[l]):
+					connections.append(l)
+
+			data = {}
+			if len(connections) == 0:
+				for l in range(1, len(jsonData) - 1):
+					connections.append(l)
+
+			if len(connections) == 1:
+				data = json.loads(jsonData[connections[0]])
+			else:
+				print("Warning: Length of connections != 0. It is: " + str(connections))
+				longestInt = connections[0]
+				longest = len(jsonData[connections[0]])
+				for l in range(1, len(connections)):
+					if longest < len(jsonData[connections[l]]):
+						longestInt = connections[l]
+						longest = len(jsonData[connections[l]])
+
+				print("Guessing: " + str(longestInt))
+				data = json.loads(jsonData[longestInt])
+
 			packets = []
 
 			packetInformation = data["ppi"]
+			packetProtocol = [0, 0, 0, 0, 0, 0] #TCP, SSL2, SSL3, TLS1, TLS2, TLS3
+			#Hacky fixes
+			if "tls" in data:
+				if "s_version" in data["tls"]:
+					protocol = data["tls"]["s_version"] # unknown = 0, SSLv2 = 1, SSLv3 = 2, TLS1.0 = 3, TLS1.1 = 4, TLS1.2 = 5."
+					if protocol != 0:
+						packetProtocol[protocol] = 1
+
 			previous = 0
 			for l in range(0, len(packetInformation)):
 				singlePacket = {}
@@ -55,11 +88,11 @@ for i in range(0, len(subdirectories) - 1):
 					flagList[3] = 1
 				if "A" in packetFlags:
 					flagList[4] = 1
-					singlePacket["Protocol"][0] = 1
-				else:
-					singlePacket["Protocol"][5] = 1
 				if "P" in packetFlags:
 					flagList[5] = 1
+					singlePacket["Protocol"][5] = packetProtocol
+				else:
+					singlePacket["Protocol"][0] = 1
 				if "R" in packetFlags:
 					flagList[6] = 1
 				if "S" in packetFlags:
