@@ -90,7 +90,7 @@ for i in range(0, len(subdirectories) - 1):
 					flagList[4] = 1
 				if "P" in packetFlags:
 					flagList[5] = 1
-					singlePacket["Protocol"][5] = packetProtocol
+					singlePacket["Protocol"] = packetProtocol
 				else:
 					singlePacket["Protocol"][0] = 1
 				if "R" in packetFlags:
@@ -107,5 +107,7 @@ for i in range(0, len(subdirectories) - 1):
 				packets.append(singlePacket);
 				previous = packetInformation[l]["t"]
 
-			with open(fileName[:-5] + "-features.json", 'w+') as f_out:
-				f_out.write(json.dumps(packets))
+			with open("features.csv", 'a+') as f_out:
+				for l in range(0, len(packets)):
+					f_out.write("[" + str(packets[l]["Protocol"])[1:-1] + ", " + str(packets[l]["Length"]) + ", " + str(packets[l]["Interval"]) + ", " + str(packets[l]["Windows Size"]) + ", " + str(packets[l]["Flag"])[1:-1] + ", " + str(packets[l]["Come"]) + "], ")
+				f_out.write("\r\n")
