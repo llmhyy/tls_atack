@@ -12732,3 +12732,321 @@
 2018-12-28 20:07:46,934-INFO-Now processing: https://www.tccb.gov.tr
 2018-12-28 20:07:50,379-INFO-Now processing: https://www.geolsoc.org.uk
 2018-12-28 20:07:53,645-INFO-py raw cap complete. 0 out of 160 failed
+2019-01-09 19:05:47,115-WARNING-Error occurred during loading data. Trying to use cache server http://d2g6u4gh6d9rq0.cloudfront.net/browsers/fake_useragent_0.1.10.json
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\urllib\request.py", line 1318, in do_open
+    encode_chunked=req.has_header('Transfer-encoding'))
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\http\client.py", line 1239, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\http\client.py", line 1285, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\http\client.py", line 1234, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\http\client.py", line 1026, in _send_output
+    self.send(msg)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\http\client.py", line 964, in send
+    self.connect()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\http\client.py", line 936, in connect
+    (self.host,self.port), self.timeout, self.source_address)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\socket.py", line 724, in create_connection
+    raise err
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\socket.py", line 713, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\fake_useragent\utils.py", line 67, in get
+    context=context,
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\urllib\request.py", line 223, in urlopen
+    return opener.open(url, data, timeout)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\urllib\request.py", line 526, in open
+    response = self._open(req, data)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\urllib\request.py", line 544, in _open
+    '_open', req)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\urllib\request.py", line 504, in _call_chain
+    result = func(*args)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\urllib\request.py", line 1346, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\urllib\request.py", line 1320, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error timed out>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\fake_useragent\utils.py", line 166, in load
+    verify_ssl=verify_ssl,
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\fake_useragent\utils.py", line 122, in get_browser_versions
+    verify_ssl=verify_ssl,
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\fake_useragent\utils.py", line 84, in get
+    raise FakeUserAgentError('Maximum amount of retries reached')
+fake_useragent.errors.FakeUserAgentError: Maximum amount of retries reached
+2019-01-09 19:06:32,844-WARNING-Error occurred during loading data. Trying to use cache server http://d2g6u4gh6d9rq0.cloudfront.net/browsers/fake_useragent_0.1.10.json
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\urllib\request.py", line 1318, in do_open
+    encode_chunked=req.has_header('Transfer-encoding'))
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\http\client.py", line 1239, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\http\client.py", line 1285, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\http\client.py", line 1234, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\http\client.py", line 1026, in _send_output
+    self.send(msg)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\http\client.py", line 964, in send
+    self.connect()
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\http\client.py", line 936, in connect
+    (self.host,self.port), self.timeout, self.source_address)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\socket.py", line 724, in create_connection
+    raise err
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\socket.py", line 713, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\fake_useragent\utils.py", line 67, in get
+    context=context,
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\urllib\request.py", line 223, in urlopen
+    return opener.open(url, data, timeout)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\urllib\request.py", line 526, in open
+    response = self._open(req, data)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\urllib\request.py", line 544, in _open
+    '_open', req)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\urllib\request.py", line 504, in _call_chain
+    result = func(*args)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\urllib\request.py", line 1346, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\urllib\request.py", line 1320, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error timed out>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\fake_useragent\utils.py", line 166, in load
+    verify_ssl=verify_ssl,
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\fake_useragent\utils.py", line 122, in get_browser_versions
+    verify_ssl=verify_ssl,
+  File "C:\Users\ChooJ\AppData\Local\Programs\Python\Python36-32\lib\site-packages\fake_useragent\utils.py", line 84, in get
+    raise FakeUserAgentError('Maximum amount of retries reached')
+fake_useragent.errors.FakeUserAgentError: Maximum amount of retries reached
+2019-01-09 19:10:53,972-INFO-Now processing: https://forums.cpanel.net
+2019-01-09 19:10:56,708-INFO-Now processing: https://www.newportmansions.org
+2019-01-09 19:10:59,199-INFO-Now processing: https://dpeaflcio.org
+2019-01-09 19:11:00,268-INFO-Now processing: https://collections.museumvictoria.com.au
+2019-01-09 19:11:01,308-INFO-Now processing: https://www.iep.utm.edu
+2019-01-09 19:11:02,335-WARNING-Request error for website: https://www.iep.utm.edu
+2019-01-09 19:11:02,337-INFO-Now processing: https://bestapples.com
+2019-01-09 19:11:05,746-INFO-Now processing: https://australianmuseum.net.au
+2019-01-09 19:11:12,027-INFO-Now processing: https://www.surette-realestate.com
+2019-01-09 19:11:14,077-INFO-Now processing: https://www.surette-realestate.com
+2019-01-09 19:11:15,918-INFO-Now processing: https://www.pnb.org
+2019-01-09 19:11:16,751-INFO-Failed request for: https://www.pnb.org, status code: 403, retry number: 1
+2019-01-09 19:11:17,517-INFO-Failed request for: https://www.pnb.org, status code: 403, retry number: 2
+2019-01-09 19:11:18,278-INFO-Failed request for: https://www.pnb.org, status code: 403, retry number: 3
+2019-01-09 19:11:19,082-INFO-Failed request for: https://www.pnb.org, status code: 403, retry number: 4
+2019-01-09 19:11:19,900-INFO-Failed request for: https://www.pnb.org, status code: 403, retry number: 5
+2019-01-09 19:11:20,754-INFO-Failed request for: https://www.pnb.org, status code: 403, retry number: 6
+2019-01-09 19:11:21,563-INFO-Failed request for: https://www.pnb.org, status code: 403, retry number: 7
+2019-01-09 19:11:22,318-INFO-Failed request for: https://www.pnb.org, status code: 403, retry number: 8
+2019-01-09 19:11:23,144-INFO-Failed request for: https://www.pnb.org, status code: 403, retry number: 9
+2019-01-09 19:11:23,897-INFO-Failed request for: https://www.pnb.org, status code: 403, retry number: 10
+2019-01-09 19:11:24,652-WARNING-Failed 10 requests for: https://www.pnb.org, status code: 403, skipping...
+2019-01-09 19:11:24,748-INFO-Now processing: https://newsroom.cisco.com
+2019-01-09 19:11:27,881-INFO-Now processing: https://www.robbinschevy.co
+2019-01-09 19:11:28,381-WARNING-Request error for website: https://www.robbinschevy.co
+2019-01-09 19:11:28,383-INFO-Now processing: https://thesefootballtimes.co
+2019-01-09 19:11:29,223-INFO-Failed request for: https://thesefootballtimes.co, status code: 403, retry number: 1
+2019-01-09 19:11:30,036-INFO-Failed request for: https://thesefootballtimes.co, status code: 403, retry number: 2
+2019-01-09 19:11:30,898-INFO-Failed request for: https://thesefootballtimes.co, status code: 403, retry number: 3
+2019-01-09 19:11:31,760-INFO-Failed request for: https://thesefootballtimes.co, status code: 403, retry number: 4
+2019-01-09 19:11:32,598-INFO-Failed request for: https://thesefootballtimes.co, status code: 403, retry number: 5
+2019-01-09 19:11:33,458-INFO-Failed request for: https://thesefootballtimes.co, status code: 403, retry number: 6
+2019-01-09 19:11:34,289-INFO-Failed request for: https://thesefootballtimes.co, status code: 403, retry number: 7
+2019-01-09 19:11:35,114-INFO-Failed request for: https://thesefootballtimes.co, status code: 403, retry number: 8
+2019-01-09 19:11:35,977-INFO-Failed request for: https://thesefootballtimes.co, status code: 403, retry number: 9
+2019-01-09 19:11:36,814-INFO-Failed request for: https://thesefootballtimes.co, status code: 403, retry number: 10
+2019-01-09 19:11:37,610-WARNING-Failed 10 requests for: https://thesefootballtimes.co, status code: 403, skipping...
+2019-01-09 19:11:37,665-INFO-Now processing: https://imm.medicina.ulisboa.pt
+2019-01-09 19:11:42,665-INFO-Now processing: https://neosmart.net
+2019-01-09 19:11:43,770-INFO-Now processing: https://danci.911cha.com
+2019-01-09 19:11:44,898-INFO-Now processing: https://danci.911cha.com
+2019-01-09 19:11:46,153-INFO-Now processing: https://www.narayana-verlag.com
+2019-01-09 19:11:49,449-INFO-Now processing: https://recorder.franklincountyohio.gov
+2019-01-09 19:11:50,921-INFO-Now processing: https://www.digitalcommonwealth.org
+2019-01-09 19:11:52,063-INFO-Now processing: https://sponsorpitch.com
+2019-01-09 19:11:53,111-INFO-Now processing: https://forum.isthmus.com
+2019-01-09 19:11:54,438-INFO-Now processing: https://www.nihadc.com
+2019-01-09 19:11:56,431-INFO-Now processing: https://www.e-jmd.org
+2019-01-09 19:11:57,888-INFO-Now processing: https://www.separations.asia.tosohbioscience.com
+2019-01-09 19:12:00,146-INFO-Now processing: https://www.e-sciencecentral.org
+2019-01-09 19:12:04,921-INFO-Now processing: https://iovs.arvojournals.org
+2019-01-09 19:12:06,486-INFO-Now processing: https://stellaris.paradoxwikis.com
+2019-01-09 19:12:07,011-WARNING-Request error for website: https://stellaris.paradoxwikis.com
+2019-01-09 19:12:07,012-INFO-Now processing: https://developer.asperasoft.com
+2019-01-09 19:12:08,373-INFO-Now processing: https://www.tourisme-alsace.com
+2019-01-09 19:12:11,018-INFO-Now processing: https://www.cem-protection.com
+2019-01-09 19:12:13,493-INFO-Now processing: https://www.paulettesauve.com
+2019-01-09 19:12:15,247-INFO-Now processing: https://read.dukeupress.edu
+2019-01-09 19:12:16,803-INFO-Now processing: https://www.marketingsherpa.com
+2019-01-09 19:12:18,946-INFO-Now processing: https://jamanetwork.com
+2019-01-09 19:12:20,764-INFO-Now processing: https://www.ceemjournal.org
+2019-01-09 19:12:24,132-INFO-Now processing: https://www.tosohindia.com
+2019-01-09 19:12:26,377-INFO-Now processing: https://shop.hytest.fi
+2019-01-09 19:12:28,362-INFO-Now processing: https://www.j-stroke.org
+2019-01-09 19:12:29,903-INFO-Now processing: https://www.diagnostics.eu.tosohbioscience.com
+2019-01-09 19:12:32,100-INFO-Now processing: https://gbtimes.com
+2019-01-09 19:12:33,377-INFO-Now processing: https://thecasswiki.net
+2019-01-09 19:12:33,753-WARNING-Request error for website: https://thecasswiki.net
+2019-01-09 19:12:33,754-INFO-Now processing: https://ck2.paradoxwikis.com
+2019-01-09 19:12:34,281-WARNING-Request error for website: https://ck2.paradoxwikis.com
+2019-01-09 19:12:34,282-INFO-Now processing: https://www.robomow.com
+2019-01-09 19:12:39,897-INFO-Now processing: https://www.ucsusa.org
+2019-01-09 19:12:41,227-INFO-Now processing: https://www.vogelwarte.ch
+2019-01-09 19:12:43,761-INFO-Now processing: https://ezcanvas.com
+2019-01-09 19:12:45,426-INFO-Now processing: https://askaquestionto.us
+2019-01-09 19:12:46,814-INFO-Now processing: https://www.rushcard.co
+2019-01-09 19:12:53,619-WARNING-Request error for website: https://www.rushcard.co
+2019-01-09 19:12:53,619-INFO-Now processing: https://www.cdfa.ca.gov
+2019-01-09 19:12:56,601-INFO-Now processing: https://www.mevaccine.org
+2019-01-09 19:12:57,069-WARNING-Request error for website: https://www.mevaccine.org
+2019-01-09 19:12:57,072-INFO-Now processing: https://www.aaos.org
+2019-01-09 19:13:00,710-INFO-Now processing: https://s2018.siggraph.org
+2019-01-09 19:13:03,401-INFO-Now processing: https://www.gsa.europa.eu
+2019-01-09 19:13:05,798-INFO-Now processing: https://www.pma.com
+2019-01-09 19:13:07,281-INFO-Now processing: https://norsafe.com
+2019-01-09 19:13:09,237-INFO-Now processing: https://pubs.geoscienceworld.org
+2019-01-09 19:13:10,768-INFO-Now processing: https://gq.pgi.gov.pl
+2019-01-09 19:13:14,937-INFO-Now processing: https://www.ajas.info
+2019-01-09 19:13:16,948-INFO-Now processing: https://www.quikrete.com
+2019-01-09 19:13:19,052-INFO-Now processing: https://starklibrary.org
+2019-01-09 19:13:20,633-INFO-Now processing: https://www.a1corp.com.sg
+2019-01-09 19:13:20,911-INFO-Now processing: https://www.str.org
+2019-01-09 19:13:22,819-INFO-Now processing: https://leader.pubs.asha.org
+2019-01-09 19:13:27,438-INFO-Now processing: https://parkinson.org
+2019-01-09 19:13:30,613-INFO-Now processing: https://mayfieldclinic.com
+2019-01-09 19:13:31,074-WARNING-Request error for website: https://mayfieldclinic.com
+2019-01-09 19:13:31,080-INFO-Now processing: https://www.thomsonbiketours.com
+2019-01-09 19:13:32,037-INFO-Now processing: https://www.rhs.org.uk
+2019-01-09 19:13:33,367-INFO-Now processing: https://www.medicines.org.uk
+2019-01-09 19:13:35,746-INFO-Now processing: https://www.mmv.org
+2019-01-09 19:13:38,016-INFO-Now processing: https://www.iwh.on.ca
+2019-01-09 19:13:40,800-INFO-Now processing: https://educationendowmentfoundation.org.uk
+2019-01-09 19:13:43,013-INFO-Now processing: https://www.docsquiffy.co
+2019-01-09 19:13:44,101-ERROR-Certificate did not match expected hostname: www.docsquiffy.co. Certificate: {'subject': ((('commonName', '*.parkingcrew.net'),),), 'subjectAltName': [('DNS', '*.parkingcrew.net'), ('DNS', 'parkingcrew.net')]}
+2019-01-09 19:13:44,159-WARNING-Request error for website: https://www.docsquiffy.co
+2019-01-09 19:13:44,161-INFO-Now processing: https://elcajon.gwfathom.co
+2019-01-09 19:13:45,263-ERROR-Certificate did not match expected hostname: elcajon.gwfathom.co. Certificate: {'subject': ((('commonName', '*.parkingcrew.net'),),), 'subjectAltName': [('DNS', '*.parkingcrew.net'), ('DNS', 'parkingcrew.net')]}
+2019-01-09 19:13:45,270-WARNING-Request error for website: https://elcajon.gwfathom.co
+2019-01-09 19:13:45,271-INFO-Now processing: https://glean.info
+2019-01-09 19:13:48,705-INFO-Now processing: https://www.gwct.org.uk
+2019-01-09 19:13:52,228-INFO-Now processing: https://www.onlalu.com
+2019-01-09 19:13:54,699-INFO-Now processing: https://www.spandidos-publications.com
+2019-01-09 19:13:55,920-INFO-Now processing: https://en.uesp.net
+2019-01-09 19:13:57,819-INFO-Now processing: https://www.arthurconandoyle.com
+2019-01-09 19:13:59,094-INFO-Now processing: https://www.endruntechnologies.com
+2019-01-09 19:14:00,186-INFO-Now processing: https://www.logmein.co
+2019-01-09 19:14:01,920-WARNING-Request error for website: https://www.logmein.co
+2019-01-09 19:14:01,920-INFO-Now processing: https://www.stpatricksfestival.ie
+2019-01-09 19:14:03,830-INFO-Now processing: https://www.cairn.info
+2019-01-09 19:14:04,596-INFO-Failed request for: https://www.cairn.info, status code: 403, retry number: 1
+2019-01-09 19:14:05,316-INFO-Failed request for: https://www.cairn.info, status code: 403, retry number: 2
+2019-01-09 19:14:06,032-INFO-Failed request for: https://www.cairn.info, status code: 403, retry number: 3
+2019-01-09 19:14:06,743-INFO-Failed request for: https://www.cairn.info, status code: 403, retry number: 4
+2019-01-09 19:14:07,463-INFO-Failed request for: https://www.cairn.info, status code: 403, retry number: 5
+2019-01-09 19:14:08,197-INFO-Failed request for: https://www.cairn.info, status code: 403, retry number: 6
+2019-01-09 19:14:08,914-INFO-Failed request for: https://www.cairn.info, status code: 403, retry number: 7
+2019-01-09 19:14:09,631-INFO-Failed request for: https://www.cairn.info, status code: 403, retry number: 8
+2019-01-09 19:14:10,353-INFO-Failed request for: https://www.cairn.info, status code: 403, retry number: 9
+2019-01-09 19:14:11,077-INFO-Failed request for: https://www.cairn.info, status code: 403, retry number: 10
+2019-01-09 19:14:11,787-WARNING-Failed 10 requests for: https://www.cairn.info, status code: 403, skipping...
+2019-01-09 19:14:11,906-INFO-Now processing: https://www.persee.fr
+2019-01-09 19:14:17,238-INFO-Now processing: https://www.fsco.gov.on.ca
+2019-01-09 19:14:19,134-INFO-Now processing: https://www.123teachme.com
+2019-01-09 19:14:20,147-INFO-Now processing: https://sites.fas.harvard.edu
+2019-01-09 19:14:21,395-INFO-Now processing: https://esami.unipi.it
+2019-01-09 19:14:22,852-INFO-Now processing: https://www.djguide.nl
+2019-01-09 19:14:25,262-INFO-Now processing: https://www.rettie.co.uk
+2019-01-09 19:14:28,123-INFO-Now processing: https://www.crwflags.com
+2019-01-09 19:14:29,517-INFO-Now processing: https://www.matrimonialsindia.com
+2019-01-09 19:14:30,799-INFO-Now processing: https://www.pothole.info
+2019-01-09 19:14:33,657-INFO-Now processing: https://www.avs.org
+2019-01-09 19:14:35,763-INFO-Now processing: https://www.element-it.com
+2019-01-09 19:14:37,340-INFO-Now processing: https://casper.berkeley.edu
+2019-01-09 19:14:38,414-INFO-Now processing: https://www.zeroaggressionproject.org
+2019-01-09 19:14:39,366-INFO-Failed request for: https://www.zeroaggressionproject.org, status code: 403, retry number: 1
+2019-01-09 19:14:40,300-INFO-Failed request for: https://www.zeroaggressionproject.org, status code: 403, retry number: 2
+2019-01-09 19:14:41,263-INFO-Failed request for: https://www.zeroaggressionproject.org, status code: 403, retry number: 3
+2019-01-09 19:14:42,238-INFO-Failed request for: https://www.zeroaggressionproject.org, status code: 403, retry number: 4
+2019-01-09 19:14:43,166-INFO-Failed request for: https://www.zeroaggressionproject.org, status code: 403, retry number: 5
+2019-01-09 19:14:44,110-INFO-Failed request for: https://www.zeroaggressionproject.org, status code: 403, retry number: 6
+2019-01-09 19:14:45,074-INFO-Failed request for: https://www.zeroaggressionproject.org, status code: 403, retry number: 7
+2019-01-09 19:14:46,033-INFO-Failed request for: https://www.zeroaggressionproject.org, status code: 403, retry number: 8
+2019-01-09 19:14:47,019-INFO-Failed request for: https://www.zeroaggressionproject.org, status code: 403, retry number: 9
+2019-01-09 19:14:47,974-INFO-Failed request for: https://www.zeroaggressionproject.org, status code: 403, retry number: 10
+2019-01-09 19:14:48,884-WARNING-Failed 10 requests for: https://www.zeroaggressionproject.org, status code: 403, skipping...
+2019-01-09 19:14:49,000-INFO-Now processing: https://www.arabianhorses.org
+2019-01-09 19:14:53,203-INFO-Now processing: https://www.butfootballclub.fr
+2019-01-09 19:14:54,959-INFO-Now processing: https://www.industrystock.com
+2019-01-09 19:14:57,385-INFO-Now processing: https://www.1life.co.za
+2019-01-09 19:14:59,552-INFO-Failed request for: https://www.1life.co.za, status code: 500, retry number: 1
+2019-01-09 19:15:01,683-INFO-Failed request for: https://www.1life.co.za, status code: 500, retry number: 2
+2019-01-09 19:15:03,826-INFO-Failed request for: https://www.1life.co.za, status code: 500, retry number: 3
+2019-01-09 19:15:05,937-INFO-Failed request for: https://www.1life.co.za, status code: 500, retry number: 4
+2019-01-09 19:15:08,145-INFO-Failed request for: https://www.1life.co.za, status code: 500, retry number: 5
+2019-01-09 19:15:10,502-INFO-Failed request for: https://www.1life.co.za, status code: 500, retry number: 6
+2019-01-09 19:15:12,816-INFO-Failed request for: https://www.1life.co.za, status code: 500, retry number: 7
+2019-01-09 19:15:15,209-INFO-Failed request for: https://www.1life.co.za, status code: 500, retry number: 8
+2019-01-09 19:15:17,659-INFO-Failed request for: https://www.1life.co.za, status code: 500, retry number: 9
+2019-01-09 19:15:20,042-INFO-Failed request for: https://www.1life.co.za, status code: 500, retry number: 10
+2019-01-09 19:15:22,407-WARNING-Failed 10 requests for: https://www.1life.co.za, status code: 500, skipping...
+2019-01-09 19:15:22,515-INFO-Now processing: https://wiki.openstack.org
+2019-01-09 19:15:24,210-INFO-Now processing: https://www.paycheckrecords.co
+2019-01-09 19:15:25,348-ERROR-Certificate did not match expected hostname: www.paycheckrecords.co. Certificate: {'subject': ((('commonName', '*.parkingcrew.net'),),), 'subjectAltName': [('DNS', '*.parkingcrew.net'), ('DNS', 'parkingcrew.net')]}
+2019-01-09 19:15:25,355-WARNING-Request error for website: https://www.paycheckrecords.co
+2019-01-09 19:15:25,356-INFO-Now processing: https://www.egnyte.co
+2019-01-09 19:15:26,488-ERROR-Certificate did not match expected hostname: www.egnyte.co. Certificate: {'subject': ((('commonName', '*.parkingcrew.net'),),), 'subjectAltName': [('DNS', '*.parkingcrew.net'), ('DNS', 'parkingcrew.net')]}
+2019-01-09 19:15:26,500-WARNING-Request error for website: https://www.egnyte.co
+2019-01-09 19:15:26,501-INFO-Now processing: https://www.wilsonsleather.co
+2019-01-09 19:15:27,635-ERROR-Certificate did not match expected hostname: www.wilsonsleather.co. Certificate: {'subject': ((('commonName', '*.parkingcrew.net'),),), 'subjectAltName': [('DNS', '*.parkingcrew.net'), ('DNS', 'parkingcrew.net')]}
+2019-01-09 19:15:27,650-WARNING-Request error for website: https://www.wilsonsleather.co
+2019-01-09 19:15:27,652-INFO-Now processing: https://www.dolomiti.org
+2019-01-09 19:15:31,495-INFO-Now processing: https://www.cifor.org
+2019-01-09 19:15:32,741-INFO-Now processing: https://www.ks.uiuc.edu
+2019-01-09 19:15:44,209-INFO-Now processing: https://incubator.duolingo.co
+2019-01-09 19:15:45,515-ERROR-Certificate did not match expected hostname: incubator.duolingo.co. Certificate: {'subject': ((('commonName', '*.parkingcrew.net'),),), 'subjectAltName': [('DNS', '*.parkingcrew.net'), ('DNS', 'parkingcrew.net')]}
+2019-01-09 19:15:45,521-WARNING-Request error for website: https://incubator.duolingo.co
+2019-01-09 19:15:45,522-INFO-Now processing: https://www.appliancewhse.co
+2019-01-09 19:15:46,728-ERROR-Certificate did not match expected hostname: www.appliancewhse.co. Certificate: {'subject': ((('commonName', '*.parkingcrew.net'),),), 'subjectAltName': [('DNS', '*.parkingcrew.net'), ('DNS', 'parkingcrew.net')]}
+2019-01-09 19:15:46,742-WARNING-Request error for website: https://www.appliancewhse.co
+2019-01-09 19:15:46,743-INFO-Now processing: https://www.waveapps.co
+2019-01-09 19:15:47,953-ERROR-Certificate did not match expected hostname: www.waveapps.co. Certificate: {'subject': ((('commonName', '*.parkingcrew.net'),),), 'subjectAltName': [('DNS', '*.parkingcrew.net'), ('DNS', 'parkingcrew.net')]}
+2019-01-09 19:15:47,973-WARNING-Request error for website: https://www.waveapps.co
+2019-01-09 19:15:47,974-INFO-Now processing: https://www.tsw.com
+2019-01-09 19:15:50,083-INFO-Now processing: https://www.inpex.co.jp
+2019-01-09 19:15:50,820-INFO-Now processing: https://www.inpex.co.jp
+2019-01-09 19:15:51,468-INFO-Now processing: https://www.fossilera.com
+2019-01-09 19:15:53,369-INFO-Now processing: https://www.thelindquistgroup.com
+2019-01-09 19:15:54,908-INFO-Now processing: https://cabrillo.instructure.co
+2019-01-09 19:15:56,138-ERROR-Certificate did not match expected hostname: cabrillo.instructure.co. Certificate: {'subject': ((('commonName', '*.parkingcrew.net'),),), 'subjectAltName': [('DNS', '*.parkingcrew.net'), ('DNS', 'parkingcrew.net')]}
+2019-01-09 19:15:56,156-WARNING-Request error for website: https://cabrillo.instructure.co
+2019-01-09 19:15:56,159-INFO-Now processing: https://www.visitsanantonio.co
+2019-01-09 19:15:57,327-ERROR-Certificate did not match expected hostname: www.visitsanantonio.co. Certificate: {'subject': ((('commonName', '*.parkingcrew.net'),),), 'subjectAltName': [('DNS', '*.parkingcrew.net'), ('DNS', 'parkingcrew.net')]}
+2019-01-09 19:15:57,342-WARNING-Request error for website: https://www.visitsanantonio.co
+2019-01-09 19:15:57,344-INFO-Now processing: https://pangea.stanford.edu
+2019-01-09 19:15:59,604-INFO-Now processing: https://www.singaporeair.co
+2019-01-09 19:16:00,810-ERROR-Certificate did not match expected hostname: www.singaporeair.co. Certificate: {'subject': ((('commonName', '*.parkingcrew.net'),),), 'subjectAltName': [('DNS', '*.parkingcrew.net'), ('DNS', 'parkingcrew.net')]}
+2019-01-09 19:16:00,819-WARNING-Request error for website: https://www.singaporeair.co
+2019-01-09 19:16:00,820-INFO-Now processing: https://www.iaindale.com
+2019-01-09 19:16:02,214-INFO-Now processing: https://www.cancercenter.com
+2019-01-09 19:16:04,221-INFO-Now processing: https://www.christiancourier.com
+2019-01-09 19:16:05,829-INFO-Now processing: https://www.care2.com
+2019-01-09 19:16:06,879-INFO-Now processing: https://ari.nus.edu.sg
+2019-01-09 19:16:07,312-INFO-Now processing: https://www.dot.ny.gov
+2019-01-09 19:16:08,707-INFO-Now processing: https://www.lenntech.com
+2019-01-09 19:16:09,844-INFO-Now processing: https://www.burnabynow.com
+2019-01-09 19:16:11,290-INFO-Now processing: https://www.bitzer.de
