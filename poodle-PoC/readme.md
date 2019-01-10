@@ -2,7 +2,9 @@
 
 To run the script, use:
 
-python poodle-exploit-multiple.py <output directory>.
+python poodle-exploit-multiple.py output/
+
+Where output/ is the output directory.
 
 You will need to open the browser (located in Win_209849_chrome-win32) which will act as a client to perform the request. Copy the javascript in poodle.js into the browser's console to execute the request. Wait till the script outputs some text before doing this.
 
