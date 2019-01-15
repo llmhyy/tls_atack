@@ -1,4 +1,16 @@
-# Poodle PoC
+# Running the script
+
+To run the script, use:
+
+python poodle-exploit-multiple.py output/
+
+Where output/ is the output directory.
+
+You will need to open the browser (located in Win_209849_chrome-win32) which will act as a client to perform the request. Copy the javascript in poodle.js into the browser's console to execute the request. Wait till the script outputs some text before doing this.
+
+The browser's command line arguments are as follows: --proxy-server=127.0.0.1:4443 --disable-web-security --ssl-version-max=ssl3 --ssl-version-min=ssl3
+
+# The old Poodle PoC readme file has been provided below:
 
 A proof of concept of the Poodle Attack (Padding Oracle On Downgraded Legacy Encryption) :
 
