@@ -1,3 +1,4 @@
+import os
 import json
 import numpy as np
 import keras
@@ -27,6 +28,7 @@ features = json.loads(pf.get_features('data/features.csv'))
 batch_dim = len(features)
 sequence_dim = max(list(map(len, features)))
 feature_dim = features[0][0]
+sequence_len = np.array([len(sample) for sample in features])
 features_pad = pad_sequences(features, maxlen=sequence_dim, dtype='float32', padding='post',value=0.0)
 #print(features_pad.shape)  # shape (3496,100,19)
 
@@ -36,7 +38,7 @@ features_pad = pad_sequences(features, maxlen=sequence_dim, dtype='float32', pad
 # Shoud I standardize within 1 traffic only? Hmm wouldnt the padding affect the standardization as well
 # 3: Scale each feature between min and max of feature
 
-scale_option = 3
+scale_option = 1
 
 if scale_option == 1:
     l2_norm = np.linalg.norm(features_pad, axis=2, keepdims=True)
@@ -68,8 +70,31 @@ Y = features_zero_appended[:,1:,:]
 # print(X.shape)     # shape (3496,100,19)
 # print(Y.shape)     # shape (3496,100,19)
 
-# Train test split 
-X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.3, random_state=2019)
+#sequence_len = np.concatenate((np.array([0]),sequence_len))
+
+# Split dataset into train and test
+seed = 2019
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.3, random_state=seed)
+X_train_seqlen, X_test_seqlen, Y_train_seqlen, Y_test_seqlen = train_test_split(sequence_len, sequence_len, test_size=0.3, random_state=seed)
+# Verify that the train test split works on the sequence length as well
+#s = 468
+# print(X_train[s,X_train_seqlen[s],:])
+# print(X_train[s,X_train_seqlen[s]+1,:])
+
+# print(Y_train[s,Y_train_seqlen[s]-1,:])
+# print(Y_train[s,Y_train_seqlen[s],:])
+
+# print(X_train_seqlen[s])
+# print(Y_train_seqlen[s])
+
+# print(X_test[s,X_test_seqlen[s],:])
+# print(X_test[s,X_test_seqlen[s]+1,:])
+
+# print(Y_test[s,Y_test_seqlen[s]-1,:])
+# print(Y_test[s,Y_test_seqlen[s],:])
+
+# print(X_test_seqlen[s])
+# print(Y_test_seqlen[s])
 
 ##########################################################################################
 
@@ -115,7 +140,7 @@ class PredictEpoch(keras.callbacks.Callback):
 
 # Training the RNN model
 predictEpoch = PredictEpoch(X_train, X_test)
-history = model.fit(X_train,Y_train, validation_data = (X_test, Y_test),batch_size=64, epochs=10, callbacks=[predictEpoch])
+history = model.fit(X_train,Y_train, validation_data = (X_test, Y_test),batch_size=64, epochs=100, callbacks=[predictEpoch])
 
 # Visualize the model prediction over epochs
 #viz.visualize_traffic(predictEpoch.predict_train, Y_train, predictEpoch.predict_test, Y_test)
@@ -140,63 +165,63 @@ Y_predict = Y_predict.reshape(1, Y_predict.shape[1]*Y_predict.shape[2])
 sample_score = cosine_similarity(Y_actual, Y_predict)
 print('Cosine similarity for sample: {}'.format(sample_score[0]))
 
-# Calculate cosine similarity for first packet and across traffic
-def cos_sim_firstpacket(predict_data, true_data):
+# Calculate cosine similarity for one packet and across traffic
+def cos_sim_onepacket(predict_data, true_data, packet_id=0):
     """
-    Calculates the cosine similarity for the first packet of every traffic and return a 
-    list of tuple (mean, median) where len(list) corresponds to #epoch
+    Calculates the cosine similarity for one packet of every traffic (default first packet)
+
+    Return a 2-tuple:
+    (cos sim of one packet for final prediction, list of tuple (mean, median)) 
+    where len(list) corresponds to #epoch
     """
     cos_sim_firstpacket_epoch = []
     true_data = [true_data] * len(predict_data)
     for epoch in range(len(predict_data)):
-        #print(predict_data[epoch][1,0,:])
-        #print(true_data[epoch][1,0,:])
-        #print(np.dot(predict_data[epoch][1,0,:], true_data[epoch][1,0,:]))
-        #print (np.tensordot(predict_data[epoch][:,0,:], true_data[epoch][:,0,:],axes=(1,1)).diagonal()[0])
-        #print(np.dot(predict_data[epoch][1,0,:], true_data[epoch][1,0,:])/(np.linalg.norm(predict_data[epoch][1,0,:]) * np.linalg.norm(true_data[epoch][1,0,:])))
-        #print(np.tensordot(predict_data[epoch][:,0,:], true_data[epoch][:,0,:],axes=(1,1)).diagonal()[0]/(np.linalg.norm(predict_data[epoch][1,0,:],axis=0)*np.linalg.norm(true_data[epoch][1,0,:], axis=0)))
-        cos_sim = np.tensordot(predict_data[epoch][:,0,:], true_data[epoch][:,0,:],axes=(1,1)).diagonal()/(np.linalg.norm(predict_data[epoch][:,0,:],axis=1)*np.linalg.norm(true_data[epoch][:,0,:], axis=1))
+        dot = np.einsum('ij,ij->i', predict_data[epoch][:,packet_id,:], true_data[epoch][:,packet_id,:])
+        vnorm = np.linalg.norm(predict_data[epoch][:,packet_id,:],axis=1)*np.linalg.norm(true_data[epoch][:,packet_id,:], axis=1)
+        cos_sim = dot/vnorm
+        
         # Append mean and median across all traffic
         mean_cos_sim = np.mean(cos_sim, axis=0)
         median_cos_sim = np.median(cos_sim, axis=0)
         cos_sim_firstpacket_epoch.append((mean_cos_sim, median_cos_sim))
 
-    return cos_sim_firstpacket_epoch
+    return (cos_sim, cos_sim_firstpacket_epoch)
 
-def cos_sim_tenpackets(predict_data, true_data):
-    cos_sim_tenpackets_epoch = []
-    true_data = [true_data] * len(predict_data)
-    for epoch in range(len(predict_data)):
-        dot = np.einsum('ijk,ijk->ij', predict_data[epoch], true_data[epoch])
-        vnorm = (np.linalg.norm(predict_data[epoch],axis=2)*np.linalg.norm(true_data[epoch],axis=2))
-        cos_sim = np.divide(dot,vnorm,out=np.zeros_like(dot), where=vnorm!=0.0)
-        #print(cos_sim.shape)
-        cos_sim_10 = cos_sim[:,0:10]
-        mean_cos_sim_10 = np.mean(cos_sim_10, axis=1)
-        median_cos_sim_10 = np.median(cos_sim_10, axis=1)
-        ten_mean = np.mean(mean_cos_sim_10)
-        ten_median = np.median(median_cos_sim_10)
-        cos_sim_tenpackets_epoch.append((ten_mean, ten_median))
-    return (mean_cos_sim_10, median_cos_sim_10, cos_sim_tenpackets_epoch)
+# def cos_sim_tenpackets(predict_data, true_data):
+#     cos_sim_tenpackets_epoch = []
+#     true_data = [true_data] * len(predict_data)
+#     for epoch in range(len(predict_data)):
+#         dot = np.einsum('ijk,ijk->ij', predict_data[epoch], true_data[epoch])
+#         vnorm = (np.linalg.norm(predict_data[epoch],axis=2)*np.linalg.norm(true_data[epoch],axis=2))
+#         cos_sim = np.divide(dot,vnorm,out=np.zeros_like(dot), where=vnorm!=0.0)
+#         #print(cos_sim.shape)
+#         cos_sim_10 = cos_sim[:,0:10]
+#         mean_cos_sim_10 = np.mean(cos_sim_10, axis=1)
+#         median_cos_sim_10 = np.median(cos_sim_10, axis=1)
+#         ten_mean = np.mean(mean_cos_sim_10)
+#         ten_median = np.median(median_cos_sim_10)
+#         cos_sim_tenpackets_epoch.append((ten_mean, ten_median))
+#     return (mean_cos_sim_10, median_cos_sim_10, cos_sim_tenpackets_epoch)
 
-def cos_sim_traffic(predict_data, true_data):
+def cos_sim_traffic(predict_data, true_data, first=None):
     """
-    Calculates the cosine similarity for the whole traffic. Returns a 3-tuple: 
+    Calculates the cosine similarity (CS) for traffic. It first calculates the mean/median CS for each traffic
+    then calculates the mean/median CS across traffic. User can specify the first ___ number of packets as arg
+    
+    Returns a 3-tuple: 
     (mean cos sim for final prediction, median cos sim for final prediction, list of tuple (mean, median)) 
     where len(list) corresponds to #epoch
     """
     cos_sim_epoch = []
     true_data = [true_data] * len(predict_data)
     for epoch in range(len(predict_data)):
-        # get mean/median cos sim within a traffic
-        #print(predict_data[epoch].shape)
-        #print(true_data[epoch].shape)
-        #print(np.einsum('ijk,ijk->ij', predict_data[epoch], true_data[epoch]).shape)
-        #print((np.linalg.norm(predict_data[epoch],axis=2)*np.linalg.norm(true_data[epoch],axis=2)).shape)
         
         dot = np.einsum('ijk,ijk->ij', predict_data[epoch], true_data[epoch])
         vnorm = (np.linalg.norm(predict_data[epoch],axis=2)*np.linalg.norm(true_data[epoch],axis=2))
         cos_sim = np.divide(dot,vnorm,out=np.zeros_like(dot), where=vnorm!=0.0)
+        if first:
+            cos_sim = cos_sim[:,0:first]
         
         # Verify that dot product is calculated correctly
         #print(np.dot(predict_data[epoch][54,10,:],true_data[epoch][54,10,:]))
@@ -217,87 +242,102 @@ def cos_sim_traffic(predict_data, true_data):
         cos_sim_epoch.append((overall_mean, overall_median))
     return (mean_cos_sim_traffic, median_cos_sim_traffic, cos_sim_epoch)
 
-print('Final cosine similarity of first packet on train dataset')
-acc_pkt1_train = cos_sim_firstpacket(predictEpoch.predict_train, Y_train)
-print(acc_pkt1_train[-1])
+# print('Final cosine similarity of first packet on train dataset')
+# acc_pkt1_train = cos_sim_onepacket(predictEpoch.predict_train, Y_train, packet_id=0)
+# print(acc_pkt1_train[-1][-1])
 
-print('Final cosine similarity of first packet on test dataset')
-acc_pkt1_test = cos_sim_firstpacket(predictEpoch.predict_test, Y_test)
-print(acc_pkt1_test[-1])
+# print('Final cosine similarity of first packet on test dataset')
+# acc_pkt1_test = cos_sim_onepacket(predictEpoch.predict_test, Y_test, packet_id=0)
+# print(acc_pkt1_test[-1][-1])
 
-print('Final cosine similarity of traffic on train dataset')
-acc_pkttraffic_train = cos_sim_traffic(predictEpoch.predict_train, Y_train)
-print(acc_pkttraffic_train[-1][-1])
+# print('Final cosine similarity of traffic on train dataset')
+# acc_pkttraffic_train = cos_sim_traffic(predictEpoch.predict_train, Y_train)
+# print(acc_pkttraffic_train[-1][-1])
 
-print('Final cosine similarity of traffic on test dataset')
-acc_pkttraffic_test = cos_sim_traffic(predictEpoch.predict_test, Y_test)
-print(acc_pkttraffic_test[-1][-1])
+# print('Final cosine similarity of traffic on test dataset')
+# acc_pkttraffic_test = cos_sim_traffic(predictEpoch.predict_test, Y_test)
+# print(acc_pkttraffic_test[-1][-1])
 
-print('Cosine similarity for the first 10 packets on train dataset')
-acc_pkt10_train = cos_sim_tenpackets(predictEpoch.predict_train, Y_train)
-print(acc_pkt10_train[-1])
+# print('Cosine similarity for the first 10 packets on train dataset')
+# acc_pkt10_train = cos_sim_traffic(predictEpoch.predict_train, Y_train,10)
+# print(acc_pkt10_train[-1][-1])
 
-print('Cosine similarity for the first 10 packets on test dataset')
-acc_pkt10_test = cos_sim_tenpackets(predictEpoch.predict_test, Y_test)
-print(acc_pkt10_test[-1])
+# print('Cosine similarity for the first 10 packets on test dataset')
+# acc_pkt10_test = cos_sim_traffic(predictEpoch.predict_test, Y_test,10)
+# print(acc_pkt10_test[-1][-1])
 
-# Plot training & validation cosine similarity for first packet
-plt.subplots_adjust(hspace=0.8)
-#plt.legend(loc=2, prop={'size': 2})
+def generate_plot(results_train, results_test, first=None, save=False):
+    """
+    Accepts a train and test object, which are generated from the function cos_sim_traffic
 
-plt.subplot(411)
-#plt.plot(history.history['cos_sim'])
-#plt.plot(history.history['val_cos_sim'])
-mean_history_train = [i[0] for i in acc_pkt1_train]
-median_history_train = [i[1] for i in acc_pkt1_train]
-mean_history_test = [i[0] for i in acc_pkt1_test]
-median_history_test = [i[1] for i in acc_pkt1_test]
-#print(mean_history_train)
-#print(median_history_train)
-#print(mean_history_test)
-#print(median_history_test)
-plt.plot(mean_history_train, alpha=0.7)
-plt.plot(median_history_train, alpha=0.7)
-plt.plot(mean_history_test, alpha=0.7)
-plt.plot(median_history_test, alpha=0.7)
-plt.title('Model cosine similarity on 1st packet')
-plt.ylabel('Cosine similarity')
-plt.xlabel('Epoch')
-plt.legend(['Train(mean)', 'Train(median)' , 'Val(mean)', 'Val(median)'], loc='upper left')
+    A function to generate the following plots for first __ number of packets:
+    • Accuracy plot for n epoch of training
+    • Distribution of cosine similarity for final prediction
 
-# Plot training % validation cosine similarity for first 10 packets
-plt.subplot(412)
-meanten_history_train = [i[0] for i in acc_pkt10_train[-1]]
-medianten_history_train = [i[1] for i in acc_pkt10_train[-1]]
-meanten_history_test = [i[0] for i in acc_pkt10_test[-1]]
-medianten_history_test = [i[1] for i in acc_pkt10_test[-1]]
-plt.plot(meanten_history_train, alpha=0.7)
-plt.plot(medianten_history_train, alpha=0.7)
-plt.plot(meanten_history_test, alpha=0.7)
-plt.plot(medianten_history_test, alpha=0.7)
-plt.title('Model cosine similarity for first 10 packets')
-plt.ylabel('Cosine similarity')
-plt.xlabel('Epoch')
-plt.legend(['Train(mean)', 'Train(median)' , 'Val(mean)', 'Val(median)'], loc='upper left')
+    If save is not False, it must be a string specifying the location to save the image. Else, the plot will be showed
+    """
+    plt.subplots_adjust(hspace=0.7)
 
+    plt.subplot(311)
+    mean_history_train = [i[0] for i in results_train[-1]]
+    median_history_train = [i[1] for i in results_train[-1]]
+    mean_history_test = [i[0] for i in results_test[-1]]
+    median_history_test = [i[1] for i in results_test[-1]]
+    plt.plot(mean_history_train, alpha=0.7)
+    plt.plot(median_history_train, alpha=0.7)
+    plt.plot(mean_history_test, alpha=0.7)
+    plt.plot(median_history_test, alpha=0.7)
+    plt.title('Model cosine similarity for first {} pkts'.format(first))
+    plt.ylabel('Cosine Similarity')
+    plt.xlabel('Epoch')
+    plt.legend(['Train(mean)', 'Train(median)' , 'Val(mean)', 'Val(median)'], loc='upper left')
 
-# Plot training & validation cosine similarity for overall traffic
-plt.subplot(413)
-meantraffic_history_train = [i[0] for i in acc_pkttraffic_train[-1]]
-mediantraffic_history_train = [i[1] for i in acc_pkttraffic_train[-1]]
-meantraffic_history_test = [i[0] for i in acc_pkttraffic_test[-1]]
-mediantraffic_history_test = [i[1] for i in acc_pkttraffic_test[-1]]
-plt.plot(meantraffic_history_train, alpha=0.7)
-plt.plot(mediantraffic_history_train, alpha=0.7)
-plt.plot(meantraffic_history_test, alpha=0.7)
-plt.plot(mediantraffic_history_test, alpha=0.7)
-plt.title('Model cosine similarity on overall traffic')
-plt.ylabel('Cosine similarity')
-plt.xlabel('Epoch')
-plt.legend(['Train(mean)', 'Train(median)' , 'Val(mean)', 'Val(median)'], loc='upper left')
+    plt.subplot(312)
+    meantraffic_train = results_train[0]
+    plt.plot(meantraffic_train,'|')
+    plt.title('Dist of mean cosine similarity for first {} pkts (train)'.format(first))
+    plt.ylabel('Mean Cosine Similarity')
+    plt.xlabel('Traffic #')
+
+    plt.subplot(313)
+    meantraffic_test = results_test[0]
+    plt.plot(meantraffic_test,'|')
+    plt.title('Dist of mean cosine similarity for first {} pkts (validation)'.format(first))
+    plt.ylabel('Mean Cosine Similarity')
+    plt.xlabel('Traffic #')
+
+    if save:
+        plt.savefig(os.path.join(save,'acc_dist_{}pkts').format(first))
+        plt.clf()
+    else:
+        plt.show()
+
+results_dir = 'results/expt5'
+#results_dir = None
+
+plt.rcParams['figure.figsize'] = (10,7)
+plt.rcParams['legend.fontsize'] = 8
+
+# Generate result plots for first packet
+acc_pkt1_train = cos_sim_onepacket(predictEpoch.predict_train, Y_train, packet_id=0)
+acc_pkt1_test = cos_sim_onepacket(predictEpoch.predict_test, Y_test, packet_id=0)
+print('Final cosine similarity of first packet on train data')
+print(acc_pkt1_train[-1][-1])
+print('Final cosine similarity of first packet on test data')
+print(acc_pkt1_test[-1][-1])
+generate_plot(acc_pkt1_train, acc_pkt1_test, first=1, save=results_dir)
+
+# Generate result plots for first 10,20,...,90,100 packets
+for pktlen in range(10,101,10):
+    acc_pkt_train = cos_sim_traffic(predictEpoch.predict_train, Y_train, first=pktlen)
+    acc_pkt_test = cos_sim_traffic(predictEpoch.predict_test, Y_test, first=pktlen)
+    print('Final cosine similarity for the first {} packets on train data'.format(pktlen))
+    print(acc_pkt_train[-1][-1])
+    print('Final cosine similarity for the first {} packets on test data'.format(pktlen))
+    print(acc_pkt_test[-1][-1])
+    generate_plot(acc_pkt_train, acc_pkt_test, first=pktlen, save=results_dir)
 
 # Plot training & validation loss
-plt.subplot(414)
 plt.plot(history.history['loss'])
 plt.plot(history.history['val_loss'])
 plt.title('Model loss')
@@ -305,37 +345,129 @@ plt.ylabel('Loss')
 plt.xlabel('Epoch')
 plt.legend(['Train', 'Val'], loc='upper left')
 
-plt.show()
+if results_dir:
+    plt.savefig(os.path.join(results_dir,'loss'))
+else:
+    plt.show()
 
-# Plot distribution of mean osine similarity for final prediction on overall traffic
-plt.subplot(221)
-meantraffic_train = acc_pkttraffic_train[0]
-plt.plot(meantraffic_train,'|')
-plt.title('Distribution of mean cosine similarity across train traffic')
-plt.ylabel('Mean Cosine Similarity')
-plt.xlabel('Taffic #')
+# # Plot training & validation cosine similarity for first packet
+# plt.subplots_adjust(hspace=0.8)
+# #plt.legend(loc=2, prop={'size': 2})
 
-plt.subplot(223)
-meantraffic_test = acc_pkttraffic_test[0]
-plt.plot(meantraffic_test,'|')
-plt.title('Distribution of mean cosine similarity across validation traffic')
-plt.ylabel('Mean Cosine Similarity')
-plt.xlabel('Taffic #')
+# plt.subplot(411)
+# mean_history_train = [i[0] for i in acc_pkt1_train[-1]]
+# median_history_train = [i[1] for i in acc_pkt1_train[-1]]
+# mean_history_test = [i[0] for i in acc_pkt1_test[-1]]
+# median_history_test = [i[1] for i in acc_pkt1_test[-1]]
+# plt.plot(mean_history_train, alpha=0.7)
+# plt.plot(median_history_train, alpha=0.7)
+# plt.plot(mean_history_test, alpha=0.7)
+# plt.plot(median_history_test, alpha=0.7)
+# plt.title('Model cosine similarity on 1st packet')
+# plt.ylabel('Cosine similarity')
+# plt.xlabel('Epoch')
+# plt.legend(['Train(mean)', 'Train(median)' , 'Val(mean)', 'Val(median)'], loc='upper left')
 
-# Plot distribution of mean cosine similarity for final prediction on first 10 packets
-plt.subplot(222)
-mean10pkt_train = acc_pkt10_train[0]
-plt.plot(mean10pkt_train, '|')
-plt.title('Distribution of mean cosine similarity across first 10 packets of train traffic')
-plt.ylabel('Mean Cosine Similarity')
-plt.xlabel('Traffic #')
+# # Plot training % validation cosine similarity for first 10 packets
+# plt.subplot(412)
+# meanten_history_train = [i[0] for i in acc_pkt10_train[-1]]
+# medianten_history_train = [i[1] for i in acc_pkt10_train[-1]]
+# meanten_history_test = [i[0] for i in acc_pkt10_test[-1]]
+# medianten_history_test = [i[1] for i in acc_pkt10_test[-1]]
+# plt.plot(meanten_history_train, alpha=0.7)
+# plt.plot(medianten_history_train, alpha=0.7)
+# plt.plot(meanten_history_test, alpha=0.7)
+# plt.plot(medianten_history_test, alpha=0.7)
+# plt.title('Model cosine similarity for first 10 packets')
+# plt.ylabel('Cosine similarity')
+# plt.xlabel('Epoch')
+# plt.legend(['Train(mean)', 'Train(median)' , 'Val(mean)', 'Val(median)'], loc='upper left')
 
-plt.subplot(224)
-mean10pkt_test = acc_pkt10_test[0]
-plt.plot(mean10pkt_test, '|')
-plt.title('Distribution of mean cosine similarity across first 10 packets of test traffic')
-plt.ylabel('Mean Cosine Similarity')
-plt.xlabel('Traffic #')
 
-plt.show()
+# # Plot training & validation cosine similarity for overall traffic
+# plt.subplot(413)
+# meantraffic_history_train = [i[0] for i in acc_pkttraffic_train[-1]]
+# mediantraffic_history_train = [i[1] for i in acc_pkttraffic_train[-1]]
+# meantraffic_history_test = [i[0] for i in acc_pkttraffic_test[-1]]
+# mediantraffic_history_test = [i[1] for i in acc_pkttraffic_test[-1]]
+# plt.plot(meantraffic_history_train, alpha=0.7)
+# plt.plot(mediantraffic_history_train, alpha=0.7)
+# plt.plot(meantraffic_history_test, alpha=0.7)
+# plt.plot(mediantraffic_history_test, alpha=0.7)
+# plt.title('Model cosine similarity on overall traffic')
+# plt.ylabel('Cosine similarity')
+# plt.xlabel('Epoch')
+# plt.legend(['Train(mean)', 'Train(median)' , 'Val(mean)', 'Val(median)'], loc='upper left')
+
+# # Plot training & validation loss
+# plt.subplot(414)
+# plt.plot(history.history['loss'])
+# plt.plot(history.history['val_loss'])
+# plt.title('Model loss')
+# plt.ylabel('Loss')
+# plt.xlabel('Epoch')
+# plt.legend(['Train', 'Val'], loc='upper left')
+
+# plt.show()
+
+# plt.subplots_adjust(hspace=0.6)
+
+# # Plot distribution of mean cosine similarity for final prediction on overall traffic
+# #plt.subplot(221)
+# plt.subplot(211)
+# meantraffic_train = acc_pkttraffic_train[0]
+# plt.plot(meantraffic_train,'|')
+# plt.title('Distribution of mean cosine similarity across train traffic')
+# plt.ylabel('Mean Cosine Similarity')
+# plt.xlabel('Taffic #')
+
+# #plt.subplot(223)
+# plt.subplot(212)
+# meantraffic_test = acc_pkttraffic_test[0]
+# plt.plot(meantraffic_test,'|')
+# plt.title('Distribution of mean cosine similarity across validation traffic')
+# plt.ylabel('Mean Cosine Similarity')
+# plt.xlabel('Taffic #')
+
+# plt.show()
+
+# plt.subplots_adjust(hspace=0.6)
+
+# # Plot distribution of mean cosine similarity for final prediction on first 10 packets
+# #plt.subplot(222)
+# plt.subplot(211)
+# mean10pkt_train = acc_pkt10_train[0]
+# plt.plot(mean10pkt_train, '|')
+# plt.title('Distribution of mean cosine similarity across first 10 packets of train traffic')
+# plt.ylabel('Mean Cosine Similarity')
+# plt.xlabel('Traffic #')
+
+# #plt.subplot(224)
+# plt.subplot(212)
+# mean10pkt_test = acc_pkt10_test[0]
+# plt.plot(mean10pkt_test, '|')
+# plt.title('Distribution of mean cosine similarity across first 10 packets of test traffic')
+# plt.ylabel('Mean Cosine Similarity')
+# plt.xlabel('Traffic #')
+
+# plt.show()
+
+# plt.subplots_adjust(hspace=0.6)
+
+# # Plot distribution of mean cosine similarity for final prediction on first packet
+# plt.subplot(211)
+# mean1pkt_train = acc_pkt1_train[0]
+# plt.plot(mean1pkt_train, '|')
+# plt.title('Distribution of cosine similarity across first packets of train traffic')
+# plt.ylabel('Mean Cosine Similarity')
+# plt.xlabel('Traffic #')
+
+# plt.subplot(212)
+# mean1pkt_test = acc_pkt1_test[0]
+# plt.plot(mean1pkt_test, '|')
+# plt.title('Distribution of cosine similarity across first packets of test traffic')
+# plt.ylabel('Mean Cosine Similarity')
+# plt.xlabel('Traffic #')
+
+# plt.show()
 
