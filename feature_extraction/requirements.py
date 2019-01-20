@@ -1,0 +1,11 @@
+ipaddress==1.0.22
+Logbook==1.4.1
+lxml==4.3.0
+numpy==1.15.4
+py==1.7.0
+pyshark==0.3.7.11
+scapy==2.4.0
+scikit-learn==0.20.2
+scipy==1.2.0
+sklearn==0.0
+trollius==1.0.4
