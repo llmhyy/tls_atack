@@ -222,6 +222,7 @@ def searchSignatureHash_ClientHello(rootdir):
 def searchSignatureHash_Certificate(rootdir):
     pass
 
+# For handling data structure of jsonlayer type
 def find_handshake(obj, target_type):
     if type(obj) == list:
         final = None
@@ -230,9 +231,12 @@ def find_handshake(obj, target_type):
             if temp:
                 final = temp
         return final
+
     elif type(obj) == JsonLayer:    
         if obj.layer_name=='ssl' and hasattr(obj, 'record'):
             return find_handshake(obj.record, target_type)
+        # elif obj.layer_name=='ssl' and hasattr(obj, 'handshake'):
+        #     return find_handshake(obj.handshake, target_type)
         elif obj.layer_name=='record' and hasattr(obj, 'handshake'):
             return find_handshake(obj.handshake, target_type)
         # If correct handshake is identified
@@ -240,6 +244,23 @@ def find_handshake(obj, target_type):
             return obj
         else:
             return None
+
+# For handling data structure of dict type
+def find_handshake2(obj, target_type):
+    if type(obj) == list:
+        final = None
+        for a_obj in obj:
+            temp = find_handshake2(a_obj, target_type)
+            if temp:
+                final = temp
+        return final
+    elif type(obj) == dict:
+        if 'ssl.record' in obj:
+            return find_handshake2(obj['ssl.record'], target_type)
+        elif 'ssl.handshake' in obj:
+            return find_handshake2(obj['ssl.handshake'], target_type)
+        elif 'ssl.handshake.type' in obj and int(obj['ssl.handshake.type'])==target_type:
+            return obj
     else:
         return None
 
@@ -262,6 +283,7 @@ def extract_tslssl_features(pcapfile, enumCipherSuites=[], enumCompressionMethod
         features = []
 
 
+        ########################################################################
         ########################################################################
         # FOR DEBUGGING
 
@@ -287,7 +309,10 @@ def extract_tslssl_features(pcapfile, enumCipherSuites=[], enumCompressionMethod
         # continue
 
         # try:
-        #     if i == 5:
+        #     if i == 8:
+        #         print(packet_json)
+        #         print(packets_json.ssl)
+        #         myone = packet_json.ssl[0]
         #         handshake = find_handshake(packet_json.ssl, target_type=11)
         #         if handshake:
         #             features.append(int(handshake.length))
@@ -297,6 +322,7 @@ def extract_tslssl_features(pcapfile, enumCipherSuites=[], enumCompressionMethod
         #     features.append(0)
         # print(features)
         # continue
+        ########################################################################
         ########################################################################
 
 
@@ -313,38 +339,6 @@ def extract_tslssl_features(pcapfile, enumCipherSuites=[], enumCompressionMethod
         except AttributeError:
             features.append(0)
 
-        # try:
-        #     if type(packet_json.ssl.record.handshake) == list:
-        #         handshakes = packet_json.ssl.record.handshake
-        #         for handshake in handshakes:
-        #             try:
-        #                 assert not (type(handshake)==list)
-        #             except AssertionError as e:
-        #                 logging.exception("Assertion failed")
-
-        #             # ClientHello found!
-        #             if int(handshake.type)==1:
-        #                 features.append(int(handshake.length))
-        #                 break
-        #         else:
-        #             features.append(0)
-
-        #     else:
-        #         handshake = packet_json.ssl.record.handshake
-        #         try:
-        #             assert not (type(handshake)==list)
-        #         except AssertionError as e:
-        #             logging.exception("Assertion failed")
-
-        #         # ClientHello found!
-        #         if int(handshake.type)==1:
-        #             features.append(int(handshake.length))
-        #         else:
-        #             features.append(0)
-
-        # except AttributeError:
-        #     features.append(0)
-
         # 2: ClientHello - CIPHER SUITE
         ciphersuite_feature = np.zeros_like(enumCipherSuites) # enumCipherSuites is the ref list
         try: 
@@ -360,47 +354,6 @@ def extract_tslssl_features(pcapfile, enumCipherSuites=[], enumCompressionMethod
         except:
             features.extend(ciphersuite_feature)
 
-        # ciphersuite_feature = np.zeros_like(enumCipherSuites) # enumCipherSuites is the ref list
-        # try:
-        #     if type(packet_json.ssl.record.handshake) == list:
-        #         handshakes = packet_json.ssl.record.handshake
-        #         for handshake in handshakes:
-        #             try:
-        #                 assert not (type(handshake)==list)
-        #             except AssertionError as e:
-        #                 logging.exception("Assertion failed")
-
-        #             # ClientHello found!
-        #             if int(handshake.type)==1:
-        #                 for ciphersuite in handshake.ciphersuites.ciphersuite:
-        #                     ciphersuite_int = int(ciphersuite)
-        #                     if ciphersuite_int in enumCipherSuites:
-        #                         ciphersuite_feature[enumCipherSuites.index(ciphersuite_int)] = 1
-        #                 features.extend(ciphersuite_feature)
-        #                 break
-        #         else:
-        #             features.extend(ciphersuite_feature)
-
-        #     else:
-        #         handshake = packet_json.ssl.record.handshake
-        #         try:
-        #             assert not (type(handshake)==list)
-        #         except AssertionError as e:
-        #             logging.exception("Assertion failed")
-
-        #         # ClientHello found!
-        #         if int(handshake.type)==1:
-        #             for ciphersuite in handshake.ciphersuites.ciphersuite:
-        #                 ciphersuite_int = int(ciphersuite)
-        #                 if ciphersuite_int in enumCipherSuites:
-        #                     ciphersuite_feature[enumCipherSuites.index(ciphersuite_int)] = 1
-        #             features.extend(ciphersuite_feature)
-        #         else:
-        #             features.extend(ciphersuite_feature)
-
-        # except AttributeError:
-        #     features.extend(ciphersuite_feature)
-
         # 3: ClientHello - CIPHER SUITE LENGTH
         try:
             handshake = find_handshake(packet_json.ssl, target_type=1)
@@ -410,38 +363,6 @@ def extract_tslssl_features(pcapfile, enumCipherSuites=[], enumCompressionMethod
                 features.append(0)
         except AttributeError:
             features.append(0)        
-
-        # try:
-        #     if type(packet_json.ssl.record.handshake) == list:
-        #         handshakes = packet_json.ssl.record.handshake
-        #         for handshake in handshakes:
-        #             try:
-        #                 assert not (type(handshake)==list)
-        #             except AssertionError as e:
-        #                 logging.exception("Assertion failed")
-
-        #             # ClientHello found!
-        #             if int(handshake.type)==1:
-        #                 features.append(int(handshake.cipher_suites_length))
-        #                 break
-        #         else:
-        #             features.append(0)
-
-        #     else:
-        #         handshake = packet_json.ssl.record.handshake
-        #         try:
-        #             assert not (type(handshake)==list)
-        #         except AssertionError as e:
-        #             logging.exception("Assertion failed")
-
-        #         # ClientHello found!
-        #         if int(handshake.type)==1:
-        #             features.append(int(handshake.cipher_suites_length))
-        #         else:
-        #             features.append(0)
-
-        # except AttributeError:
-        #     features.append(0)
 
         # 4: ClientHello - COMPRESSION METHOD
 
@@ -464,122 +385,37 @@ def extract_tslssl_features(pcapfile, enumCipherSuites=[], enumCompressionMethod
                 features.append(0)
         except AttributeError:
             features.append(0) 
-        # try:
-        #     if type(packet_json.ssl.record.handshake) == list:
-        #         handshakes = packet_json.ssl.record.handshake
-        #         for handshake in handshakes:
-        #             try:
-        #                 assert not (type(handshake)==list)
-        #             except AssertionError as e:
-        #                 logging.exception("Assertion failed")
-
-        #             # ServerHello found!
-        #             if int(handshake.type)==2:
-        #                 features.append(int(handshake.length))
-        #                 break
-        #         else:
-        #             features.append(0)
-
-        #     else:
-        #         handshake = packet_json.ssl.record.handshake
-        #         try:
-        #             assert not (type(handshake)==list)
-        #         except AssertionError as e:
-        #             logging.exception("Assertion failed")
-
-        #         # ServerHello found!
-        #         if int(handshake.type)==2:
-        #             features.append(int(handshake.length))
-        #         else:
-        #             features.append(0)
-
-        # except AttributeError:
-        #     features.append(0)
 
         # 11: ServerHello - EXTENDED MASTER SECRET
 
         # 12: ServerHello - RENEGOTIATION INFO LENGTH
 
-        # 13: Certificate - CERTIFICATE LENGTH
-        # try:
-        #     if type(packet_json.ssl.record.handshake) == list:
-        #         handshakes = packet_json.ssl.record.handshake
-        #         for handshake in handshakes:
-        #             try:
-        #                 assert not (type(handshake)==list)
-        #             except AssertionError as e:
-        #                 logging.exception("Assertion failed")
-
-        #             # Certificate found!
-        #             if int(handshake.type)==11:
-        #                 features.append(int(handshake.length))
-        #                 break
-        #         else:
-        #             features.append(0)
-
-        #     else:
-        #         handshake = packet_json.ssl.record.handshake
-        #         try:
-        #             assert not (type(handshake)==list)
-        #         except AssertionError as e:
-        #             logging.exception("Assertion failed")
-
-        #         # Certificate found!
-        #         if int(handshake.type)==11:
-        #             features.append(int(handshake.length))
-        #         else:
-        #             features.append(0)
-
-        # except AttributeError:
-        #     features.append(0)
-
         # 13,14,15,16: Certificate - NUM_CERT, AVERAGE, MIN, MAX CERTIFICATE LENGTH
+        handshake = None
+        handshake2 = None
+        # Attempt 1: use find_handshake()
         try:
+            
             handshake = find_handshake(packet_json.ssl, target_type=11)
-            if handshake:
-                temp = [int(i) for i in handshake.certificates.certificate_length]
-                mean_cert_len = sum(temp)/float(len(temp))
-                features.extend([len(temp), mean_cert_len,max(temp),min(temp)])
-            else:
-                features.extend([0,0,0,0])
         except AttributeError:
+            pass
+        # Attempt 2: certificate is more difficult to identify. Use hardcode
+        try: 
+            handshake2 = find_handshake2(packet_json.ssl.value, target_type=11)
+        except AttributeError:
+            pass
+
+        if handshake:
+            certificates_length = [int(i) for i in handshake.certificates.certificate_length]
+            mean_cert_len = sum(certificates_length)/float(len(certificates_length))
+            features.extend([len(certificates_length), mean_cert_len,max(certificates_length),min(certificates_length)])
+        elif handshake2:
+            certificates_length = handshake2['ssl.handshake.certificates']['ssl.handshake.certificate_length']
+            certificates_length = [int(i) for i in certificates_length]
+            mean_cert_len = sum(certificates_length)/float(len(certificates_length))
+            features.extend([len(certificates_length), mean_cert_len,max(certificates_length),min(certificates_length)])
+        else:
             features.extend([0,0,0,0])
-
-        # try:
-        #     if type(packet_json.ssl.record.handshake) == list:
-        #         handshakes = packet_json.ssl.record.handshake
-        #         for handshake in handshakes:
-        #             try:
-        #                 assert not (type(handshake)==list)
-        #             except AssertionError as e:
-        #                 logging.exception("Assertion failed")
-
-        #             # Certificate found!
-        #             if int(handshake.type)==11:
-        #                 temp = [int(i) for i in handshake.certificates.certificate_length]
-        #                 mean_cert_len = sum(temp)/float(len(temp))
-        #                 features.extend([mean_cert_len,max(temp),min(temp)])
-        #                 break
-        #         else:
-        #             features.extend([0,0,0])
-
-        #     else:
-        #         handshake = packet_json.ssl.record.handshake
-        #         try:
-        #             assert not (type(handshake)==list)
-        #         except AssertionError as e:
-        #             logging.exception("Assertion failed")
-
-        #         # Certificate found!
-        #         if int(handshake.type)==11:
-        #             temp = [int(i) for i in handshake.certificates.certificate_length]
-        #             mean_cert_len = sum(temp)/float(len(temp))
-        #             features.extend([mean_cert_len,max(temp),min(temp)])
-        #         else:
-        #             features.extend([0,0,0])
-
-        # except AttributeError:
-        #     features.extend([0,0,0])
 
         # 17: Certificate - SIGNATURE ALGORITHM
         sighash_features = np.zeros_like(enumSignatureHashCert) # enumSignatureHashCert is the ref list
@@ -596,47 +432,6 @@ def extract_tslssl_features(pcapfile, enumCipherSuites=[], enumCompressionMethod
         except:
             features.extend(sighash_features)
 
-        # sighash_features = np.zeros_like(enumSignatureHashCert) # enumSignatureHashCert is the ref list
-        # try:
-        #     if type(packet_json.ssl.record.handshake) == list:
-        #         handshakes = packet_json.ssl.record.handshake
-        #         for handshake in handshakes:
-        #             try:
-        #                 assert not (type(handshake)==list)
-        #             except AssertionError as e:
-        #                 logging.exception("Assertion failed")
-
-        #             # Certificate found!
-        #             if int(handshake.type)==11:
-        #                 for sighash in handshake.certificates.certificate:
-        #                     algo_id = sighash.signedCertificate_element.algorithmIdentifier_element.id
-        #                     if algo_id in enumSignatureHashCert:
-        #                         sighash_features[enumSignatureHashCert.index(algo_id)] = 1
-        #                 features.extend(sighash_features)
-        #                 break
-        #         else:
-        #             features.extend(sighash_features)
-
-        #     else:
-        #         handshake = packet_json.ssl.record.handshake
-        #         try:
-        #             assert not (type(handshake)==list)
-        #         except AssertionError as e:
-        #             logging.exception("Assertion failed")
-
-        #         # Certificate found!
-        #         if int(handshake.type)==11:
-        #             for sighash in handshake.certificates.certificate:
-        #                 algo_id = sighash.signedCertificate_element.algorithmIdentifier_element.id
-        #                 if algo_id in enumSignatureHashCert:
-        #                     sighash_features[enumSignatureHashCert.index(algo_id)] = 1
-        #             features.extend(sighash_features)
-        #         else:
-        #             features.extend(sighash_features)
-
-        # except AttributeError:
-        #     features.extend(sighash_features)
-
         # 18: ServerHelloDone - LENGTH
         try:
             handshake = find_handshake(packet_json.ssl, target_type=14)
@@ -647,128 +442,24 @@ def extract_tslssl_features(pcapfile, enumCipherSuites=[], enumCompressionMethod
         except AttributeError:
             features.append(0) 
 
-        # try:
-        #     if type(packet_json.ssl.record.handshake) == list:
-        #         handshakes = packet_json.ssl.record.handshake
-        #         for handshake in handshakes:
-        #             try:
-        #                 assert not (type(handshake)==list)
-        #             except AssertionError as e:
-        #                 logging.exception("Assertion failed")
-
-        #             # ServerHelloDone found!
-        #             if int(handshake.type)==14:
-        #                 features.append(int(handshake.length))
-        #                 break
-        #         else:
-        #             features.append(0)
-
-        #     else:
-        #         handshake = packet_json.ssl.record.handshake
-        #         try:
-        #             assert not (type(handshake)==list)
-        #         except AssertionError as e:
-        #             logging.exception("Assertion failed")
-
-        #         # ServerHelloDone found!
-        #         if int(handshake.type)==14:
-        #             features.append(int(handshake.length))
-        #         else:
-        #             features.append(0)
-
-        # except AttributeError:
-        #     features.append(0)
-
         # 19: ClientKeyExchange - LENGTH
 
+        # 20: ClientKeyExchange - PUBKEY LENGTH
+
+        # 21: EncryptedHandshakeMessage - LENGTH
+
+
+        #  CHANGE CIPHER PROTOCOL
+        ##################################################################
+        #  22: ChangeCipherSpec - LENGTH
+
+
+        #  APPLICATION DATA PROTOCOL
+        ##################################################################
+        #  23: ApplicationDataProtocol - LENGTH
 
 
 
-
-
-        # # 1: ClientHello - LENGTH
-        # try:
-        #     if packet.ssl.handshake.showname_value == 'Client Hello':
-        #         features.append(int(packet.ssl.handshake_length))
-        #     else:
-        #         features.append(0)
-        # except AttributeError:
-        #     features.append(0)
-
-        # # 2: ClientHello - CIPHER SUITE
-        # # try:
-        # #     if packet.ssl.handshake.showname_value == 'Client Hello':
-        # #         print(dir(packet.ssl))
-        # #         print(packet.ssl.handshake_ciphersuites)
-        # #     else:
-        # #         pass
-        # # except AttributeError:
-        # #     pass
-
-        # # 3: ClientHello - CIPHER SUITE LENGTH
-        # try:
-        #     if packet.ssl.handshake.showname_value == 'Client Hello':
-        #         features.append(int(packet.ssl.handshake_cipher_suites_length))
-        #     else:
-        #         features.append(0)
-        # except AttributeError:
-        #     features.append(0)
-
-        # # 4: ClientHello - COMPRESSION METHOD
-
-        # # 5: ClientHello - SUPPORTED GROUP LENGTH
-
-        # # 6: ClientHello - SUPPORTED GROUPS
-
-        # # 7: ClientHello - ENCRYPT THEN MAC LENGTH
-
-        # # 8: ClientHello - EXTENDED MASTER SECRET
-
-        # # 9: ClientHello - SIGNATURE HASH ALGORITHM
-
-        # # 10: ServerHello - LENGTH
-        # try:
-        #     if packet.ssl.handshake.showname_value == 'Server Hello':
-        #         features.append(int(packet.ssl.handshake_length))
-        #     else:
-        #         features.append(0)
-        # except AttributeError:
-        #     features.append(0)
-
-        # # 11: ServerHello - EXTENDED MASTER SECRET
-
-        # # 12: ServerHello - RENEGOTIATION INFO LENGTH
-
-        # # 13: Certificate - CERTIFICATE LENGTH
-        # try:
-        #     features.append(int(packet.ssl.handshake_certificates_length))
-        # except AttributeError:
-        #     features.append(0)
-
-        # # 14: Certificate - SIGNATURE ALGORITHM
-        # # What is signature algorithm?
-
-        # # 15: ServerHelloDone - LENGTH
-        # # Issue: Pyshark cant seem to differentiate between record layers!!!
-
-        # # 16: ClientKeyExchange - LENGTH
-
-        # # 17: ClientKeyExchange - PUBKEY LENGTH
-        # # 18: EncryptedHandshakeMessage - LENGTH
-
-        # # CHANGE CIPHER PROTOCOL
-        # ##################################################################
-        # # 19: ChangeCipherSpec - LENGTH
-
-        # # APPLICATION DATA PROTOCOL
-        # ##################################################################
-        # # 20: ApplicationDataProtocol - LENGTH
-
-        # # try:
-        # #     print(dir(packet.ssl))
-        # #     total_ssl+=1
-        # # except AttributeError:
-        # #     pass 
 
         print(features)
 
@@ -820,9 +511,9 @@ if __name__ == '__main__':
 
     # Test whether all features are extracted
     sample = 'sample/ari.nus.edu.sg_2018-12-24_14-30-02.pcap'
-    #sample = 'sample/www.zeroaggressionproject.org_2018-12-21_16-19-03.pcap'
-    #sample = 'sample/australianmuseum.net.au_2018-12-21_16-15-59.pcap'
-    #sample = 'sample/www.stripes.com_2018-12-21_16-20-12.pcap'
+    # sample = 'sample/www.zeroaggressionproject.org_2018-12-21_16-19-03.pcap'
+    # sample = 'sample/australianmuseum.net.au_2018-12-21_16-15-59.pcap'
+    # sample = 'sample/www.stripes.com_2018-12-21_16-20-12.pcap'
     extract_tslssl_features(sample)
     exit()
 
