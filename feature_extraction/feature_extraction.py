@@ -237,13 +237,18 @@ def find_handshake(obj, target_type):
             return find_handshake(obj.record, target_type)
         # elif obj.layer_name=='ssl' and hasattr(obj, 'handshake'):
         #     return find_handshake(obj.handshake, target_type)
-        elif obj.layer_name=='record' and hasattr(obj, 'handshake'):
+        elif obj.layer_name=='record' and hasattr(obj, 'handshake') and target_type!=99:
             return find_handshake(obj.handshake, target_type)
         # If correct handshake is identified
         elif obj.layer_name=='handshake' and int(obj.type)==target_type:
             return obj
+        # Return record containing Encrypted Handshake Message (only handshake msg without a type)
+        elif obj.layer_name=='record' and hasattr(obj, 'handshake') and not(type(obj.handshake)==JsonLayer) and target_type==99:
+            return obj
         else:
             return None
+    else:
+        return None
 
 # For handling data structure of dict type
 def find_handshake2(obj, target_type):
@@ -261,6 +266,62 @@ def find_handshake2(obj, target_type):
             return find_handshake2(obj['ssl.handshake'], target_type)
         elif 'ssl.handshake.type' in obj and int(obj['ssl.handshake.type'])==target_type:
             return obj
+        else:
+            return None
+    else:
+        return None
+
+def find_changecipher(obj):
+    if type(obj) == list:
+        final = None
+        for a_obj in obj:
+            temp = find_changecipher(a_obj)
+            if temp:
+                final = temp
+        return final
+    elif type(obj)==JsonLayer:
+        if obj.layer_name=='ssl' and hasattr(obj, 'record'):
+            return find_changecipher(obj.record)
+        elif obj.layer_name=='record' and hasattr(obj, 'change_cipher_spec'):
+            return obj
+        else:
+            return None
+    else:
+        return None
+
+def find_appdata(obj):
+    if type(obj) == list:
+        final = None
+        for a_obj in obj:
+            temp = find_appdata(a_obj)
+            if temp:
+                final = temp
+        return final
+    elif type(obj)==JsonLayer:
+        if obj.layer_name=='ssl' and hasattr(obj, 'record'):
+            return find_appdata(obj.record)
+        elif obj.layer_name=='record' and hasattr(obj, 'app_data'):
+            return obj
+        else:
+            return None
+    else:
+        return None
+
+def find_appdata2(obj):
+    if type(obj) == list:
+        final = None
+        for a_obj in obj:
+            temp = find_appdata2(a_obj)
+            if temp:
+                final = temp
+        return final
+    elif type(obj) == dict:
+        if 'ssl.record' in obj:
+            return find_appdata2(obj['ssl.record'])
+        elif 'ssl.app_data' in obj:
+            return obj
+        else:
+            return None
     else:
         return None
 
@@ -391,19 +452,16 @@ def extract_tslssl_features(pcapfile, enumCipherSuites=[], enumCompressionMethod
         # 12: ServerHello - RENEGOTIATION INFO LENGTH
 
         # 13,14,15,16: Certificate - NUM_CERT, AVERAGE, MIN, MAX CERTIFICATE LENGTH
-        handshake = None
-        handshake2 = None
         # Attempt 1: use find_handshake()
         try:
-            
             handshake = find_handshake(packet_json.ssl, target_type=11)
         except AttributeError:
-            pass
+            handshake = None
         # Attempt 2: certificate is more difficult to identify. Use hardcode
         try: 
             handshake2 = find_handshake2(packet_json.ssl.value, target_type=11)
         except AttributeError:
-            pass
+            handshake2 = None
 
         if handshake:
             certificates_length = [int(i) for i in handshake.certificates.certificate_length]
@@ -418,6 +476,7 @@ def extract_tslssl_features(pcapfile, enumCipherSuites=[], enumCompressionMethod
             features.extend([0,0,0,0])
 
         # 17: Certificate - SIGNATURE ALGORITHM
+        # TODO: NEED REVISION
         sighash_features = np.zeros_like(enumSignatureHashCert) # enumSignatureHashCert is the ref list
         try: 
             handshake = find_handshake(packet_json.ssl, target_type = 11)
@@ -443,22 +502,71 @@ def extract_tslssl_features(pcapfile, enumCipherSuites=[], enumCompressionMethod
             features.append(0) 
 
         # 19: ClientKeyExchange - LENGTH
+        try:
+            handshake = find_handshake(packet_json.ssl, target_type=16)
+            if handshake:
+                features.append(int(handshake.length))
+            else:
+                features.append(0)
+        except AttributeError:
+            features.append(0) 
 
         # 20: ClientKeyExchange - PUBKEY LENGTH
+        try:
+            handshake = find_handshake(packet_json.ssl, target_type=16)
+            if handshake:
+                pub_key_dict = handshake._all_fields['EC Diffie-Hellman Client Params']
+                features.append(int(pub_key_dict['ssl.handshake.client_point_len']))
+            else:
+                features.append(0)
+        except AttributeError:
+            features.append(0) 
 
         # 21: EncryptedHandshakeMessage - LENGTH
+        try:
+            handshake = find_handshake(packet_json.ssl, target_type=99)
+            if handshake:
+                features.append(int(handshake.length))
+            else:
+                features.append(0)
+        except AttributeError:
+            features.append(0)
 
 
         #  CHANGE CIPHER PROTOCOL
         ##################################################################
         #  22: ChangeCipherSpec - LENGTH
+        try:
+            changecipher = find_changecipher(packet_json.ssl)
+            if changecipher:
+                features.append(int(changecipher.length))
+            else:
+                features.append(0)
+        except AttributeError:
+            features.append(0)
 
 
         #  APPLICATION DATA PROTOCOL
         ##################################################################
         #  23: ApplicationDataProtocol - LENGTH
-
-
+        
+        # Attempt 1: use find_appdata to identify pure Application DAta
+        try:
+            appdata = find_appdata(packet_json.ssl)
+        except AttributeError:
+            appdata = None
+        # Attempt 2: use find_appdata2 to identify Application Data[TCP segment of a reassembled PDU]
+        try: 
+            appdata2 = find_appdata2(packet_json.ssl.value)
+        except AttributeError:
+            appdata2 = None
+        
+        if appdata:
+            features.append(int(appdata.length))
+        elif appdata2:
+            features.append(int(appdata2['ssl.record.length']))
+        else:
+            features.append(0)
 
 
         print(features)
@@ -510,10 +618,11 @@ if __name__ == '__main__':
     #enumCipherSuites,enumCompressionMethods, enumSupportedGroups, enumSignatureHashClient, enumSignatureHashCert = [],[],[],[],[]
 
     # Test whether all features are extracted
-    sample = 'sample/ari.nus.edu.sg_2018-12-24_14-30-02.pcap'
+    # sample = 'sample/ari.nus.edu.sg_2018-12-24_14-30-02.pcap'
     # sample = 'sample/www.zeroaggressionproject.org_2018-12-21_16-19-03.pcap'
+    sample = 'sample/www.stripes.com_2018-12-21_16-20-12.pcap'
     # sample = 'sample/australianmuseum.net.au_2018-12-21_16-15-59.pcap'
-    # sample = 'sample/www.stripes.com_2018-12-21_16-20-12.pcap'
+    
     extract_tslssl_features(sample)
     exit()
 
