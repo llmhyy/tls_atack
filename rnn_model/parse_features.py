@@ -22,7 +22,7 @@ def get_features(filename):
 
 				list3 = []
 				for j in range(0, len(packetData)):
-					list3.append(int(packetData[j]))
+					list3.append(float(packetData[j]))
 
 				list2.append(list3)
 

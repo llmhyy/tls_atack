@@ -22,7 +22,8 @@ import visualization as viz
 ##########################################################################################
 
 # Load the dataset into memory 
-features = json.loads(pf.get_features('data/features.csv'))
+# features = json.loads(pf.get_features('data/features.csv'))
+features = json.loads(pf.get_features('data/features_tls_2019-01-24_16-53-53.csv'))
 
 # Initialize useful constants and pad the sequences to have equal length
 batch_dim = len(features)
