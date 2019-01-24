@@ -97,8 +97,13 @@ def extract_tcp_features(pcapfile):
         # Checks for SSL layer in packet. Bug in detecting SSL layer despite plain TCP packet
         if ('ssl' in packet) and (packet.ssl.get('record_version') != None):
             # Convert hex into integer and return the index in the ref list
-            protocol_id = protcol_ver.index(int(packet.ssl.record_version, 16))
-        protocol_onehot[protocol_id] = 1
+            prot = int(packet.ssl.record_version, 16)
+            try:
+                protocol_id = protcol_ver.index(prot)
+                protocol_onehot[protocol_id] = 1
+            except ValueError:
+                logging.warning('Found SSL packet with unknown SSL type {} in file {}'.format(prot, pcapfile))
+            
         features.extend(protocol_onehot)
 
         # 3: LENGTH
@@ -142,11 +147,11 @@ def searchEnums(rootdir, limit):
     sighashalgorithms_cert = []
 
     debug_count = 0
-    logging.info("Traversing through directory to find all cipher suites...")
+    logging.info("Traversing through directory to find all enums...")
     for root, dirs, files in os.walk(rootdir):
         for f in files:
             if f.endswith(".pcap"):
-                print("Processing {}".format(f))
+                #print("Processing {}".format(f))
                 logging.info("Processing {}".format(f))
                 # Might need to close FileCapture somehow to prevent the another loop running
                 packets_json = pyshark.FileCapture(os.path.join(root, f), use_json=True)
@@ -207,7 +212,7 @@ def searchEnums(rootdir, limit):
                     traffic_sighashalgorithms_cert = []
                     if handshake:
                         certificates = handshake.certificates.certificate_tree
-                        traffic_sighashalgorithms_cert = [str(traffic_sighashalgorithm_cert.algorithmIdentifier_element.id) for certificate in certificates]
+                        traffic_sighashalgorithms_cert = [str(certificate.algorithmIdentifier_element.id) for certificate in certificates]
                         found_certificate = True
 
                     elif handshake2:
@@ -234,9 +239,9 @@ def searchEnums(rootdir, limit):
 
                 # If ClientHello cannot be found in the traffic
                 if not found_clienthello:
-                    logging.warning("File has no ClientHello: {}".format(os.path.join(root,f)))
+                    logging.warning("No ClientHello found for file {}".format(os.path.join(root,f)))
                 if not found_certificate:
-                    logging.warning("File has no Certificate: {}".format(os.path.join(root,f)))
+                    logging.warning("No Certificate found for file {}".format(os.path.join(root,f)))
 
                 ciphersuites = list(set(ciphersuites))
                 compressionmethods = list(set(compressionmethods))
@@ -422,7 +427,7 @@ def extract_tslssl_features(pcapfile, enumCipherSuites, enumCompressionMethods, 
                     if ciphersuite_int in enumCipherSuites:
                         ciphersuite_feature[enumCipherSuites.index(ciphersuite_int)] = 1
                     else:
-                        logging.warning('File {} contains unseen cipher suite'.format(pcapfile))
+                        logging.warning('Unseen cipher suite in file {} '.format(pcapfile))
                 features.extend(ciphersuite_feature)
             else:
                 features.extend(ciphersuite_feature)
@@ -450,7 +455,7 @@ def extract_tslssl_features(pcapfile, enumCipherSuites, enumCompressionMethods, 
                     if compression_method_int in enumCompressionMethods:
                         compressionmethod_feature[enumCompressionMethods.index(compression_method_int)]=1
                     else:
-                        logging.warning('File {} contains unseen compression method'.format(pcapfile))
+                        logging.warning('Unseen compression method in file {}'.format(pcapfile))
                 features.extend(compressionmethod_feature)
             else:
                 features.extend(compressionmethod_feature)
@@ -484,7 +489,7 @@ def extract_tslssl_features(pcapfile, enumCipherSuites, enumCompressionMethods, 
                             if supported_group_int in enumSupportedGroups:
                                 supportedgroup_feature[enumSupportedGroups.index(supported_group_int)] = 1
                             else:
-                                logging.warning('File {} contains unseen supported group'.format(pcapfile))
+                                logging.warning('Unseen supported group in file {}'.format(pcapfile))
                 features.extend(supportedgroup_feature)
             else:
                 features.extend(supportedgroup_feature)
@@ -532,7 +537,7 @@ def extract_tslssl_features(pcapfile, enumCipherSuites, enumCompressionMethods, 
                             if signature_algorithm_int in enumSignatureHashClient:
                                 sighash_features_client[enumSignatureHashClient.index(signature_algorithm_int)]=1
                             else:
-                                logging.warning('File {} contains unseen signature hash algo (clienthello)'.format(pcapfile))
+                                logging.warning('Unseen signature hash algo (clienthello) in file {}'.format(pcapfile))
                 features.extend(sighash_features_client)
             else:
                 features.extend(sighash_features_client)
@@ -608,7 +613,7 @@ def extract_tslssl_features(pcapfile, enumCipherSuites, enumCompressionMethods, 
                 if algo_id in enumSignatureHashCert:
                     sighash_features[enumSignatureHashCert.index(algo_id)] = 1
                 else:
-                    logging.warning('File {} contains unseen signature hash algo (Cert)'.format(pcapfile))
+                    logging.warning('Unseen signature hash algo (Cert) in file {}'.format(pcapfile))
 
         elif handshake2:
             certificates = handshake2['ssl.handshake.certificates']['ssl.handshake.certificate_tree']
@@ -619,7 +624,7 @@ def extract_tslssl_features(pcapfile, enumCipherSuites, enumCompressionMethods, 
                             if 'algorithm.id' in kk and str(vv) in enumSignatureHashCert:
                                 sighash_features[enumSignatureHashCert.index(str(vv))] = 1
                             else:
-                                logging.warning('File {} contains unseen signature hash algo (Cert)'.format(pcapfile))
+                                logging.warning('Unseen signature hash algo (Cert) in file {}'.format(pcapfile))
 
         features.extend(sighash_features)
 
@@ -647,8 +652,25 @@ def extract_tslssl_features(pcapfile, enumCipherSuites, enumCompressionMethods, 
         try:
             handshake = find_handshake(packet_json.ssl, target_type=16)
             if handshake:
-                pub_key_dict = handshake._all_fields['EC Diffie-Hellman Client Params']
-                features.append(int(pub_key_dict['ssl.handshake.client_point_len']))
+                try:
+                    if 'EC Diffie-Hellman Client Params' in handshake._all_fields:
+                        pub_key_dict = handshake._all_fields['EC Diffie-Hellman Client Params']
+                        features.append(int(pub_key_dict['ssl.handshake.client_point_len']))
+                    elif 'RSA Encrypted PreMaster Secret' in handshake._all_fields:
+                        pub_key_dict = handshake._all_fields['RSA Encrypted PreMaster Secret']
+                        features.append(int(pub_key_dict['ssl.handshake.epms_len']))
+                    elif 'Diffie-Hellman Client Params' in handshake._all_fields:
+                        pub_key_dict = handshake._all_fields['Diffie-Hellman Client Params']
+                        features.append(int(pub_key_dict['ssl.handshake.yc_len']))
+                    # Unseen Client Key Exchange algorithm                
+                    else:
+                        # Last resort: use the length of handshake as substitute
+                        features.append(int(handshake._all_fields['ssl.handshake.length']))
+                        logging.warning('Unseen client key exchange algo in ClientKeyExchange for file {}'.format(pcapfile))
+                # RSA in SSLv3 does not seem to publish the len, resulting in KeyError
+                except KeyError:
+                    features.append(int(handshake._all_fields['ssl.handshake.length']))
+                
             else:
                 features.append(0)
         except AttributeError:
@@ -705,31 +727,6 @@ def extract_tslssl_features(pcapfile, enumCipherSuites, enumCompressionMethods, 
 
     return traffic_features
 
-
-def search_and_extract(rootdir, csvfile):
-    """
-    Search in directory for pcap files and generate features from each pcap file
-
-    Parameters:
-    directory (str): ??
-    csvfile (str): ??
-
-    Returns:
-    boolean: returns True if successful
-    """
-    count = 0
-    for root, dirs, files in os.walk(rootdir):
-        for f in files:
-            if f.endswith(".pcap"):
-                print("Parsing {}..".format(f))
-                tcp_features = extract_tcp_features(os.path.join(root, f))
-                # TODO: write the tcp_features into csv file
-
-                count += 1
-    print("{} pcap files have been successfully parsed with features generated".format(count))
-    return True
-
-
 if __name__ == '__main__':
     testcsv = 'test_tcp_features2.csv'
     rootdir = '/Users/YiLong/Desktop/SUTD/NUS-Singtel_Research/tls_atack/legitimate traffic'
@@ -750,13 +747,23 @@ if __name__ == '__main__':
     
     # Test whether all features are extracted
     # sample = 'sample/ari.nus.edu.sg_2018-12-24_14-30-02.pcap'
-    sample = 'sample/www.zeroaggressionproject.org_2018-12-21_16-19-03.pcap'
+    # sample = 'sample/www.zeroaggressionproject.org_2018-12-21_16-19-03.pcap'
     # sample = 'sample/www.stripes.com_2018-12-21_16-20-12.pcap'
     # sample = 'sample/australianmuseum.net.au_2018-12-21_16-15-59.pcap'
+
+    # sample = 'sample/tls/www.tmr.qld.gov.au_2018-12-24_17-20-56.pcap'
+    # sample = 'sample/tls/www.orkin.com_2018-12-24_17-10-27.pcap'
+    # sample = 'sample/tls/whc.unesco.org_2018-12-24_17-09-08.pcap'
+    # sample = 'sample/tls/dataverse.harvard.edu_2018-12-24_17-16-00.pcap'
+    # sample = 'sample/tls/www.cancerresearchuk.org_2018-12-24_17-15-46.pcap'
+    
+    # sample = 'sample/sslv3/www.ceemjournal.org_2018-12-28_17-18-46_0.pcap'
+    sample = 'sample/sslv3/www.britishmuseum.org_2018-12-28_17-22-11_0.pcap'
     enumCipherSuites,enumCompressionMethods, enumSupportedGroups, enumSignatureHashClient, enumSignatureHashCert = [],[],[],[],[]
     
     # Test whether tls/ssl features are extracted
+    extract_tcp_features(sample)
     extract_tslssl_features(sample,enumCipherSuites,enumCompressionMethods, enumSupportedGroups, enumSignatureHashClient, enumSignatureHashCert)
 
     # Test whether directory is searched correctly with features extracted 
-    search_and_extract(rootdir, testcsv)
+    # search_and_extract(rootdir, testcsv)
