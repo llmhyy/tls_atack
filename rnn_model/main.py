@@ -54,17 +54,17 @@ features_pad = pad_sequences(features, maxlen=sequence_dim, dtype='float32', pad
 
 # scale_option = 1
 
-if args.scale == 1:
+if args.norm == 1:
     l2_norm = np.linalg.norm(features_pad, axis=2, keepdims=True)
     features_scaled = np.divide(features_pad, l2_norm, out=np.zeros_like(features_pad), where=l2_norm!=0.0)
 
-elif args.scale == 2:
+elif args.norm == 2:
     flattened = features_pad.reshape((features_pad.shape[0]*features_pad.shape[1],features_pad.shape[2]))
     zero_centered = features_pad - np.mean(flattened, axis=0, keepdims=True)
     std_dev = np.std(flattened, axis=0, keepdims=True)
     features_scaled = np.divide(zero_centered, std_dev, out=np.zeros_like(features_pad), where=std_dev!=0.0) 
 
-elif args.scale == 3:
+elif args.norm == 3:
     features_max = np.amax(features_pad, axis=(0,1))
     features_min = np.amin(features_pad, axis=(0,1))
     num = (features_pad-features_min)
@@ -323,7 +323,7 @@ def generate_plot(results_train, results_test, first=None, save=False):
 
 results_dir = None
 if args.save:
-    results_dir = args.savefig
+    results_dir = args.save
 
 plt.rcParams['figure.figsize'] = (10,7)
 plt.rcParams['legend.fontsize'] = 8
