@@ -1,5 +1,6 @@
 import os
 import json
+import argparse
 import numpy as np
 import keras
 from keras.preprocessing.sequence import pad_sequences
@@ -15,6 +16,13 @@ import matplotlib.pyplot as plt
 import parse_features as pf
 import visualization as viz
 
+parser = argparse.ArgumentParser()
+parser.add_argument('-n', '--norm', help='Input normalization options for features', default=1, type=int, choices=[1,2,3])
+parser.add_argument('-e', '--epoch', help='Input epoch for training', default=100, type=int)
+parser.add_argument('-f', '--feature', help='Input directory of feature file to be used', required=True)
+parser.add_argument('-s', '--save', help='Input directory for saving the plots. If not, it is displayed')
+args = parser.parse_args()
+
 ##########################################################################################
 
 # DATA LOADING AND PREPROCESSING
@@ -23,7 +31,12 @@ import visualization as viz
 
 # Load the dataset into memory 
 # features = json.loads(pf.get_features('data/features.csv'))
-features = json.loads(pf.get_features('data/features_tls_2019-01-24_16-53-53.csv'))
+# features = json.loads(pf.get_features('data/features_tls_2019-01-24_16-53-53.csv'))
+features = json.loads(pf.get_features(args.feature))
+# print(len(features))
+# print(len(features[0]))
+# print(len(features[0][0]))
+# exit()
 
 # Initialize useful constants and pad the sequences to have equal length
 batch_dim = len(features)
@@ -39,19 +52,19 @@ features_pad = pad_sequences(features, maxlen=sequence_dim, dtype='float32', pad
 # Shoud I standardize within 1 traffic only? Hmm wouldnt the padding affect the standardization as well
 # 3: Scale each feature between min and max of feature
 
-scale_option = 1
+# scale_option = 1
 
-if scale_option == 1:
+if args.scale == 1:
     l2_norm = np.linalg.norm(features_pad, axis=2, keepdims=True)
     features_scaled = np.divide(features_pad, l2_norm, out=np.zeros_like(features_pad), where=l2_norm!=0.0)
 
-elif scale_option == 2:
+elif args.scale == 2:
     flattened = features_pad.reshape((features_pad.shape[0]*features_pad.shape[1],features_pad.shape[2]))
     zero_centered = features_pad - np.mean(flattened, axis=0, keepdims=True)
     std_dev = np.std(flattened, axis=0, keepdims=True)
     features_scaled = np.divide(zero_centered, std_dev, out=np.zeros_like(features_pad), where=std_dev!=0.0) 
 
-elif scale_option == 3:
+elif args.scale == 3:
     features_max = np.amax(features_pad, axis=(0,1))
     features_min = np.amin(features_pad, axis=(0,1))
     num = (features_pad-features_min)
@@ -142,7 +155,7 @@ class PredictEpoch(keras.callbacks.Callback):
 
 # Training the RNN model
 predictEpoch = PredictEpoch(X_train, X_test)
-history = model.fit(X_train,Y_train, validation_data = (X_test, Y_test),batch_size=64, epochs=10, callbacks=[predictEpoch])
+history = model.fit(X_train,Y_train, validation_data = (X_test, Y_test),batch_size=64, epochs=args.epoch, callbacks=[predictEpoch])
 
 # Evaluate the RNN model on validation dataset
 #score = model.evaluate(X_test, Y_test, batch_size=64)
@@ -308,8 +321,9 @@ def generate_plot(results_train, results_test, first=None, save=False):
 
 ##########################################################################################
 
-#results_dir = 'results/expt5'
 results_dir = None
+if args.save:
+    results_dir = args.savefig
 
 plt.rcParams['figure.figsize'] = (10,7)
 plt.rcParams['legend.fontsize'] = 8
