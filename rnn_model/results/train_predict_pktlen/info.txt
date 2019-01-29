@@ -1,1 +1,0 @@
-features are rescaled using l2 normalization
