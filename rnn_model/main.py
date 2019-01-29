@@ -2,9 +2,11 @@ import os
 import json
 import argparse
 import numpy as np
+from datetime import datetime
 import keras
 from keras.preprocessing.sequence import pad_sequences
 from keras.models import Sequential
+from keras.models import load_model
 from keras.layers import Dense, Dropout, Activation
 from keras.layers import LSTM
 import keras.backend as K
@@ -20,8 +22,11 @@ parser = argparse.ArgumentParser()
 parser.add_argument('-n', '--norm', help='Input normalization options for features', default=1, type=int, choices=[1,2,3])
 parser.add_argument('-e', '--epoch', help='Input epoch for training', default=100, type=int)
 parser.add_argument('-f', '--feature', help='Input directory of feature file to be used', required=True)
-parser.add_argument('-s', '--save', help='Input directory for saving the plots. If not, it is displayed')
+parser.add_argument('-s', '--save', help='Flag for saving the plots. If not, it is displayed', action='store_true')
+parser.add_argument('-m', '--model', help='Input directory for existing model to be trained')
 args = parser.parse_args()
+
+datetime_now = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
 
 ##########################################################################################
 
@@ -33,10 +38,6 @@ args = parser.parse_args()
 # features = json.loads(pf.get_features('data/features.csv'))
 # features = json.loads(pf.get_features('data/features_tls_2019-01-24_16-53-53.csv'))
 features = json.loads(pf.get_features(args.feature))
-# print(len(features))
-# print(len(features[0]))
-# print(len(features[0][0]))
-# exit()
 
 # Initialize useful constants and pad the sequences to have equal length
 batch_dim = len(features)
@@ -51,8 +52,6 @@ features_pad = pad_sequences(features, maxlen=sequence_dim, dtype='float32', pad
 # 2: Standardize each feature across ALL traffic (http://cs231n.github.io/neural-networks-2/)
 # Shoud I standardize within 1 traffic only? Hmm wouldnt the padding affect the standardization as well
 # 3: Scale each feature between min and max of feature
-
-# scale_option = 1
 
 if args.norm == 1:
     l2_norm = np.linalg.norm(features_pad, axis=2, keepdims=True)
@@ -117,28 +116,19 @@ X_train_seqlen, X_test_seqlen, Y_train_seqlen, Y_test_seqlen = train_test_split(
 
 ##########################################################################################
 
-# Build RNN model
-model = Sequential()
-model.add(LSTM(X.shape[2], input_shape=(X.shape[1],X.shape[2]), return_sequences=True))
-model.add(Activation('relu'))
-model.summary()
-#model.add(Dropout(0.2))
+# Build RNN model or Load existing RNN model
+if args.model:
+    model = load_model(args.model)
+    model.summary()
+else:
+    model = Sequential()
+    model.add(LSTM(X.shape[2], input_shape=(X.shape[1],X.shape[2]), return_sequences=True))
+    model.add(Activation('relu'))
+    model.summary()
 
-# Defining cosine similarity
-def cos_sim(y_true, y_pred):
-    y_true = K.l2_normalize(y_true, axis=-1)
-    y_pred = K.l2_normalize(y_pred, axis=-1)
-    # Flattening features in a time series from (n_sample, time seq, features) into (n_sample, n_features)
-    #print(K.shape(y_true))
-    #y_true = K.reshape(y_true, K.cast((y_true.shape[0],y_true.shape[1]*y_true.shape[2]), dtype='int32'))
-    y_true = K.reshape(y_true, K.cast((K.shape(y_true)[0],K.shape(y_true)[1]*K.shape(y_true)[2]), dtype='int32'))
-    #y_pred = K.reshape(y_pred, K.cast((y_pred.shape[0],y_pred.shape[1]*y_pred.shape[2]), dtype='int32'))
-    y_pred = K.reshape(y_pred, K.cast((K.shape(y_pred)[0],K.shape(y_pred)[1]*K.shape(y_pred)[2]), dtype='int32'))
-    return y_true*y_pred
-
-# Selecting optimizers 
-model.compile(loss='mean_squared_error',
-                optimizer='rmsprop')
+    # Selecting optimizers 
+    model.compile(loss='mean_squared_error',
+                    optimizer='rmsprop')
 
 class PredictEpoch(keras.callbacks.Callback):
     def __init__(self, train, test):
@@ -310,7 +300,7 @@ def generate_plot(results_train, results_test, first=None, save=False):
     plt.xlabel('Traffic #')
 
     if save:
-        plt.savefig(os.path.join(save,'acc_dist_{}pkts').format(first))
+        plt.savefig(os.path.join(save,'acc_dist','acc_dist_{}pkts').format(first))
         plt.clf()
     else:
         plt.show()
@@ -323,13 +313,17 @@ def generate_plot(results_train, results_test, first=None, save=False):
 
 results_dir = None
 if args.save:
-    results_dir = args.save
+    results_dir = os.path.join('results', 'expt_{}'.format(datetime_now))
+    if not os.path.exists(results_dir):
+        os.mkdir(results_dir)
+        os.mkdir(os.path.join(results_dir,'acc_dist'))
+        os.mkdir(os.path.join(results_dir,'traffic_len'))
 
 plt.rcParams['figure.figsize'] = (10,7)
 plt.rcParams['legend.fontsize'] = 8
 
 # Visualize the model prediction on a specified dimension (default:packet length) over epochs
-viz.visualize_traffic(predictEpoch.predict_train, Y_train, predictEpoch.predict_test, Y_test)
+viz.visualize_traffic(predictEpoch.predict_train, Y_train, predictEpoch.predict_test, Y_test, save=results_dir)
 
 # Generate result plots for true traffic
 acc_pkttrue_train = cos_sim_truetraffic(predictEpoch.predict_train, Y_train, Y_train_seqlen)
@@ -371,3 +365,6 @@ if results_dir:
     plt.savefig(os.path.join(results_dir,'loss'))
 else:
     plt.show()
+
+# Save the model
+model.save('model/rnnmodel_{}.h5'.format(datetime_now))
