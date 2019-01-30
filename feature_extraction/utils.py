@@ -258,7 +258,15 @@ def searchEnums(rootdir, limit):
             break
 
     logging.info("Done processing enum")
-    return (ciphersuites, compressionmethods, supportedgroups, sighashalgorithms_client, sighashalgorithms_cert)
+
+    enum = {}
+    enum['ciphersuites'] = ciphersuites
+    enum['compressionmethods'] = compressionmethods
+    enum['supportedgroups'] = supportedgroups
+    enum['sighashalgorithms_client'] = sighashalgorithms_client
+    enum['sighashalgorithms_cert'] = sighashalgorithms_cert
+    # return (ciphersuites, compressionmethods, supportedgroups, sighashalgorithms_client, sighashalgorithms_cert)
+    return enum
 
 # For handling data structure of jsonlayer type
 def find_handshake(obj, target_type):
@@ -345,11 +353,17 @@ def find_appdata2(obj):
         elif 'ssl.app_data' in obj:
             return obj
 
-def extract_tslssl_features(pcapfile, enumCipherSuites, enumCompressionMethods, enumSupportedGroups, enumSignatureHashClient, enumSignatureHashCert):
+def extract_tslssl_features(pcapfile, enums):
 
     # TODO: implement dynamic features
     # Each packet will have its own record layer. If the layer does not exist, the features in that layer
     # will be zero-ed. Hence, we still assume one packet/Eth frame as the most basic unit of traffic
+
+    enumCipherSuites = enums['ciphersuites']
+    enumCompressionMethods = enums['compressionmethods']
+    enumSupportedGroups = enums['supportedgroups']
+    enumSignatureHashClient = enums['sighashalgorithms_client']
+    enumSignatureHashCert = enums['sighashalgorithms_cert']
 
     # Traffic features for storing features of packets
     traffic_features = []
@@ -427,7 +441,7 @@ def extract_tslssl_features(pcapfile, enumCipherSuites, enumCompressionMethods, 
                     if ciphersuite_int in enumCipherSuites:
                         ciphersuite_feature[enumCipherSuites.index(ciphersuite_int)] = 1
                     else:
-                        logging.warning('Unseen cipher suite in file {} '.format(pcapfile))
+                        logging.warning('Unseen cipher suite ({}) in file {} '.format(ciphersuite,pcapfile))
                 features.extend(ciphersuite_feature)
             else:
                 features.extend(ciphersuite_feature)
@@ -455,7 +469,7 @@ def extract_tslssl_features(pcapfile, enumCipherSuites, enumCompressionMethods, 
                     if compression_method_int in enumCompressionMethods:
                         compressionmethod_feature[enumCompressionMethods.index(compression_method_int)]=1
                     else:
-                        logging.warning('Unseen compression method in file {}'.format(pcapfile))
+                        logging.warning('Unseen compression method ({}) in file {}'.format(compression_method,pcapfile))
                 features.extend(compressionmethod_feature)
             else:
                 features.extend(compressionmethod_feature)
@@ -489,7 +503,7 @@ def extract_tslssl_features(pcapfile, enumCipherSuites, enumCompressionMethods, 
                             if supported_group_int in enumSupportedGroups:
                                 supportedgroup_feature[enumSupportedGroups.index(supported_group_int)] = 1
                             else:
-                                logging.warning('Unseen supported group in file {}'.format(pcapfile))
+                                logging.warning('Unseen supported group ({}) in file {}'.format(supported_group,pcapfile))
                 features.extend(supportedgroup_feature)
             else:
                 features.extend(supportedgroup_feature)
@@ -537,7 +551,7 @@ def extract_tslssl_features(pcapfile, enumCipherSuites, enumCompressionMethods, 
                             if signature_algorithm_int in enumSignatureHashClient:
                                 sighash_features_client[enumSignatureHashClient.index(signature_algorithm_int)]=1
                             else:
-                                logging.warning('Unseen signature hash algo (clienthello) in file {}'.format(pcapfile))
+                                logging.warning('Unseen signature hash algo in Clienthello ({}) in file {}'.format(signature_algorithm,pcapfile))
                 features.extend(sighash_features_client)
             else:
                 features.extend(sighash_features_client)
@@ -613,7 +627,7 @@ def extract_tslssl_features(pcapfile, enumCipherSuites, enumCompressionMethods, 
                 if algo_id in enumSignatureHashCert:
                     sighash_features[enumSignatureHashCert.index(algo_id)] = 1
                 else:
-                    logging.warning('Unseen signature hash algo (Cert) in file {}'.format(pcapfile))
+                    logging.warning('Unseen signature hash algo in Cert ({}) in file {}'.format(algo_id, pcapfile))
 
         elif handshake2:
             certificates = handshake2['ssl.handshake.certificates']['ssl.handshake.certificate_tree']
@@ -621,10 +635,11 @@ def extract_tslssl_features(pcapfile, enumCipherSuites, enumCompressionMethods, 
                 for k,v in certificate.items():
                     if 'algorithmIdentifier_element' in k:
                         for kk,vv in v.items():
-                            if 'algorithm.id' in kk and str(vv) in enumSignatureHashCert:
-                                sighash_features[enumSignatureHashCert.index(str(vv))] = 1
-                            else:
-                                logging.warning('Unseen signature hash algo (Cert) in file {}'.format(pcapfile))
+                            if 'algorithm.id' in kk:
+                                if str(vv) in enumSignatureHashCert:
+                                    sighash_features[enumSignatureHashCert.index(str(vv))] = 1
+                                else:
+                                    logging.warning('Unseen signature hash algo in Cert ({}) in file {}'.format(str(vv), pcapfile))
 
         features.extend(sighash_features)
 
@@ -666,7 +681,7 @@ def extract_tslssl_features(pcapfile, enumCipherSuites, enumCompressionMethods, 
                     else:
                         # Last resort: use the length of handshake as substitute
                         features.append(int(handshake._all_fields['ssl.handshake.length']))
-                        logging.warning('Unseen client key exchange algo in ClientKeyExchange for file {}'.format(pcapfile))
+                        logging.warning('Unknown client key exchange algo in ClientKeyExchange for file {}'.format(pcapfile))
                 # RSA in SSLv3 does not seem to publish the len, resulting in KeyError
                 except KeyError:
                     features.append(int(handshake._all_fields['ssl.handshake.length']))
@@ -756,14 +771,22 @@ if __name__ == '__main__':
     # sample = 'sample/tls/whc.unesco.org_2018-12-24_17-09-08.pcap'
     # sample = 'sample/tls/dataverse.harvard.edu_2018-12-24_17-16-00.pcap'
     # sample = 'sample/tls/www.cancerresearchuk.org_2018-12-24_17-15-46.pcap'
+    sample = 'sample/tls/alis.alberta.ca_2019-01-22_19-26-05.pcap'
     
     # sample = 'sample/sslv3/www.ceemjournal.org_2018-12-28_17-18-46_0.pcap'
-    sample = 'sample/sslv3/www.britishmuseum.org_2018-12-28_17-22-11_0.pcap'
-    enumCipherSuites,enumCompressionMethods, enumSupportedGroups, enumSignatureHashClient, enumSignatureHashCert = [],[],[],[],[]
+    # sample = 'sample/sslv3/www.britishmuseum.org_2018-12-28_17-22-11_0.pcap'
+
+    # enumCipherSuites,enumCompressionMethods, enumSupportedGroups, enumSignatureHashClient, enumSignatureHashCert = [],[],[],[],[]
+    # enumCipherSuites = enums['ciphersuites']
+    # enumCompressionMethods = enums['compressionmethods']
+    # enumSupportedGroups = enums['supportedgroups']
+    # enumSignatureHashClient = enums['sighashalgorithms_client']
+    # enumSignatureHashCert = enums['sighashalgorithms_cert']
+    enums = {'ciphersuites':[], 'compressionmethods':[], 'supportedgroups':[], 'sighashalgorithms_client':[], 'sighashalgorithms_cert':[]}
     
     # Test whether tls/ssl features are extracted
     extract_tcp_features(sample)
-    extract_tslssl_features(sample,enumCipherSuites,enumCompressionMethods, enumSupportedGroups, enumSignatureHashClient, enumSignatureHashCert)
+    extract_tslssl_features(sample, enums)
 
     # Test whether directory is searched correctly with features extracted 
     # search_and_extract(rootdir, testcsv)
