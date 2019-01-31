@@ -1,11 +1,13 @@
+import os
+import random
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import figure
 from matplotlib.widgets import Slider, Button, RadioButtons
-import random
+
 
 #defaults to rcParams["figure.figsize"] = [6.4, 4.8]
 
-def visualize_traffic(predict_train, true_train, predict_test, true_test, dim=7):
+def visualize_traffic(predict_train, true_train, predict_test, true_test, save=False, dim=7):
     """
     Given an array, visualize the traffic over time in a given dimension. This helps us to understand
     whether the model is learning anything at all. We can callback this method at every epoch to observe 
@@ -49,7 +51,26 @@ def visualize_traffic(predict_train, true_train, predict_test, true_test, dim=7)
             ax[1,i].plot(true_train[index[1],:,dim], alpha=0.8)
             ax[1,i].set_title('Test #{}'.format(index[1]))
         fig.canvas.draw_idle()
+
+    def manual_update(epoch):
+        for i, index in enumerate(zip(train_random,test_random)):
+            ax[0,i].clear()
+            ax[1,i].clear()
+            ax[0,i].set_ylim([0,1])
+            ax[1,i].set_ylim([0,1])
+            ax[0,i].plot(predict_train[epoch-1][index[0],:,dim])
+            ax[0,i].plot(true_train[index[0],:,dim], alpha=0.8)
+            ax[0,i].set_title('Train #{}'.format(index[0]))
+            ax[1,i].plot(predict_test[epoch-1][index[1],:,dim])
+            ax[1,i].plot(true_train[index[1],:,dim], alpha=0.8)
+            ax[1,i].set_title('Test #{}'.format(index[1]))
+        fig.canvas.draw_idle()
     
     s.on_changed(update)
 
-    plt.show()
+    if save:
+        for epoch in range(1, len(predict_train), len(predict_train)//10):
+            manual_update(epoch)
+            plt.savefig(os.path.join(save, 'traffic_len', 'traffic_len_epoch{}'.format(epoch)))
+    else:
+        plt.show()

@@ -27,7 +27,8 @@ Required arguments:
 Optional arguments:
 * -n : Normalization options for features (default=1)
 * -e : Number of epoch for training (default=100)
-* -s : Directory for saving visualization plots. If not specified, the plots will be displayed 
+* -s : Flag for saving visualization plots. If not specified, the plots will be displayed 
+* -m : Directory of existing model to be used for training
 
 Normalization options:
 1. Normalize each sample independently into unit vectors
