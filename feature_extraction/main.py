@@ -21,8 +21,8 @@ features_csv = 'features_tls_{}.csv'.format(datetime.now().strftime('%Y-%m-%d_%H
 # features_csv = os.path.join(args.save, 'features_tls_{}.csv'.format(datetime.now().strftime('%Y-%m-%d_%H-%M-%S')))
 
 def search_and_extract(pcap_dir, features_csv, enums):
+    file_count = 0
     with open(features_csv, 'a', newline='') as csv:
-        count = 0
         for root, dirs, files in os.walk(pcap_dir):
             for f in files:
                 if f.endswith(".pcap"):
@@ -43,8 +43,10 @@ def search_and_extract(pcap_dir, features_csv, enums):
                     for traffic_feature in traffic_features:
                         csv.write(str(traffic_feature)+', ')
                     csv.write('\n')
-                    count+=1
-    print("{} pcap files have been successfully parsed from {} with features generated".format(count, pcap_dir))
+                    file_count+=1
+                    if file_count%1000==0:
+                        print('{} pcap files has been parsed...'.format(file_count))
+    print("{} pcap files have been successfully parsed from {} with features generated".format(file_count, pcap_dir))
 
 # Iterate through pcap files and identify all enums
 enums_tls = utils.searchEnums(pcap_tls_dir, limit=1000)
