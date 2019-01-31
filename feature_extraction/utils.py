@@ -79,6 +79,7 @@ def extract_tcp_features(pcapfile):
     # Pyshark seems to be unable to distinguish between record layers
 
     packets = pyshark.FileCapture(pcapfile)
+
     for i, packet in enumerate(packets):
 
         # TCP FEATURES
@@ -123,13 +124,6 @@ def extract_tcp_features(pcapfile):
         features.append(int(packet.tcp.window_size))
 
         traffic_features.append(features)
-
-    ####################################################################################
-    # Write into csvfile as a row
-    # with open(csvfile, 'a', newline='') as f:
-    #     for traffic_feature in traffic_features:
-    #         f.write(str(traffic_feature)+', ')
-    #     f.write('\n')
 
     return traffic_features
 
@@ -370,7 +364,7 @@ def extract_tslssl_features(pcapfile, enums):
     packets = pyshark.FileCapture(pcapfile)
     packets_json = pyshark.FileCapture(pcapfile, use_json=True)
     total_ssl = 0
-    #for i, (packet,packet_json) in enumerate(zip(packets, packets_json)):
+
     for i, packet_json in enumerate(packets_json):
         #print('Packet ID {}'.format(i + 1))
         
@@ -418,331 +412,339 @@ def extract_tslssl_features(pcapfile, enums):
         ########################################################################
         ########################################################################
 
+        # try:
+
+        # HANDSHAKE PROTOCOL
+        ##################################################################
+        # 1: ClientHello - LENGTH
         try:
-
-            # HANDSHAKE PROTOCOL
-            ##################################################################
-            # 1: ClientHello - LENGTH
-            try:
-                handshake = find_handshake(packet_json.ssl, target_type=1)
-                if handshake:
-                    features.append(int(handshake.length))
-                else:
-                    features.append(0)
-            except AttributeError:
-                features.append(0)
-
-            # 2: ClientHello - CIPHER SUITE
-            ciphersuite_feature = np.zeros_like(enumCipherSuites) # enumCipherSuites is the ref list
-            try: 
-                handshake = find_handshake(packet_json.ssl, target_type = 1)
-                if handshake:
-                    for ciphersuite in handshake.ciphersuites.ciphersuite:
-                        ciphersuite_int = int(ciphersuite)
-                        if ciphersuite_int in enumCipherSuites:
-                            ciphersuite_feature[enumCipherSuites.index(ciphersuite_int)] = 1
-                        else:
-                            logging.warning('Unseen cipher suite ({}) in file {} '.format(ciphersuite,pcapfile))
-                    features.extend(ciphersuite_feature)
-                else:
-                    features.extend(ciphersuite_feature)
-            except:
-                features.extend(ciphersuite_feature)
-
-            # 3: ClientHello - CIPHER SUITE LENGTH
-            try:
-                handshake = find_handshake(packet_json.ssl, target_type=1)
-                if handshake:
-                    features.append(int(handshake.cipher_suites_length))
-                else:
-                    features.append(0)
-            except AttributeError:
-                features.append(0)        
-
-            # 4: ClientHello - COMPRESSION METHOD
-            compressionmethod_feature = np.zeros_like(enumCompressionMethods)
-            try:
-                handshake = find_handshake(packet_json.ssl, target_type=1)
-                if handshake:
-                    compression_methods = handshake._all_fields['ssl.handshake.comp_methods']['ssl.handshake.comp_method']
-                    for compression_method in compression_methods:
-                        compression_method_int = int(compression_method, 16) # in hdexdecimal
-                        if compression_method_int in enumCompressionMethods:
-                            compressionmethod_feature[enumCompressionMethods.index(compression_method_int)]=1
-                        else:
-                            logging.warning('Unseen compression method ({}) in file {}'.format(compression_method,pcapfile))
-                    features.extend(compressionmethod_feature)
-                else:
-                    features.extend(compressionmethod_feature)
-            except AttributeError:
-                features.extend(compressionmethod_feature)
-
-            # 5: ClientHello - SUPPORTED GROUP LENGTH
-            try:
-                handshake = find_handshake(packet_json.ssl, target_type=1)
-                if handshake:
-                    supported_group_len = 0
-                    for k,v in handshake._all_fields.items():
-                        if 'supported_groups' in k:
-                            supported_group_len = int(v['ssl.handshake.extension.len'])
-                    features.append(supported_group_len)
-                else:
-                    features.append(0)
-            except AttributeError:
-                features.append(0)         
-
-            # 6: ClientHello - SUPPORTED GROUPS
-            supportedgroup_feature = np.zeros_like(enumSupportedGroups)
-            try:
-                handshake = find_handshake(packet_json.ssl, target_type=1)
-                if handshake:
-                    for k,v in handshake._all_fields.items():
-                        if 'supported_groups' in k:
-                            supported_groups = v['ssl.handshake.extensions_supported_groups']['ssl.handshake.extensions_supported_group']
-                            for supported_group in supported_groups:
-                                supported_group_int = int(supported_group,16) # in hexadecimal
-                                if supported_group_int in enumSupportedGroups:
-                                    supportedgroup_feature[enumSupportedGroups.index(supported_group_int)] = 1
-                                else:
-                                    logging.warning('Unseen supported group ({}) in file {}'.format(supported_group,pcapfile))
-                    features.extend(supportedgroup_feature)
-                else:
-                    features.extend(supportedgroup_feature)
-            except AttributeError:
-                features.extend(supportedgroup_feature)
-
-            # 7: ClientHello - ENCRYPT THEN MAC LENGTH
-            try:
-                handshake = find_handshake(packet_json.ssl, target_type=1)
-                if handshake:
-                    encrypt_then_mac_len = 0
-                    for k,v in handshake._all_fields.items():
-                        if 'encrypt_then_mac' in k:
-                            encrypt_then_mac_len = int(v['ssl.handshake.extension.len'])
-                    features.append(encrypt_then_mac_len)
-                else:
-                    features.append(0)
-            except AttributeError:
-                features.append(0)   
-
-            # 8: ClientHello - EXTENDED MASTER SECRET
-            try:
-                handshake = find_handshake(packet_json.ssl, target_type=1)
-                if handshake:
-                    extended_master_secret_len = 0
-                    for k,v in handshake._all_fields.items():
-                        if 'extended_master_secret' in k:
-                            extended_master_secret_len = int(v['ssl.handshake.extension.len'])
-                    features.append(extended_master_secret_len)
-                else:
-                    features.append(0)
-            except AttributeError:
-                features.append(0)
-
-            # 9: ClientHello - SIGNATURE HASH ALGORITHM
-            sighash_features_client = np.zeros_like(enumSignatureHashClient)
-            try:
-                handshake = find_handshake(packet_json.ssl, target_type=1)
-                if handshake:
-                    for k,v in handshake._all_fields.item():
-                        if 'signature_algorithms' in k:
-                            signature_algorithms = v['ssl.handshake.sig_hash_algs']['ssl.handshake.sig_hash_alg']
-                            for signature_algorithm in signature_algorithms:
-                                signature_algorithm_int = int(signature_algorithm,16)
-                                if signature_algorithm_int in enumSignatureHashClient:
-                                    sighash_features_client[enumSignatureHashClient.index(signature_algorithm_int)]=1
-                                else:
-                                    logging.warning('Unseen signature hash algo in Clienthello ({}) in file {}'.format(signature_algorithm,pcapfile))
-                    features.extend(sighash_features_client)
-                else:
-                    features.extend(sighash_features_client)
-            except AttributeError:
-                features.extend(sighash_features_client)
-
-            # 10: ServerHello - LENGTH
-            try:
-                handshake = find_handshake(packet_json.ssl, target_type=2)
-                if handshake:
-                    features.append(int(handshake.length))
-                else:
-                    features.append(0)
-            except AttributeError:
-                features.append(0) 
-
-            # 11: ServerHello - EXTENDED MASTER SECRET
-            # ????????????????
-
-            # 12: ServerHello - RENEGOTIATION INFO LENGTH
-            try:
-                handshake = find_handshake(packet_json.ssl, target_type=2)
-                if handshake:
-                    renegotiation_info_len = 0
-                    for k,v in handshake._all_fields.items():
-                        if 'renegotiation_info' in k:
-                            renegotiation_info_len = int(v['ssl.handshake.extension.len'])
-                    features.append(renegotiation_info_len)
-                else:
-                    features.append(0)
-            except AttributeError as e:
-                features.append(0)
-
-            # 13,14,15,16: Certificate - NUM_CERT, AVERAGE, MIN, MAX CERTIFICATE LENGTH
-            # Attempt 1: use find_handshake()
-            try:
-                handshake = find_handshake(packet_json.ssl, target_type=11)
-            except AttributeError:
-                handshake = None
-            # Attempt 2: certificate is more difficult to identify. Use hardcode
-            try: 
-                handshake2 = find_handshake2(packet_json.ssl.value, target_type=11)
-            except AttributeError:
-                handshake2 = None
-
+            handshake = find_handshake(packet_json.ssl, target_type=1)
             if handshake:
-                certificates_length = [int(i) for i in handshake.certificates.certificate_length]
-                mean_cert_len = sum(certificates_length)/float(len(certificates_length))
-                features.extend([len(certificates_length), mean_cert_len,max(certificates_length),min(certificates_length)])
-            elif handshake2:
-                certificates_length = handshake2['ssl.handshake.certificates']['ssl.handshake.certificate_length']
-                certificates_length = [int(i) for i in certificates_length]
-                mean_cert_len = sum(certificates_length)/float(len(certificates_length))
-                features.extend([len(certificates_length), mean_cert_len,max(certificates_length),min(certificates_length)])
+                features.append(int(handshake.length))
             else:
-                features.extend([0,0,0,0])
+                features.append(0)
+        except AttributeError:
+            features.append(0)
 
-            # 17: Certificate - SIGNATURE ALGORITHM
-            sighash_features = np.zeros_like(enumSignatureHashCert, dtype='int32') # enumSignatureHashCert is the ref list
-            try: 
-                handshake = find_handshake(packet_json.ssl, target_type = 11)
-            except:
-                handshake = None
-            try:
-                handshake2 = find_handshake2(packet_json.ssl.value, target_type = 11)
-            except:
-                handshake2 = None
-
+        # 2: ClientHello - CIPHER SUITE
+        ciphersuite_feature = np.zeros_like(enumCipherSuites) # enumCipherSuites is the ref list
+        ciphersuite_feature = np.concatenate((ciphersuite_feature, np.array([0]))) # For unknown dim
+        try: 
+            handshake = find_handshake(packet_json.ssl, target_type = 1)
             if handshake:
-                certificates = handshake.certificates.certificate_tree
-                for certificate in certificates:
-                    algo_id = str(certificate.algorithmIdentifier_element.id)
-                    if algo_id in enumSignatureHashCert:
-                        sighash_features[enumSignatureHashCert.index(algo_id)] = 1
+                for ciphersuite in handshake.ciphersuites.ciphersuite:
+                    ciphersuite_int = int(ciphersuite)
+                    if ciphersuite_int in enumCipherSuites:
+                        ciphersuite_feature[enumCipherSuites.index(ciphersuite_int)] = 1
                     else:
-                        logging.warning('Unseen signature hash algo in Cert ({}) in file {}'.format(algo_id, pcapfile))
+                        logging.warning('Unseen cipher suite ({}) in file {} '.format(ciphersuite,pcapfile))
+                        ciphersuite_feature[-1] = 1
+                features.extend(ciphersuite_feature)
+            else:
+                features.extend(ciphersuite_feature)
+        except:
+            features.extend(ciphersuite_feature)
 
-            elif handshake2:
-                certificates = handshake2['ssl.handshake.certificates']['ssl.handshake.certificate_tree']
-                for certificate in certificates:
-                    for k,v in certificate.items():
-                        if 'algorithmIdentifier_element' in k:
-                            for kk,vv in v.items():
-                                if 'algorithm.id' in kk:
-                                    if str(vv) in enumSignatureHashCert:
-                                        sighash_features[enumSignatureHashCert.index(str(vv))] = 1
-                                    else:
-                                        logging.warning('Unseen signature hash algo in Cert ({}) in file {}'.format(str(vv), pcapfile))
-
-            features.extend(sighash_features)
-
-            # 18: ServerHelloDone - LENGTH
-            try:
-                handshake = find_handshake(packet_json.ssl, target_type=14)
-                if handshake:
-                    features.append(int(handshake.length))
-                else:
-                    features.append(0)
-            except AttributeError:
-                features.append(0) 
-
-            # 19: ClientKeyExchange - LENGTH
-            try:
-                handshake = find_handshake(packet_json.ssl, target_type=16)
-                if handshake:
-                    features.append(int(handshake.length))
-                else:
-                    features.append(0)
-            except AttributeError:
-                features.append(0) 
-
-            # 20: ClientKeyExchange - PUBKEY LENGTH
-            try:
-                handshake = find_handshake(packet_json.ssl, target_type=16)
-                if handshake:
-                    try:
-                        if 'EC Diffie-Hellman Client Params' in handshake._all_fields:
-                            pub_key_dict = handshake._all_fields['EC Diffie-Hellman Client Params']
-                            features.append(int(pub_key_dict['ssl.handshake.client_point_len']))
-                        elif 'RSA Encrypted PreMaster Secret' in handshake._all_fields:
-                            pub_key_dict = handshake._all_fields['RSA Encrypted PreMaster Secret']
-                            features.append(int(pub_key_dict['ssl.handshake.epms_len']))
-                        elif 'Diffie-Hellman Client Params' in handshake._all_fields:
-                            pub_key_dict = handshake._all_fields['Diffie-Hellman Client Params']
-                            features.append(int(pub_key_dict['ssl.handshake.yc_len']))
-                        # Unseen Client Key Exchange algorithm                
-                        else:
-                            # Last resort: use the length of handshake as substitute
-                            features.append(int(handshake._all_fields['ssl.handshake.length']))
-                            logging.warning('Unknown client key exchange algo in ClientKeyExchange for file {}'.format(pcapfile))
-                    # RSA in SSLv3 does not seem to publish the len, resulting in KeyError
-                    except KeyError:
-                        features.append(int(handshake._all_fields['ssl.handshake.length']))
-                    
-                else:
-                    features.append(0)
-            except AttributeError:
-                features.append(0) 
-
-            # 21: EncryptedHandshakeMessage - LENGTH
-            try:
-                handshake = find_handshake(packet_json.ssl, target_type=99)
-                if handshake:
-                    features.append(int(handshake.length))
-                else:
-                    features.append(0)
-            except AttributeError:
-                features.append(0)
-
-
-            #  CHANGE CIPHER PROTOCOL
-            ##################################################################
-            #  22: ChangeCipherSpec - LENGTH
-            try:
-                changecipher = find_changecipher(packet_json.ssl)
-                if changecipher:
-                    features.append(int(changecipher.length))
-                else:
-                    features.append(0)
-            except AttributeError:
-                features.append(0)
-
-
-            #  APPLICATION DATA PROTOCOL
-            ##################################################################
-            #  23: ApplicationDataProtocol - LENGTH
-            
-            # Attempt 1: use find_appdata to identify pure Application DAta
-            try:
-                appdata = find_appdata(packet_json.ssl)
-            except AttributeError:
-                appdata = None
-            # Attempt 2: use find_appdata2 to identify Application Data[TCP segment of a reassembled PDU]
-            try: 
-                appdata2 = find_appdata2(packet_json.ssl.value)
-            except AttributeError:
-                appdata2 = None
-            
-            if appdata:
-                features.append(int(appdata.length))
-            elif appdata2:
-                features.append(int(appdata2['ssl.record.length']))
+        # 3: ClientHello - CIPHER SUITE LENGTH
+        try:
+            handshake = find_handshake(packet_json.ssl, target_type=1)
+            if handshake:
+                features.append(int(handshake.cipher_suites_length))
             else:
                 features.append(0)
+        except AttributeError:
+            features.append(0)        
 
-        # Serious error in traffic that cannot be caught. Skip this packet and report error
-        except KeyError:
-            logging.exception('Serious error in traffic. Packet skipped')
-            continue
+        # 4: ClientHello - COMPRESSION METHOD
+        compressionmethod_feature = np.zeros_like(enumCompressionMethods)
+        compressionmethod_feature = np.concatenate((compressionmethod_feature, np.array([0]))) # For unknown dim
+        try:
+            handshake = find_handshake(packet_json.ssl, target_type=1)
+            if handshake:
+                compression_methods = handshake._all_fields['ssl.handshake.comp_methods']['ssl.handshake.comp_method']
+                for compression_method in compression_methods:
+                    compression_method_int = int(compression_method, 16) # in hdexdecimal
+                    if compression_method_int in enumCompressionMethods:
+                        compressionmethod_feature[enumCompressionMethods.index(compression_method_int)] = 1
+                    else:
+                        logging.warning('Unseen compression method ({}) in file {}'.format(compression_method,pcapfile))
+                        compressionmethod_feature[-1] = 1
+                features.extend(compressionmethod_feature)
+            else:
+                features.extend(compressionmethod_feature)
+        except AttributeError:
+            features.extend(compressionmethod_feature)
 
+        # 5: ClientHello - SUPPORTED GROUP LENGTH
+        try:
+            handshake = find_handshake(packet_json.ssl, target_type=1)
+            if handshake:
+                supported_group_len = 0
+                for k,v in handshake._all_fields.items():
+                    if 'supported_groups' in k:
+                        supported_group_len = int(v['ssl.handshake.extension.len'])
+                features.append(supported_group_len)
+            else:
+                features.append(0)
+        except AttributeError:
+            features.append(0)         
+
+        # 6: ClientHello - SUPPORTED GROUPS
+        supportedgroup_feature = np.zeros_like(enumSupportedGroups)
+        supportedgroup_feature = np.concatenate((supportedgroup_feature, np.array([0]))) # For unknown dim
+        try:
+            handshake = find_handshake(packet_json.ssl, target_type=1)
+            if handshake:
+                for k,v in handshake._all_fields.items():
+                    if 'supported_groups' in k:
+                        supported_groups = v['ssl.handshake.extensions_supported_groups']['ssl.handshake.extensions_supported_group']
+                        for supported_group in supported_groups:
+                            supported_group_int = int(supported_group,16) # in hexadecimal
+                            if supported_group_int in enumSupportedGroups:
+                                supportedgroup_feature[enumSupportedGroups.index(supported_group_int)] = 1
+                            else:
+                                logging.warning('Unseen supported group ({}) in file {}'.format(supported_group,pcapfile))
+                                supportedgroup_feature[-1] = 1
+                features.extend(supportedgroup_feature)
+            else:
+                features.extend(supportedgroup_feature)
+        except AttributeError:
+            features.extend(supportedgroup_feature)
+
+        # 7: ClientHello - ENCRYPT THEN MAC LENGTH
+        try:
+            handshake = find_handshake(packet_json.ssl, target_type=1)
+            if handshake:
+                encrypt_then_mac_len = 0
+                for k,v in handshake._all_fields.items():
+                    if 'encrypt_then_mac' in k:
+                        encrypt_then_mac_len = int(v['ssl.handshake.extension.len'])
+                features.append(encrypt_then_mac_len)
+            else:
+                features.append(0)
+        except AttributeError:
+            features.append(0)   
+
+        # 8: ClientHello - EXTENDED MASTER SECRET
+        try:
+            handshake = find_handshake(packet_json.ssl, target_type=1)
+            if handshake:
+                extended_master_secret_len = 0
+                for k,v in handshake._all_fields.items():
+                    if 'extended_master_secret' in k:
+                        extended_master_secret_len = int(v['ssl.handshake.extension.len'])
+                features.append(extended_master_secret_len)
+            else:
+                features.append(0)
+        except AttributeError:
+            features.append(0)
+
+        # 9: ClientHello - SIGNATURE HASH ALGORITHM
+        sighash_features_client = np.zeros_like(enumSignatureHashClient)
+        sighash_features_client = np.concatenate((sighash_features_client, np.array([0]))) # For unknown dim
+        try:
+            handshake = find_handshake(packet_json.ssl, target_type=1)
+            if handshake:
+                for k,v in handshake._all_fields.item():
+                    if 'signature_algorithms' in k:
+                        signature_algorithms = v['ssl.handshake.sig_hash_algs']['ssl.handshake.sig_hash_alg']
+                        for signature_algorithm in signature_algorithms:
+                            signature_algorithm_int = int(signature_algorithm,16)
+                            if signature_algorithm_int in enumSignatureHashClient:
+                                sighash_features_client[enumSignatureHashClient.index(signature_algorithm_int)]=1
+                            else:
+                                logging.warning('Unseen signature hash algo in Clienthello ({}) in file {}'.format(signature_algorithm,pcapfile))
+                                sighash_features_client[-1] = 1
+                features.extend(sighash_features_client)
+            else:
+                features.extend(sighash_features_client)
+        except AttributeError:
+            features.extend(sighash_features_client)
+
+        # 10: ServerHello - LENGTH
+        try:
+            handshake = find_handshake(packet_json.ssl, target_type=2)
+            if handshake:
+                features.append(int(handshake.length))
+            else:
+                features.append(0)
+        except AttributeError:
+            features.append(0) 
+
+        # 11: ServerHello - EXTENDED MASTER SECRET
+        # ????????????????
+
+        # 12: ServerHello - RENEGOTIATION INFO LENGTH
+        try:
+            handshake = find_handshake(packet_json.ssl, target_type=2)
+            if handshake:
+                renegotiation_info_len = 0
+                for k,v in handshake._all_fields.items():
+                    if 'renegotiation_info' in k:
+                        renegotiation_info_len = int(v['ssl.handshake.extension.len'])
+                features.append(renegotiation_info_len)
+            else:
+                features.append(0)
+        except AttributeError as e:
+            features.append(0)
+
+        # 13,14,15,16: Certificate - NUM_CERT, AVERAGE, MIN, MAX CERTIFICATE LENGTH
+        # Attempt 1: use find_handshake()
+        try:
+            handshake = find_handshake(packet_json.ssl, target_type=11)
+        except AttributeError:
+            handshake = None
+        # Attempt 2: certificate is more difficult to identify. Use hardcode
+        try: 
+            handshake2 = find_handshake2(packet_json.ssl.value, target_type=11)
+        except AttributeError:
+            handshake2 = None
+
+        if handshake:
+            certificates_length = [int(i) for i in handshake.certificates.certificate_length]
+            mean_cert_len = sum(certificates_length)/float(len(certificates_length))
+            features.extend([len(certificates_length), mean_cert_len,max(certificates_length),min(certificates_length)])
+        elif handshake2:
+            certificates_length = handshake2['ssl.handshake.certificates']['ssl.handshake.certificate_length']
+            certificates_length = [int(i) for i in certificates_length]
+            mean_cert_len = sum(certificates_length)/float(len(certificates_length))
+            features.extend([len(certificates_length), mean_cert_len,max(certificates_length),min(certificates_length)])
+        else:
+            features.extend([0,0,0,0])
+
+        # 17: Certificate - SIGNATURE ALGORITHM
+        sighash_features_cert = np.zeros_like(enumSignatureHashCert, dtype='int32') # enumSignatureHashCert is the ref list
+        sighash_features_cert = np.concatenate((sighash_features_cert, np.array([0]))) # For unknown dim
+        try: 
+            handshake = find_handshake(packet_json.ssl, target_type = 11)
+        except:
+            handshake = None
+        try:
+            handshake2 = find_handshake2(packet_json.ssl.value, target_type = 11)
+        except:
+            handshake2 = None
+
+        if handshake:
+            certificates = handshake.certificates.certificate_tree
+            for certificate in certificates:
+                algo_id = str(certificate.algorithmIdentifier_element.id)
+                if algo_id in enumSignatureHashCert:
+                    sighash_features_cert[enumSignatureHashCert.index(algo_id)] = 1
+                else:
+                    logging.warning('Unseen signature hash algo in Cert ({}) in file {}'.format(algo_id, pcapfile))
+                    sighash_features_cert[-1] = 1
+
+        elif handshake2:
+            certificates = handshake2['ssl.handshake.certificates']['ssl.handshake.certificate_tree']
+            for certificate in certificates:
+                for k,v in certificate.items():
+                    if 'algorithmIdentifier_element' in k:
+                        for kk,vv in v.items():
+                            if 'algorithm.id' in kk:
+                                if str(vv) in enumSignatureHashCert:
+                                    sighash_features_cert[enumSignatureHashCert.index(str(vv))] = 1
+                                else:
+                                    logging.warning('Unseen signature hash algo in Cert ({}) in file {}'.format(str(vv), pcapfile))
+                                    sighash_features_cert[-1] = 1
+
+        features.extend(sighash_features_cert)
+
+        # 18: ServerHelloDone - LENGTH
+        try:
+            handshake = find_handshake(packet_json.ssl, target_type=14)
+            if handshake:
+                features.append(int(handshake.length))
+            else:
+                features.append(0)
+        except AttributeError:
+            features.append(0) 
+
+        # 19: ClientKeyExchange - LENGTH
+        try:
+            handshake = find_handshake(packet_json.ssl, target_type=16)
+            if handshake:
+                features.append(int(handshake.length))
+            else:
+                features.append(0)
+        except AttributeError:
+            features.append(0) 
+
+        # 20: ClientKeyExchange - PUBKEY LENGTH
+        try:
+            handshake = find_handshake(packet_json.ssl, target_type=16)
+            if handshake:
+                try:
+                    if 'EC Diffie-Hellman Client Params' in handshake._all_fields:
+                        pub_key_dict = handshake._all_fields['EC Diffie-Hellman Client Params']
+                        features.append(int(pub_key_dict['ssl.handshake.client_point_len']))
+                    elif 'RSA Encrypted PreMaster Secret' in handshake._all_fields:
+                        pub_key_dict = handshake._all_fields['RSA Encrypted PreMaster Secret']
+                        features.append(int(pub_key_dict['ssl.handshake.epms_len']))
+                    elif 'Diffie-Hellman Client Params' in handshake._all_fields:
+                        pub_key_dict = handshake._all_fields['Diffie-Hellman Client Params']
+                        features.append(int(pub_key_dict['ssl.handshake.yc_len']))
+                    # Unseen Client Key Exchange algorithm                
+                    else:
+                        # Last resort: use the length of handshake as substitute
+                        features.append(int(handshake._all_fields['ssl.handshake.length']))
+                        logging.warning('Unknown client key exchange algo in ClientKeyExchange for file {}'.format(pcapfile))
+                # RSA in SSLv3 does not seem to publish the len, resulting in KeyError
+                except KeyError:
+                    features.append(int(handshake._all_fields['ssl.handshake.length']))
+                
+            else:
+                features.append(0)
+        except AttributeError:
+            features.append(0) 
+
+        # 21: EncryptedHandshakeMessage - LENGTH
+        try:
+            handshake = find_handshake(packet_json.ssl, target_type=99)
+            if handshake:
+                features.append(int(handshake.length))
+            else:
+                features.append(0)
+        except AttributeError:
+            features.append(0)
+
+
+        #  CHANGE CIPHER PROTOCOL
+        ##################################################################
+        #  22: ChangeCipherSpec - LENGTH
+        try:
+            changecipher = find_changecipher(packet_json.ssl)
+            if changecipher:
+                features.append(int(changecipher.length))
+            else:
+                features.append(0)
+        except AttributeError:
+            features.append(0)
+
+
+        #  APPLICATION DATA PROTOCOL
+        ##################################################################
+        #  23: ApplicationDataProtocol - LENGTH
+        
+        # Attempt 1: use find_appdata to identify pure Application DAta
+        try:
+            appdata = find_appdata(packet_json.ssl)
+        except AttributeError:
+            appdata = None
+        # Attempt 2: use find_appdata2 to identify Application Data[TCP segment of a reassembled PDU]
+        try: 
+            appdata2 = find_appdata2(packet_json.ssl.value)
+        except AttributeError:
+            appdata2 = None
+        
+        if appdata:
+            features.append(int(appdata.length))
+        elif appdata2:
+            features.append(int(appdata2['ssl.record.length']))
+        else:
+            features.append(0)
+        
+        # Convert to float for standardization
+        features = [float(i) for i in features]
         traffic_features.append(features)
 
     return traffic_features
@@ -769,14 +771,14 @@ if __name__ == '__main__':
     # sample = 'sample/ari.nus.edu.sg_2018-12-24_14-30-02.pcap'
     # sample = 'sample/www.zeroaggressionproject.org_2018-12-21_16-19-03.pcap'
     # sample = 'sample/www.stripes.com_2018-12-21_16-20-12.pcap'
-    # sample = 'sample/australianmuseum.net.au_2018-12-21_16-15-59.pcap'
+    sample = 'sample/australianmuseum.net.au_2018-12-21_16-15-59.pcap'
 
     # sample = 'sample/tls/www.tmr.qld.gov.au_2018-12-24_17-20-56.pcap'
     # sample = 'sample/tls/www.orkin.com_2018-12-24_17-10-27.pcap'
     # sample = 'sample/tls/whc.unesco.org_2018-12-24_17-09-08.pcap'
     # sample = 'sample/tls/dataverse.harvard.edu_2018-12-24_17-16-00.pcap'
     # sample = 'sample/tls/www.cancerresearchuk.org_2018-12-24_17-15-46.pcap'
-    sample = 'sample/tls/alis.alberta.ca_2019-01-22_19-26-05.pcap'
+    # sample = 'sample/tls/alis.alberta.ca_2019-01-22_19-26-05.pcap'
     
     # sample = 'sample/sslv3/www.ceemjournal.org_2018-12-28_17-18-46_0.pcap'
     # sample = 'sample/sslv3/www.britishmuseum.org_2018-12-28_17-22-11_0.pcap'
