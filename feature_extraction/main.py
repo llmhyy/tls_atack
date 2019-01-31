@@ -32,12 +32,11 @@ def search_and_extract(pcap_dir, features_csv, enums):
                     tcp_features = utils.extract_tcp_features(os.path.join(root, f))
                     # Generate TLS/SSL features
                     tls_features = utils.extract_tslssl_features(os.path.join(root, f), enums)
-                    # Combine TCP and TLS/SSL features
-                    try:
-                        traffic_features = (np.concatenate((np.array(tcp_features), np.array(tls_features)), axis=1)).tolist()
-                    # Mismatch in sizes when concatenating..Skip the traffic
-                    except ValueError:
+                    # Skip this pcap file due to serious error
+                    if tcp_features==None or tls_features==None:
                         continue
+                    # Combine TCP and TLS/SSL features
+                    traffic_features = (np.concatenate((np.array(tcp_features), np.array(tls_features)), axis=1)).tolist()
                     # Each packet in traffic features is a vector of 139 dimension
 
                     # Write into csv file
@@ -48,8 +47,8 @@ def search_and_extract(pcap_dir, features_csv, enums):
     print("{} pcap files have been successfully parsed from {} with features generated".format(count, pcap_dir))
 
 # Iterate through pcap files and identify all enums
-enums_tls = utils.searchEnums(pcap_tls_dir, limit=100)
-enum_sslv3 = utils.searchEnums(pcap_sslv3_dir, limit=100)
+enums_tls = utils.searchEnums(pcap_tls_dir, limit=1000)
+enum_sslv3 = utils.searchEnums(pcap_sslv3_dir, limit=1000)
 # enums = tuple(list(set(i[0]+i[1])) for i in zip(enums_tls, enum_sslv3))
 enums = {k:list(set(v+enum_sslv3[k])) for k,v in enums_tls.items()}
 for k,v in enums.items():

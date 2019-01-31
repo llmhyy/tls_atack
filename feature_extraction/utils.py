@@ -79,57 +79,54 @@ def extract_tcp_features(pcapfile):
     # Pyshark seems to be unable to distinguish between record layers
 
     packets = pyshark.FileCapture(pcapfile)
-    for i, packet in enumerate(packets):
+    try:
+        for i, packet in enumerate(packets):
 
-        # TCP FEATURES
-        ##################################################################
-        features = []
+            # TCP FEATURES
+            ##################################################################
+            features = []
 
-        # 1: COME/LEAVE
-        if ipaddress.ip_address(str(packet.ip.dst)).is_private:
-            features.append(1)
-        else:
-            features.append(0)
+            # 1: COME/LEAVE
+            if ipaddress.ip_address(str(packet.ip.dst)).is_private:
+                features.append(1)
+            else:
+                features.append(0)
 
-        # 2: PROTOCOL
-        protocol_id = 0
-        protocol_onehot = [0] * len(protcol_ver)
-        # Checks for SSL layer in packet. Bug in detecting SSL layer despite plain TCP packet
-        if ('ssl' in packet) and (packet.ssl.get('record_version') != None):
-            # Convert hex into integer and return the index in the ref list
-            prot = int(packet.ssl.record_version, 16)
-            try:
-                protocol_id = protcol_ver.index(prot)
-                protocol_onehot[protocol_id] = 1
-            except ValueError:
-                logging.warning('Found SSL packet with unknown SSL type {} in file {}'.format(prot, pcapfile))
-            
-        features.extend(protocol_onehot)
+            # 2: PROTOCOL
+            protocol_id = 0
+            protocol_onehot = [0] * len(protcol_ver)
+            # Checks for SSL layer in packet. Bug in detecting SSL layer despite plain TCP packet
+            if ('ssl' in packet) and (packet.ssl.get('record_version') != None):
+                # Convert hex into integer and return the index in the ref list
+                prot = int(packet.ssl.record_version, 16)
+                try:
+                    protocol_id = protcol_ver.index(prot)
+                    protocol_onehot[protocol_id] = 1
+                except ValueError:
+                    logging.warning('Found SSL packet with unknown SSL type {} in file {}'.format(prot, pcapfile))
+                
+            features.extend(protocol_onehot)
 
-        # 3: LENGTH
-        features.append(int(packet.length))
+            # 3: LENGTH
+            features.append(int(packet.length))
 
-        # 4: INTERVAL
-        features.append(float(packet.frame_info.time_delta) * 1000)
+            # 4: INTERVAL
+            features.append(float(packet.frame_info.time_delta) * 1000)
 
-        # 5: FLAG
-        num_of_flags = 9
-        # Convert hex into binary and pad left with 0 to fill 9 flags
-        flags = list(bin(int(packet.tcp.flags, 16))[2:].zfill(num_of_flags))
-        features.extend(list(map(int, flags)))
+            # 5: FLAG
+            num_of_flags = 9
+            # Convert hex into binary and pad left with 0 to fill 9 flags
+            flags = list(bin(int(packet.tcp.flags, 16))[2:].zfill(num_of_flags))
+            features.extend(list(map(int, flags)))
 
-        # 6: WINDOW SIZE
-        # Append the calculated window size (window size value * scaling factor)
-        features.append(int(packet.tcp.window_size))
+            # 6: WINDOW SIZE
+            # Append the calculated window size (window size value * scaling factor)
+            features.append(int(packet.tcp.window_size))
 
-        traffic_features.append(features)
-
-    ####################################################################################
-    # Write into csvfile as a row
-    # with open(csvfile, 'a', newline='') as f:
-    #     for traffic_feature in traffic_features:
-    #         f.write(str(traffic_feature)+', ')
-    #     f.write('\n')
+            traffic_features.append(features)
+    except (KeyError, AttributeError):
+        logging.exception('Serious error in traffic. Packet skipped')
+        return
 
     return traffic_features
 
@@ -370,55 +367,56 @@ def extract_tslssl_features(pcapfile, enums):
     packets = pyshark.FileCapture(pcapfile)
     packets_json = pyshark.FileCapture(pcapfile, use_json=True)
     total_ssl = 0
-    #for i, (packet,packet_json) in enumerate(zip(packets, packets_json)):
-    for i, packet_json in enumerate(packets_json):
-        #print('Packet ID {}'.format(i + 1))
-        
-        features = []
 
-        ########################################################################
-        ########################################################################
-        # FOR DEBUGGING
+    try:
+        for i, packet_json in enumerate(packets_json):
+            #print('Packet ID {}'.format(i + 1))
+            
+            features = []
 
-        # try:
-        #     #print(packet_json)
-        #     #if i==2 or i==5:
-        #     if i==2:
-        #         print(packet_json)
-        #         print('*********************************************************')
-        #         print(packet_json.ssl.record.handshake)
-        #         print('*********************************************************')
-        #         print(packet_json.ssl.handshake.extension.len)
-        #         #print(packet_json.ssl)
-        #         #print(type(packet_json.ssl.record.handshake))
-        #     #print(packet.ssl.record.handshake.ciphersuites)
-        #     #cipher_suites = packet.ssl.record.handshake.ciphersuites.ciphersuite
-        #     #print(cipher_suites.field_names)
-        #     #print(cipher_suites)
-        #     #for cipher_suite in cipher_suites:
-        #     #    print(cipher_suite)
-        # except AttributeError:
-        #     pass
-        # continue
+            ########################################################################
+            ########################################################################
+            # FOR DEBUGGING
 
-        # try:
-        #     if i == 8:
-        #         print(packet_json)
-        #         print(packets_json.ssl)
-        #         myone = packet_json.ssl[0]
-        #         handshake = find_handshake(packet_json.ssl, target_type=11)
-        #         if handshake:
-        #             features.append(int(handshake.length))
-        #         else:
-        #             features.append(0)
-        # except AttributeError:
-        #     features.append(0)
-        # print(features)
-        # continue
-        ########################################################################
-        ########################################################################
+            # try:
+            #     #print(packet_json)
+            #     #if i==2 or i==5:
+            #     if i==2:
+            #         print(packet_json)
+            #         print('*********************************************************')
+            #         print(packet_json.ssl.record.handshake)
+            #         print('*********************************************************')
+            #         print(packet_json.ssl.handshake.extension.len)
+            #         #print(packet_json.ssl)
+            #         #print(type(packet_json.ssl.record.handshake))
+            #     #print(packet.ssl.record.handshake.ciphersuites)
+            #     #cipher_suites = packet.ssl.record.handshake.ciphersuites.ciphersuite
+            #     #print(cipher_suites.field_names)
+            #     #print(cipher_suites)
+            #     #for cipher_suite in cipher_suites:
+            #     #    print(cipher_suite)
+            # except AttributeError:
+            #     pass
+            # continue
 
-        try:
+            # try:
+            #     if i == 8:
+            #         print(packet_json)
+            #         print(packets_json.ssl)
+            #         myone = packet_json.ssl[0]
+            #         handshake = find_handshake(packet_json.ssl, target_type=11)
+            #         if handshake:
+            #             features.append(int(handshake.length))
+            #         else:
+            #             features.append(0)
+            # except AttributeError:
+            #     features.append(0)
+            # print(features)
+            # continue
+            ########################################################################
+            ########################################################################
+
+            # try:
 
             # HANDSHAKE PROTOCOL
             ##################################################################
@@ -738,12 +736,11 @@ def extract_tslssl_features(pcapfile, enums):
             else:
                 features.append(0)
 
-        # Serious error in traffic that cannot be caught. Skip this packet and report error
-        except KeyError:
-            logging.exception('Serious error in traffic. Packet skipped')
-            continue
+            traffic_features.append(features)
 
-        traffic_features.append(features)
+    except (KeyError,AttributeError):
+        logging.exception('Serious error in traffic. Packet skipped')
+        return
 
     return traffic_features
 
