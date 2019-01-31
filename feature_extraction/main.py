@@ -26,26 +26,30 @@ def search_and_extract(pcap_dir, features_csv, enums):
         for root, dirs, files in os.walk(pcap_dir):
             for f in files:
                 if f.endswith(".pcap"):
-                    #print("Extracting features from {}".format(f))
-                    logging.info("Extracting features from {}".format(f))
-                    # Generate TCP features
-                    tcp_features = utils.extract_tcp_features(os.path.join(root, f))
-                    # Generate TLS/SSL features
-                    tls_features = utils.extract_tslssl_features(os.path.join(root, f), enums)
-                    # Skip this pcap file due to serious error
-                    if tcp_features==None or tls_features==None:
-                        continue
-                    # Combine TCP and TLS/SSL features
-                    traffic_features = (np.concatenate((np.array(tcp_features), np.array(tls_features)), axis=1)).tolist()
-                    # Each packet in traffic features is a vector of 139 dimension
+                    try:
+                        #print("Extracting features from {}".format(f))
+                        logging.info("Extracting features from {}".format(f))
+                        # Generate TCP features
+                        tcp_features = utils.extract_tcp_features(os.path.join(root, f))
+                        # Generate TLS/SSL features
+                        tls_features = utils.extract_tslssl_features(os.path.join(root, f), enums)
+                        # Combine TCP and TLS/SSL features
+                        traffic_features = (np.concatenate((np.array(tcp_features), np.array(tls_features)), axis=1)).tolist()
+                        # Each packet in traffic features is a vector of 139 dimension
 
-                    # Write into csv file
-                    for traffic_feature in traffic_features:
-                        csv.write(str(traffic_feature)+', ')
-                    csv.write('\n')
-                    file_count+=1
-                    if file_count%1000==0:
-                        print('{} pcap files has been parsed...'.format(file_count))
+                        # Write into csv file
+                        for traffic_feature in traffic_features:
+                            csv.write(str(traffic_feature)+', ')
+                        csv.write('\n')
+                        file_count+=1
+                        if file_count%1000==0:
+                            print('{} pcap files has been parsed...'.format(file_count))
+
+                    # Skip this pcap file 
+                    except (KeyError, AttributeError):
+                        logging.exception('Serious error in file {}. Traffic is skipped'.format(f))
+                        continue
+
     print("{} pcap files have been successfully parsed from {} with features generated".format(file_count, pcap_dir))
 
 # Iterate through pcap files and identify all enums
