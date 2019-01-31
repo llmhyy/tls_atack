@@ -133,7 +133,7 @@ while i < len(websites):
 	try:
 		#Use java to perform the request with sslv3
 		try:
-			s = subprocess.check_output(["curl", websites[i][0], "--sslv3"]).decode("utf-8");
+			s = subprocess.check_output(["curl", websites[i][0], "--sslv3", "-k"]).decode("utf-8");
 		except UnicodeDecodeError as e:
 			#Assume success
 			done = 1
