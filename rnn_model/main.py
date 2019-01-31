@@ -43,7 +43,7 @@ features = json.loads(pf.get_features(args.feature))
 batch_dim = len(features)
 sequence_dim = max(list(map(len, features)))
 feature_dim = features[0][0]
-sequence_len = np.array([len(sample) for sample in features])
+sequence_len = np.asarray([len(sample) for sample in features])
 features_pad = pad_sequences(features, maxlen=sequence_dim, dtype='float32', padding='post',value=0.0)
 #print(features_pad.shape)  # shape (3496,100,19)
 
@@ -251,8 +251,8 @@ def cos_sim_truetraffic(predict_data, true_data, seq_len):
         for i in range(cos_sim.shape[0]):
             mean_cos_sim_traffic.append(np.mean(cos_sim[i,0:seq_len[i]]))
             median_cos_sim_traffic.append(np.median(cos_sim[i,0:seq_len[i]]))
-        mean_cos_sim_traffic = np.array(mean_cos_sim_traffic)
-        median_cos_sim_traffic = np.array(median_cos_sim_traffic)
+        mean_cos_sim_traffic = np.asarray(mean_cos_sim_traffic)
+        median_cos_sim_traffic = np.asarray(median_cos_sim_traffic)
 
         overall_mean = np.mean(mean_cos_sim_traffic)
         overall_median = np.median(median_cos_sim_traffic)
