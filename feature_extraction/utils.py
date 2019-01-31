@@ -428,6 +428,7 @@ def extract_tslssl_features(pcapfile, enums):
 
         # 2: ClientHello - CIPHER SUITE
         ciphersuite_feature = np.zeros_like(enumCipherSuites) # enumCipherSuites is the ref list
+        ciphersuite_feature = np.concatenate((ciphersuite_feature, np.array([0]))) # For unknown dim
         try: 
             handshake = find_handshake(packet_json.ssl, target_type = 1)
             if handshake:
@@ -437,6 +438,7 @@ def extract_tslssl_features(pcapfile, enums):
                         ciphersuite_feature[enumCipherSuites.index(ciphersuite_int)] = 1
                     else:
                         logging.warning('Unseen cipher suite ({}) in file {} '.format(ciphersuite,pcapfile))
+                        ciphersuite_feature[-1] = 1
                 features.extend(ciphersuite_feature)
             else:
                 features.extend(ciphersuite_feature)
@@ -455,6 +457,7 @@ def extract_tslssl_features(pcapfile, enums):
 
         # 4: ClientHello - COMPRESSION METHOD
         compressionmethod_feature = np.zeros_like(enumCompressionMethods)
+        compressionmethod_feature = np.concatenate((compressionmethod_feature, np.array([0]))) # For unknown dim
         try:
             handshake = find_handshake(packet_json.ssl, target_type=1)
             if handshake:
@@ -462,9 +465,10 @@ def extract_tslssl_features(pcapfile, enums):
                 for compression_method in compression_methods:
                     compression_method_int = int(compression_method, 16) # in hdexdecimal
                     if compression_method_int in enumCompressionMethods:
-                        compressionmethod_feature[enumCompressionMethods.index(compression_method_int)]=1
+                        compressionmethod_feature[enumCompressionMethods.index(compression_method_int)] = 1
                     else:
                         logging.warning('Unseen compression method ({}) in file {}'.format(compression_method,pcapfile))
+                        compressionmethod_feature[-1] = 1
                 features.extend(compressionmethod_feature)
             else:
                 features.extend(compressionmethod_feature)
@@ -487,6 +491,7 @@ def extract_tslssl_features(pcapfile, enums):
 
         # 6: ClientHello - SUPPORTED GROUPS
         supportedgroup_feature = np.zeros_like(enumSupportedGroups)
+        supportedgroup_feature = np.concatenate((supportedgroup_feature, np.array([0]))) # For unknown dim
         try:
             handshake = find_handshake(packet_json.ssl, target_type=1)
             if handshake:
@@ -499,6 +504,7 @@ def extract_tslssl_features(pcapfile, enums):
                                 supportedgroup_feature[enumSupportedGroups.index(supported_group_int)] = 1
                             else:
                                 logging.warning('Unseen supported group ({}) in file {}'.format(supported_group,pcapfile))
+                                supportedgroup_feature[-1] = 1
                 features.extend(supportedgroup_feature)
             else:
                 features.extend(supportedgroup_feature)
@@ -535,6 +541,7 @@ def extract_tslssl_features(pcapfile, enums):
 
         # 9: ClientHello - SIGNATURE HASH ALGORITHM
         sighash_features_client = np.zeros_like(enumSignatureHashClient)
+        sighash_features_client = np.concatenate((sighash_features_client, np.array([0]))) # For unknown dim
         try:
             handshake = find_handshake(packet_json.ssl, target_type=1)
             if handshake:
@@ -547,6 +554,7 @@ def extract_tslssl_features(pcapfile, enums):
                                 sighash_features_client[enumSignatureHashClient.index(signature_algorithm_int)]=1
                             else:
                                 logging.warning('Unseen signature hash algo in Clienthello ({}) in file {}'.format(signature_algorithm,pcapfile))
+                                sighash_features_client[-1] = 1
                 features.extend(sighash_features_client)
             else:
                 features.extend(sighash_features_client)
@@ -605,7 +613,8 @@ def extract_tslssl_features(pcapfile, enums):
             features.extend([0,0,0,0])
 
         # 17: Certificate - SIGNATURE ALGORITHM
-        sighash_features = np.zeros_like(enumSignatureHashCert, dtype='int32') # enumSignatureHashCert is the ref list
+        sighash_features_cert = np.zeros_like(enumSignatureHashCert, dtype='int32') # enumSignatureHashCert is the ref list
+        sighash_features_cert = np.concatenate((sighash_features_cert, np.array([0]))) # For unknown dim
         try: 
             handshake = find_handshake(packet_json.ssl, target_type = 11)
         except:
@@ -620,9 +629,10 @@ def extract_tslssl_features(pcapfile, enums):
             for certificate in certificates:
                 algo_id = str(certificate.algorithmIdentifier_element.id)
                 if algo_id in enumSignatureHashCert:
-                    sighash_features[enumSignatureHashCert.index(algo_id)] = 1
+                    sighash_features_cert[enumSignatureHashCert.index(algo_id)] = 1
                 else:
                     logging.warning('Unseen signature hash algo in Cert ({}) in file {}'.format(algo_id, pcapfile))
+                    sighash_features_cert[-1] = 1
 
         elif handshake2:
             certificates = handshake2['ssl.handshake.certificates']['ssl.handshake.certificate_tree']
@@ -632,11 +642,12 @@ def extract_tslssl_features(pcapfile, enums):
                         for kk,vv in v.items():
                             if 'algorithm.id' in kk:
                                 if str(vv) in enumSignatureHashCert:
-                                    sighash_features[enumSignatureHashCert.index(str(vv))] = 1
+                                    sighash_features_cert[enumSignatureHashCert.index(str(vv))] = 1
                                 else:
                                     logging.warning('Unseen signature hash algo in Cert ({}) in file {}'.format(str(vv), pcapfile))
+                                    sighash_features_cert[-1] = 1
 
-        features.extend(sighash_features)
+        features.extend(sighash_features_cert)
 
         # 18: ServerHelloDone - LENGTH
         try:
@@ -731,7 +742,9 @@ def extract_tslssl_features(pcapfile, enums):
             features.append(int(appdata2['ssl.record.length']))
         else:
             features.append(0)
-
+        
+        # Convert to float for standardization
+        features = [float(i) for i in features]
         traffic_features.append(features)
 
     return traffic_features
@@ -758,14 +771,14 @@ if __name__ == '__main__':
     # sample = 'sample/ari.nus.edu.sg_2018-12-24_14-30-02.pcap'
     # sample = 'sample/www.zeroaggressionproject.org_2018-12-21_16-19-03.pcap'
     # sample = 'sample/www.stripes.com_2018-12-21_16-20-12.pcap'
-    # sample = 'sample/australianmuseum.net.au_2018-12-21_16-15-59.pcap'
+    sample = 'sample/australianmuseum.net.au_2018-12-21_16-15-59.pcap'
 
     # sample = 'sample/tls/www.tmr.qld.gov.au_2018-12-24_17-20-56.pcap'
     # sample = 'sample/tls/www.orkin.com_2018-12-24_17-10-27.pcap'
     # sample = 'sample/tls/whc.unesco.org_2018-12-24_17-09-08.pcap'
     # sample = 'sample/tls/dataverse.harvard.edu_2018-12-24_17-16-00.pcap'
     # sample = 'sample/tls/www.cancerresearchuk.org_2018-12-24_17-15-46.pcap'
-    sample = 'sample/tls/alis.alberta.ca_2019-01-22_19-26-05.pcap'
+    # sample = 'sample/tls/alis.alberta.ca_2019-01-22_19-26-05.pcap'
     
     # sample = 'sample/sslv3/www.ceemjournal.org_2018-12-28_17-18-46_0.pcap'
     # sample = 'sample/sslv3/www.britishmuseum.org_2018-12-28_17-22-11_0.pcap'
