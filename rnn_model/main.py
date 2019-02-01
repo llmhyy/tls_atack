@@ -2,6 +2,7 @@ import os
 import json
 import argparse
 import numpy as np
+from sys import getsizeof
 from datetime import datetime
 import keras
 from keras.preprocessing.sequence import pad_sequences
@@ -34,10 +35,16 @@ datetime_now = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
 
 ##########################################################################################
 
+# Python Generator to read csv file
+# def feature_generator(csvfile):
+#     with open(csvfile, 'r') as f:
+#     pass
+
 # Load the dataset into memory 
 # features = json.loads(pf.get_features('data/features.csv'))
 # features = json.loads(pf.get_features('data/features_tls_2019-01-24_16-53-53.csv'))
 features = json.loads(pf.get_features(args.feature))
+# print('Features:{}'.format(getsizeof(features)))
 
 # Initialize useful constants and pad the sequences to have equal length
 batch_dim = len(features)
@@ -75,6 +82,9 @@ elif args.norm == 3:
     #print(features_max)
     #print(features_scaled[200,4,:])
 
+# Limited the traffic length to first 100 in order to save memory. Mean of traffic = 43.5
+features_scaled = features_scaled[:,0:100,:]
+
 # Generate training input and output by lagging 1 timestep
 zero_features = np.zeros((features_scaled.shape[0],1,features_scaled.shape[2]))
 features_zero_appended = np.concatenate((zero_features, features_scaled), axis=1)
@@ -89,7 +99,6 @@ Y = features_zero_appended[:,1:,:]
 seed = 2019
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.3, random_state=seed)
 X_train_seqlen, X_test_seqlen, Y_train_seqlen, Y_test_seqlen = train_test_split(sequence_len, sequence_len, test_size=0.3, random_state=seed)
-
 # Verify that the train test split works on the sequence length as well
 #s = 468
 # print(X_train[s,X_train_seqlen[s],:])
@@ -142,6 +151,9 @@ class PredictEpoch(keras.callbacks.Callback):
     def on_epoch_end(self, epoch, logs={}):
         self.predict_train.append(self.model.predict(self.train))
         self.predict_test.append(self.model.predict(self.test))
+
+        # print(getsizeof(self.predict_train))
+        # print(getsizeof(self.predict_test))
 
 # Training the RNN model
 predictEpoch = PredictEpoch(X_train, X_test)
