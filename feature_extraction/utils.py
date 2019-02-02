@@ -772,6 +772,7 @@ if __name__ == '__main__':
     # sample = 'sample/www.zeroaggressionproject.org_2018-12-21_16-19-03.pcap'
     # sample = 'sample/www.stripes.com_2018-12-21_16-20-12.pcap'
     sample = 'sample/australianmuseum.net.au_2018-12-21_16-15-59.pcap'
+    # sample = 'sample/openssl102n.pcap'
 
     # sample = 'sample/tls/www.tmr.qld.gov.au_2018-12-24_17-20-56.pcap'
     # sample = 'sample/tls/www.orkin.com_2018-12-24_17-10-27.pcap'

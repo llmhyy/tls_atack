@@ -1,27 +1,31 @@
 import os
 import logging
-# import argparse
+import argparse
 import numpy as np
 from datetime import datetime
 
 import utils 
 
-# parser = argparse.ArgumentParser()
-# parser.add_argument('-p', '--pcap', help='Input directory where pcap files are stored', nargs='+', required=True)
-# parser.add_argument('-s', '--save', help='Input directory to save the csv file', required=True)
-# args = parser.parse_args()
+parser = argparse.ArgumentParser()
+parser.add_argument('-p', '--pcap', help='Input top-level directory of the module containing pcap files', required=True)
+args = parser.parse_args()
 
 logging.basicConfig(filename='output.log', level=logging.INFO,format='%(asctime)s-%(levelname)s-%(message)s')
 
-pcap_dir = '/Users/YiLong/Desktop/SUTD/NUS-Singtel_Research/tls_atack/legitimate traffic/'
-# pcap_tls_dir = '/Users/YiLong/Desktop/SUTD/NUS-Singtel_Research/tls_atack/legitimate traffic/output TLS/'
-pcap_tls_dir = '/Users/YiLong/Desktop/SUTD/NUS-Singtel_Research/tls_atack/new_traffic/output_TLS/'
-pcap_sslv3_dir = '/Users/YiLong/Desktop/SUTD/NUS-Singtel_Research/tls_atack/legitimate traffic/output_SSLv3/'
-features_csv = 'features_tls_{}.csv'.format(datetime.now().strftime('%Y-%m-%d_%H-%M-%S'))
-# features_csv = os.path.join(args.save, 'features_tls_{}.csv'.format(datetime.now().strftime('%Y-%m-%d_%H-%M-%S')))
+pcap_dir = args.pcap
+extracted_features = os.path.join(pcap_dir, 'extracted_features')
+# Create a new folder 'extracted_features' to store extracted features
+if not os.path.exists(extracted_features):
+    os.mkdir(extracted_features)
+datetime_now = datetime.now()
+# File for storing extracted features
+features_csv = os.path.join(extracted_features,'features_tls_{}.csv'.format(datetime_now.strftime('%Y-%m-%d_%H-%M-%S')))
+# File for storing information about enums used
+features_info = os.path.join(extracted_features, 'features_info_{}.txt'.format(datetime_now.strftime('%Y-%m-%d_%H-%M-%S')))
 
 def search_and_extract(pcap_dir, features_csv, enums):
-    file_count = 0
+    success = 0
+    failed = 0
     with open(features_csv, 'a', newline='') as csv:
         for root, dirs, files in os.walk(pcap_dir):
             for f in files:
@@ -41,28 +45,42 @@ def search_and_extract(pcap_dir, features_csv, enums):
                         for traffic_feature in traffic_features:
                             csv.write(str(traffic_feature)+', ')
                         csv.write('\n')
-                        file_count+=1
-                        if file_count%1000==0:
-                            print('{} pcap files has been parsed...'.format(file_count))
+                        success+=1
+                        if success%1000==0:
+                            print('{} pcap files has been parsed...'.format(success))
 
                     # Skip this pcap file 
                     except (KeyError, AttributeError):
                         logging.exception('Serious error in file {}. Traffic is skipped'.format(f))
+                        failed+=1
                         continue
 
-    print("{} pcap files have been successfully parsed from {} with features generated".format(file_count, pcap_dir))
+    print("{} pcap files have been successfully parsed from {} with features generated. {} pcap files have failed".format(success, pcap_dir, failed))
+
 
 # Iterate through pcap files and identify all enums
-enums_tls = utils.searchEnums(pcap_tls_dir, limit=1000)
-enum_sslv3 = utils.searchEnums(pcap_sslv3_dir, limit=1000)
-# enums = tuple(list(set(i[0]+i[1])) for i in zip(enums_tls, enum_sslv3))
-enums = {k:list(set(v+enum_sslv3[k])) for k,v in enums_tls.items()}
-for k,v in enums.items():
-    print('Enum: {}'.format(k))
-    print(v)
-    print('Length of enum: {}'.format(len(v)))
+if 'new_traffic' in pcap_dir:
+    # Traffic contains both TLS and SSLv3 traffic and both have wide differences in enums
+    enums_tls = utils.searchEnums(os.path.join(pcap_dir, 'output_TLS'), limit=1000)
+    enums_sslv3 = utils.searchEnums(os.path.join(pcap_dir, 'outsslv3'), limit=1000)
+    enums = {k:list(set(v+enums_sslv3[k])) for k,v in enums_tls.items()}
+elif 'legitimate traffic' in pcap_dir:
+    # Traffic contains both TLS and SSLv3 traffic and both have wide differences in enums
+    enums_tls = utils.searchEnums(os.path.join(pcap_dir, 'output TLS'), limit=3)
+    enums_sslv3 = utils.searchEnums(os.path.join(pcap_dir, 'output_SSLv3'), limit=3)
+    enums = {k:list(set(v+enums_sslv3[k])) for k,v in enums_tls.items()}
+else:
+    enums = utils.searchEnums(pcap_dir, limit=2000)
+
+with open(features_info, 'w') as f:
+    for k,v in enums.items():
+        print('Enum: {}'.format(k))
+        f.write('Enum: {}\n'.format(k))
+        print(v)
+        f.write(str(v)+'\n')
+        print('Length of enum: {}'.format(len(v)))
+        f.write('Length of enum: {}\n\n'.format(len(v)))
 
 # Iterate through pcap files and extract features
-search_and_extract(pcap_tls_dir, features_csv, enums)
-search_and_extract(pcap_sslv3_dir, features_csv, enums)
+search_and_extract(pcap_dir, features_csv, enums)
 
