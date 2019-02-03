@@ -2,3 +2,7 @@ rnn_model/venv
 rnn_model/__pycache__
 rnn_model/figlegend_demo.py
 rnn_model/slider_demo.py
+legitimate\ traffic/joy/
+venv/
+.idea/
+__pycache__/
