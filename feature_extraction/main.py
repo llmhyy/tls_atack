@@ -13,8 +13,6 @@ args = parser.parse_args()
 pcap_dir = args.traffic 
 extracted_features = os.path.join(pcap_dir, 'extracted_features')
 
-logging.basicConfig(filename=os.path.join(extracted_features,'output.log'), level=logging.INFO,format='%(asctime)s-%(levelname)s-%(message)s')
-
 # Create a new directory 'extracted_features' to store extracted features
 if not os.path.exists(extracted_features):
     os.mkdir(extracted_features)
@@ -23,6 +21,8 @@ datetime_now = datetime.now()
 features_csv = os.path.join(extracted_features,'features_tls_{}.csv'.format(datetime_now.strftime('%Y-%m-%d_%H-%M-%S')))
 # File for storing information about enums used
 features_info = os.path.join(extracted_features, 'features_info_{}.txt'.format(datetime_now.strftime('%Y-%m-%d_%H-%M-%S')))
+
+logging.basicConfig(filename=os.path.join(extracted_features,'output.log'), level=logging.INFO,format='%(asctime)s-%(levelname)s-%(message)s')
 
 def search_and_extract(pcap_dir, features_csv, enums):
     success = 0
