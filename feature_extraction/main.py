@@ -10,10 +10,11 @@ parser = argparse.ArgumentParser()
 parser.add_argument('-t', '--traffic', help='Input top-level directory of the traffic module containing pcap files', required=True)
 args = parser.parse_args()
 
-logging.basicConfig(filename='output.log', level=logging.INFO,format='%(asctime)s-%(levelname)s-%(message)s')
-
 pcap_dir = args.traffic 
 extracted_features = os.path.join(pcap_dir, 'extracted_features')
+
+logging.basicConfig(filename=os.path.join(extracted_features,'output.log'), level=logging.INFO,format='%(asctime)s-%(levelname)s-%(message)s')
+
 # Create a new directory 'extracted_features' to store extracted features
 if not os.path.exists(extracted_features):
     os.mkdir(extracted_features)
@@ -66,8 +67,8 @@ if 'new_traffic' in pcap_dir:
     enums = {k:list(set(v+enums_sslv3[k])) for k,v in enums_tls.items()}
 elif 'legitimate traffic' in pcap_dir:
     # Traffic contains both TLS and SSLv3 traffic and both have wide differences in enums
-    enums_tls = utils.searchEnums(os.path.join(pcap_dir, 'output TLS'), limit=3)
-    enums_sslv3 = utils.searchEnums(os.path.join(pcap_dir, 'output_SSLv3'), limit=3)
+    enums_tls = utils.searchEnums(os.path.join(pcap_dir, 'output TLS'), limit=1000)
+    enums_sslv3 = utils.searchEnums(os.path.join(pcap_dir, 'output_SSLv3'), limit=1000)
     enums = {k:list(set(v+enums_sslv3[k])) for k,v in enums_tls.items()}
 else:
     enums = utils.searchEnums(pcap_dir, limit=2000)
