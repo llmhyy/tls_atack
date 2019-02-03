@@ -7,7 +7,7 @@ from matplotlib.widgets import Slider, Button, RadioButtons
 
 #defaults to rcParams["figure.figsize"] = [6.4, 4.8]
 
-def visualize_traffic(predict_train, true_train, predict_test, true_test, save=False, dim=7):
+def visualize_traffic(predict_train, true_train, predict_test, true_test, save, dim=7, show=False):
     """
     Given an array, visualize the traffic over time in a given dimension. This helps us to understand
     whether the model is learning anything at all. We can callback this method at every epoch to observe 
@@ -68,9 +68,12 @@ def visualize_traffic(predict_train, true_train, predict_test, true_test, save=F
     
     s.on_changed(update)
 
-    if save:
-        for epoch in range(1, len(predict_train), len(predict_train)//10):
-            manual_update(epoch)
-            plt.savefig(os.path.join(save, 'traffic_len', 'traffic_len_epoch{}'.format(epoch)))
-    else:
+    traffic_len = os.path.join(save, 'traffic_len')
+    if not os.path.exists(traffic_len):
+        os.mkdir(traffic_len)
+    for epoch in range(1, len(predict_train), max(len(predict_train)//10, 1)):
+        manual_update(epoch)
+        plt.savefig(os.path.join(traffic_len, 'traffic_len_epoch{}'.format(epoch)))
+    if show:
         plt.show()
+    plt.clf()

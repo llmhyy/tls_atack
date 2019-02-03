@@ -7,14 +7,14 @@ from datetime import datetime
 import utils 
 
 parser = argparse.ArgumentParser()
-parser.add_argument('-p', '--pcap', help='Input top-level directory of the module containing pcap files', required=True)
+parser.add_argument('-t', '--traffic', help='Input top-level directory of the traffic module containing pcap files', required=True)
 args = parser.parse_args()
 
 logging.basicConfig(filename='output.log', level=logging.INFO,format='%(asctime)s-%(levelname)s-%(message)s')
 
-pcap_dir = args.pcap
+pcap_dir = args.traffic 
 extracted_features = os.path.join(pcap_dir, 'extracted_features')
-# Create a new folder 'extracted_features' to store extracted features
+# Create a new directory 'extracted_features' to store extracted features
 if not os.path.exists(extracted_features):
     os.mkdir(extracted_features)
 datetime_now = datetime.now()

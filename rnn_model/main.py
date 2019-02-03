@@ -22,12 +22,21 @@ import visualization as viz
 parser = argparse.ArgumentParser()
 parser.add_argument('-n', '--norm', help='Input normalization options for features', default=1, type=int, choices=[1,2,3])
 parser.add_argument('-e', '--epoch', help='Input epoch for training', default=100, type=int)
-parser.add_argument('-f', '--feature', help='Input directory of feature file to be used', required=True)
-parser.add_argument('-s', '--save', help='Flag for saving the plots. If not, it is displayed', action='store_true')
+parser.add_argument('-t', '--traffic', help='Input top-level directory of the traffic module containing extracted features', required=True)
+parser.add_argument('-f', '--feature', help='Input filename of feature to be used', required=True)
+parser.add_argument('-s', '--show', help='Flag for displaying plots', action='store_true', default=False)
 parser.add_argument('-m', '--model', help='Input directory for existing model to be trained')
 args = parser.parse_args()
 
+# Config info
 datetime_now = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
+batch_size = 64
+epoch = args.epoch
+feature_file = args.feature
+existing_model = args.model
+split_ratio = 0.3
+seed = 2019
+
 
 ##########################################################################################
 
@@ -35,16 +44,12 @@ datetime_now = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
 
 ##########################################################################################
 
-# Python Generator to read csv file
-# def feature_generator(csvfile):
-#     with open(csvfile, 'r') as f:
-#     pass
-
+# Search for extracted_features directory
+extracted_features = os.path.join(args.traffic, 'extracted_features')
+if not os.path.exists(extracted_features):
+    raise FileNotFoundError("Directory extracted_features not found. Extract features first")
 # Load the dataset into memory 
-# features = json.loads(pf.get_features('data/features.csv'))
-# features = json.loads(pf.get_features('data/features_tls_2019-01-24_16-53-53.csv'))
-features = json.loads(pf.get_features(args.feature))
-# print('Features:{}'.format(getsizeof(features)))
+features = json.loads(pf.get_features(os.path.join(os.path.join(extracted_features, feature_file))))
 
 # Initialize useful constants and pad the sequences to have equal length
 batch_dim = len(features)
@@ -96,9 +101,8 @@ Y = features_zero_appended[:,1:,:]
 #sequence_len = np.concatenate((np.array([0]),sequence_len))
 
 # Split dataset into train and test
-seed = 2019
-X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.3, random_state=seed)
-X_train_seqlen, X_test_seqlen, Y_train_seqlen, Y_test_seqlen = train_test_split(sequence_len, sequence_len, test_size=0.3, random_state=seed)
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=split_ratio, random_state=seed)
+X_train_seqlen, X_test_seqlen, Y_train_seqlen, Y_test_seqlen = train_test_split(sequence_len, sequence_len, test_size=split_ratio, random_state=seed)
 # Verify that the train test split works on the sequence length as well
 #s = 468
 # print(X_train[s,X_train_seqlen[s],:])
@@ -126,8 +130,8 @@ X_train_seqlen, X_test_seqlen, Y_train_seqlen, Y_test_seqlen = train_test_split(
 ##########################################################################################
 
 # Build RNN model or Load existing RNN model
-if args.model:
-    model = load_model(args.model)
+if existing_model:
+    model = load_model(existing_model)
     model.summary()
 else:
     model = Sequential()
@@ -157,7 +161,7 @@ class PredictEpoch(keras.callbacks.Callback):
 
 # Training the RNN model
 predictEpoch = PredictEpoch(X_train, X_test)
-history = model.fit(X_train,Y_train, validation_data = (X_test, Y_test),batch_size=64, epochs=args.epoch, callbacks=[predictEpoch])
+history = model.fit(X_train,Y_train, validation_data = (X_test, Y_test),batch_size=batch_size, epochs=epoch, callbacks=[predictEpoch])
 
 # Evaluate the RNN model on validation dataset
 #score = model.evaluate(X_test, Y_test, batch_size=64)
@@ -271,7 +275,7 @@ def cos_sim_truetraffic(predict_data, true_data, seq_len):
         cos_sim_epoch.append((overall_mean, overall_median))
     return (mean_cos_sim_traffic, median_cos_sim_traffic, cos_sim_epoch)
 
-def generate_plot(results_train, results_test, first=None, save=False):
+def generate_plot(results_train, results_test, first, save, show=False):
     """
     Accepts a train and test object, which are generated from the function cos_sim_traffic
 
@@ -311,11 +315,13 @@ def generate_plot(results_train, results_test, first=None, save=False):
     plt.ylabel('Mean Cosine Similarity')
     plt.xlabel('Traffic #')
 
-    if save:
-        plt.savefig(os.path.join(save,'acc_dist','acc_dist_{}pkts').format(first))
-        plt.clf()
-    else:
+    acc_dist = os.path.join(save, 'acc_dist')
+    if not os.path.exists(acc_dist):
+        os.mkdir(acc_dist)
+    plt.savefig(os.path.join(acc_dist,'acc_dist_{}pkts').format(first))
+    if show:
         plt.show()
+    plt.clf()
 
 ##########################################################################################
 
@@ -323,19 +329,25 @@ def generate_plot(results_train, results_test, first=None, save=False):
 
 ##########################################################################################
 
-results_dir = None
-if args.save:
-    results_dir = os.path.join('results', 'expt_{}'.format(datetime_now))
-    if not os.path.exists(results_dir):
-        os.mkdir(results_dir)
-        os.mkdir(os.path.join(results_dir,'acc_dist'))
-        os.mkdir(os.path.join(results_dir,'traffic_len'))
+trained_rnn = os.path.join(args.traffic, 'trained_rnn')
+trained_rnn_expt = os.path.join(trained_rnn, 'expt_{}'.format(datetime_now))
+trained_rnn_results = os.path.join(trained_rnn_expt, 'results')
+trained_rnn_model = os.path.join(trained_rnn_expt, 'model')
+
+# Create a new directory 'trained_rnn' to store model and results for training rnn on this traffic
+if not os.path.exists(trained_rnn):
+    os.mkdir(trained_rnn)
+
+# Create directories for current experiment
+os.mkdir(trained_rnn_expt)
+os.mkdir(trained_rnn_results)
+os.mkdir(trained_rnn_model)
 
 plt.rcParams['figure.figsize'] = (10,7)
 plt.rcParams['legend.fontsize'] = 8
 
 # Visualize the model prediction on a specified dimension (default:packet length) over epochs
-viz.visualize_traffic(predictEpoch.predict_train, Y_train, predictEpoch.predict_test, Y_test, save=results_dir)
+viz.visualize_traffic(predictEpoch.predict_train, Y_train, predictEpoch.predict_test, Y_test, save=trained_rnn_results, show=args.show)
 
 # Generate result plots for true traffic
 acc_pkttrue_train = cos_sim_truetraffic(predictEpoch.predict_train, Y_train, Y_train_seqlen)
@@ -344,7 +356,7 @@ print('Final cosine similarity for true traffic on train data')
 print(acc_pkttrue_train[-1][-1])
 print('Final cosine similarity for true traffic on test data')
 print(acc_pkttrue_test[-1][-1])
-generate_plot(acc_pkttrue_train, acc_pkttrue_test, first='True', save=results_dir)
+generate_plot(acc_pkttrue_train, acc_pkttrue_test, first='True', save=trained_rnn_results, show=args.show)
 
 # Generate result plots for first packet
 acc_pkt1_train = cos_sim_onepacket(predictEpoch.predict_train, Y_train, packet_id=0)
@@ -353,7 +365,7 @@ print('Final cosine similarity of first packet on train data')
 print(acc_pkt1_train[-1][-1])
 print('Final cosine similarity of first packet on test data')
 print(acc_pkt1_test[-1][-1])
-generate_plot(acc_pkt1_train, acc_pkt1_test, first=1, save=results_dir)
+generate_plot(acc_pkt1_train, acc_pkt1_test, first=1, save=trained_rnn_results, show=args.show)
 
 # Generate result plots for first 10,20,...,90,100 packets
 for pktlen in range(10,101,10):
@@ -363,7 +375,7 @@ for pktlen in range(10,101,10):
     print(acc_pkt_train[-1][-1])
     print('Final cosine similarity for the first {} packets on test data'.format(pktlen))
     print(acc_pkt_test[-1][-1])
-    generate_plot(acc_pkt_train, acc_pkt_test, first=pktlen, save=results_dir)
+    generate_plot(acc_pkt_train, acc_pkt_test, first=pktlen, save=trained_rnn_results, show=args.show)
 
 # Generate plots for training & validation loss
 plt.plot(history.history['loss'])
@@ -373,10 +385,25 @@ plt.ylabel('Loss')
 plt.xlabel('Epoch')
 plt.legend(['Train', 'Val'], loc='upper left')
 
-if results_dir:
-    plt.savefig(os.path.join(results_dir,'loss'))
-else:
+plt.savefig(os.path.join(trained_rnn_results,'loss'))
+if args.show:
     plt.show()
+plt.clf()
 
 # Save the model
-model.save('model/rnnmodel_{}.h5'.format(datetime_now))
+model.save(os.path.join(trained_rnn_model,'rnnmodel_{}.h5'.format(datetime_now)))
+
+# Save model config information
+train_info = os.path.join(trained_rnn_model, 'train_info_{}.txt'.format(datetime_now))
+with open(train_info, 'w') as f:
+    # Datetime
+    f.write('####################################\n\n')
+    f.write('Training Date: {}\n'.format(datetime_now.split('_')[0]))
+    f.write('Training Time: {}\n'.format(datetime_now.split('_')[1]))
+    f.write('Batch Size: {}\n'.format(batch_size))
+    f.write('Epoch: {}\n'.format(epoch))
+    f.write('Feature file used: {}\n'.format(feature_file))
+    f.write("Existing model used: {}\n".format(existing_model))
+    f.write("Split Ratio: {}\n".format(split_ratio))
+    f.write("Seed: {}\n\n".format(seed))
+    f.write('####################################')
