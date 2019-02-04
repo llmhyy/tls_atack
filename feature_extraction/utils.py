@@ -145,108 +145,114 @@ def searchEnums(rootdir, limit):
     for root, dirs, files in os.walk(rootdir):
         for f in files:
             if f.endswith(".pcap"):
-                #print("Processing {}".format(f))
-                logging.info("Processing {}".format(f))
-                # Might need to close FileCapture somehow to prevent the another loop running
-                packets_json = pyshark.FileCapture(os.path.join(root, f), use_json=True)
+                try:
+                    #print("Processing {}".format(f))
+                    logging.info("Processing {}".format(f))
+                    # Might need to close FileCapture somehow to prevent the another loop running
+                    packets_json = pyshark.FileCapture(os.path.join(root, f), use_json=True)
 
-                starttime = time.time()
-                totaltime = 0.0
-                found_clienthello = False # Variable for ending the packet loop if ClientHello is found
-                found_certificate = False # Variable for ending the packet loop if Certificate is found
+                    starttime = time.time()
+                    totaltime = 0.0
+                    found_clienthello = False # Variable for ending the packet loop if ClientHello is found
+                    found_certificate = False # Variable for ending the packet loop if Certificate is found
 
-                for packet_json in packets_json:
-                    starttime3 = time.time()
+                    for packet_json in packets_json:
+                        starttime3 = time.time()
 
-                    ########## For finding ClientHello ##########
-                    try:
-                        handshake = find_handshake(packet_json.ssl, target_type=1)
+                        ########## For finding ClientHello ##########
+                        try:
+                            handshake = find_handshake(packet_json.ssl, target_type=1)
+                            if handshake:
+                                # Cipher Suites
+                                traffic_ciphersuites = [int(j) for j in handshake.ciphersuites.ciphersuite]
+                                ciphersuites.extend(traffic_ciphersuites)
+
+                                # Compression Methods
+                                traffic_compressionmethods = handshake._all_fields['ssl.handshake.comp_methods']['ssl.handshake.comp_method']
+                                if type(traffic_compressionmethods)==list:
+                                    traffic_compressionmethods = [int(j) for j in traffic_compressionmethods]
+                                else:
+                                    traffic_compressionmethods = [int(traffic_compressionmethods)]
+                                compressionmethods.extend(traffic_compressionmethods)
+
+                                # Supported Groups
+                                for k,v in handshake._all_fields.items():
+                                    if 'supported_groups' in k:
+                                        traffic_supportedgroups = v['ssl.handshake.extensions_supported_groups']['ssl.handshake.extensions_supported_group']
+                                        traffic_supportedgroups = [int(j,16) for j in traffic_supportedgroups]
+                                        supportedgroups.extend(traffic_supportedgroups)
+
+                                # Signature Hash Algorithm
+                                for k,v in handshake._all_fields.items():
+                                    if 'signature_algorithms' in k:
+                                        traffic_sighashalgorithms_client = v['ssl.handshake.sig_hash_algs']['ssl.handshake.sig_hash_alg']
+                                        traffic_sighashalgorithms_client = [int(j,16) for j in traffic_sighashalgorithms_client]
+                                        sighashalgorithms_client.extend(traffic_sighashalgorithms_client)
+
+                                found_clienthello = True
+
+                        except AttributeError:
+                            pass
+
+                        ########## For finding Certificate ##########
+                        try:
+                            handshake = find_handshake(packet_json.ssl, target_type = 11)
+                        except:
+                            handshake = None
+                        try:
+                            handshake2 = find_handshake2(packet_json.ssl.value, target_type = 11)
+                        except:
+                            handshake2 = None
+
+                        traffic_sighashalgorithms_cert = []
                         if handshake:
-                            # Cipher Suites
-                            traffic_ciphersuites = [int(j) for j in handshake.ciphersuites.ciphersuite]
-                            ciphersuites.extend(traffic_ciphersuites)
-                            
-                            # Compression Methods
-                            traffic_compressionmethods = handshake._all_fields['ssl.handshake.comp_methods']['ssl.handshake.comp_method']
-                            if type(traffic_compressionmethods)==list:
-                                traffic_compressionmethods = [int(j) for j in traffic_compressionmethods]
-                            else:
-                                traffic_compressionmethods = [int(traffic_compressionmethods)]
-                            compressionmethods.extend(traffic_compressionmethods)
-                            
-                            # Supported Groups
-                            for k,v in handshake._all_fields.items():
-                                if 'supported_groups' in k:
-                                    traffic_supportedgroups = v['ssl.handshake.extensions_supported_groups']['ssl.handshake.extensions_supported_group']
-                                    traffic_supportedgroups = [int(j,16) for j in traffic_supportedgroups]
-                                    supportedgroups.extend(traffic_supportedgroups)
+                            certificates = handshake.certificates.certificate_tree
+                            traffic_sighashalgorithms_cert = [str(certificate.algorithmIdentifier_element.id) for certificate in certificates]
+                            found_certificate = True
 
-                            # Signature Hash Algorithm
-                            for k,v in handshake._all_fields.items():
-                                if 'signature_algorithms' in k:
-                                    traffic_sighashalgorithms_client = v['ssl.handshake.sig_hash_algs']['ssl.handshake.sig_hash_alg']
-                                    traffic_sighashalgorithms_client = [int(j,16) for j in traffic_sighashalgorithms_client]
-                                    sighashalgorithms_client.extend(traffic_sighashalgorithms_client)
+                        elif handshake2:
+                            certificates = handshake2['ssl.handshake.certificates']['ssl.handshake.certificate_tree']
+                            for certificate in certificates:
+                                for k,v in certificate.items():
+                                    if 'algorithmIdentifier_element' in k:
+                                        for kk,vv in v.items():
+                                            if 'algorithm.id' in kk:
+                                                traffic_sighashalgorithms_cert.append(str(vv))
+                            found_certificate = True
 
-                            found_clienthello = True
-                    
-                    except AttributeError:
-                        pass
+                        sighashalgorithms_cert.extend(traffic_sighashalgorithms_cert)
 
-                    ########## For finding Certificate ##########
-                    try: 
-                        handshake = find_handshake(packet_json.ssl, target_type = 11)
-                    except:
-                        handshake = None
-                    try:
-                        handshake2 = find_handshake2(packet_json.ssl.value, target_type = 11)
-                    except:
-                        handshake2 = None
 
-                    traffic_sighashalgorithms_cert = []
-                    if handshake:
-                        certificates = handshake.certificates.certificate_tree
-                        traffic_sighashalgorithms_cert = [str(certificate.algorithmIdentifier_element.id) for certificate in certificates]
-                        found_certificate = True
+                        logging.debug("Time spent on packet: {}s".format(time.time()-starttime3))
+                        totaltime = totaltime + (time.time()-starttime3)
+                        # Break the loop once both ClientHello and Certificate are found
+                        if found_clienthello and found_certificate:
+                            break
 
-                    elif handshake2:
-                        certificates = handshake2['ssl.handshake.certificates']['ssl.handshake.certificate_tree']
-                        for certificate in certificates:
-                            for k,v in certificate.items():
-                                if 'algorithmIdentifier_element' in k:
-                                    for kk,vv in v.items():
-                                        if 'algorithm.id' in kk:
-                                            traffic_sighashalgorithms_cert.append(str(vv))
-                        found_certificate = True
-                    
-                    sighashalgorithms_cert.extend(traffic_sighashalgorithms_cert)
+                    logging.debug("Time spent on traffic: {}s".format(time.time()-starttime))
+                    logging.debug("Total time accumulated on traffic: {}s".format(totaltime))
 
-                    
-                    logging.debug("Time spent on packet: {}s".format(time.time()-starttime3))
-                    totaltime = totaltime + (time.time()-starttime3)
-                    # Break the loop once both ClientHello and Certificate are found
-                    if found_clienthello and found_certificate:
+                    # If ClientHello cannot be found in the traffic
+                    if not found_clienthello:
+                        logging.warning("No ClientHello found for file {}".format(os.path.join(root,f)))
+                    if not found_certificate:
+                        logging.warning("No Certificate found for file {}".format(os.path.join(root,f)))
+
+                    ciphersuites = list(set(ciphersuites))
+                    compressionmethods = list(set(compressionmethods))
+                    supportedgroups = list(set(supportedgroups))
+                    sighashalgorithms_client = list(set(sighashalgorithms_client))
+                    sighashalgorithms_cert = list(set(sighashalgorithms_cert))
+
+                    debug_count += 1
+
+                    if debug_count>=limit:
                         break
 
-                logging.debug("Time spent on traffic: {}s".format(time.time()-starttime))
-                logging.debug("Total time accumulated on traffic: {}s".format(totaltime))
-
-                # If ClientHello cannot be found in the traffic
-                if not found_clienthello:
-                    logging.warning("No ClientHello found for file {}".format(os.path.join(root,f)))
-                if not found_certificate:
-                    logging.warning("No Certificate found for file {}".format(os.path.join(root,f)))
-
-                ciphersuites = list(set(ciphersuites))
-                compressionmethods = list(set(compressionmethods))
-                supportedgroups = list(set(supportedgroups))
-                sighashalgorithms_client = list(set(sighashalgorithms_client))
-                sighashalgorithms_cert = list(set(sighashalgorithms_cert))
-
-                debug_count += 1
-
-                if debug_count>=limit:
-                    break
+                # Skip this pcap file
+                except (KeyError, AttributeError):
+                    logging.exception('Serious error in file {}. Traffic is skipped'.format(f))
+                    continue
 
         if debug_count>=limit:
             break
