@@ -32,6 +32,7 @@ args = parser.parse_args()
 datetime_now = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
 batch_size = 64
 epoch = args.epoch
+save_every_epoch = 5
 feature_file = args.feature
 existing_model = args.model
 split_ratio = 0.3
@@ -153,8 +154,9 @@ class PredictEpoch(keras.callbacks.Callback):
         self.predict_test = []
 
     def on_epoch_end(self, epoch, logs={}):
-        self.predict_train.append(self.model.predict(self.train))
-        self.predict_test.append(self.model.predict(self.test))
+        if epoch%save_every_epoch==0:
+            self.predict_train.append(self.model.predict(self.train))
+            self.predict_test.append(self.model.predict(self.test))
 
         # print(getsizeof(self.predict_train))
         # print(getsizeof(self.predict_test))
@@ -292,10 +294,11 @@ def generate_plot(results_train, results_test, first, save, show=False):
     median_history_train = [i[1] for i in results_train[-1]]
     mean_history_test = [i[0] for i in results_test[-1]]
     median_history_test = [i[1] for i in results_test[-1]]
-    plt.plot(mean_history_train, alpha=0.7)
-    plt.plot(median_history_train, alpha=0.7)
-    plt.plot(mean_history_test, alpha=0.7)
-    plt.plot(median_history_test, alpha=0.7)
+    x_values = [i for i in range(0, epoch, save_every_epoch)]
+    plt.plot(x_values, mean_history_train, alpha=0.7)
+    plt.plot(x_values, median_history_train, alpha=0.7)
+    plt.plot(x_values, mean_history_test, alpha=0.7)
+    plt.plot(x_values, median_history_test, alpha=0.7)
     plt.title('Model cosine similarity for first {} pkts'.format(first))
     plt.ylabel('Cosine Similarity')
     plt.xlabel('Epoch')
