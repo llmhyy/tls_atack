@@ -21,8 +21,7 @@ with open(full_path,'r') as f:
             count+=1
             new_filename = os.path.join(path, real_filename, real_filename+'_'+str(count)+fileextension)
             out_f = open(new_filename,'w')
-        else:
-            out_f.write(line)
+        out_f.write(line)
     out_f.close()
 
 
