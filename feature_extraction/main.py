@@ -51,7 +51,7 @@ def search_and_extract(pcap_dir, features_csv, enums):
                             print('{} pcap files has been parsed...'.format(success))
 
                     # Skip this pcap file 
-                    except (KeyError, AttributeError):
+                    except (KeyError, AttributeError, TypeError):
                         logging.exception('Serious error in file {}. Traffic is skipped'.format(f))
                         failed+=1
                         continue
