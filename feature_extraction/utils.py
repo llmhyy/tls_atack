@@ -140,7 +140,8 @@ def searchEnums(rootdir, limit):
     sighashalgorithms_client = []
     sighashalgorithms_cert = []
 
-    debug_count = 0
+    success = 0
+    failed = 0
     logging.info("Traversing through directory to find all enums...")
     for root, dirs, files in os.walk(rootdir):
         for f in files:
@@ -244,20 +245,22 @@ def searchEnums(rootdir, limit):
                     sighashalgorithms_client = list(set(sighashalgorithms_client))
                     sighashalgorithms_cert = list(set(sighashalgorithms_cert))
 
-                    debug_count += 1
+                    success += 1
 
-                    if debug_count>=limit:
+                    if success>=limit:
                         break
 
                 # Skip this pcap file
-                except (KeyError, AttributeError):
+                except (KeyError, AttributeError, TypeError):
                     logging.exception('Serious error in file {}. Traffic is skipped'.format(f))
+                    failed+=1
                     continue
 
-        if debug_count>=limit:
+        if success>=limit:
             break
 
     logging.info("Done processing enum")
+    print("Processing enums: {} success, {} failure".format(success, failed))
 
     enum = {}
     enum['ciphersuites'] = ciphersuites

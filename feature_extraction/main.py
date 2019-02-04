@@ -56,7 +56,8 @@ def search_and_extract(pcap_dir, features_csv, enums):
                         failed+=1
                         continue
 
-    print("{} pcap files have been successfully parsed from {} with features generated. {} pcap files have failed".format(success, pcap_dir, failed))
+    # print("{} pcap files have been successfully parsed from {} with features generated. {} pcap files have failed".format(success, pcap_dir, failed))
+    print("Extracted features from pcap files: {} success, {} failure".format(success, failed))
 
 
 # Iterate through pcap files and identify all enums
