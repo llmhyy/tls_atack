@@ -7,7 +7,7 @@ from matplotlib.widgets import Slider, Button, RadioButtons
 
 #defaults to rcParams["figure.figsize"] = [6.4, 4.8]
 
-def visualize_traffic(predict_train, true_train, predict_test, true_test, save_every_epoch, save, dim=7, show=False):
+def visualize_traffic(predict_train, true_train, predict_test, true_test, save_every_epoch, save, show=False):
     """
     Given an array, visualize the traffic over time in a given dimension. This helps us to understand
     whether the model is learning anything at all. We can callback this method at every epoch to observe 
@@ -25,11 +25,11 @@ def visualize_traffic(predict_train, true_train, predict_test, true_test, save_e
     for i, index in enumerate(zip(train_random,test_random)):
         ax[0,i].set_ylim([0,1])
         ax[1,i].set_ylim([0,1])
-        predict = ax[0,i].plot(predict_train[0][index[0],:,dim],)
-        true = ax[0,i].plot(true_train[index[0],:,dim], alpha=0.5)
+        predict = ax[0,i].plot(predict_train[0,index[0],:,0],)
+        true = ax[0,i].plot(true_train[0,index[0],:,0], alpha=0.8)
         ax[0,i].set_title('Train #{}'.format(index[0]))
-        ax[1,i].plot(predict_test[0][index[1],:,dim])
-        ax[1,i].plot(true_train[index[1],:,dim], alpha=0.5)
+        ax[1,i].plot(predict_test[0,index[1],:,0])
+        ax[1,i].plot(true_train[0,index[1],:,0], alpha=0.8)
         ax[1,i].set_title('Test #{}'.format(index[1]))
     fig.legend((predict[0], true[0]),('Predict','True'),loc='center left')
     
@@ -44,11 +44,11 @@ def visualize_traffic(predict_train, true_train, predict_test, true_test, save_e
             ax[1,i].clear()
             ax[0,i].set_ylim([0,1])
             ax[1,i].set_ylim([0,1])
-            ax[0,i].plot(predict_train[epoch-1][index[0],:,dim])
-            ax[0,i].plot(true_train[index[0],:,dim], alpha=0.8)
+            ax[0,i].plot(predict_train[epoch-1,index[0],:,0])
+            ax[0,i].plot(true_train[0,index[0],:,0], alpha=0.8)
             ax[0,i].set_title('Train #{}'.format(index[0]))
-            ax[1,i].plot(predict_test[epoch-1][index[1],:,dim])
-            ax[1,i].plot(true_train[index[1],:,dim], alpha=0.8)
+            ax[1,i].plot(predict_test[epoch-1,index[1],:,0])
+            ax[1,i].plot(true_train[0,index[1],:,0], alpha=0.8)
             ax[1,i].set_title('Test #{}'.format(index[1]))
         fig.canvas.draw_idle()
 
@@ -58,11 +58,11 @@ def visualize_traffic(predict_train, true_train, predict_test, true_test, save_e
             ax[1,i].clear()
             ax[0,i].set_ylim([0,1])
             ax[1,i].set_ylim([0,1])
-            ax[0,i].plot(predict_train[epoch-1][index[0],:,dim])
-            ax[0,i].plot(true_train[index[0],:,dim], alpha=0.8)
+            ax[0,i].plot(predict_train[epoch-1,index[0],:,0])
+            ax[0,i].plot(true_train[0,index[0],:,0], alpha=0.8)
             ax[0,i].set_title('Train #{}'.format(index[0]))
-            ax[1,i].plot(predict_test[epoch-1][index[1],:,dim])
-            ax[1,i].plot(true_train[index[1],:,dim], alpha=0.8)
+            ax[1,i].plot(predict_test[epoch-1,index[1],:,0])
+            ax[1,i].plot(true_train[0,index[1],:,0], alpha=0.8)
             ax[1,i].set_title('Test #{}'.format(index[1]))
         fig.canvas.draw_idle()
     

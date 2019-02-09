@@ -24,7 +24,7 @@ import matplotlib.pyplot as plt
 import parse_features as pf
 import visualization as viz
 import diagnostic as diag
-import metric as mt
+import metric
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-n', '--norm', help='Input normalization options for features', default=1, type=int, choices=[1,2,3])
@@ -40,7 +40,7 @@ DATETIME_NOW = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
 BATCH_SIZE = 64
 SEQUENCE_LEN = 100
 EPOCH = args.epoch
-SAVE_EVERY_EPOCH = 5
+SAVE_EVERY_EPOCH = 1
 SPLIT_RATIO = 0.3
 SEED = 2019
 feature_file = args.feature
@@ -165,7 +165,7 @@ TEST_SIZE = len(test_start_end_line)
 sample_traffic = json.loads('['+data[train_start_end_line[0][0]:train_start_end_line[0][1]+1].decode('ascii').strip().rstrip(',')+']')
 INPUT_DIM = len(sample_traffic[0])
 
-# Initialize the train and test generators
+# Initialize the train and test generators for model training
 train_generator = BatchGenerator(data, train_start_end_line, BATCH_SIZE, SEQUENCE_LEN)
 test_generator = BatchGenerator(data, test_start_end_line, BATCH_SIZE, SEQUENCE_LEN)
 
@@ -246,29 +246,94 @@ else:
     model.compile(loss='mean_squared_error',
                     optimizer='rmsprop')
 
-class PredictEpoch(keras.callbacks.Callback):
-    def __init__(self, train_generator, test_generator):
-        self.train_generator = train_generator
-        self.test_generator = test_generator
+class MetricEpoch(keras.callbacks.Callback):
+    def __init__(self, generator):
+        self.generator = generator
 
     def on_train_begin(self, logs={}):
-        self.predict_train = []
-        self.predict_test = []
+        self.mean_acc = {}
+        self.median_acc = {}
+        self.final_mean_acc = {}
+        self.predict_on_len = np.array([])
+        self.true_on_len = np.array([])
 
     def on_epoch_end(self, epoch, logs={}):
         # At the end of every epoch, we make a prediction and evaluate its accuracy, instead of savings the prediction...too much MEM!
         if epoch%SAVE_EVERY_EPOCH==0:
-            self.predict_train.append(self.model.predict_generator(self.train_generator))
-            self.predict_test.append(self.model.predict_generator(self.test_generator))
+            temp_mean_acc = {}
+            temp_median_acc = {}
+            temp_predict_on_len = np.array([])
+            temp_true_on_len = np.array([])
+
+            for (batch_inputs, batch_true, batch_seq_len) in self.generator:
+                batch_predict = self.model.predict_on_batch(batch_inputs)
+                batch_acc = metric.calculate_acc_of_traffic(batch_predict, batch_true)
+
+                # Calculate cosine similarity for true packets
+                if 'true' not in temp_mean_acc:
+                    temp_mean_acc['true'] = np.array([])
+                if 'true' not in temp_median_acc:
+                    temp_median_acc['true'] = np.array([])
+                for i,seq_len in enumerate(batch_seq_len):
+                    acc_spliced = batch_acc[i:i+1,0:seq_len] # slicing to retain the dimensionality
+                    mean_acc_of_true_traffic = metric.calculate_mean_acc_of_traffic(acc_spliced)
+                    median_acc_of_true_traffic = metric.calculate_median_acc_of_traffic(acc_spliced)
+                    temp_mean_acc['true'] = np.concatenate((temp_mean_acc['true'], mean_acc_of_true_traffic))
+                    temp_median_acc['true'] = np.concatenate((temp_median_acc['true'], median_acc_of_true_traffic))
+
+                # Calculate cosine similarity for packet length ranging from 10 to 100
+                for seq_len in range(10,101,10):
+                    if seq_len not in temp_mean_acc:
+                        temp_mean_acc[seq_len] = np.array([])
+                    if seq_len not in temp_median_acc:
+                        temp_median_acc[seq_len] = np.array([])
+                    batch_acc_spliced = batch_acc[:,0:seq_len]
+                    mean_batch_acc_of_traffic = metric.calculate_mean_acc_of_traffic(batch_acc_spliced)
+                    median_batch_acc_of_traffic = metric.calculate_median_acc_of_traffic(batch_acc_spliced)
+                    temp_mean_acc[seq_len] = np.concatenate((temp_mean_acc[seq_len], mean_batch_acc_of_traffic))
+                    temp_median_acc[seq_len] = np.concatenate((temp_median_acc[seq_len], median_batch_acc_of_traffic))
+
+                # Save prediction on packet length
+                batch_predict_len = batch_predict[:,:,7:8]
+                batch_true_len = batch_true[:,:,7:8]
+                if temp_predict_on_len.size==0:
+                    temp_predict_on_len = temp_predict_on_len.reshape(0,batch_predict_len.shape[1], batch_predict_len.shape[2])
+                if temp_true_on_len.size==0:
+                    temp_true_on_len = temp_true_on_len.reshape(0,batch_true_len.shape[1], batch_true_len.shape[2])
+                temp_predict_on_len = np.concatenate((temp_predict_on_len, batch_predict_len), axis=0)
+                temp_true_on_len = np.concatenate((temp_true_on_len, batch_true_len), axis=0)
+
+            for k,v in temp_mean_acc.items():
+                if k not in self.mean_acc:
+                    self.mean_acc[k] = np.array([])
+                self.mean_acc[k] = np.concatenate((self.mean_acc[k], np.mean(v, keepdims=True)))
+                self.final_mean_acc[k] = v
+
+            for k,v in temp_median_acc.items():
+                if k not in self.median_acc:
+                    self.median_acc[k] = np.array([])
+                self.median_acc[k] = np.concatenate((self.median_acc[k], np.median(v, keepdims=True)))
+
+            if self.predict_on_len.size==0:
+                self.predict_on_len = self.predict_on_len.reshape(0,*temp_predict_on_len.shape)
+            if self.true_on_len.size==0:
+                self.true_on_len = self.true_on_len.reshape(0,*temp_true_on_len.shape)
+            self.predict_on_len = np.concatenate((self.predict_on_len, temp_predict_on_len.reshape(1, *temp_predict_on_len.shape))) 
+            self.true_on_len = np.concatenate((self.true_on_len, temp_predict_on_len.reshape(1, *temp_true_on_len.shape)))
+
+# Initialize the train and test generators for model prediction
+train_generator_prediction = BatchGenerator(data, train_start_end_line, BATCH_SIZE, SEQUENCE_LEN, return_seq_len=True)
+test_generator_prediction = BatchGenerator(data, test_start_end_line, BATCH_SIZE, SEQUENCE_LEN, return_seq_len=True)
+metric_in_epoch_train = MetricEpoch(train_generator_prediction)
+metric_in_epoch_test = MetricEpoch(test_generator_prediction)
 
 # Training the RNN model
-predictEpoch = PredictEpoch(train_generator, test_generator)
 ####################################################################
 # OPTION 1: USING A GENERATOR TO LOAD DATA 
 ####################################################################
 history = model.fit_generator(train_generator, steps_per_epoch=math.ceil(TRAIN_SIZE/BATCH_SIZE), 
                                                 epochs=EPOCH, 
-                                                callbacks=[predictEpoch], 
+                                                callbacks=[metric_in_epoch_train, metric_in_epoch_test], 
                                                 validation_data=test_generator, 
                                                 validation_steps=math.ceil(TEST_SIZE/BATCH_SIZE), 
                                                 workers=4, 
@@ -278,6 +343,9 @@ history = model.fit_generator(train_generator, steps_per_epoch=math.ceil(TRAIN_S
 # OPTION 2: LOADING THE DATASET INTO MEMORY 
 ####################################################################
 # history = model.fit(X_train,Y_train, validation_data = (X_test, Y_test),batch_size=BATCH_SIZE, epochs=EPOCH, callbacks=[predictEpoch])
+
+
+
 
 # Predict with RNN model for a randomly chosen sample from the test dataset
 # sample = X_test[[3]]
@@ -294,100 +362,102 @@ history = model.fit_generator(train_generator, steps_per_epoch=math.ceil(TRAIN_S
 # sample_score = cosine_similarity(Y_actual, Y_predict)
 # print('Cosine similarity for sample: {}'.format(sample_score[0]))
 
-# Calculate cosine similarity for ONE packet and across traffic
-def cos_sim_onepacket(predict_data, true_data, packet_id=0):
-    """
-    Calculates the cosine similarity for one packet of every traffic (default first packet)
 
-    Return a 2-tuple:
-    (cos sim of one packet for final prediction, list of tuple (mean, median)) 
-    where len(list) corresponds to #epoch
-    """
-    cos_sim_firstpacket_epoch = []
-    true_data = [true_data] * len(predict_data)
-    for epoch in range(len(predict_data)):
-        dot = np.einsum('ij,ij->i', predict_data[epoch][:,packet_id,:], true_data[epoch][:,packet_id,:])
-        vnorm = np.linalg.norm(predict_data[epoch][:,packet_id,:],axis=1)*np.linalg.norm(true_data[epoch][:,packet_id,:], axis=1)
-        cos_sim = dot/vnorm
+
+# # Calculate cosine similarity for ONE packet and across traffic
+# def cos_sim_onepacket(predict_data, true_data, packet_id=0):
+#     """
+#     Calculates the cosine similarity for one packet of every traffic (default first packet)
+
+#     Return a 2-tuple:
+#     (cos sim of one packet for final prediction, list of tuple (mean, median)) 
+#     where len(list) corresponds to #epoch
+#     """
+#     cos_sim_firstpacket_epoch = []
+#     true_data = [true_data] * len(predict_data)
+#     for epoch in range(len(predict_data)):
+#         dot = np.einsum('ij,ij->i', predict_data[epoch][:,packet_id,:], true_data[epoch][:,packet_id,:])
+#         vnorm = np.linalg.norm(predict_data[epoch][:,packet_id,:],axis=1)*np.linalg.norm(true_data[epoch][:,packet_id,:], axis=1)
+#         cos_sim = dot/vnorm
         
-        # Append mean and median across all traffic
-        mean_cos_sim = np.mean(cos_sim, axis=0)
-        median_cos_sim = np.median(cos_sim, axis=0)
-        cos_sim_firstpacket_epoch.append((mean_cos_sim, median_cos_sim))
+#         # Append mean and median across all traffic
+#         mean_cos_sim = np.mean(cos_sim, axis=0)
+#         median_cos_sim = np.median(cos_sim, axis=0)
+#         cos_sim_firstpacket_epoch.append((mean_cos_sim, median_cos_sim))
 
-    return (cos_sim, cos_sim_firstpacket_epoch)
+#     return (cos_sim, cos_sim_firstpacket_epoch)
 
-def cos_sim_traffic(predict_data, true_data, first=None):
-    """
-    Calculates the cosine similarity (CS) for traffic. It first calculates the mean/median CS for each traffic
-    then calculates the mean/median CS across traffic. User can specify the first ___ number of packets as arg
+# def cos_sim_traffic(predict_data, true_data, first=None):
+#     """
+#     Calculates the cosine similarity (CS) for traffic. It first calculates the mean/median CS for each traffic
+#     then calculates the mean/median CS across traffic. User can specify the first ___ number of packets as arg
     
-    Returns a 3-tuple: 
-    (mean cos sim for final prediction, median cos sim for final prediction, list of tuple (mean, median)) 
-    where len(list) corresponds to #epoch
-    """
-    cos_sim_epoch = []
-    true_data = [true_data] * len(predict_data)
-    for epoch in range(len(predict_data)):
+#     Returns a 3-tuple: 
+#     (mean cos sim for final prediction, median cos sim for final prediction, list of tuple (mean, median)) 
+#     where len(list) corresponds to #epoch
+#     """
+#     cos_sim_epoch = []
+#     true_data = [true_data] * len(predict_data)
+#     for epoch in range(len(predict_data)):
         
-        dot = np.einsum('ijk,ijk->ij', predict_data[epoch], true_data[epoch])
-        vnorm = (np.linalg.norm(predict_data[epoch],axis=2)*np.linalg.norm(true_data[epoch],axis=2))
-        cos_sim = np.divide(dot,vnorm,out=np.zeros_like(dot), where=vnorm!=0.0)
-        if first:
-            cos_sim = cos_sim[:,0:first]
+#         dot = np.einsum('ijk,ijk->ij', predict_data[epoch], true_data[epoch])
+#         vnorm = (np.linalg.norm(predict_data[epoch],axis=2)*np.linalg.norm(true_data[epoch],axis=2))
+#         cos_sim = np.divide(dot,vnorm,out=np.zeros_like(dot), where=vnorm!=0.0)
+#         if first:
+#             cos_sim = cos_sim[:,0:first]
         
-        # Verify that dot product is calculated correctly
-        #print(np.dot(predict_data[epoch][54,10,:],true_data[epoch][54,10,:]))
-        #print(np.einsum('ijk,ijk->ij', predict_data[epoch], true_data[epoch])[54,10])
-        # Verify that norm is calculated correctly
-        #print(np.linalg.norm(predict_data[epoch][0,0,:])*np.linalg.norm(true_data[epoch][0,0,:]))
-        #print((np.linalg.norm(predict_data[epoch],axis=2)*np.linalg.norm(true_data[epoch],axis=2))[0,0])
-        # Verify that einsendot is calcaluted correctly
-        #print(np.dot(predict_data[epoch][0,0,:],true_data[epoch][0,0,:])/(np.linalg.norm(predict_data[epoch][0,0,:])*np.linalg.norm(true_data[epoch][0,0,:])))
-        #print(cos_sim[0,0])
+#         # Verify that dot product is calculated correctly
+#         #print(np.dot(predict_data[epoch][54,10,:],true_data[epoch][54,10,:]))
+#         #print(np.einsum('ijk,ijk->ij', predict_data[epoch], true_data[epoch])[54,10])
+#         # Verify that norm is calculated correctly
+#         #print(np.linalg.norm(predict_data[epoch][0,0,:])*np.linalg.norm(true_data[epoch][0,0,:]))
+#         #print((np.linalg.norm(predict_data[epoch],axis=2)*np.linalg.norm(true_data[epoch],axis=2))[0,0])
+#         # Verify that einsendot is calcaluted correctly
+#         #print(np.dot(predict_data[epoch][0,0,:],true_data[epoch][0,0,:])/(np.linalg.norm(predict_data[epoch][0,0,:])*np.linalg.norm(true_data[epoch][0,0,:])))
+#         #print(cos_sim[0,0])
 
-        mean_cos_sim_traffic = np.mean(cos_sim, axis=1)
-        median_cos_sim_traffic = np.median(cos_sim, axis=1)
+#         mean_cos_sim_traffic = np.mean(cos_sim, axis=1)
+#         median_cos_sim_traffic = np.median(cos_sim, axis=1)
         
-        overall_mean = np.mean(mean_cos_sim_traffic)
-        overall_median = np.median(median_cos_sim_traffic)
+#         overall_mean = np.mean(mean_cos_sim_traffic)
+#         overall_median = np.median(median_cos_sim_traffic)
 
-        cos_sim_epoch.append((overall_mean, overall_median))
-    return (mean_cos_sim_traffic, median_cos_sim_traffic, cos_sim_epoch)
+#         cos_sim_epoch.append((overall_mean, overall_median))
+#     return (mean_cos_sim_traffic, median_cos_sim_traffic, cos_sim_epoch)
 
-def cos_sim_truetraffic(predict_data, true_data, seq_len):
-    """
-    Calculates the cosine similarity (CS) for true traffic (non-padded packets). It is similar to cos_sim_traffic()
-    Information on actual sequence length of each traffic must be known through seq_len. The length of seq_len
-    should be the same as true_data
+# def cos_sim_truetraffic(predict_data, true_data, seq_len):
+#     """
+#     Calculates the cosine similarity (CS) for true traffic (non-padded packets). It is similar to cos_sim_traffic()
+#     Information on actual sequence length of each traffic must be known through seq_len. The length of seq_len
+#     should be the same as true_data
 
-    Returns a 3-tuple:
-    (mean cos sim for final prediction, median cos sim for final prediction, list of tuple (mean, median)) 
-    where len(list) corresponds to #epoch
-    """
+#     Returns a 3-tuple:
+#     (mean cos sim for final prediction, median cos sim for final prediction, list of tuple (mean, median)) 
+#     where len(list) corresponds to #epoch
+#     """
 
-    cos_sim_epoch = []
-    true_data = [true_data] * len(predict_data)
-    for epoch in range(len(predict_data)):
-        dot = np.einsum('ijk,ijk->ij', predict_data[epoch], true_data[epoch])
-        vnorm = (np.linalg.norm(predict_data[epoch],axis=2)*np.linalg.norm(true_data[epoch],axis=2))
-        cos_sim = np.divide(dot,vnorm,out=np.zeros_like(dot), where=vnorm!=0.0)
+#     cos_sim_epoch = []
+#     true_data = [true_data] * len(predict_data)
+#     for epoch in range(len(predict_data)):
+#         dot = np.einsum('ijk,ijk->ij', predict_data[epoch], true_data[epoch])
+#         vnorm = (np.linalg.norm(predict_data[epoch],axis=2)*np.linalg.norm(true_data[epoch],axis=2))
+#         cos_sim = np.divide(dot,vnorm,out=np.zeros_like(dot), where=vnorm!=0.0)
 
-        # iterate through traffic
-        mean_cos_sim_traffic = []
-        median_cos_sim_traffic = []
-        for i in range(cos_sim.shape[0]):
-            mean_cos_sim_traffic.append(np.mean(cos_sim[i,0:seq_len[i]]))
-            median_cos_sim_traffic.append(np.median(cos_sim[i,0:seq_len[i]]))
-        mean_cos_sim_traffic = np.asarray(mean_cos_sim_traffic)
-        median_cos_sim_traffic = np.asarray(median_cos_sim_traffic)
+#         # iterate through traffic
+#         mean_cos_sim_traffic = []
+#         median_cos_sim_traffic = []
+#         for i in range(cos_sim.shape[0]):
+#             mean_cos_sim_traffic.append(np.mean(cos_sim[i,0:seq_len[i]]))
+#             median_cos_sim_traffic.append(np.median(cos_sim[i,0:seq_len[i]]))
+#         mean_cos_sim_traffic = np.asarray(mean_cos_sim_traffic)
+#         median_cos_sim_traffic = np.asarray(median_cos_sim_traffic)
 
-        overall_mean = np.mean(mean_cos_sim_traffic)
-        overall_median = np.median(median_cos_sim_traffic)
-        cos_sim_epoch.append((overall_mean, overall_median))
-    return (mean_cos_sim_traffic, median_cos_sim_traffic, cos_sim_epoch)
+#         overall_mean = np.mean(mean_cos_sim_traffic)
+#         overall_median = np.median(median_cos_sim_traffic)
+#         cos_sim_epoch.append((overall_mean, overall_median))
+#     return (mean_cos_sim_traffic, median_cos_sim_traffic, cos_sim_epoch)
 
-def generate_plot(results_train, results_test, first, save, show=False):
+def generate_plot(mean_acc_train, median_acc_train, mean_acc_test, median_acc_test, final_acc_train, final_acc_test, first, save, show=False):
     """
     Accepts a train and test object, which are generated from the function cos_sim_traffic
 
@@ -400,30 +470,24 @@ def generate_plot(results_train, results_test, first, save, show=False):
     plt.subplots_adjust(hspace=0.7)
 
     plt.subplot(311)
-    mean_history_train = [i[0] for i in results_train[-1]]
-    median_history_train = [i[1] for i in results_train[-1]]
-    mean_history_test = [i[0] for i in results_test[-1]]
-    median_history_test = [i[1] for i in results_test[-1]]
     x_values = [i for i in range(0, EPOCH, SAVE_EVERY_EPOCH)]
-    plt.plot(x_values, mean_history_train, alpha=0.7)
-    plt.plot(x_values, median_history_train, alpha=0.7)
-    plt.plot(x_values, mean_history_test, alpha=0.7)
-    plt.plot(x_values, median_history_test, alpha=0.7)
+    plt.plot(x_values, mean_acc_train, alpha=0.7)
+    plt.plot(x_values, median_acc_train, alpha=0.7)
+    plt.plot(x_values, mean_acc_test, alpha=0.7)
+    plt.plot(x_values, median_acc_test, alpha=0.7)
     plt.title('Model cosine similarity for first {} pkts'.format(first))
     plt.ylabel('Cosine Similarity')
     plt.xlabel('Epoch')
     plt.legend(['Train(mean)', 'Train(median)' , 'Val(mean)', 'Val(median)'], loc='upper left')
 
     plt.subplot(312)
-    meantraffic_train = results_train[0]
-    plt.plot(meantraffic_train,'|')
+    plt.plot(final_acc_train,'|')
     plt.title('Dist of mean cosine similarity for first {} pkts (train)'.format(first))
     plt.ylabel('Mean Cosine Similarity')
     plt.xlabel('Traffic #')
 
     plt.subplot(313)
-    meantraffic_test = results_test[0]
-    plt.plot(meantraffic_test,'|')
+    plt.plot(final_acc_test,'|')
     plt.title('Dist of mean cosine similarity for first {} pkts (validation)'.format(first))
     plt.ylabel('Mean Cosine Similarity')
     plt.xlabel('Traffic #')
@@ -460,35 +524,51 @@ plt.rcParams['figure.figsize'] = (10,7)
 plt.rcParams['legend.fontsize'] = 8
 
 # Visualize the model prediction on a specified dimension (default:packet length) over epochs
-viz.visualize_traffic(predictEpoch.predict_train, Y_train, predictEpoch.predict_test, Y_test, save_every_epoch=SAVE_EVERY_EPOCH, save=trained_rnn_results, show=args.show)
+viz.visualize_traffic(metric_in_epoch_train.predict_on_len, 
+                        metric_in_epoch_train.true_on_len, 
+                        metric_in_epoch_test.predict_on_len, 
+                        metric_in_epoch_test.true_on_len, 
+                        save_every_epoch=SAVE_EVERY_EPOCH, save=trained_rnn_results, show=args.show)
 
-# Generate result plots for true traffic
-acc_pkttrue_train = cos_sim_truetraffic(predictEpoch.predict_train, Y_train, Y_train_seqlen)
-acc_pkttrue_test = cos_sim_truetraffic(predictEpoch.predict_test, Y_test, Y_test_seqlen)
-print('Final cosine similarity for true traffic on train data')
-print(acc_pkttrue_train[-1][-1])
-print('Final cosine similarity for true traffic on test data')
-print(acc_pkttrue_test[-1][-1])
-generate_plot(acc_pkttrue_train, acc_pkttrue_test, first='True', save=trained_rnn_results, show=args.show)
+seq_len_keys = ['true'] + list(range(10,101,10))
+# Generate result plots for different sequence length
+for key in seq_len_keys:
+    acc_pkt_mean_train = metric_in_epoch_train.mean_acc[key]
+    acc_pkt_median_train = metric_in_epoch_train.median_acc[key]
+    acc_pkt_mean_test = metric_in_epoch_test.mean_acc[key]
+    acc_pkt_median_test = metric_in_epoch_test.median_acc[key]
+    final_acc_pkt_mean_train = metric_in_epoch_train.final_mean_acc[key]
+    final_acc_pkt_mean_test = metric_in_epoch_test.final_mean_acc[key]
+    print('Final mean cosine similarity for first {} pkts on train data'.format(key))
+    print(acc_pkt_mean_train[-1])
+    print('Final mean cosine similarity for first {} pkts on test data'.format(key))
+    print(acc_pkt_mean_test[-1])
+    generate_plot(acc_pkt_mean_train, 
+                    acc_pkt_median_train, 
+                    acc_pkt_mean_test, 
+                    acc_pkt_median_test, 
+                    final_acc_pkt_mean_train, 
+                    final_acc_pkt_mean_test, 
+                    first=key, save=trained_rnn_results, show=args.show)
 
 # Generate result plots for first packet
-acc_pkt1_train = cos_sim_onepacket(predictEpoch.predict_train, Y_train, packet_id=0)
-acc_pkt1_test = cos_sim_onepacket(predictEpoch.predict_test, Y_test, packet_id=0)
-print('Final cosine similarity of first packet on train data')
-print(acc_pkt1_train[-1][-1])
-print('Final cosine similarity of first packet on test data')
-print(acc_pkt1_test[-1][-1])
-generate_plot(acc_pkt1_train, acc_pkt1_test, first=1, save=trained_rnn_results, show=args.show)
+# acc_pkt1_train = cos_sim_onepacket(predictEpoch.predict_train, Y_train, packet_id=0)
+# acc_pkt1_test = cos_sim_onepacket(predictEpoch.predict_test, Y_test, packet_id=0)
+# print('Final cosine similarity of first packet on train data')
+# print(acc_pkt1_train[-1][-1])
+# print('Final cosine similarity of first packet on test data')
+# print(acc_pkt1_test[-1][-1])
+# generate_plot(acc_pkt1_train, acc_pkt1_test, first=1, save=trained_rnn_results, show=args.show)
 
 # Generate result plots for first 10,20,...,90,100 packets
-for pktlen in range(10,101,10):
-    acc_pkt_train = cos_sim_traffic(predictEpoch.predict_train, Y_train, first=pktlen)
-    acc_pkt_test = cos_sim_traffic(predictEpoch.predict_test, Y_test, first=pktlen)
-    print('Final cosine similarity for the first {} packets on train data'.format(pktlen))
-    print(acc_pkt_train[-1][-1])
-    print('Final cosine similarity for the first {} packets on test data'.format(pktlen))
-    print(acc_pkt_test[-1][-1])
-    generate_plot(acc_pkt_train, acc_pkt_test, first=pktlen, save=trained_rnn_results, show=args.show)
+# for pktlen in range(10,101,10):
+#     acc_pkt_train = cos_sim_traffic(predictEpoch.predict_train, Y_train, first=pktlen)
+#     acc_pkt_test = cos_sim_traffic(predictEpoch.predict_test, Y_test, first=pktlen)
+#     print('Final cosine similarity for the first {} packets on train data'.format(pktlen))
+#     print(acc_pkt_train[-1][-1])
+#     print('Final cosine similarity for the first {} packets on test data'.format(pktlen))
+#     print(acc_pkt_test[-1][-1])
+#     generate_plot(acc_pkt_train, acc_pkt_test, first=pktlen, save=trained_rnn_results, show=args.show)
 
 # Generate plots for training & validation loss
 plt.plot(history.history['loss'])
@@ -529,7 +609,7 @@ with open(train_info, 'w') as f:
 
 snapshot = tracemalloc.take_snapshot()
 # diag.display_top(snapshot)
-# Pick the top 3 biggest memory blocks 
+# Pick the top 5 biggest memory blocks 
 top_stats = snapshot.statistics('traceback')
 for i in range(0,5):
     stat = top_stats[i]
