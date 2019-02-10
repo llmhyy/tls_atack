@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 from matplotlib.pyplot import figure
 from matplotlib.widgets import Slider, Button, RadioButtons
 
-
 #defaults to rcParams["figure.figsize"] = [6.4, 4.8]
 
 def visualize_traffic(predict_train, true_train, predict_test, true_test, save_every_epoch, save, show=False):
