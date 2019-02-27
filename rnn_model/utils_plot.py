@@ -6,7 +6,8 @@ from matplotlib.widgets import Slider, Button, RadioButtons
 
 #defaults to rcParams["figure.figsize"] = [6.4, 4.8]
 
-def visualize_traffic(predict_train, true_train, predict_test, true_test, save_every_epoch, save, show=False):
+def plot_prediction_on_pktlen(predict_train, true_train, predict_test, true_test, 
+                                save_every_epoch, save_dir, show=False):
     """
     Given an array, visualize the traffic over time in a given dimension. This helps us to understand
     whether the model is learning anything at all. We can callback this method at every epoch to observe 
@@ -67,12 +68,68 @@ def visualize_traffic(predict_train, true_train, predict_test, true_test, save_e
     
     s.on_changed(update)
 
-    traffic_len = os.path.join(save, 'traffic_len')
+    traffic_len = os.path.join(save_dir, 'traffic_len')
     if not os.path.exists(traffic_len):
         os.mkdir(traffic_len)
-    for epoch in range(0, len(predict_train), max(len(predict_train)//10, 1)):
+    epochs = len(predict_train)*save_every_epoch
+    for epoch in range(0, epochs):
         manual_update(epoch)
-        plt.savefig(os.path.join(traffic_len, 'traffic_len_epoch{}'.format(epoch*save_every_epoch)))
+        plt.savefig(os.path.join(traffic_len, 'traffic_len_epoch{}'.format(epoch)))
+    if show:
+        plt.show()
+    plt.clf()
+
+
+def plot_accuracy_and_distribution(mean_acc_train, median_acc_train, mean_acc_test, median_acc_test, final_acc_train, final_acc_test, 
+                                    first, save_every_epoch, save_dir, show=False):
+    """
+    Plots train and test cosine similarity (mean/median) over training epochs 
+    AND distribution of mean cosine similarity for train and test dataset.
+
+    Parameters:
+    mean_acc_train:     list of mean cosine similarity on train dataset for each epoch
+    median_acc_train:   list of median cosine similarity on train dataset for each epoch
+    mean_acc_test:      list of mean cosine similarity on test dataset for each epoch
+    median_acc_test:    list of median cosine similarity on test dataset for each epoch
+    final_acc_train:    list of mean cosine similarity for each traffic in train dataset after last epoch
+    final_acc_test:     list of mean cosine similarity for each traffic in test dataset after last epoch
+    
+    first:              integer to indicate first ___ packets to apply cosine similarity over 1 traffic
+    save_every_epoch:   integer to indicate the number of epochs for each save
+    save_dir:           string to indicate the directory to save the plots
+    show:               boolean to show the plots or not
+
+    """
+    plt.subplots_adjust(hspace=0.7)
+
+    plt.subplot(311)
+    epochs = len(mean_acc_train)*save_every_epoch
+    x_values = [i for i in range(0, epochs)]
+    plt.plot(x_values, mean_acc_train, alpha=0.7)
+    plt.plot(x_values, median_acc_train, alpha=0.7)
+    plt.plot(x_values, mean_acc_test, alpha=0.7)
+    plt.plot(x_values, median_acc_test, alpha=0.7)
+    plt.title('Model cosine similarity for first {} pkts'.format(first))
+    plt.ylabel('Cosine Similarity')
+    plt.xlabel('Epoch')
+    plt.legend(['Train(mean)', 'Train(median)' , 'Val(mean)', 'Val(median)'], loc='upper left')
+
+    plt.subplot(312)
+    plt.plot(final_acc_train,'|')
+    plt.title('Dist of mean cosine similarity for first {} pkts (train)'.format(first))
+    plt.ylabel('Mean Cosine Similarity')
+    plt.xlabel('Traffic #')
+
+    plt.subplot(313)
+    plt.plot(final_acc_test,'|')
+    plt.title('Dist of mean cosine similarity for first {} pkts (validation)'.format(first))
+    plt.ylabel('Mean Cosine Similarity')
+    plt.xlabel('Traffic #')
+
+    acc_dist = os.path.join(save_dir, 'acc_dist')
+    if not os.path.exists(acc_dist):
+        os.mkdir(acc_dist)
+    plt.savefig(os.path.join(acc_dist,'acc_dist_{}pkts').format(first))
     if show:
         plt.show()
     plt.clf()
