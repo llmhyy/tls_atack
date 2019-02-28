@@ -769,7 +769,7 @@ if __name__ == '__main__':
     # extract_tcp_features('sample/www.zeroaggressionproject.org_2018-12-21_16-19-03.pcap')
 
     # Test whether all enums are generated
-    # enums = searchEnums(rootdir)
+    enums = searchEnums(rootdir, limit=5)
     #enumCipherSuites = searchCipherSuites(rootdir)
     #enumCompressionMethods = searchCompressionMethods(rootdir)
     #enumSupportedGroups = searchSupportedGroups(rootdir)
