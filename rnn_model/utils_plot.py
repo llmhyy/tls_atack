@@ -79,6 +79,19 @@ def plot_prediction_on_pktlen(predict_train, true_train, predict_test, true_test
         plt.show()
     plt.clf()
 
+def plot_distribution(final_acc, overall_mean_acc, feature_filename, save_dir, show=False):
+    ax = plt.gca()
+    plt.plot(final_acc, '|')
+    plt.title('Dist of mean cosine similarity for true packets')
+    plt.xlabel('Traffic #')
+    plt.ylabel('Mean Cosine Similarity')
+    plt.axhline(y=round(overall_mean_acc,3), color='r', linestyle='-')
+    plt.text(0, round(overall_mean_acc,3), '{:.3f}'.format(overall_mean_acc), color='r', horizontalalignment='right', verticalalignment='center', transform=ax.transAxes)
+    plt.savefig(os.path.join(save_dir, 'dist_true_({})'.format(feature_filename)))
+    if show:
+        plt.show()
+    plt.clf()
+
 
 def plot_accuracy_and_distribution(mean_acc_train, median_acc_train, mean_acc_test, median_acc_test, final_acc_train, final_acc_test, 
                                     first, save_every_epoch, save_dir, show=False):
@@ -86,7 +99,7 @@ def plot_accuracy_and_distribution(mean_acc_train, median_acc_train, mean_acc_te
     Plots train and test cosine similarity (mean/median) over training epochs 
     AND distribution of mean cosine similarity for train and test dataset.
 
-    Parameters:
+    Parameters
     mean_acc_train:     list of mean cosine similarity on train dataset for each epoch
     median_acc_train:   list of median cosine similarity on train dataset for each epoch
     mean_acc_test:      list of mean cosine similarity on test dataset for each epoch
