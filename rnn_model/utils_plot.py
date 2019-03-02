@@ -81,6 +81,7 @@ def plot_prediction_on_pktlen(predict_train, true_train, predict_test, true_test
 
 def plot_distribution(final_acc, overall_mean_acc, feature_filename, save_dir, show=False):
     ax = plt.gca()
+    ax.set_ylim(0.0, 1.0)
     plt.plot(final_acc, '|')
     plt.title('Dist of mean cosine similarity for true packets')
     plt.xlabel('Traffic #')
