@@ -85,8 +85,8 @@ def plot_distribution(final_acc, overall_mean_acc, feature_filename, save_dir, s
     plt.title('Dist of mean cosine similarity for true packets')
     plt.xlabel('Traffic #')
     plt.ylabel('Mean Cosine Similarity')
-    plt.axhline(y=round(overall_mean_acc,3), color='r', linestyle='-')
-    plt.text(0, round(overall_mean_acc,3), '{:.3f}'.format(overall_mean_acc), color='r', horizontalalignment='right', verticalalignment='center', transform=ax.transAxes)
+    plt.axhline(y=round(overall_mean_acc,5), color='r', linestyle='-')
+    plt.text(0, round(overall_mean_acc,5), '{:.3f}'.format(overall_mean_acc), color='r', horizontalalignment='right', verticalalignment='center', transform=ax.transAxes)
     plt.savefig(os.path.join(save_dir, 'dist_true_({})'.format(feature_filename)))
     if show:
         plt.show()
