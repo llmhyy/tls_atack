@@ -87,7 +87,7 @@ def plot_distribution(final_acc, overall_mean_acc, feature_filename, save_dir, s
     plt.xlabel('Traffic #')
     plt.ylabel('Mean Cosine Similarity')
     plt.axhline(y=round(overall_mean_acc,5), color='r', linestyle='-')
-    plt.text(0.05, round(overall_mean_acc,5), '{:.5f}'.format(overall_mean_acc), color='r', horizontalalignment='left', verticalalignment='bottom', transform=ax.transAxes)
+    plt.text(0.05, round(overall_mean_acc,5)-0.025, '{:.5f}'.format(overall_mean_acc), color='r', fontweight='bold', horizontalalignment='left', verticalalignment='top', transform=ax.transAxes)
     plt.savefig(os.path.join(save_dir, 'dist_true_({})'.format(feature_filename)))
     if show:
         plt.show()
