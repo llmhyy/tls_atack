@@ -43,7 +43,7 @@ BATCH_SIZE = 64
 SEQUENCE_LEN = 100
 EPOCH = args.epoch
 SAVE_EVERY_EPOCH = 1
-SPLIT_RATIO = 0.3
+SPLIT_RATIO = 0.05
 SEED = 2019
 feature_file = args.feature
 existing_model = args.model
@@ -202,8 +202,8 @@ history = model.fit_generator(train_generator, steps_per_epoch=math.ceil(TRAIN_S
                                                 callbacks=[trainHistory_on_traindata, trainHistory_on_testdata], 
                                                 validation_data=test_generator, 
                                                 validation_steps=math.ceil(TEST_SIZE/BATCH_SIZE), 
-                                                workers=4, 
-                                                use_multiprocessing=True)
+                                                workers=1,
+                                                use_multiprocessing=False)
 
 # def generate_plot(mean_acc_train, median_acc_train, mean_acc_test, median_acc_test, final_acc_train, final_acc_test, 
 #                     first, save, show=False):
