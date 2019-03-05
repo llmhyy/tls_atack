@@ -28,6 +28,20 @@ def get_mmapdata_and_byteoffset(feature_file):
             start = end + 1
     return mmap_data, byte_offset
 
+def get_min_max(mmap_data, byte_offset):
+    min_feature = None
+    max_feature = None
+    for start,end in byte_offset:
+        dataline = mmap_data[start:end+1].decode('ascii').strip().rstrip(',')
+        dataline = np.array(json.loads('['+dataline+']'))
+        if min_feature is not None:
+            dataline = np.vstack((min_feature, dataline))
+        if max_feature is not None:
+            dataline = np.vstack((max_feature, dataline))
+        min_feature = np.min(dataline, axis=0)
+        max_feature = np.max(dataline, axis=0)
+    return (min_feature, max_feature)
+
 def split_train_test(byte_offset, split_ratio, seed):
     # Shuffling the indices to give a random train test split
     indices = np.random.RandomState(seed=seed).permutation(len(byte_offset)) 
@@ -39,11 +53,13 @@ def split_train_test(byte_offset, split_ratio, seed):
     return train_byte_offset, test_byte_offset
 
 class BatchGenerator(Sequence):
-    def __init__(self, mmap_data, byte_offset, batch_size, sequence_len, return_seq_len=False):
+    def __init__(self, mmap_data, byte_offset, batch_size, sequence_len, min_max_feature, return_seq_len=False):
         self.mmap_data = mmap_data
         self.byte_offset = byte_offset
         self.batch_size = batch_size
         self.sequence_len = sequence_len
+        self.min_feature = min_max_feature[0]
+        self.max_feature = min_max_feature[1]
         self.return_seq_len = return_seq_len
 
     def __len__(self):
@@ -63,8 +79,14 @@ class BatchGenerator(Sequence):
         batch_data = pad_sequences(batch_data, maxlen=self.sequence_len, dtype='float32', padding='post',value=0.0)
 
         # Scale the features
-        l2_norm = np.linalg.norm(batch_data, axis=2, keepdims=True)
-        batch_data = np.divide(batch_data, l2_norm, out=np.zeros_like(batch_data), where=l2_norm!=0.0)
+        # (1)   L2 Normalization
+        # l2_norm = np.linalg.norm(batch_data, axis=2, keepdims=True)
+        # batch_data = np.divide(batch_data, l2_norm, out=np.zeros_like(batch_data), where=l2_norm!=0.0)
+        # (2)   Min Max Normalization
+        # batch_data = (batch_data - self.min_feature)/(self.max_feature - self.min_feature)
+        num = batch_data-self.min_feature
+        den = self.max_feature-self.min_feature
+        batch_data = np.divide(num, den, out=np.zeros_like(num), where=den!=0.0)
 
         # Append zero to the start of the sequence
         packet_zero = np.zeros((batch_data.shape[0],1,batch_data.shape[2]))

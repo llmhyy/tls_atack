@@ -22,6 +22,7 @@ from sklearn.preprocessing import normalize
 import matplotlib.pyplot as plt
 
 from utils_datagen import get_mmapdata_and_byteoffset
+from utils_datagen import get_min_max
 from utils_datagen import split_train_test
 from utils_datagen import BatchGenerator
 import utils_plot as utilsPlot
@@ -42,7 +43,7 @@ DATETIME_NOW = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
 BATCH_SIZE = 64
 SEQUENCE_LEN = 100
 EPOCH = args.epoch
-SAVE_EVERY_EPOCH = 1
+SAVE_EVERY_EPOCH = 5
 SPLIT_RATIO = 0.05
 SEED = 2019
 feature_file = args.feature
@@ -63,6 +64,8 @@ if not os.path.exists(extracted_features):
 
 # Load the mmap data and the byte offsets from the feature file
 mmap_data, byte_offset = get_mmapdata_and_byteoffset(os.path.join(extracted_features, feature_file))
+# Get min and max for each feature
+min_max_feature = get_min_max(mmap_data, byte_offset)
 # Split the dataset into train and test
 train_byteoffset, test_byteoffset = split_train_test(byte_offset, SPLIT_RATIO, SEED)
 
@@ -89,8 +92,8 @@ sample_traffic = json.loads('['+mmap_data[train_byteoffset[0][0]:train_byteoffse
 INPUT_DIM = len(sample_traffic[0])
 
 # Initialize the train and test generators for model training
-train_generator = BatchGenerator(mmap_data, train_byteoffset, BATCH_SIZE, SEQUENCE_LEN)
-test_generator = BatchGenerator(mmap_data, test_byteoffset, BATCH_SIZE, SEQUENCE_LEN)
+train_generator = BatchGenerator(mmap_data, train_byteoffset, BATCH_SIZE, SEQUENCE_LEN, min_max_feature)
+test_generator = BatchGenerator(mmap_data, test_byteoffset, BATCH_SIZE, SEQUENCE_LEN, min_max_feature)
 
 ##########################################################################################
  
@@ -191,8 +194,8 @@ class TrainHistory(keras.callbacks.Callback):
             self.true_on_len = np.concatenate((self.true_on_len, temp_predict_on_len.reshape(1, *temp_true_on_len.shape)))
 
 # Initialize NEW train and test generators for model prediction
-train_generator_prediction = BatchGenerator(mmap_data, train_byteoffset, BATCH_SIZE, SEQUENCE_LEN, return_seq_len=True)
-test_generator_prediction = BatchGenerator(mmap_data, test_byteoffset, BATCH_SIZE, SEQUENCE_LEN, return_seq_len=True)
+train_generator_prediction = BatchGenerator(mmap_data, train_byteoffset, BATCH_SIZE, SEQUENCE_LEN, min_max_feature, return_seq_len=True)
+test_generator_prediction = BatchGenerator(mmap_data, test_byteoffset, BATCH_SIZE, SEQUENCE_LEN, min_max_feature, return_seq_len=True)
 trainHistory_on_traindata = TrainHistory(train_generator_prediction)
 trainHistory_on_testdata = TrainHistory(test_generator_prediction)
 
