@@ -1,0 +1,12 @@
+####################################
+
+Training Date: 2019-03-04
+Training Time: 14-33-00
+Batch Size: 64
+Epoch: 100
+Feature file used: features_tls_2019-03-01_11-06-12.csv
+Existing model used: None
+Split Ratio: 0.05
+Seed: 2019
+
+####################################

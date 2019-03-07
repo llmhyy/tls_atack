@@ -71,10 +71,10 @@ def plot_prediction_on_pktlen(predict_train, true_train, predict_test, true_test
     traffic_len = os.path.join(save_dir, 'traffic_len')
     if not os.path.exists(traffic_len):
         os.mkdir(traffic_len)
-    epochs = len(predict_train)*save_every_epoch
+    epochs = len(predict_train)
     for epoch in range(0, epochs):
         manual_update(epoch)
-        plt.savefig(os.path.join(traffic_len, 'traffic_len_epoch{}'.format(epoch)))
+        plt.savefig(os.path.join(traffic_len, 'traffic_len_epoch{}'.format((epoch*save_every_epoch)+1)))
     if show:
         plt.show()
     plt.clf()
@@ -117,8 +117,8 @@ def plot_accuracy_and_distribution(mean_acc_train, median_acc_train, mean_acc_te
     plt.subplots_adjust(hspace=0.7)
 
     plt.subplot(311)
-    epochs = len(mean_acc_train)*save_every_epoch
-    x_values = [i for i in range(0, epochs)]
+    epochs = len(mean_acc_train)
+    x_values = [i for i in range(1, (epochs*save_every_epoch)+1, save_every_epoch)]
     plt.plot(x_values, mean_acc_train, alpha=0.7)
     plt.plot(x_values, median_acc_train, alpha=0.7)
     plt.plot(x_values, mean_acc_test, alpha=0.7)

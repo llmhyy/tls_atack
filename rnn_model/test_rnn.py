@@ -4,6 +4,7 @@ import numpy as np
 from keras.models import load_model
 
 from utils_datagen import get_mmapdata_and_byteoffset
+from utils_datagen import get_min_max
 from utils_datagen import BatchGenerator
 from utils_plot import plot_distribution
 import utils_metric as utilsMetric
@@ -33,21 +34,39 @@ if not os.path.exists(extracted_features):
 # Load the mmap data and the byte offsets from the feature file
 print('\nLoading features into memory...')
 mmap_data, byte_offset = get_mmapdata_and_byteoffset(os.path.join(extracted_features, args.feature))
-data_generator = BatchGenerator(mmap_data, byte_offset, BATCH_SIZE, SEQUENCE_LEN, return_seq_len=True)
+# Get min and max for each feature
+min_max_feature = get_min_max(mmap_data, byte_offset)
+data_generator = BatchGenerator(mmap_data, byte_offset, BATCH_SIZE, SEQUENCE_LEN, min_max_feature, return_seq_len=True)
 
 # Obtain the mean accuracy for each traffic and store in a array
 print('Computing mean accuracy for traffic...')
 mean_acc_for_all_traffic = np.array([])
 for (batch_inputs, batch_true, batch_seq_len) in data_generator:
+    print('BATCH INPUT SIZE: {} BATCH TRUE SIZE: {}'.format(batch_inputs.shape, batch_true.shape))
     batch_predict = model.predict_on_batch(batch_inputs)
+
+    # np.set_printoptions(threshold=np.nan)
+    # print('PREDICT')
+    # print(batch_predict[5,2,:])
+    # print('TRUE')
+    # print(batch_true[5,2,:])
+
+    # print('CALCULATED')
+    # test_cal = np.dot(batch_predict[5,2,:],batch_true[5,2,:])/(np.linalg.norm(batch_predict[5,2,:])*np.linalg.norm(batch_true[5,2,:]))
+    # print(test_cal)
+
     batch_acc = utilsMetric.calculate_acc_of_traffic(batch_predict, batch_true)
+    # print('COS SIM')
+    # print(batch_acc[5,2])
 
     for i, seq_len in enumerate(batch_seq_len):
+        #print('SEQ LEN: {}'.format(seq_len))
         acc_spliced = batch_acc[i:i+1,0:seq_len]
         mean_acc = utilsMetric.calculate_mean_acc_of_traffic(acc_spliced)
+        #print('MEAN ACC: {}'.format(mean_acc))
         mean_acc_for_all_traffic = np.concatenate((mean_acc_for_all_traffic, mean_acc))
 
-# Compute the overall mean accuracy across all traffic
+# Compute the overall amean accuracy across all traffic
 overall_mean_acc = np.mean(mean_acc_for_all_traffic, keepdims=True)[0]
 
 print('#### Overall Mean Consine Similarity for {}:\t{}\n'.format(target_traffic_name, overall_mean_acc))
