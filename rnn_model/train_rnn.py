@@ -1,4 +1,5 @@
 import os
+import sys
 import json
 import math
 import mmap
@@ -25,15 +26,17 @@ from utils_datagen import get_mmapdata_and_byteoffset
 from utils_datagen import get_min_max
 from utils_datagen import split_train_test
 from utils_datagen import BatchGenerator
+from utils_logging import Logger
 import utils_plot as utilsPlot
 import utils_diagnostic as utilsDiagnostic
 import utils_metric as utilsMetric
+
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-n', '--norm', help='Input normalization options for features', default=1, type=int, choices=[1,2,3])
 parser.add_argument('-e', '--epoch', help='Input epoch for training', default=100, type=int)
 parser.add_argument('-t', '--traffic', help='Input top-level directory of the traffic module containing extracted features', required=True)
-parser.add_argument('-f', '--feature', help='Input filename of feature to be used', required=True)
+parser.add_argument('-f', '--feature', help='Input directory path of feature file to be used', required=True)
 parser.add_argument('-s', '--show', help='Flag for displaying plots', action='store_true', default=False)
 parser.add_argument('-m', '--model', help='Input directory for existing model to be trained')
 args = parser.parse_args()
@@ -49,7 +52,18 @@ SEED = 2019
 feature_file = args.feature
 existing_model = args.model
 
+# Create directories for current experiment
+trained_rnn_results = os.path.join(args.traffic, 'trained_rnn', 'expt_{}'.format(DATETIME_NOW),'train_results')
+trained_rnn_model = os.path.join(args.traffic, 'trained_rnn', 'expt_{}'.format(DATETIME_NOW), 'model')
+os.makedirs(trained_rnn_results)
+os.makedirs(trained_rnn_model)
+
+# Start diagnostic analysis
 tracemalloc.start()
+
+# Start logging into file
+# sys.stdout = Logger(os.path.join(trained_rnn_results, 'train_log.txt'))
+logfile = open(os.path.join(trained_rnn_results, 'train_log.txt'),'w')
 
 ##########################################################################################
 
@@ -63,7 +77,7 @@ if not os.path.exists(extracted_features):
     raise FileNotFoundError("Directory extracted_features not found. Extract features first")
 
 # Load the mmap data and the byte offsets from the feature file
-mmap_data, byte_offset = get_mmapdata_and_byteoffset(os.path.join(extracted_features, feature_file))
+mmap_data, byte_offset = get_mmapdata_and_byteoffset(feature_file)
 # Get min and max for each feature
 min_max_feature = get_min_max(mmap_data, byte_offset)
 # Split the dataset into train and test
@@ -104,16 +118,15 @@ test_generator = BatchGenerator(mmap_data, test_byteoffset, BATCH_SIZE, SEQUENCE
 # Build RNN model or Load existing RNN model
 if existing_model:
     model = load_model(existing_model)
-    model.summary()
 else:
     model = Sequential()
     model.add(LSTM(INPUT_DIM, input_shape=(SEQUENCE_LEN,INPUT_DIM), return_sequences=True))
     model.add(Activation('relu'))
-    model.summary()
-
     # Selecting optimizers 
     model.compile(loss='mean_squared_error',
                     optimizer='rmsprop')
+
+model.summary()
 
 class TrainHistory(keras.callbacks.Callback):
     def __init__(self, generator):
@@ -128,7 +141,7 @@ class TrainHistory(keras.callbacks.Callback):
 
     def on_epoch_end(self, epoch, logs={}):
         # At the end of every epoch, we make a prediction and evaluate its accuracy, instead of savings the prediction...too much MEM!
-        if epoch%SAVE_EVERY_EPOCH==0:
+        if epoch%SAVE_EVERY_EPOCH==4: # save after every 5,10,15,... epoch
             temp_mean_acc = {}
             temp_median_acc = {}
             temp_predict_on_len = np.array([])
@@ -208,69 +221,11 @@ history = model.fit_generator(train_generator, steps_per_epoch=math.ceil(TRAIN_S
                                                 workers=1,
                                                 use_multiprocessing=False)
 
-# def generate_plot(mean_acc_train, median_acc_train, mean_acc_test, median_acc_test, final_acc_train, final_acc_test, 
-#                     first, save, show=False):
-#     """
-#     Accepts a train and test object, which are generated from the function cos_sim_traffic
-
-#     A function to generate the following plots for first __ number of packets:
-#     • Accuracy plot for n epoch of training
-#     • Distribution of cosine similarity for final prediction
-
-#     If save is not False, it must be a string specifying the location to save the image. Else, the plot will be showed
-#     """
-#     plt.subplots_adjust(hspace=0.7)
-
-#     plt.subplot(311)
-#     x_values = [i for i in range(0, EPOCH, SAVE_EVERY_EPOCH)]
-#     plt.plot(x_values, mean_acc_train, alpha=0.7)
-#     plt.plot(x_values, median_acc_train, alpha=0.7)
-#     plt.plot(x_values, mean_acc_test, alpha=0.7)
-#     plt.plot(x_values, median_acc_test, alpha=0.7)
-#     plt.title('Model cosine similarity for first {} pkts'.format(first))
-#     plt.ylabel('Cosine Similarity')
-#     plt.xlabel('Epoch')
-#     plt.legend(['Train(mean)', 'Train(median)' , 'Val(mean)', 'Val(median)'], loc='upper left')
-
-#     plt.subplot(312)
-#     plt.plot(final_acc_train,'|')
-#     plt.title('Dist of mean cosine similarity for first {} pkts (train)'.format(first))
-#     plt.ylabel('Mean Cosine Similarity')
-#     plt.xlabel('Traffic #')
-
-#     plt.subplot(313)
-#     plt.plot(final_acc_test,'|')
-#     plt.title('Dist of mean cosine similarity for first {} pkts (validation)'.format(first))
-#     plt.ylabel('Mean Cosine Similarity')
-#     plt.xlabel('Traffic #')
-
-#     acc_dist = os.path.join(save, 'acc_dist')
-#     if not os.path.exists(acc_dist):
-#         os.mkdir(acc_dist)
-#     plt.savefig(os.path.join(acc_dist,'acc_dist_{}pkts').format(first))
-#     if show:
-#         plt.show()
-#     plt.clf()
-
 ##########################################################################################
 
 # MODEL EVALUATION
 
 ##########################################################################################
-
-trained_rnn = os.path.join(args.traffic, 'trained_rnn')
-trained_rnn_expt = os.path.join(trained_rnn, 'expt_{}'.format(DATETIME_NOW))
-trained_rnn_results = os.path.join(trained_rnn_expt, 'train_results')
-trained_rnn_model = os.path.join(trained_rnn_expt, 'model')
-
-# Create a new directory 'trained_rnn' to store model and results for training rnn on this traffic
-if not os.path.exists(trained_rnn):
-    os.mkdir(trained_rnn)
-
-# Create directories for current experiment
-os.mkdir(trained_rnn_expt)
-os.mkdir(trained_rnn_results)
-os.mkdir(trained_rnn_model)
 
 plt.rcParams['figure.figsize'] = (10,7)
 plt.rcParams['legend.fontsize'] = 8
@@ -314,7 +269,18 @@ plt.legend(['Train', 'Val'], loc='upper left')
 plt.savefig(os.path.join(trained_rnn_results,'loss'))
 if args.show:
     plt.show()
-plt.clf()
+plt.clf()  
+
+# Save the train results into the log file
+logfile.write("#####  TRAIN/VAL LOSS  #####\n")
+for i, (loss, val_loss) in enumerate(zip(history.history['loss'], history.history['val_loss'])):
+    logfile.write('Epoch  #{}\tTrain Loss: {:.6f}\tVal Loss: {:.6f}\n'.format(i+1, loss, val_loss))
+logfile.write("#####  TRAIN/VAL MEAN ACCURACY  #####\n")
+for i, (train_mean, test_mean) in enumerate(zip(trainHistory_on_traindata.mean_acc['true'], trainHistory_on_testdata.mean_acc['true'])):
+    logfile.write('Epoch  #{}\tTrain Mean Accuracy: {:.6f}\tVal Mean Accuracy: {:.6f}\n'.format((i*SAVE_EVERY_EPOCH)+5, train_mean, test_mean))
+logfile.write("#####  TRAIN/VAL MEDIAN ACCURACY  #####\n")
+for i, (train_median, test_median) in enumerate(zip(trainHistory_on_traindata.median_acc['true'], trainHistory_on_testdata.median_acc['true'])):
+    logfile.write('Epoch  #{}\tTrain Median Accuracy: {:.6f}\tVal Median Accuracy: {:.6f}\n'.format((i*SAVE_EVERY_EPOCH)+5, train_median, test_median))
 
 # Save the model
 model.save(os.path.join(trained_rnn_model,'rnnmodel_{}.h5'.format(DATETIME_NOW)))
@@ -328,11 +294,12 @@ with open(train_info, 'w') as f:
     f.write('Training Time: {}\n'.format(DATETIME_NOW.split('_')[1]))
     f.write('Batch Size: {}\n'.format(BATCH_SIZE))
     f.write('Epoch: {}\n'.format(EPOCH))
-    f.write('Feature file used: {}\n'.format(feature_file))
+    f.write('Feature file used: {}\n'.format(os.path.basename(feature_file)))
     f.write("Existing model used: {}\n".format(existing_model))
     f.write("Split Ratio: {}\n".format(SPLIT_RATIO))
     f.write("Seed: {}\n\n".format(SEED))
     f.write('####################################')
+    model.summary(print_fn=lambda x:f.write(x + '\n'))
 
 ##########################################################################################
 
@@ -355,3 +322,4 @@ for i in range(0,5):
         print(line)
 print('##################################################')
 
+logfile.close()
