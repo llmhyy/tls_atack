@@ -5,30 +5,26 @@ The module trains a simple 1 layer LSTM model from a sequence of traffic. The in
 ## Getting Started
 
 With a Python 3 environment, install the dependencies from `requirements.txt`
-
 ```
 pip install -r requirements.txt
 ```
-
-Execute the following possible commands:
-
-_Basic_
+For training a enw model, this is a sample code:
 ```
-python main.py -f 'features.csv'
+python main.py -e 100 -t ../new_traffic -f ../new_traffic/extracted_features/features_tls_2019-03-01_11-06-12.csv 
 ```
-_Complete_
+For re-training an existing model, this is a sample code
 ```
-python main.py -f 'features.csv' -n 1 -e 100 -s 'results/expt999'
+python main.py -e 100 -t ../new_traffic -f ../new_traffic/extracted_features/features_tls_2019-03-01_11-06-12.csv -m ../new_traffic/trained_rnn/expt_2019-03-09_22-22-35/model/rnnmodel_2019-03-09_22-22-35.h5
 ```
 
 Required arguments:
-* -f: Directory of feature file to be used for model training
+* -t: Input top-level directory of the traffic module containing extracted features
+* -f: Input directory path of feature file to be used
 
 Optional arguments:
-* -n : Normalization options for features (default=1)
 * -e : Number of epoch for training (default=100)
-* -s : Flag for saving visualization plots. If not specified, the plots will be displayed 
-* -m : Directory of existing model to be used for training
+* -s : Flag for saving visualization plots. If not specified, the plots will be displayed (default=True)
+* -m : Input directory of existing model to be used for training
 
 Normalization options:
 1. Normalize each sample independently into unit vectors
@@ -58,45 +54,20 @@ norm_fn = utils_datagen.normalize(2, min_max_feature)
 ```
 data_generator = utils_datagen.BatchGenerator(mmap_data, byte_offset, batch_size, sequence_len, norm_fn)
 ```
+5. The data generator will generate batches in this format: (input, target). Both input and target will have the shape: (batch_size, sequence_len, 146). Note that the size of the third dimension is 146 because there are a total of 146 extracted features in a packet. To use the generator, you can do something like this:
+```
+for (batch input, batch target) in data_generator:
+	# your code to manipulate batch input and batch target...
+```
 
 ## Visualization plots
 
 __Plotting the prediction on sequence length at every epoch.__ Motivation: to determine if the model is learning and is able to model after the traffic data
 
-At epoch 1
-
-![plot1](https://github.com/llmhyy/tls_atack/blob/master/rnn_model/results/train_predict_pktlen2%20(nicer%20diagram)/epoch1.png)
-
-At epoch 10
-
-![plot2](https://github.com/llmhyy/tls_atack/blob/master/rnn_model/results/train_predict_pktlen2%20(nicer%20diagram)/epoch10.png)
-
-At epoch 20
-
-![plot3](https://github.com/llmhyy/tls_atack/blob/master/rnn_model/results/train_predict_pktlen2%20(nicer%20diagram)/epoch20.png)
-
 __Plotting the cosine similarity for True packets__
-
-![plot4](https://github.com/llmhyy/tls_atack/blob/master/rnn_model/results/acc_dist_truepkts_.png)
 
 __Plotting the mean and median cosine similarity over epoch and final cosine similarity for #1 packet__
 
-![plot5](https://github.com/llmhyy/tls_atack/blob/master/rnn_model/results/expt1/acc_dist_1pkts.png)
-
 __Plotting the mean and median cosine similarity over epoch and final cosine similarity for first \_\_ packets__
 
-First 10 packets
-![plot6](https://github.com/llmhyy/tls_atack/blob/master/rnn_model/results/expt1/acc_dist_10pkts.png)
-
-First 30 packets
-![plot7](https://github.com/llmhyy/tls_atack/blob/master/rnn_model/results/expt1/acc_dist_30pkts.png)
-
-First 60 packets
-![plot8](https://github.com/llmhyy/tls_atack/blob/master/rnn_model/results/expt1/acc_dist_60pkts.png)
-
-First 90 packets
-![plot9](https://github.com/llmhyy/tls_atack/blob/master/rnn_model/results/expt1/acc_dist_90pkts.png)
-
 __Plotting the training and validation loss__
-
-![plot10](https://github.com/llmhyy/tls_atack/blob/master/rnn_model/results/expt1/loss.png)

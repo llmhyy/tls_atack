@@ -33,7 +33,6 @@ import utils_metric as utilsMetric
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument('-n', '--norm', help='Input normalization options for features', default=1, type=int, choices=[1,2,3])
 parser.add_argument('-e', '--epoch', help='Input epoch for training', default=100, type=int)
 parser.add_argument('-t', '--traffic', help='Input top-level directory of the traffic module containing extracted features', required=True)
 parser.add_argument('-f', '--feature', help='Input directory path of feature file to be used', required=True)
