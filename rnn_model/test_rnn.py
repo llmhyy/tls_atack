@@ -5,6 +5,7 @@ from keras.models import load_model
 
 from utils_datagen import get_mmapdata_and_byteoffset
 from utils_datagen import get_min_max
+from utils_datagen import normalize
 from utils_datagen import BatchGenerator
 from utils_plot import plot_distribution
 import utils_metric as utilsMetric
@@ -39,7 +40,10 @@ print('\nLoading features into memory...')
 mmap_data, byte_offset = get_mmapdata_and_byteoffset(args.feature)
 # Get min and max for each feature
 min_max_feature = get_min_max(mmap_data, byte_offset)
-data_generator = BatchGenerator(mmap_data, byte_offset, BATCH_SIZE, SEQUENCE_LEN, min_max_feature, return_seq_len=True)
+# Initialize the normalization function 
+norm_fn = normalize(2, min_max_feature)
+
+data_generator = BatchGenerator(mmap_data, byte_offset, BATCH_SIZE, SEQUENCE_LEN, norm_fn, return_seq_len=True)
 
 # Obtain the mean accuracy for each traffic and store in a array
 print('Computing mean accuracy for traffic...')

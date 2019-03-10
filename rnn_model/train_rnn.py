@@ -25,8 +25,8 @@ import matplotlib.pyplot as plt
 from utils_datagen import get_mmapdata_and_byteoffset
 from utils_datagen import get_min_max
 from utils_datagen import split_train_test
+from utils_datagen import normalize
 from utils_datagen import BatchGenerator
-from utils_logging import Logger
 import utils_plot as utilsPlot
 import utils_diagnostic as utilsDiagnostic
 import utils_metric as utilsMetric
@@ -105,9 +105,12 @@ TEST_SIZE = len(test_byteoffset)
 sample_traffic = json.loads('['+mmap_data[train_byteoffset[0][0]:train_byteoffset[0][1]+1].decode('ascii').strip().rstrip(',')+']')
 INPUT_DIM = len(sample_traffic[0])
 
+# Initialize the normalization function 
+norm_fn = normalize(2, min_max_feature)
+
 # Initialize the train and test generators for model training
-train_generator = BatchGenerator(mmap_data, train_byteoffset, BATCH_SIZE, SEQUENCE_LEN, min_max_feature)
-test_generator = BatchGenerator(mmap_data, test_byteoffset, BATCH_SIZE, SEQUENCE_LEN, min_max_feature)
+train_generator = BatchGenerator(mmap_data, train_byteoffset, BATCH_SIZE, SEQUENCE_LEN, norm_fn)
+test_generator = BatchGenerator(mmap_data, test_byteoffset, BATCH_SIZE, SEQUENCE_LEN, norm_fn)
 
 ##########################################################################################
  
@@ -141,7 +144,7 @@ class TrainHistory(keras.callbacks.Callback):
 
     def on_epoch_end(self, epoch, logs={}):
         # At the end of every epoch, we make a prediction and evaluate its accuracy, instead of savings the prediction...too much MEM!
-        if epoch%SAVE_EVERY_EPOCH==4: # save after every 5,10,15,... epoch
+        if epoch%SAVE_EVERY_EPOCH==(SAVE_EVERY_EPOCH-1): # save after every 5,10,15,... epoch
             temp_mean_acc = {}
             temp_median_acc = {}
             temp_predict_on_len = np.array([])
@@ -207,8 +210,8 @@ class TrainHistory(keras.callbacks.Callback):
             self.true_on_len = np.concatenate((self.true_on_len, temp_predict_on_len.reshape(1, *temp_true_on_len.shape)))
 
 # Initialize NEW train and test generators for model prediction
-train_generator_prediction = BatchGenerator(mmap_data, train_byteoffset, BATCH_SIZE, SEQUENCE_LEN, min_max_feature, return_seq_len=True)
-test_generator_prediction = BatchGenerator(mmap_data, test_byteoffset, BATCH_SIZE, SEQUENCE_LEN, min_max_feature, return_seq_len=True)
+train_generator_prediction = BatchGenerator(mmap_data, train_byteoffset, BATCH_SIZE, SEQUENCE_LEN, norm_fn, return_seq_len=True)
+test_generator_prediction = BatchGenerator(mmap_data, test_byteoffset, BATCH_SIZE, SEQUENCE_LEN, norm_fn, return_seq_len=True)
 trainHistory_on_traindata = TrainHistory(train_generator_prediction)
 trainHistory_on_testdata = TrainHistory(test_generator_prediction)
 
@@ -275,12 +278,12 @@ plt.clf()
 logfile.write("#####  TRAIN/VAL LOSS  #####\n")
 for i, (loss, val_loss) in enumerate(zip(history.history['loss'], history.history['val_loss'])):
     logfile.write('Epoch  #{}\tTrain Loss: {:.6f}\tVal Loss: {:.6f}\n'.format(i+1, loss, val_loss))
-logfile.write("#####  TRAIN/VAL MEAN ACCURACY  #####\n")
+logfile.write("\n#####  TRAIN/VAL MEAN ACCURACY  #####\n")
 for i, (train_mean, test_mean) in enumerate(zip(trainHistory_on_traindata.mean_acc['true'], trainHistory_on_testdata.mean_acc['true'])):
-    logfile.write('Epoch  #{}\tTrain Mean Accuracy: {:.6f}\tVal Mean Accuracy: {:.6f}\n'.format((i*SAVE_EVERY_EPOCH)+5, train_mean, test_mean))
-logfile.write("#####  TRAIN/VAL MEDIAN ACCURACY  #####\n")
+    logfile.write('Epoch  #{}\tTrain Mean Accuracy: {:.6f}\tVal Mean Accuracy: {:.6f}\n'.format((i*SAVE_EVERY_EPOCH)+SAVE_EVERY_EPOCH, train_mean, test_mean))
+logfile.write("\n#####  TRAIN/VAL MEDIAN ACCURACY  #####\n")
 for i, (train_median, test_median) in enumerate(zip(trainHistory_on_traindata.median_acc['true'], trainHistory_on_testdata.median_acc['true'])):
-    logfile.write('Epoch  #{}\tTrain Median Accuracy: {:.6f}\tVal Median Accuracy: {:.6f}\n'.format((i*SAVE_EVERY_EPOCH)+5, train_median, test_median))
+    logfile.write('Epoch  #{}\tTrain Median Accuracy: {:.6f}\tVal Median Accuracy: {:.6f}\n'.format((i*SAVE_EVERY_EPOCH)+SAVE_EVERY_EPOCH, train_median, test_median))
 
 # Save the model
 model.save(os.path.join(trained_rnn_model,'rnnmodel_{}.h5'.format(DATETIME_NOW)))
@@ -298,7 +301,7 @@ with open(train_info, 'w') as f:
     f.write("Existing model used: {}\n".format(existing_model))
     f.write("Split Ratio: {}\n".format(SPLIT_RATIO))
     f.write("Seed: {}\n\n".format(SEED))
-    f.write('####################################')
+    f.write('####################################\n\n')
     model.summary(print_fn=lambda x:f.write(x + '\n'))
 
 ##########################################################################################

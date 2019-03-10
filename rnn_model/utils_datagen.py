@@ -2,9 +2,11 @@ import json
 import math
 import mmap
 import numpy as np
+from functools import partial
 from random import shuffle
 from keras.utils import Sequence
 from keras.preprocessing.sequence import pad_sequences
+
 
 
 def find_lines(data):
@@ -52,14 +54,34 @@ def split_train_test(byte_offset, split_ratio, seed):
 
     return train_byte_offset, test_byte_offset
 
+def normalize(option, min_max_feature=None):
+    def l2_norm(batch_data):
+        l2_norm = np.linalg.norm(batch_data, axis=2, keepdims=True)
+        batch_data = np.divide(batch_data, l2_norm, out=np.zeros_like(batch_data), where=l2_norm!=0.0)
+        return batch_data
+    def min_max_norm(batch_data, min_max_feature):
+        num = batch_data-min_max_feature[0]
+        den = min_max_feature[1]-min_max_feature[0]
+        batch_data = np.divide(num, den, out=np.zeros_like(num), where=den!=0.0)    
+        return batch_data
+    if option == 1:
+        return l2_norm
+    elif option == 2:
+        if min_max_feature is not None:
+            return partial(min_max_norm, min_max_feature=min_max_feature)
+        else:
+            print("Error: min-max range for feature is not provided")
+            return
+
 class BatchGenerator(Sequence):
-    def __init__(self, mmap_data, byte_offset, batch_size, sequence_len, min_max_feature, return_seq_len=False):
+    def __init__(self, mmap_data, byte_offset, batch_size, sequence_len, norm_fn, return_seq_len=False):
         self.mmap_data = mmap_data
         self.byte_offset = byte_offset
         self.batch_size = batch_size
         self.sequence_len = sequence_len
-        self.min_feature = min_max_feature[0]
-        self.max_feature = min_max_feature[1]
+        self.norm_fn = norm_fn
+        # self.min_feature = min_max_feature[0]
+        # self.max_feature = min_max_feature[1]
         self.return_seq_len = return_seq_len
 
     def __len__(self):
@@ -79,14 +101,15 @@ class BatchGenerator(Sequence):
         batch_data = pad_sequences(batch_data, maxlen=self.sequence_len, dtype='float32', padding='post',value=0.0)
 
         # Scale the features
+        batch_data = self.norm_fn(batch_data)
         # (1)   L2 Normalization
         # l2_norm = np.linalg.norm(batch_data, axis=2, keepdims=True)
         # batch_data = np.divide(batch_data, l2_norm, out=np.zeros_like(batch_data), where=l2_norm!=0.0)
         # (2)   Min Max Normalization
         # batch_data = (batch_data - self.min_feature)/(self.max_feature - self.min_feature)
-        num = batch_data-self.min_feature
-        den = self.max_feature-self.min_feature
-        batch_data = np.divide(num, den, out=np.zeros_like(num), where=den!=0.0)
+        # num = batch_data-self.min_feature
+        # den = self.max_feature-self.min_feature
+        # batch_data = np.divide(num, den, out=np.zeros_like(num), where=den!=0.0)
 
         # Append zero to the start of the sequence
         packet_zero = np.zeros((batch_data.shape[0],1,batch_data.shape[2]))
