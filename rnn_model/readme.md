@@ -10,11 +10,11 @@ pip install -r requirements.txt
 ```
 For training a enw model, this is a sample code:
 ```
-python main.py -e 100 -t ../new_traffic -f ../new_traffic/extracted_features/features_tls_2019-03-01_11-06-12.csv 
+python train_rnn.py -e 100 -t ../new_traffic -f ../new_traffic/extracted_features/features_tls_2019-03-01_11-06-12.csv 
 ```
 For re-training an existing model, this is a sample code
 ```
-python main.py -e 100 -t ../new_traffic -f ../new_traffic/extracted_features/features_tls_2019-03-01_11-06-12.csv -m ../new_traffic/trained_rnn/expt_2019-03-09_22-22-35/model/rnnmodel_2019-03-09_22-22-35.h5
+python train_rnn.py -e 100 -t ../new_traffic -f ../new_traffic/extracted_features/features_tls_2019-03-01_11-06-12.csv -m ../new_traffic/trained_rnn/expt_2019-03-09_22-22-35/model/rnnmodel_2019-03-09_22-22-35.h5
 ```
 
 Required arguments:
