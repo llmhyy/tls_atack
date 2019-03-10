@@ -35,6 +35,30 @@ Normalization options:
 2. Standardize each feature across ALL traffic. [Source](http://cs231n.github.io/neural-networks-2/)
 3. Scale each feature between min and max of feature
 
+## Loading dataset for model training
+
+A step-by-step guide to loading the data into memory _nicely_. Typically, we can load the whole dataset into memory if the dataset is small, but the dataset we are dealing with is too big (≥1GB), hence we can use `keras.utils.Sequence()` class to load the dataset in batches for memory efficiency, much like how Python Generators work. These are the steps to follow:
+1. Import `utils_datagen` from the folder rnn_model, which contains utility functions
+```
+import utils_datagen
+```
+2. Set `path_to_feature_file` to the directory path of the feature file to be used and use the `get_mmapdata_and_byteoffset` function to obtain the mmap object and the byte offsets of the lines in the feature file. You can refer to [this](https://stackoverflow.com/questions/24492331/shuffle-a-large-list-of-items-without-loading-in-memory) for more info on mmap and how byte offsets are generated
+```
+mmap_data, byte_offset = utils_datagen.get_mmapdata_and_byteoffset(path_to_feature_file)
+```
+3. There are 2 options for normalization: L2 normalization or Min-Max normalization. For min-max normalization, the lower and upper bound must first be discovered using the function `utils_datagen.get_min_max`
+```
+# Option 1: L2 Normalization
+norm_fn = utils_datagen.normalize(1)
+# Option 2: Min-Max Normalization
+min_max_feature = utils_datagen.get_min_max(mmap_data, byte_offset)
+norm_fn = utils_datagen.normalize(2, min_max_feature)
+```
+4. Initialize the generator with the following parameters. `batch_size` refers to the number of training observation for 1 batch (default=64). `sequence_len` refers to the number of packets in a training observation (default=100). The rest are derived from above.
+```
+data_generator = utils_datagen.BatchGenerator(mmap_data, byte_offset, batch_size, sequence_len, norm_fn)
+```
+
 ## Visualization plots
 
 __Plotting the prediction on sequence length at every epoch.__ Motivation: to determine if the model is learning and is able to model after the traffic data

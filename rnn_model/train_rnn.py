@@ -78,26 +78,12 @@ if not os.path.exists(extracted_features):
 
 # Load the mmap data and the byte offsets from the feature file
 mmap_data, byte_offset = get_mmapdata_and_byteoffset(feature_file)
+
 # Get min and max for each feature
 min_max_feature = get_min_max(mmap_data, byte_offset)
+
 # Split the dataset into train and test
 train_byteoffset, test_byteoffset = split_train_test(byte_offset, SPLIT_RATIO, SEED)
-
-# # Creating a list of byte offset for each line
-# with open(os.path.join(extracted_features, feature_file), 'r') as f:
-#     data = mmap.mmap(f.fileno(), 0, access=mmap.ACCESS_READ)
-#     start = 0
-#     lines = []
-#     for end in find_lines(data):
-#         lines.append((start, end))
-#         start = end + 1
-
-# # Shuffling the indices to give a random train test split
-# indices = np.random.RandomState(seed=SEED).permutation(len(lines)) 
-# split_idx = math.ceil((1-SPLIT_RATIO)*len(lines))
-# train_idx, test_idx = indices[:split_idx], indices[split_idx:]
-# train_start_end_line = [lines[idx] for idx in train_idx]
-# test_start_end_line = [lines[idx] for idx in test_idx]
 
 # Intializing constants
 TRAIN_SIZE = len(train_byteoffset)
