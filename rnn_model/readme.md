@@ -34,16 +34,27 @@ Normalization options:
 ## Loading dataset for model training
 
 A step-by-step guide to loading the data into memory _nicely_. Typically, we can load the whole dataset into memory if the dataset is small, but the dataset we are dealing with is too big (≥1GB), hence we can use `keras.utils.Sequence()` class to load the dataset in batches for memory efficiency, much like how Python Generators work. These are the steps to follow:
-1. Import `utils_datagen` from the folder rnn_model, which contains utility functions
+
+0. When you first git pull, the feature files are in different parts and currently found in a folder. This is because git only allows file of max size 100MB to be uploaded, hence the files are split into parts before pushing into the remote repository. For example, the feature files in parts for normal traffic can be found in 'tls_atack/new_traffic/extracted_features/features_tls_<datetime>/'. You need to combine them into a single csv file by running the following command, which will generate a feature file in the same directory as the folder with the same name but with a csv extension: 'features_tls_<datetime>.csv'.
 ```
+# bash
+cd feature_extraction/
+source venv/bin/activate # rmb to pip install the requirements first
+python file_joiner.py -i new_traffic/extracted_features/features_tls_<datetime>/
+```
+1. Now in your python script, import `utils_datagen` from the folder rnn_model, which contains utility functions. Note that you need to install keras and numpy 
+```
+# python3
 import utils_datagen
 ```
-2. Set `path_to_feature_file` to the directory path of the feature file to be used and use the `get_mmapdata_and_byteoffset` function to obtain the mmap object and the byte offsets of the lines in the feature file. You can refer to [this](https://stackoverflow.com/questions/24492331/shuffle-a-large-list-of-items-without-loading-in-memory) for more info on mmap and how byte offsets are generated
+2. Set `path_to_feature_file` to the directory path of the feature file to be used and use the `get_mmapdata_and_byteoffset` function to obtain the mmap object and the byte offsets of the lines in the feature file. You can refer to [this](https://stackoverflow.com/questions/24492331/shuffle-a-large-list-of-items-without-loading-in-memory) for more info on mmap and how byte offsets are generated. Note that the feature file is always found in a directory path with this pattern: 'tls_atack/<top-level module>/extracted_features/features_tls_<datetime>' where <top-level model> can be 'new_traffic' for normal traffic and 'thc-tls-dos_traffic' for DOS attack traffic
 ```
+# python3
 mmap_data, byte_offset = utils_datagen.get_mmapdata_and_byteoffset(path_to_feature_file)
 ```
 3. There are 2 options for normalization: L2 normalization or Min-Max normalization. For min-max normalization, the lower and upper bound must first be discovered using the function `utils_datagen.get_min_max`
 ```
+# python3
 # Option 1: L2 Normalization
 norm_fn = utils_datagen.normalize(1)
 # Option 2: Min-Max Normalization
@@ -52,10 +63,12 @@ norm_fn = utils_datagen.normalize(2, min_max_feature)
 ```
 4. Initialize the generator with the following parameters. `batch_size` refers to the number of training observation for 1 batch (default=64). `sequence_len` refers to the number of packets in a training observation (default=100). The rest are derived from above.
 ```
+# python3
 data_generator = utils_datagen.BatchGenerator(mmap_data, byte_offset, batch_size, sequence_len, norm_fn)
 ```
 5. The data generator will generate batches in this format: (input, target). Both input and target will have the shape: (batch_size, sequence_len, 146). Note that the size of the third dimension is 146 because there are a total of 146 extracted features in a packet. To use the generator, you can do something like this:
 ```
+# python3
 for (batch input, batch target) in data_generator:
 	# your code to manipulate batch input and batch target...
 ```
