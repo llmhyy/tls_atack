@@ -10,7 +10,7 @@ import numpy as np
 import ipaddress
 from sklearn.preprocessing import OneHotEncoder
 
-def extract_tcp_features(pcapfile):
+def extract_tcp_features(pcapfile, limit):
     """
     ** NEED EDITS **
     Extract features from a pcap file and returns a feature vector. The feature vector is a 
@@ -81,9 +81,10 @@ def extract_tcp_features(pcapfile):
     packets = pyshark.FileCapture(pcapfile)
 
     for i, packet in enumerate(packets):
+        # Break the loop when limit is reached
+        if i>=limit:
+            break
 
-        # TCP FEATURES
-        ##################################################################
         features = []
 
         # 1: COME/LEAVE
@@ -356,7 +357,7 @@ def find_appdata2(obj):
         elif 'ssl.app_data' in obj:
             return obj
 
-def extract_tslssl_features(pcapfile, enums):
+def extract_tslssl_features(pcapfile, enums, limit):
 
     # TODO: implement dynamic features
     # Each packet will have its own record layer. If the layer does not exist, the features in that layer
@@ -375,7 +376,9 @@ def extract_tslssl_features(pcapfile, enums):
     total_ssl = 0
 
     for i, packet_json in enumerate(packets_json):
-        #print('Packet ID {}'.format(i + 1))
+        # Break the loop when limit is reached
+        if i>=limit:
+            break
         
         features = []
 
@@ -769,7 +772,7 @@ if __name__ == '__main__':
     # extract_tcp_features('sample/www.zeroaggressionproject.org_2018-12-21_16-19-03.pcap')
 
     # Test whether all enums are generated
-    enums = searchEnums(rootdir, limit=5)
+    # enums = searchEnums(rootdir, limit=5)
     #enumCipherSuites = searchCipherSuites(rootdir)
     #enumCompressionMethods = searchCompressionMethods(rootdir)
     #enumSupportedGroups = searchSupportedGroups(rootdir)
@@ -779,8 +782,8 @@ if __name__ == '__main__':
     # Test whether all features are extracted
     # sample = 'sample/ari.nus.edu.sg_2018-12-24_14-30-02.pcap'
     # sample = 'sample/www.zeroaggressionproject.org_2018-12-21_16-19-03.pcap'
-    # sample = 'sample/www.stripes.com_2018-12-21_16-20-12.pcap'
-    sample = 'sample/australianmuseum.net.au_2018-12-21_16-15-59.pcap'
+    sample = 'sample/www.stripes.com_2018-12-21_16-20-12.pcap'
+    # sample = 'sample/australianmuseum.net.au_2018-12-21_16-15-59.pcap'
     # sample = 'sample/openssl102n.pcap'
 
     # sample = 'sample/tls/www.tmr.qld.gov.au_2018-12-24_17-20-56.pcap'
@@ -802,8 +805,10 @@ if __name__ == '__main__':
     enums = {'ciphersuites':[], 'compressionmethods':[], 'supportedgroups':[], 'sighashalgorithms_client':[], 'sighashalgorithms_cert':[]}
     
     # Test whether tls/ssl features are extracted
-    extract_tcp_features(sample)
-    extract_tslssl_features(sample, enums)
+    # sample_t = extract_tcp_features(sample,limit=75)
+    sample_t = extract_tslssl_features(sample, enums,limit=75)
+    print(len(sample_t))
+    print(len(sample_t[0]))
 
     # Test whether directory is searched correctly with features extracted 
     # search_and_extract(rootdir, testcsv)

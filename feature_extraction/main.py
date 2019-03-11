@@ -33,6 +33,7 @@ logging.basicConfig(filename=os.path.join(extracted_features,'output.log'), leve
 def search_and_extract(pcap_dir, features_csv, enums):
     success = 0
     failed = 0
+    traffic_limit = 200
     with open(features_csv, 'a', newline='') as csv:
         for root, dirs, files in os.walk(pcap_dir):
             for f in files:
@@ -41,9 +42,9 @@ def search_and_extract(pcap_dir, features_csv, enums):
                         #print("Extracting features from {}".format(f))
                         logging.info("Extracting features from {}".format(f))
                         # Generate TCP features
-                        tcp_features = utils.extract_tcp_features(os.path.join(root, f))
+                        tcp_features = utils.extract_tcp_features(os.path.join(root, f), limit=traffic_limit)
                         # Generate TLS/SSL features
-                        tls_features = utils.extract_tslssl_features(os.path.join(root, f), enums)
+                        tls_features = utils.extract_tslssl_features(os.path.join(root, f), enums, limit=traffic_limit)
                         # Combine TCP and TLS/SSL features
                         traffic_features = (np.concatenate((np.array(tcp_features), np.array(tls_features)), axis=1)).tolist()
                         # Each packet in traffic features is a vector of 139 dimension
