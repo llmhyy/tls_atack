@@ -1,22 +1,22 @@
 Network Layer,TLS Protocol Name,Feature Name,Type,Enum Value
 TCP,-,Come/Leave,Boolean,-
 TCP,-,Protocol,Enum,TCP
-TCP,-,Protocol,Enum, SSL2.0
-TCP,-,Protocol,Enum, SSL3.0
-TCP,-,Protocol,Enum, TLS1.0
-TCP,-,Protocol,Enum, TLS1.1
-TCP,-,Protocol,Enum, TLS1.2
+TCP,-,Protocol,Enum,SSL2.0
+TCP,-,Protocol,Enum,SSL3.0
+TCP,-,Protocol,Enum,TLS1.0
+TCP,-,Protocol,Enum,TLS1.1
+TCP,-,Protocol,Enum,TLS1.2
 TCP,-,Length,Integer,-
 TCP,-,Interval,Float,-
 TCP,-,Flag,Enum,NS
-TCP,-,Flag,Enum, CWR
-TCP,-,Flag,Enum, ECE
-TCP,-,Flag,Enum, URG
-TCP,-,Flag,Enum, ACK
-TCP,-,Flag,Enum, PSH
-TCP,-,Flag,Enum, RST
-TCP,-,Flag,Enum, SYN
-TCP,-,Flag,Enum, FIN
+TCP,-,Flag,Enum,CWR
+TCP,-,Flag,Enum,ECE
+TCP,-,Flag,Enum,URG
+TCP,-,Flag,Enum,ACK
+TCP,-,Flag,Enum,PSH
+TCP,-,Flag,Enum,RST
+TCP,-,Flag,Enum,SYN
+TCP,-,Flag,Enum,FIN
 TCP,-,Windows Size,Integer,-
 TLS,ClientHello,Length,Integer,-
 TLS,ClientHello,Cipher suites,Enum,?

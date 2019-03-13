@@ -1,0 +1,147 @@
+Network Layer,TLS Protocol Name,Feature Name,Type,Enum Value
+TCP,-,Come/Leave,Boolean,-
+TCP,-,Protocol,Enum,TCP
+TCP,-,Protocol,Enum, SSL2.0
+TCP,-,Protocol,Enum, SSL3.0
+TCP,-,Protocol,Enum, TLS1.0
+TCP,-,Protocol,Enum, TLS1.1
+TCP,-,Protocol,Enum, TLS1.2
+TCP,-,Length,Integer,-
+TCP,-,Interval,Float,-
+TCP,-,Flag,Enum,NS
+TCP,-,Flag,Enum, CWR
+TCP,-,Flag,Enum, ECE
+TCP,-,Flag,Enum, URG
+TCP,-,Flag,Enum, ACK
+TCP,-,Flag,Enum, PSH
+TCP,-,Flag,Enum, RST
+TCP,-,Flag,Enum, SYN
+TCP,-,Flag,Enum, FIN
+TCP,-,Windows Size,Integer,-
+TLS,ClientHello,Length,Integer,-
+TLS,ClientHello,Cipher suites,Enum,0
+TLS,ClientHello,Cipher suites,Enum,49155
+TLS,ClientHello,Cipher suites,Enum,132
+TLS,ClientHello,Cipher suites,Enum,133
+TLS,ClientHello,Cipher suites,Enum,134
+TLS,ClientHello,Cipher suites,Enum,135
+TLS,ClientHello,Cipher suites,Enum,136
+TLS,ClientHello,Cipher suites,Enum,49161
+TLS,ClientHello,Cipher suites,Enum,49162
+TLS,ClientHello,Cipher suites,Enum,49157
+TLS,ClientHello,Cipher suites,Enum,49156
+TLS,ClientHello,Cipher suites,Enum,7
+TLS,ClientHello,Cipher suites,Enum,49166
+TLS,ClientHello,Cipher suites,Enum,49167
+TLS,ClientHello,Cipher suites,Enum,49160
+TLS,ClientHello,Cipher suites,Enum,16
+TLS,ClientHello,Cipher suites,Enum,49170
+TLS,ClientHello,Cipher suites,Enum,49171
+TLS,ClientHello,Cipher suites,Enum,49172
+TLS,ClientHello,Cipher suites,Enum,19
+TLS,ClientHello,Cipher suites,Enum,150
+TLS,ClientHello,Cipher suites,Enum,151
+TLS,ClientHello,Cipher suites,Enum,152
+TLS,ClientHello,Cipher suites,Enum,153
+TLS,ClientHello,Cipher suites,Enum,154
+TLS,ClientHello,Cipher suites,Enum,158
+TLS,ClientHello,Cipher suites,Enum,49308
+TLS,ClientHello,Cipher suites,Enum,157
+TLS,ClientHello,Cipher suites,Enum,49310
+TLS,ClientHello,Cipher suites,Enum,156
+TLS,ClientHello,Cipher suites,Enum,49309
+TLS,ClientHello,Cipher suites,Enum,49313
+TLS,ClientHello,Cipher suites,Enum,162
+TLS,ClientHello,Cipher suites,Enum,163
+TLS,ClientHello,Cipher suites,Enum,49188
+TLS,ClientHello,Cipher suites,Enum,49315
+TLS,ClientHello,Cipher suites,Enum,49187
+TLS,ClientHello,Cipher suites,Enum,49191
+TLS,ClientHello,Cipher suites,Enum,52392
+TLS,ClientHello,Cipher suites,Enum,52393
+TLS,ClientHello,Cipher suites,Enum,52394
+TLS,ClientHello,Cipher suites,Enum,159
+TLS,ClientHello,Cipher suites,Enum,49195
+TLS,ClientHello,Cipher suites,Enum,49196
+TLS,ClientHello,Cipher suites,Enum,49325
+TLS,ClientHello,Cipher suites,Enum,49192
+TLS,ClientHello,Cipher suites,Enum,49199
+TLS,ClientHello,Cipher suites,Enum,49200
+TLS,ClientHello,Cipher suites,Enum,49327
+TLS,ClientHello,Cipher suites,Enum,49326
+TLS,ClientHello,Cipher suites,Enum,49324
+TLS,ClientHello,Cipher suites,Enum,49314
+TLS,ClientHello,Cipher suites,Enum,51
+TLS,ClientHello,Cipher suites,Enum,50
+TLS,ClientHello,Cipher suites,Enum,53
+TLS,ClientHello,Cipher suites,Enum,56
+TLS,ClientHello,Cipher suites,Enum,57
+TLS,ClientHello,Cipher suites,Enum,10
+TLS,ClientHello,Cipher suites,Enum,60
+TLS,ClientHello,Cipher suites,Enum,61
+TLS,ClientHello,Cipher suites,Enum,54
+TLS,ClientHello,Cipher suites,Enum,55
+TLS,ClientHello,Cipher suites,Enum,64
+TLS,ClientHello,Cipher suites,Enum,65
+TLS,ClientHello,Cipher suites,Enum,66
+TLS,ClientHello,Cipher suites,Enum,67
+TLS,ClientHello,Cipher suites,Enum,68
+TLS,ClientHello,Cipher suites,Enum,69
+TLS,ClientHello,Cipher suites,Enum,13
+TLS,ClientHello,Cipher suites,Enum,49165
+TLS,ClientHello,Cipher suites,Enum,49311
+TLS,ClientHello,Cipher suites,Enum,103
+TLS,ClientHello,Cipher suites,Enum,106
+TLS,ClientHello,Cipher suites,Enum,107
+TLS,ClientHello,Cipher suites,Enum,47
+TLS,ClientHello,Cipher suites,Enum,49312
+TLS,ClientHello,Cipher suites,Enum,22
+TLS,ClientHello,Cipher suites,Enum,48
+TLS,ClientHello,Cipher suites,Enum,49
+TLS,ClientHello,Cipher suites,Enum,255
+TLS,ClientHello,Cipher suites length,Integer,-
+TLS,ClientHello,Compression method,Enum,0
+TLS,ClientHello,Compression method,Enum,0
+TLS,ClientHello,Supported group length,Integer,-
+TLS,ClientHello,Supported groups,Enum,0
+TLS,ClientHello,Supported groups,Enum,24
+TLS,ClientHello,Supported groups,Enum,25
+TLS,ClientHello,Supported groups,Enum,29
+TLS,ClientHello,Supported groups,Enum,23
+TLS,ClientHello,Encrypt then mac length,Integer,-
+TLS,ClientHello,Extended master secret,Integer,-
+TLS,ClientHello,Signature hash algorithm,Enum,0
+TLS,ClientHello,Signature hash algorithm,Enum,1537
+TLS,ClientHello,Signature hash algorithm,Enum,1538
+TLS,ClientHello,Signature hash algorithm,Enum,515
+TLS,ClientHello,Signature hash algorithm,Enum,1539
+TLS,ClientHello,Signature hash algorithm,Enum,1281
+TLS,ClientHello,Signature hash algorithm,Enum,1282
+TLS,ClientHello,Signature hash algorithm,Enum,1283
+TLS,ClientHello,Signature hash algorithm,Enum,1025
+TLS,ClientHello,Signature hash algorithm,Enum,1026
+TLS,ClientHello,Signature hash algorithm,Enum,1027
+TLS,ClientHello,Signature hash algorithm,Enum,770
+TLS,ClientHello,Signature hash algorithm,Enum,771
+TLS,ClientHello,Signature hash algorithm,Enum,513
+TLS,ClientHello,Signature hash algorithm,Enum,514
+TLS,ClientHello,Signature hash algorithm,Enum,769
+TLS,ServerHello,Length,Integer,-
+TLS,ServerHello,Renegotiation info length,Integer ,-
+TLS,Certificate,Average certificate length,Integer,-
+TLS,Certificate,Maximum certificate length,Integer,-
+TLS,Certificate,Minimum certificate length,Integer,-
+TLS,Certificate,Number of Certificates,Integer,-
+TLS,Certificate,Signature algorithm,Enum,0
+TLS,Certificate,Signature algorithm,Enum,1.2.840.113549.1.1.13
+TLS,Certificate,Signature algorithm,Enum,1.2.840.113549.1.1.11
+TLS,Certificate,Signature algorithm,Enum,1.2.840.10045.4.3.3
+TLS,Certificate,Signature algorithm,Enum,1.2.840.113549.1.1.5
+TLS,Certificate,Signature algorithm,Enum,1.2.840.10045.4.3.2
+TLS,Certificate,Signature algorithm,Enum,1.2.840.113549.1.1.12
+TLS,Server Hello Done,Length,Integer,-
+TLS,Client Key Exchange,Length,Integer,-
+TLS,Client Key Exchange,Pubkey length,Integer,-
+TLS,Encrypted Handshake Message,Length,Integer,-
+TLS,Change Cipher Spec,Length,Integer,-
+TLS,Application Data Protocol,Length,Integer,-
