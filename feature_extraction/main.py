@@ -108,6 +108,7 @@ else:
                 enum_list = enums['sighashalgorithms_cert']
             
             if enum_list:
+                enum_list = [0] + enum_list
                 for each_enum in enum_list:
                     split_line[4] = str(each_enum)
                     out_file.write(','.join(split_line)+'\n')
