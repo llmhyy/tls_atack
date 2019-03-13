@@ -1,0 +1,42 @@
+Network Layer,TLS Protocol Name,Feature Name,Type,Enum Value
+TCP,-,Come/Leave,Boolean,-
+TCP,-,Protocol,Enum,TCP
+TCP,-,Protocol,Enum, SSL2.0
+TCP,-,Protocol,Enum, SSL3.0
+TCP,-,Protocol,Enum, TLS1.0
+TCP,-,Protocol,Enum, TLS1.1
+TCP,-,Protocol,Enum, TLS1.2
+TCP,-,Length,Integer,-
+TCP,-,Interval,Float,-
+TCP,-,Flag,Enum,NS
+TCP,-,Flag,Enum, CWR
+TCP,-,Flag,Enum, ECE
+TCP,-,Flag,Enum, URG
+TCP,-,Flag,Enum, ACK
+TCP,-,Flag,Enum, PSH
+TCP,-,Flag,Enum, RST
+TCP,-,Flag,Enum, SYN
+TCP,-,Flag,Enum, FIN
+TCP,-,Windows Size,Integer,-
+TLS,ClientHello,Length,Integer,-
+TLS,ClientHello,Cipher suites,Enum,?
+TLS,ClientHello,Cipher suites length,Integer,-
+TLS,ClientHello,Compression method,Enum,?
+TLS,ClientHello,Supported group length,Integer,-
+TLS,ClientHello,Supported groups,Enum,?
+TLS,ClientHello,Encrypt then mac length,Integer,-
+TLS,ClientHello,Extended master secret,Integer,-
+TLS,ClientHello,Signature hash algorithm,Enum,?
+TLS,ServerHello,Length,Integer,-
+TLS,ServerHello,Renegotiation info length,Integer ,-
+TLS,Certificate,Average certificate length,Integer,-
+TLS,Certificate,Maximum certificate length,Integer,-
+TLS,Certificate,Minimum certificate length,Integer,-
+TLS,Certificate,Number of Certificates,Integer,-
+TLS,Certificate,Signature algorithm,Enum,?
+TLS,Server Hello Done,Length,Integer,-
+TLS,Client Key Exchange,Length,Integer,-
+TLS,Client Key Exchange,Pubkey length,Integer,-
+TLS,Encrypted Handshake Message,Length,Integer,-
+TLS,Change Cipher Spec,Length,Integer,-
+TLS,Application Data Protocol,Length,Integer,-
