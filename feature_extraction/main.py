@@ -90,7 +90,7 @@ else:
         yaml.dump(enums, f)
 
     feature_info = 'feature_info.csv'
-    new_feature_info = os.path.join(extracted_features, feature_info)
+    new_feature_info = os.path.join(extracted_features, 'feature_info_{}.csv'.format(datetime_now.strftime('%Y-%m-%d_%H-%M-%S')))
     with open(feature_info,'r') as in_file, open(new_feature_info,'w') as out_file:
         for line in in_file:
             enum_list = None
