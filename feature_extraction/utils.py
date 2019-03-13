@@ -38,45 +38,9 @@ def extract_tcp_features(pcapfile, limit):
     # prot: ['TCP' (-), 'SSL2.0' (0x0200), 'SSL3.0' (0x0300), 'TLS1.0' (0x0301), 'TLS1.1' (0x0302), 'TLS1.2' (0x0303)]
     protcol_ver = [0, 512, 768, 769, 770, 771]
 
-    ####################################################################################
-    ## USING SCAPY ##
-
-    if False:
-        packets = rdpcap(pcapfile)
-        # print(len(packets))
-        # print(packets[0])
-        # print(packets[0].show())
-        # print(dir(packets))
-        # print(type(packets))
-
-        for i, packet in enumerate(packets):
-            print('Packet  #' + str(i + 1))
-            packet.show()
-            features = []
-
-            # 1: Come/Leave
-            if packet.haslayer('IP'):
-                if ipaddress.ip_address(unicode(packet['IP'].dst)).is_private:
-                    features.append(1)
-                else:
-                    features.append(0)
-            else:
-                print("Error: packet does not contain IP layer")
-                exit()
-
-            # 2: Protocol
-            # print(packet.haslayer('SSL'))
-
-            # 3: Length
-            # 4: Interval
-            # 5: Flag
-            # 6: Window Size
-
-            # print(features)
 
     ####################################################################################
     ## USING PYSHARK ##
-    # Pyshark seems to be unable to distinguish between record layers
 
     packets = pyshark.FileCapture(pcapfile)
 

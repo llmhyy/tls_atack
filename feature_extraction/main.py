@@ -89,14 +89,39 @@ else:
     with open(enums_filename, 'w') as f:
         yaml.dump(enums, f)
 
-    with open(enums_info, 'w') as f:
-        for k,v in enums.items():
-            print('Enum: {}'.format(k))
-            f.write('Enum: {}\n'.format(k))
-            print(v)
-            f.write(str(v)+'\n')
-            print('Length of enum: {}'.format(len(v)))
-            f.write('Length of enum: {}\n\n'.format(len(v)))
+    feature_info = 'feature_info.csv'
+    new_feature_info = os.path.join(extracted_features, feature_info)
+    with open(feature_info,'r') as in_file, open(new_feature_info,'w') as out_file:
+        for line in in_file:
+            enum_list = None
+            split_line = line.split(',')
+            if 'ClientHello' == split_line[1]:
+                if 'Cipher suites' == split_line[2]:
+                    enum_list = enums['ciphersuites']
+                elif 'Compression method' == split_line[2]:
+                    enum_list = enums['compressionmethods']
+                elif 'Supported groups' == split_line[2]:
+                    enum_list = enums['supportedgroups']
+                elif 'Signature hash algorithm' == split_line[2]:
+                    enum_list = enums['sighashalgorithms_client']
+            elif 'Certificate' == split_line[1] and 'Signature algorithm' == split_line[2]:
+                enum_list = enums['sighashalgorithms_cert']
+            
+            if enum_list:
+                for each_enum in enum_list:
+                    split_line[4] = str(each_enum)
+                    out_file.write(','.join(split_line)+'\n')
+            else:
+                out_file.write(line)
+
+    # with open(enums_info, 'w') as f:
+    #     for k,v in enums.items():
+    #         print('Enum: {}'.format(k))
+    #         f.write('Enum: {}\n'.format(k))
+    #         print(v)
+    #         f.write(str(v)+'\n')
+    #         print('Length of enum: {}'.format(len(v)))
+    #         f.write('Length of enum: {}\n\n'.format(len(v)))
 
 # Iterate through pcap files and extract features
 search_and_extract(pcap_dir, features_csv, enums)
