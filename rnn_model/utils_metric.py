@@ -17,3 +17,8 @@ def calculate_mean_acc_of_traffic(list_of_acc):
 def calculate_median_acc_of_traffic(list_of_acc):
     # Calculates the median cosine similarity across packets in a traffic. Works with batches
     return np.median(list_of_acc, axis=1)
+
+def calculate_squared_error_of_traffic(predict, true):
+    # Calculates squared error between predict and true for a batch of traffic
+    # Returns a single vector with dimensions equal to the number of features
+    return np.sum((true - predict)**2, (0,1))
